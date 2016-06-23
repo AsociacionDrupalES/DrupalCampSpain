@@ -285,7 +285,7 @@ $config_directories = array();
  *   $settings['hash_salt'] = file_get_contents('/home/example/salt.txt');
  * @endcode
  */
-$settings['hash_salt'] = '';
+$settings['hash_salt'] = 'F7Oz5sRNQqRWtUF0gWws6PVfZweoZ5jYsbzo0zl5yx9YdoYcyd1hEU8zmYEjh2mL3XHaqIRJOA';
 
 /**
  * Deployment identifier.
@@ -714,6 +714,6 @@ $settings['container_yamls'][] = __DIR__ . '/services.yml';
  *
  * Keep this code block at the end of this file to take full effect.
  */
-# if (file_exists(__DIR__ . '/settings.local.php')) {
-#   include __DIR__ . '/settings.local.php';
-# }
+if (file_exists(__DIR__ . '/settings.local.php')) {
+  include __DIR__ . '/settings.local.php';
+}
