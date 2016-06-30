@@ -1,7 +1,6 @@
-name: DrupalCamp Newsletter
+name: 'DrupalCamp Newsletter'
+description: 'Provides Mailchimp integration'
 type: module
-description: Provides Mailchimp integration
 core: 8.x
-package: Custom
 dependencies:
-  - mailchimp
+  - mailchimp_signup

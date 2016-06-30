@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "2bbcbdc490b588c3c146adcec2a27e99",
-    "content-hash": "2c2408364e282489bab6205cb5c0e4ff",
+    "hash": "5947cedad27ce540101a188337bc3dd3",
+    "content-hash": "fd37d66919e353d95b666250b96f41ef",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -800,6 +800,45 @@
             "time": "2016-05-25 21:59:48"
         },
         {
+            "name": "drupal/config_update",
+            "version": "8.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/config_update.git",
+                "reference": "ac1526df5836a611f04bb421945beddb6306b7f2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/config_update-8.x-1.1.zip",
+                "reference": "ac1526df5836a611f04bb421945beddb6306b7f2",
+                "shasum": null
+            },
+            "require": {
+                "drupal/config": "8.*",
+                "drupal/core": "8.*"
+            },
+            "replace": {
+                "drupal/config_update_ui": "self.version"
+            },
+            "suggest": {
+                "drupal/config": "Required by drupal/config_update_ui",
+                "drupal/core": "Required by drupal/config_update_ui"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-8.x-1.x": "8.1.x-dev"
+                }
+            },
+            "notification-url": "https://packagist.drupal-composer.org/downloads/",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "description": "Provides basic revert and update functionality for other modules",
+            "homepage": "https://www.drupal.org/project/config_update",
+            "time": "2016-03-01 16:28:35"
+        },
+        {
             "name": "drupal/console",
             "version": "1.0.0-beta2",
             "source": {
@@ -1055,6 +1094,45 @@
             "time": "2016-06-15 20:08:27"
         },
         {
+            "name": "drupal/features",
+            "version": "8.3.0-beta5",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/features",
+                "reference": "6d23d8e5b3e69c879e4b02c0e6ca52eba44260c6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/features-8.x-3.0-beta5.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "drupal/config": "8.*",
+                "drupal/config_update": "8.*",
+                "drupal/core": "8.*"
+            },
+            "replace": {
+                "drupal/features_ui": "self.version"
+            },
+            "suggest": {
+                "drupal/core": "Required by drupal/features_ui"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-8.x-3.x": "8.3.x-dev"
+                }
+            },
+            "notification-url": "https://packagist.drupal-composer.org/downloads/",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "description": "Enables administrators to package configuration into modules.",
+            "homepage": "https://www.drupal.org/project/features",
+            "time": "2016-06-09 14:12:34"
+        },
+        {
             "name": "drupal/mailchimp",
             "version": "8.1.1",
             "source": {
@@ -1065,7 +1143,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/mailchimp-8.x-1.1.zip",
-                "reference": null,
+                "reference": "0997301c48b719d8c40689b97601d687fd38047e",
                 "shasum": null
             },
             "require": {
