@@ -1,0 +1,14 @@
+{
+  "name": "drupal/dcamp_newsletter",
+  "type": "drupal-module",
+  "description": "Provides Mailchimp integration",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/dcamp_newsletter",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/dcamp_newsletter",
+    "source": "http://cgit.drupalcode.org/dcamp_newsletter"
+  },
+  "require": { }
+}
