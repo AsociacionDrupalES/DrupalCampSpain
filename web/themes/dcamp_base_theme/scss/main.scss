@@ -1,0 +1,153 @@
+/**
+*
+* Imports
+*
+**/
+// Utils
+@import "utils/variables";
+@import "utils/functions";
+@import "utils/mixins";
+// Base
+@import "base/reset";
+@import "base/global";
+@import "base/typography";
+// Components
+@import "components/links";
+@import "components/drupal-overrides";
+@import "components/form-elements.scss";
+@import "components/animations";
+@import "components/prism";
+//  Layout
+@import "layout/layout";
+@import "layout/header";
+@import "layout/footer";
+@import "layout/offcanvas";
+
+// Temporary CSS.
+body {
+  background-color:$bg-color;
+  font-family: $main_font;
+  h1 {
+    font-family: $header_font;
+    font-size: 3em;
+  }
+  .layout-content {
+    max-width: $desk;
+    margin: 0 auto;
+  }
+  header {
+    background: $main-color;
+    color: white;
+    @include clearfix;
+    > div {
+      max-width: $desk;
+      margin: 0 auto;
+    }
+    .block-system-branding-block {
+      float: left;
+      width: 100px;
+      margin-right: 20px;
+      height: auto;
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+   .menu--main{
+      float:left;
+      ul.menu {
+        li.menu-item {
+          padding: 0;
+          a {
+            color: white;
+            font-size: .8em;
+            font-family: $header_font;
+            text-transform: uppercase;
+            text-decoration: none;
+            padding: 27px 10px;
+            line-height: 20px;
+            display: block;
+            &:hover {
+              background: black;
+            }
+          }
+        }
+      }
+    }
+    .menu--account {
+      ul.menu {
+        float: right;
+        li.menu-item {
+          padding:0;
+          a {
+            color:white;
+            text-decoration: none;
+            font-family: $header_font;
+            font-size: .8em;
+            line-height: 20px;
+            padding: 27px 10px;
+            display: block;
+            text-transform: uppercase;
+            &:hover {
+              background: black;
+            }
+          }
+        }
+      }
+    }
+  }
+  .region-messages {
+    background: green;
+    color: white;
+    > div {
+      max-width: $desk;
+      margin: 0 auto;
+      padding: 10px;
+      font-size: 12px;
+    }
+  }
+  .layout-content{
+    .block-page-title-block{
+      margin-top:50px;
+    }
+    .block-system-main-block{
+      padding:20px;
+      background:white;
+      margin:50px 0;
+    }
+  }
+  footer {
+    background: $main-color;
+    color: white;
+    > div {
+      max-width: $desk;
+      margin: 0 auto;
+      ul.menu {
+        li.menu-item {
+          padding:0;
+          a {
+            color:white;
+            text-decoration: none;
+            font-family: $header_font;
+            font-size: .8em;
+            line-height: 20px;
+            padding: 27px 10px;
+            display: block;
+            text-transform: uppercase;
+            &:hover {
+              background: black;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+ul.menu {
+  @include clearfix;
+  margin:0;
+  li.menu-item {
+    float: left;
+  }
+}

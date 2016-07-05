@@ -1,0 +1,16 @@
+#  Global library
+global:
+  version: 1.x
+  css:
+    theme:
+      styles/main.css: { weight: -1 }
+
+  js:
+    scripts/main.js: { scope: footer, weight: -6 }
+  dependencies:
+    - core/jquery
+    - core/drupal.ajax
+    - core/drupal
+    - core/drupalSettings
+    - core/jquery.once
+    - core/modernizr
