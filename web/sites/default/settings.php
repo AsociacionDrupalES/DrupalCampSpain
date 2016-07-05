@@ -285,7 +285,7 @@ $config_directories = array();
  *   $settings['hash_salt'] = file_get_contents('/home/example/salt.txt');
  * @endcode
  */
-$settings['hash_salt'] = 'F7Oz5sRNQqRWtUF0gWws6PVfZweoZ5jYsbzo0zl5yx9YdoYcyd1hEU8zmYEjh2mL3XHaqIRJOA';
+$settings['hash_salt'] = 'xnkQq_9F_auv52O3qIUFPbqu491oLsWMUBF1UuDGGENPK1gnmRr0bphxrLfsSsbIjThuX1RlWA';
 
 /**
  * Deployment identifier.
@@ -717,3 +717,4 @@ $settings['container_yamls'][] = __DIR__ . '/services.yml';
 if (file_exists(__DIR__ . '/settings.local.php')) {
   include __DIR__ . '/settings.local.php';
 }
+$settings['install_profile'] = 'standard';
