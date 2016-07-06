@@ -22,3 +22,26 @@ $config_directories['sync'] = 'sites/default/files/config_42L9pXMBOiVVCE4Uwm980e
 
 // If you need to test the newsletter widget, set your Mailchimp API key below.
 $config['mailchimp.settings']['api_key'] = 'foo';
+
+/**
+ * Set development friendly settings and configurations.
+ *
+ * @see sites/example.settings.local.php
+ */
+assert_options(ASSERT_ACTIVE, TRUE);
+\Drupal\Component\Assertion\Handle::register();
+$settings['container_yamls'][] = DRUPAL_ROOT . '/sites/development.services.yml';
+$config['system.logging']['error_level'] = 'verbose';
+$config['system.performance']['css']['preprocess'] = FALSE;
+$config['system.performance']['js']['preprocess'] = FALSE;
+
+// Disable render cache. (Do not change until after the site is installed.)
+# $settings['cache']['bins']['render'] = 'cache.backend.null';
+
+// Disable Dynamic Page cache.
+# $settings['cache']['bins']['dynamic_page_cache'] = 'cache.backend.null';
+
+$settings['extension_discovery_scan_tests'] = TRUE;
+$settings['rebuild_access'] = TRUE;
+$settings['skip_permissions_hardening'] = TRUE;
+

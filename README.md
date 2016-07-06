@@ -7,7 +7,7 @@
 1. Open web/sites/default/settings.local.php and adjust it
    to your local environment needs.
 1. Configure your web server so it points to the web directory.
-1. Open the site in a web browser.
+1. Open the site in a web browser and go to core/install.php.
 1. Select Config Installer as the installation profile.
 1. At the config import step, find and select the configuration
    file at config/config.tar.gz.
