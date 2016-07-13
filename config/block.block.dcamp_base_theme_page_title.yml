@@ -1,0 +1,20 @@
+uuid: e68a77ea-2b22-4cbc-ac6b-9e12666b7125
+langcode: en
+status: true
+dependencies:
+  theme:
+    - dcamp_base_theme
+_core:
+  default_config_hash: 7rR9chwXvdM2H8OYMAYx9Zj3GGlPMrZp_M3ZA4thYTk
+id: dcamp_base_theme_page_title
+theme: dcamp_base_theme
+region: content
+weight: -6
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  provider: core
+  label_display: '0'
+visibility: {  }

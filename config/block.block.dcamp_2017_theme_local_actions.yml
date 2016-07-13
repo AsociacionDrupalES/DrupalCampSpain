@@ -1,0 +1,20 @@
+uuid: 583fc77c-b2ea-4e4f-b4f6-0baa0891611e
+langcode: en
+status: true
+dependencies:
+  theme:
+    - dcamp_2017_theme
+_core:
+  default_config_hash: 13GQpeITIJsp1kyPniXtWZfyFH87vb1xxJCHifL4UeE
+id: dcamp_2017_theme_local_actions
+theme: dcamp_2017_theme
+region: content
+weight: -4
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }

@@ -1,0 +1,22 @@
+uuid: 1c6ddfd7-104b-45c2-a2a5-14e3722680b1
+langcode: en
+status: true
+dependencies:
+  theme:
+    - dcamp_2017_theme
+_core:
+  default_config_hash: X9I1OB0W3WlWtrK-CNcg6hNWwa8wficanpH8pYnDZDE
+id: dcamp_2017_theme_local_tasks
+theme: dcamp_2017_theme
+region: content
+weight: -5
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }
