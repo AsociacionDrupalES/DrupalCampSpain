@@ -25,3 +25,23 @@
 1. Run 'gulp' in the terminal
 1. Activate LiveReload in chrome
 1. Happy styling!
+
+### Contributing
+1. Fork this repository and clone it.
+1. Follow the installation instructions above.
+1. Checkout a new branch out of master. If there is an issue, use the issue
+   number at the start of the branch name, such as 1-foo.
+1. Work. Try to create commits as you add functionality. You can use this
+   template for your commits:
+```
+[#1] 50 chars one-liner that describes your changes
+
+This is a longer description of the chanes in this commit. You can
+use lists, links, and whatever you need here.
+```
+1. Push your branch and create a pull request. The better you describe it,
+   the easier it will be to review and merge.
+1. If you are changing configuration, save both config.tar.gz and its
+contents in config. config/config.tar.gz is used for the installation, while
+having the list of exported files within the config directory helps us to
+see the differences in configuration that a pull request introduces.

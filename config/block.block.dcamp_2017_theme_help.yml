@@ -1,0 +1,22 @@
+uuid: 25b2f5f2-4580-40b4-beb3-f7d853e2eee9
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - dcamp_2017_theme
+_core:
+  default_config_hash: 8I8iACSa0sKO3k3jlvUG1ge52rfcKX7USJAQYnzuBgg
+id: dcamp_2017_theme_help
+theme: dcamp_2017_theme
+region: help
+weight: -6
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  provider: help
+  label_display: '0'
+visibility: {  }
