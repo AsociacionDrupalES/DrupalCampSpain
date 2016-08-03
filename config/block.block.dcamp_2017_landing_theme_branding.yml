@@ -1,0 +1,25 @@
+uuid: 72f22591-b65d-41e1-8e09-36d312630b97
+langcode: en
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - dcamp_2017_landing_theme
+_core:
+  default_config_hash: NDwadleLD3YVSbDUaakxyYZyINYtkFtOVGShfq4kWy8
+id: dcamp_2017_landing_theme_branding
+theme: dcamp_2017_landing_theme
+region: '-1'
+weight: 1
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  provider: system
+  label_display: '0'
+  use_site_logo: true
+  use_site_name: false
+  use_site_slogan: false
+visibility: {  }

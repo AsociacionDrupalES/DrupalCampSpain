@@ -1,0 +1,22 @@
+uuid: dba37262-5f04-45b1-a10f-d17ff59bb0a0
+langcode: en
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - dcamp_2017_landing_theme
+_core:
+  default_config_hash: jQQUUWN2Uxr5qZtc9zcJKBCxpKY8orN1u2HPqYYRQDI
+id: dcamp_2017_landing_theme_powered
+theme: dcamp_2017_landing_theme
+region: '-1'
+weight: 5
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Powered by Drupal'
+  provider: system
+  label_display: '0'
+visibility: {  }

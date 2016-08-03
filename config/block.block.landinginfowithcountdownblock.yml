@@ -1,0 +1,24 @@
+uuid: fb6480c8-e871-4cc2-800b-a1514c7eaf8a
+langcode: en
+status: true
+dependencies:
+  module:
+    - dcamp
+  theme:
+    - dcamp_2017_landing_theme
+id: landinginfowithcountdownblock
+theme: dcamp_2017_landing_theme
+region: region_1
+weight: -8
+provider: null
+plugin: dcamp_landing_info_with_countdown_block
+settings:
+  id: dcamp_landing_info_with_countdown_block
+  label: 'Landing Info With Count Down Block'
+  provider: dcamp
+  label_display: '0'
+  start_date: null
+  translatable_text_value: null
+  title: 'SHORT N SWEET'
+  body: "EN!La Drupalcamp reúne durante un fin de semana a los mejores expertos del sector.\r\n\r\nEl objetivo de la Drupal Camp es difundir y compartir las tendencias de la industria del desarrollo web en Drupal y sirve como punto de encuentro para la comunidad española."
+visibility: {  }

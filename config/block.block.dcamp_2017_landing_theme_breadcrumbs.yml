@@ -1,0 +1,22 @@
+uuid: e3eddc45-e578-4cc1-9d71-2d320334eb2a
+langcode: en
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - dcamp_2017_landing_theme
+_core:
+  default_config_hash: oXUb3JZR2WW5VOdw4HrhRicCsq51mCgLfRyvheG68ck
+id: dcamp_2017_landing_theme_breadcrumbs
+theme: dcamp_2017_landing_theme
+region: '-1'
+weight: -5
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  provider: system
+  label_display: '0'
+visibility: {  }

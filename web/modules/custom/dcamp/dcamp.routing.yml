@@ -1,0 +1,10 @@
+entity.dcamp.canonical:
+  path: '/dcamp-landing/{dcamp}'
+  defaults:
+    _controller: '\Drupal\dcamp\Controller\DcampController::landing'
+  requirements:
+    _permission: 'view published content'
+  options:
+    parameters:
+      dcamp_entity:
+        type: entity:dcamp

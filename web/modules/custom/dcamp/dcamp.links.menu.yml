@@ -1,0 +1,8 @@
+# DrupalCamp Configuration menu items definition
+entity.dcamp.collection:
+  title: 'DrupalCamp Configuration'
+  route_name: entity.dcamp.collection
+  description: 'List DrupalCamp Configuration entities'
+  parent: system.admin_structure
+  weight: 99
+

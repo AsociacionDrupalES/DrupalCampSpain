@@ -1,0 +1,22 @@
+uuid: 7009f613-2cc4-42a8-bcd0-9bff930893a9
+langcode: en
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - dcamp_2017_landing_theme
+_core:
+  default_config_hash: KHQIJ7Vfl25lTjzIc7qIvnuistt-Mw2O0kG4jCofmkI
+id: dcamp_2017_landing_theme_messages
+theme: dcamp_2017_landing_theme
+region: '-1'
+weight: -1
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  provider: system
+  label_display: '0'
+visibility: {  }

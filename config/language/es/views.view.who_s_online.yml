@@ -1,0 +1,30 @@
+label: 'Who''s online block'
+description: 'Muestra los nombres de usuario de los usuarios recientes más activos y el número total de usuarios activos.'
+display:
+  default:
+    display_title: Máster
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Apply
+          reset_button_label: Reiniciar
+          exposed_sorts_label: 'Sort by'
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+      filters:
+        access:
+          expose:
+            label: 'Último acceso'
+            description: 'Se considera que un usuario está conectado este periodo después de que haya visto esta página por última vez.'
+      title: 'Quién está conectado'
+      header:
+        result:
+          content: 'There are currently @total users online.'
+      empty:
+        area_text_custom:
+          content: 'There are currently 0 users online.'
+  who_s_online_block:
+    display_title: 'Quién está conectado'
+    display_options:
+      block_description: 'Quién está conectado'
+      display_description: 'A list of users that are currently logged in.'

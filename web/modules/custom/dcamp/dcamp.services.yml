@@ -1,0 +1,5 @@
+services:
+  theme.negotiator.dcamp.landing:
+    class: Drupal\dcamp\Theme\LandingThemeNegotiation
+    tags:
+      - { name: theme_negotiator, priority: 1000 }

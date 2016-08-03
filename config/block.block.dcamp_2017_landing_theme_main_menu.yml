@@ -1,0 +1,26 @@
+uuid: d1d28a1e-80be-48a0-bcfb-d1cace07dd4c
+langcode: en
+status: false
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - dcamp_2017_landing_theme
+_core:
+  default_config_hash: rx9IrdDv7Ldc4kpalZAxdhIPZfYIeOMh1N-qKoQZwHo
+id: dcamp_2017_landing_theme_main_menu
+theme: dcamp_2017_landing_theme
+region: '-1'
+weight: 2
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Main navigation'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 1
+visibility: {  }

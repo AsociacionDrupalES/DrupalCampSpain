@@ -1,0 +1,22 @@
+uuid: 146b3a69-5937-45f7-830c-540b9526e0cd
+langcode: en
+status: false
+dependencies:
+  module:
+    - help
+  theme:
+    - dcamp_2017_landing_theme
+_core:
+  default_config_hash: 8I8iACSa0sKO3k3jlvUG1ge52rfcKX7USJAQYnzuBgg
+id: dcamp_2017_landing_theme_help
+theme: dcamp_2017_landing_theme
+region: '-1'
+weight: -3
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  provider: help
+  label_display: '0'
+visibility: {  }

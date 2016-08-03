@@ -1,0 +1,22 @@
+uuid: b1f03eb8-e40c-4ec5-8a21-038c5f15dec5
+langcode: en
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - dcamp_2017_landing_theme
+_core:
+  default_config_hash: 9EoWV2Lot6FVSr50t4hoKgiz1LIXYWNG-IIPYsWxBqo
+id: dcamp_2017_landing_theme_content
+theme: dcamp_2017_landing_theme
+region: '-1'
+weight: 4
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }

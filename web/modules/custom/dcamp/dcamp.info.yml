@@ -1,0 +1,6 @@
+name: DrupalCamp
+description: Functionality and configuration for Drupal Camps.
+package: dcamp
+
+type: module
+core: 8.x

@@ -1,0 +1,73 @@
+label: Usuarios
+description: 'Encontrar y administrar las personas que interactúan con el sitio.'
+display:
+  default:
+    display_title: Máster
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Filtro
+          reset_button_label: Reiniciar
+          exposed_sorts_label: 'Sort by'
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+      pager:
+        options:
+          tags:
+            next: 'Siguiente ›'
+            first: '« First'
+            last: 'Last »'
+          expose:
+            items_per_page_label: 'elementos por página'
+            items_per_page_options_all_label: '— Todo(s) —'
+            offset_label: Desplazamiento
+      fields:
+        user_bulk_form:
+          label: 'Actualización en masa'
+        name:
+          label: 'Nombre de usuario'
+        status:
+          label: Estado
+        roles_target_id:
+          label: Roles
+        created:
+          label: 'Member for'
+        access:
+          label: 'Último acceso'
+        operations:
+          label: Operaciones
+        mail:
+          separator: ', '
+      filters:
+        combine:
+          expose:
+            label: 'Name or email contains'
+        roles_target_id:
+          expose:
+            label: Rol
+        permission:
+          expose:
+            label: Permission
+        status:
+          group_info:
+            label: Estado
+            group_items:
+              1:
+                title: Activo
+                value: '1'
+              2:
+                title: Blocked
+      title: Usuarios
+      empty:
+        area_text_custom:
+          content: 'No people available.'
+      use_more_text: más
+  page_1:
+    display_title: Página
+    display_options:
+      menu:
+        title: Lista
+        description: 'Encontrar y administrar las personas que interactúan con el sitio.'
+      tab_options:
+        title: Usuarios
+        description: 'Manage user accounts, roles, and permissions.'

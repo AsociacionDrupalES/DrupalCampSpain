@@ -1,0 +1,26 @@
+uuid: 73ddb3bc-a4e8-4acf-9ee3-1902313495a9
+langcode: en
+status: false
+dependencies:
+  config:
+    - system.menu.tools
+  module:
+    - system
+  theme:
+    - dcamp_2017_landing_theme
+_core:
+  default_config_hash: NeHSoqm4XFqA7_0bDmR429ZZQt3LRbZMNRJTMsFyOfI
+id: dcamp_2017_landing_theme_tools
+theme: dcamp_2017_landing_theme
+region: '-1'
+weight: 6
+provider: null
+plugin: 'system_menu_block:tools'
+settings:
+  id: 'system_menu_block:tools'
+  label: Tools
+  provider: system
+  label_display: visible
+  level: 1
+  depth: 0
+visibility: {  }

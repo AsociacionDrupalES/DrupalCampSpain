@@ -1,0 +1,31 @@
+label: 'Término de taxonomía'
+description: 'Contenido perteneciente a un determinado término de taxonomía.'
+display:
+  default:
+    display_title: Máster
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Apply
+          reset_button_label: Reiniciar
+          exposed_sorts_label: 'Sort by'
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+      pager:
+        options:
+          expose:
+            items_per_page_label: 'elementos por página'
+            items_per_page_options_all_label: '— Todo(s) —'
+            offset_label: Desplazamiento
+          tags:
+            previous: ‹‹
+            next: ››
+      arguments:
+        tid:
+          exception:
+            title: Todo
+          title: '{{ arguments.tid }}'
+  feed_1:
+    display_title: 'Canal de noticias'
+  page_1:
+    display_title: Página

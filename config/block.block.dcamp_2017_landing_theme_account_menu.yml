@@ -1,0 +1,26 @@
+uuid: 010dedee-7327-4b46-8835-959526ec7e65
+langcode: en
+status: false
+dependencies:
+  config:
+    - system.menu.account
+  module:
+    - system
+  theme:
+    - dcamp_2017_landing_theme
+_core:
+  default_config_hash: DweBpscQZdG0-fHkSpUzdYucrNH45G_KF7Z82V-oyQM
+id: dcamp_2017_landing_theme_account_menu
+theme: dcamp_2017_landing_theme
+region: '-1'
+weight: -2
+provider: null
+plugin: 'system_menu_block:account'
+settings:
+  id: 'system_menu_block:account'
+  label: 'User account menu'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 1
+visibility: {  }

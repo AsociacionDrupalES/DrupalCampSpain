@@ -1,0 +1,21 @@
+<?php
+/**
+ * @file
+ * Contains dcamp.module
+ */
+
+/**
+ * Implements hook_theme.
+ */
+function dcamp_theme($existing, $type, $theme, $path){
+ return [
+   'dcamp_landing_info_with_countdown' => array(
+     'variables' => [
+       'title' => NULL,
+       'body' => NULL,
+       'countdown' => NULL,
+     ],
+     'template' => 'dcamp-landing-info-with-countdown'
+   ),
+ ];
+}

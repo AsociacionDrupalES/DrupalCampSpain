@@ -1,0 +1,22 @@
+uuid: fc19076c-61e8-475a-b7fa-6d7434d1955f
+langcode: en
+status: false
+dependencies:
+  module:
+    - search
+  theme:
+    - dcamp_2017_landing_theme
+_core:
+  default_config_hash: za-39d5WDUg6XvbyqSnuVYEeq6QM4qKJxW8MnoAha5A
+id: dcamp_2017_landing_theme_search
+theme: dcamp_2017_landing_theme
+region: '-1'
+weight: 7
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: Search
+  provider: search
+  label_display: visible
+visibility: {  }
