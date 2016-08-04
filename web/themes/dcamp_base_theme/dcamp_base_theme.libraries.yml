@@ -20,4 +20,3 @@ vendor:
   version: 1.x
   js:
     scripts/vendor/fastclick.js: { scope: footer , weight: -8 }
-    scripts/vendor/prism.js: { scope: footer , weight: -10 }

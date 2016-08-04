@@ -1,0 +1,24 @@
+<?php
+/**
+ * @file
+ * Contains dcamp.module
+ */
+
+/**
+ * Implements hook_theme.
+ */
+function dcamp_theme($existing, $type, $theme, $path){
+ return [
+   'landing_block' => array(
+     'variables' => [
+       'title' => NULL,
+       'body' => NULL,
+       'countdown' => NULL,
+       'form' => NULL,
+       'download' => NULL,
+       'link' => NULL,
+     ],
+     'template' => 'landing-block'
+   ),
+ ];
+}

@@ -1,0 +1,20 @@
+label: 'Nuevos usuarios'
+description: 'Muestra una lista de las cuentas de usuario más recientes en el sitio.'
+display:
+  default:
+    display_title: Máster
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Apply
+          reset_button_label: Reiniciar
+          exposed_sorts_label: 'Sort by'
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+      title: 'Nuevos usuarios'
+  block_1:
+    display_title: 'Nuevos usuarios'
+    display_options:
+      display_description: 'A list of new users'
+      block_description: 'Nuevos usuarios'
+      block_category: Usuario

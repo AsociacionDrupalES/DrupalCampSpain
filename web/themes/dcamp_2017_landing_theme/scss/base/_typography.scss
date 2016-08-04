@@ -1,0 +1,24 @@
+/**
+ * Fontello Icons.
+ *
+ * To add icons: upload config.json to fontello, add your icons and download
+ * the files, and replace the {{theme}}/icons folder.
+ */
+@font-face {
+  font-family: 'icons';
+  src: url('../icons/font/icons.eot?11985607');
+  src: url('../icons/font/icons.eot?11985607#iefix') format('embedded-opentype'),
+  url('../icons/font/icons.woff?11985607') format('woff'),
+  url('../icons/font/icons.ttf?11985607') format('truetype'),
+  url('../icons/font/icons.svg?11985607#icons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/**
+ * Google Fonts
+ */
+@import 'https://fonts.googleapis.com/css?family=Open+Sans:400,400i|Secular+One';
+
+$header_font: 'Secular One', sans-serif;
+$main_font: 'Open Sans', sans-serif;

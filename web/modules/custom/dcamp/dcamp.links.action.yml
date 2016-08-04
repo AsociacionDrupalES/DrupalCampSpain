@@ -1,0 +1,6 @@
+entity.dcamp.add_form:
+  route_name: 'entity.dcamp.add_form'
+  title: 'Add DrupalCamp Configuration'
+  appears_on:
+    - entity.dcamp.collection
+

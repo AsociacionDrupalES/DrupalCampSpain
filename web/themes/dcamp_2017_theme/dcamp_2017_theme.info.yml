@@ -2,7 +2,7 @@ name: DCamp 2017 Theme
 type: theme
 description: 'AED Drupal Camp 2017 Theme'
 base theme: dcamp_base_theme
-version: 1.0
+version: 0.1-dev
 core: 8.x
 
 regions:
