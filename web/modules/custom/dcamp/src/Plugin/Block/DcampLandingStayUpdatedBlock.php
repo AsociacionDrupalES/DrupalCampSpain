@@ -20,7 +20,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  *
  * @Block(
  *   id = "dcamp_landing_stay_updated_block",
- *   admin_label = @Translation("DrupalCamp block for landing about the community")
+ *   admin_label = @Translation("DrupalCamp block for landing for staying updated")
  * )
  */
 class DcampLandingStayUpdatedBlockBlock extends BlockBase implements BlockPluginInterface, ContainerFactoryPluginInterface{
