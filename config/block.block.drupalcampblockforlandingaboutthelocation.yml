@@ -9,7 +9,7 @@ dependencies:
 id: drupalcampblockforlandingaboutthelocation
 theme: dcamp_2017_landing_theme
 region: region_2
-weight: null
+weight: -10
 provider: null
 plugin: dcamp_landing_about_location_block
 settings:
@@ -18,5 +18,5 @@ settings:
   provider: dcamp
   label_display: '0'
   title: Madrid
-  body: "Ciudad cosmopolita que acoge con entusiasmo cada visitante. Ofrece cultura y ocio, un centro plagado de historia y una oferta empresarial y profesional como ninguna otra ciudad de España.\r\n\r\nEl espacio que acogerá esta edición es La Casa Encendida."
+  body: "<p>A cosmopolitan city which warmly welcomes every visitor. A city of culture and leisure; a city full to the brim with history, and a hub for businesses and professionals unlike any other city in Spain. Madrid constantly surprises those on the inside as much as those coming from outside.</p>\r\n<p>The venue that will be hosting this years edition will be <a href=\"https://http://www.lacasaencendida.es/en\" target=\"_blank\">La Casa Encendida</a>."
 visibility: {  }

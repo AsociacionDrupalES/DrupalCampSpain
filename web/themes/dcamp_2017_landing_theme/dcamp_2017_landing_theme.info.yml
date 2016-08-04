@@ -13,3 +13,8 @@ regions:
   region_4: 'Region 4'
   region_5: 'Region 5'
   region_6: 'Region 6'
+
+libraries:
+ - dcamp_2017_landing_theme/global
+ - dcamp_2017_landing_theme/plax
+ - dcamp_2017_landing_theme/fullPage.js

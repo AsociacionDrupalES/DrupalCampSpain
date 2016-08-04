@@ -1,0 +1,30 @@
+{
+  "name": "drupal/dcamp_base_theme",
+  "description": "Defines composer dependencies for the dcamp base theme theme.",
+  "type": "drupal-theme",
+  "license": "GPL-2.0+",
+  "authors": [
+    {
+      "name": "Teun van Veggel (nuez)",
+      "homepage": "http://nuez.io",
+      "role": "Maintainer"
+    }
+  ],
+  "repositories": [
+    {
+      "type": "package",
+      "package": {
+        "name": "ftlabs/fastclick",
+        "version": "1.0.6",
+        "source": {
+          "url": "https://github.com/ftlabs/fastclick",
+          "type": "git",
+          "reference": "master"
+        }
+      }
+    }
+  ],
+  "require": {
+    "ftlabs/fastclick": "1.0.6"
+  }
+}

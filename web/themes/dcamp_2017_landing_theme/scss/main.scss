@@ -21,3 +21,566 @@
 @import "layout/header";
 @import "layout/footer";
 @import "layout/offcanvas";
+
+
+/*!
+ * styles for drupalcamp spain 2017
+ * cesar alvarez & javier del campo
+ * https://wildwildweb.es/
+ */
+
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "futura-pt",sans-serif;
+  font-weight: 400;
+  color: #ffffff;
+  background-color: #22283f;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.title {
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+h2 {
+  font-family: "futura-pt-condensed",sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 500%;
+  margin-bottom: 24px;
+  text-align: left;
+}
+
+.zig-zag {
+  height: 30px;
+  display: block;
+}
+
+.description {
+  display: block;
+  margin-bottom: 78px;
+  font-size: 150%;
+  letter-spacing: 2px;
+  max-width: 534px;
+}
+
+.button {
+  font-family: "futura-pt-condensed",sans-serif;
+  display: inline-block;
+  padding: 30px 50px 30px 62px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 120%;
+  background:  #4b26e6 none no-repeat left 30px center;
+  max-width: 90%;
+}
+
+input {
+  appearance: none;
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
+
+.section {
+  position: relative;
+  overflow: hidden;
+}
+
+.section .content {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-45%, -50%);
+  width: 90%;
+  z-index: 1;
+}
+
+
+/* intro */
+#intro {
+  background: #fff url('../images/pattern.jpg') repeat top left;
+  z-index: 1;
+}
+
+h1 {
+  margin: 0;
+  left: 0;
+  position: absolute;
+  top: 20%;
+  display: block;
+  width: 918px;
+  height: 128px;
+  text-indent: -9000px;
+  background-image: url('../images/logo.svg');
+  background-size: cover;
+}
+
+#intro .letter {
+  position: absolute;
+  z-index: -1;
+}
+
+.letter.d {
+  left: 0;
+  top: 50px;
+}
+
+.letter.r {
+  left: 37%;
+  top: 0;
+}
+
+.letter.u {
+  right: 0;
+  top: 0;
+}
+
+.letter.p {
+  bottom: -20%;
+  left: 15%;
+}
+
+.letter.al {
+  bottom: -40%;
+  right: 10%;
+}
+
+.arrow {
+  bottom: 10%;
+  left: 0;
+  margin: 0 auto;
+  position: absolute;
+  right: 0;
+}
+
+
+/* slogan */
+#slogan {
+  color: #fff;
+  background: #4b26e6;
+}
+
+#slogan .ico {
+  position: absolute;
+}
+
+.ico.thunder {
+  right: 15%;
+  top: 5%;
+}
+
+.ico.saturn {
+  right: 45%;
+  top: 15%;
+}
+
+.ico.cloud {
+  right: 15%;
+  top: 35%;
+}
+
+.ico.drop {
+  right: 30%;
+  top: 45%;
+}
+
+.ico.computer {
+  right: 22%;
+  top: 65%;
+}
+
+.ico.mobile {
+  right: 50%;
+  top: 75%;
+}
+
+.count {
+  display: inline-block;
+}
+
+.countdown div {
+  overflow: hidden;
+  text-align: left;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #fff;
+  margin-right: 20px;
+}
+
+.countdown div span {
+  color: #9e87f9;
+  display: block;
+  font-size: 150%;
+  font-family: "futura-pt-condensed",sans-serif;
+}
+
+
+/* location */
+#location {
+  background: #fff url('../images/location.jpg') no-repeat center center;
+  background-size: cover;
+}
+
+#location a {
+  color: #dd2d75;
+  text-decoration: none;
+}
+
+#location a:hover {
+  background-color: #dd2d75;
+  color: #fff;
+}
+
+
+/* sponsor */
+#sponsor {
+  color: #4b26e6;
+  background:  #fff;
+}
+
+#sponsor .circle {
+  position: absolute;
+  right: -25%;
+  top: -53%;
+}
+
+#sponsor .button {
+  background-image: url('../images/button-arrow.svg');
+}
+
+#sponsor .button:hover {
+  background-color: #dd2d75;
+}
+
+
+/* community */
+#community {
+  background: #fff url('../images/community.jpg') no-repeat center center;
+  background-size: cover;
+}
+
+#community h2 {
+  color: #dd2d75;
+}
+
+#community .description p {
+  color: #4b26e6;
+}
+
+#community .button {
+  background-image: url('../images/button-users.svg');
+}
+
+#community .button:hover {
+  background-color: #dd2d75;
+}
+
+
+/* newsletter */
+#newsletter {
+  color: #fff;
+  background-color: #dd2d75;
+}
+
+#newsletter h2:after {
+  background: transparent url("../images/zig-zag-blue.svg") no-repeat scroll left top;
+}
+
+#newsletter .ico {
+  position: absolute;
+}
+
+.ico.code {
+  right: 15%;
+  top: 20%;
+}
+
+.ico.diamond {
+  right: 40%;
+  top: 30%;
+}
+
+.ico.taxonomy {
+  right: 27%;
+  top: 45%;
+}
+
+.ico.newsletter {
+  right: 50%;
+  top: 65%;
+}
+
+.ico.mouse {
+  right: 22%;
+  top: 75%;
+}
+
+#newsletter h3 {
+  font-size: 110%;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+#newsletter form {
+  max-width: 530px;
+  width: 90%;
+}
+
+#newsletter input.email {
+  border: medium none;
+  float: left;
+  font-size: 100%;
+  height: 50px;
+  line-height: 50px;
+  padding: 0 0 0 10px;
+  width: 75%;
+  color: #dc2e76;
+  border-radius: 0;
+}
+
+#newsletter input.button {
+  background: #a82358 none repeat scroll 0 0;
+  border: medium none;
+  font-size: 110%;
+  height: 50px;
+  letter-spacing: 0;
+  line-height: 50px;
+  padding: 0;
+  width: 25%;
+  cursor: pointer;
+}
+
+#newsletter input.button:hover {
+  background-color: #4b26e6;
+}
+
+#newsletter span.subtitle {
+  color: #fa92b7;
+  margin-top: 15px;
+  display: block;
+}
+
+
+/* footer */
+#footer {
+  text-align: center;
+}
+
+#footer {
+  background-color: #fff;
+}
+
+#footer.cd-section .content {
+  transform: translate(-50%, -50%);
+}
+
+#footer span {
+  color: #b3b3b3;
+  display: block;
+  text-transform: uppercase;
+  margin-bottom: 50px;
+}
+
+#footer a.aed {
+  background: transparent url("../images/aed.svg") no-repeat scroll center center;
+  display: block;
+  height: 100px;
+  margin: 0 auto 100px;
+  text-indent: -9000px;
+  width: 218px;
+}
+
+#footer .rrss a {
+  display: inline-block;
+  margin: 0 2%;
+  color: #b3b3b3;
+  text-transform: uppercase;
+  font-size: 120%;
+  text-decoration: none;
+  line-height: 38px;
+  height: 38px;
+  padding-left: 45px;
+}
+
+
+#footer .rrss a:hover {
+  color: #dd2d75;
+}
+
+#footer .rrss a.contact {
+  background: transparent url("../images/contact.svg") no-repeat scroll left center;
+}
+
+#footer .rrss a.facebook {
+  background: transparent url("../images/facebook.svg") no-repeat scroll left center;
+}
+
+#footer .rrss a.twitter {
+  background: transparent url("../images/twitter.svg") no-repeat scroll left center;
+}
+
+#footer .pattern {
+  background: url('../images/pattern.jpg') repeat bottom left;
+  bottom: 0;
+  height: 85px;
+  left: 0;
+  position: absolute;
+  right: 0;
+  width: 100%;
+}
+
+
+
+/* MEDIA QUERIES */
+@media only screen and (max-width: 1400px) {
+
+  h1 {
+    width: 645px;
+    height: 90px;
+  }
+
+  h2 {
+    font-size: 400%;
+  }
+
+
+  .description {
+    font-size: 130%;
+  }
+
+  .ico {
+    opacity: 0.5;
+  }
+
+  #intro .letter.p {
+    display: none;
+  }
+
+}
+
+@media only screen and (max-width: 1024px) {
+
+  h1 {
+    width: 358px;
+    height: 50px;
+  }
+
+  h2 {
+    font-size: 300%;
+  }
+
+  .description {
+    font-size: 120%;
+  }
+
+  #newsletter .ico {
+    opacity: 0.1;
+  }
+
+  #slogan .ico {
+    opacity: 0.2;
+  }
+
+  #intro .letter.r,
+  #intro .letter.al {
+    display: none;
+  }
+
+}
+
+
+@media only screen and (max-width: 550px) {
+
+  h1 {
+    width: 287px;
+    height: 40px;
+  }
+
+  #intro .letter.u {
+    display: none;
+  }
+
+  h2 {
+    font-size: 200%;
+    margin-bottom: 24px;
+  }
+
+  .zig-zag {
+    height: 15px;
+  }
+
+  #footer .rrss {
+    margin: 0 auto;
+    max-width: 150px;
+    text-align: left;
+  }
+
+  #footer .rrss a {
+    margin: 0 0 8%;
+  }
+
+  #footer a.aed {
+    width: 109px;
+    height: 50px;
+    margin-bottom: 50px;
+    background-size: cover;
+  }
+
+  #footer span {
+    margin-bottom: 26px;
+  }
+
+  .section .content {
+    transform: translate(-50%, -50%);
+  }
+
+  .fp-section {
+    padding: 20px 0;
+    box-sizing: unset;
+  }
+
+  #intro.fp-section {
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .button {
+    padding: 15px 15px 15px 45px;
+    background-position: 15px center;
+  }
+
+  .countdown div {
+    margin-right: 10px;
+  }
+
+  .countdown div span {
+    font-size: 100%;
+  }
+
+  #newsletter .ico {
+    opacity: 0.1;
+    width: 27px;
+  }
+
+  #slogan .ico {
+    opacity: 0.2;
+    width: 27px;
+  }
+
+}
+
+

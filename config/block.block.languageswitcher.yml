@@ -1,4 +1,4 @@
-uuid: 3ae7f054-dd98-4afe-9906-476473b2398a
+uuid: d1656398-bbb0-47b0-87f8-80939a72e5b6
 langcode: en
 status: true
 dependencies:
@@ -9,7 +9,7 @@ dependencies:
 id: languageswitcher
 theme: dcamp_2017_landing_theme
 region: content
-weight: -9
+weight: -10
 provider: null
 plugin: 'language_block:language_interface'
 settings:
