@@ -8,7 +8,6 @@ namespace Drupal\dcamp\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Block\BlockPluginInterface;
-use Drupal\Core\DependencyInjection\ContainerInjectionInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Routing\CurrentRouteMatch;
@@ -20,11 +19,11 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  * Provides a Description block with Countdown
  *
  * @Block(
- *   id = "dcamp_landing_info_with_countdown_block",
- *   admin_label = @Translation("Landing Info With Count Down Block")
+ *   id = "dcamp_landing_about_event_block",
+ *   admin_label = @Translation("DrupalCamp block for landing about event")
  * )
  */
-class DcampLandingInfoWithCountDownBlock extends BlockBase implements BlockPluginInterface, ContainerFactoryPluginInterface{
+class DcampLandingAboutEventBlock extends BlockBase implements BlockPluginInterface, ContainerFactoryPluginInterface{
 
 
   /**
@@ -68,7 +67,7 @@ class DcampLandingInfoWithCountDownBlock extends BlockBase implements BlockPlugi
     $config = $this->getConfiguration();
     $dcamp = $this->currentRouteMatch->getParameter('dcamp');
     return [
-      '#theme' => 'dcamp_landing_info_with_countdown',
+      '#theme' => 'landing_block',
       '#title' => $config['title'],
       '#body' => $config['body'],
       '#countdown' => '@todo countdown to '. $dcamp->get('starting_date'),
@@ -86,14 +85,12 @@ class DcampLandingInfoWithCountDownBlock extends BlockBase implements BlockPlugi
       '#type' => 'textfield',
       '#title' => $this->t('Title'),
       '#default_value' => $config['title'],
-      '#format' => $config['title'],
       '#required' => TRUE,
     ];
     $form['body'] = [
       '#type' => 'textarea',
       '#title' => $this->t('Body'),
       '#default_value' => $config['body'],
-      '#format' => $config['body'],
       '#required' => TRUE,
     ];
     return $form;

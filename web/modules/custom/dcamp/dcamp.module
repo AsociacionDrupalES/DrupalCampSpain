@@ -9,13 +9,16 @@
  */
 function dcamp_theme($existing, $type, $theme, $path){
  return [
-   'dcamp_landing_info_with_countdown' => array(
+   'landing_block' => array(
      'variables' => [
        'title' => NULL,
        'body' => NULL,
        'countdown' => NULL,
+       'form' => NULL,
+       'download' => NULL,
+       'link' => NULL,
      ],
-     'template' => 'dcamp-landing-info-with-countdown'
+     'template' => 'landing-block'
    ),
  ];
 }
