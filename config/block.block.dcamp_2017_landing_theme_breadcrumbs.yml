@@ -1,4 +1,4 @@
-uuid: e3eddc45-e578-4cc1-9d71-2d320334eb2a
+uuid: 21c5c63a-ad07-45f7-888c-58f644619f67
 langcode: en
 status: false
 dependencies:
@@ -11,7 +11,7 @@ _core:
 id: dcamp_2017_landing_theme_breadcrumbs
 theme: dcamp_2017_landing_theme
 region: '-1'
-weight: -5
+weight: -6
 provider: null
 plugin: system_breadcrumb_block
 settings:

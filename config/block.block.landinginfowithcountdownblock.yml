@@ -1,4 +1,4 @@
-uuid: fb6480c8-e871-4cc2-800b-a1514c7eaf8a
+uuid: 0a8aba44-8aaa-48cc-834e-6e7f38278157
 langcode: en
 status: true
 dependencies:
@@ -9,7 +9,7 @@ dependencies:
 id: landinginfowithcountdownblock
 theme: dcamp_2017_landing_theme
 region: region_1
-weight: -8
+weight: null
 provider: null
 plugin: dcamp_landing_info_with_countdown_block
 settings:
@@ -17,8 +17,6 @@ settings:
   label: 'Landing Info With Count Down Block'
   provider: dcamp
   label_display: '0'
-  start_date: null
-  translatable_text_value: null
-  title: 'SHORT N SWEET'
-  body: "EN!La Drupalcamp reúne durante un fin de semana a los mejores expertos del sector.\r\n\r\nEl objetivo de la Drupal Camp es difundir y compartir las tendencias de la industria del desarrollo web en Drupal y sirve como punto de encuentro para la comunidad española."
+  title: 'Short N Sweet'
+  body: "<p>La Drupalcamp reúne durante un fin de semana a los mejores expertos del sector.</p>\r\n\r\n<p>El objetivo de la Drupal Camp es difundir y compartir las tendencias de la industria del desarrollo web en Drupal y sirve como punto de encuentro para la comunidad española.</p>"
 visibility: {  }

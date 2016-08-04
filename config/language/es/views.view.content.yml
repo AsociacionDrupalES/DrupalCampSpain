@@ -13,7 +13,7 @@ display:
       pager:
         options:
           tags:
-            next: 'Siguiente ›'
+            previous: '‹ Previous'
             first: '« First'
             last: 'Last »'
       fields:

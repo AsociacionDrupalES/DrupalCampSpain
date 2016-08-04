@@ -1,4 +1,4 @@
-uuid: 01817f3f-73be-4ebc-abcc-91a01e7c168e
+uuid: 01b2b957-c0a6-41d9-9a45-6299804f5d44
 langcode: en
 status: false
 dependencies:
@@ -9,7 +9,7 @@ _core:
 id: dcamp_2017_landing_theme_local_actions
 theme: dcamp_2017_landing_theme
 region: '-1'
-weight: 3
+weight: 4
 provider: null
 plugin: local_actions_block
 settings:

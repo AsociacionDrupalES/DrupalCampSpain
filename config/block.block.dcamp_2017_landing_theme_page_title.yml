@@ -1,4 +1,4 @@
-uuid: 7497798e-7958-4438-b974-ce16ec6f20c8
+uuid: 6af216c0-0855-4f32-9306-b51580a2d072
 langcode: en
 status: false
 dependencies:
@@ -9,7 +9,7 @@ _core:
 id: dcamp_2017_landing_theme_page_title
 theme: dcamp_2017_landing_theme
 region: '-1'
-weight: -6
+weight: -4
 provider: null
 plugin: page_title_block
 settings:

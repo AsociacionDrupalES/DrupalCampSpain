@@ -1,4 +1,4 @@
-uuid: e23d59d1-80e8-47ce-b3fa-dd44887e7145
+uuid: 2dcd846b-5e73-42fc-8694-4382b3245599
 langcode: en
 status: false
 dependencies:
@@ -13,7 +13,7 @@ _core:
 id: dcamp_2017_landing_theme_footer
 theme: dcamp_2017_landing_theme
 region: '-1'
-weight: -4
+weight: -5
 provider: null
 plugin: 'system_menu_block:footer'
 settings:
