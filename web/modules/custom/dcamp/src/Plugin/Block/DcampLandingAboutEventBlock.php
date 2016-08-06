@@ -9,6 +9,7 @@ namespace Drupal\dcamp\Plugin\Block;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Routing\CurrentRouteMatch;
 use Drupal\Core\Routing\RouteMatch;
+use Drupal\dcamp\Entity\Dcamp;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 
@@ -55,8 +56,13 @@ class DcampLandingAboutEventBlock extends DcampLandingBlockBase implements Conta
    */
   public function build() {
     $build = parent::build();
+    /** @var Dcamp $dcamp */
     $dcamp = $this->currentRouteMatch->getParameter('dcamp');
-    $build['#countdown'] = '@todo';
+    /**
+     * @todo replace depricated format_date.
+     */
+    $date = format_date($dcamp->get('starting_date'), 'custom', 'F d, Y H:i:s', NULL, 'en');
+    $build['#countdown']['#markup'] = '<div id="countdown" data-date="'.$date.'"></div>';
     return $build;
   }
 }

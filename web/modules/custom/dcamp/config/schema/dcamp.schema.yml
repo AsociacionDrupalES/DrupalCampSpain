@@ -39,6 +39,12 @@ block.settings.dcamp_landing_about_community_block:
     body:
       type: text
       label: 'Body'
+    link_text:
+      type: text
+      label: 'Link text'
+    link_url:
+      type: url
+      label: 'Link URL'
 
 block.settings.dcamp_landing_about_location_block:
   type: block_settings
@@ -61,6 +67,12 @@ block.settings.dcamp_landing_about_sponsor_block:
     body:
       type: text
       label: 'Body'
+    download_text:
+      type: text
+      label: 'Download text'
+    download_url:
+      type: url
+      label: 'Download URL'
 
 block.settings.dcamp_landing_stay_updated_block:
   type: block_settings

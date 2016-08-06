@@ -3,7 +3,7 @@ entity.dcamp.canonical:
   defaults:
     _controller: '\Drupal\dcamp\Controller\DcampController::landing'
   requirements:
-    _permission: 'view published content'
+    _permission: 'access content'
   options:
     parameters:
       dcamp_entity:
