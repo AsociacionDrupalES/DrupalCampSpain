@@ -1,11 +1,11 @@
 @font-face {
   font-family: 'dcamp-icons';
-  src: url('../font/dcamp-icons.eot?99610033');
-  src: url('../font/dcamp-icons.eot?99610033#iefix') format('embedded-opentype'),
-       url('../font/dcamp-icons.woff2?99610033') format('woff2'),
-       url('../font/dcamp-icons.woff?99610033') format('woff'),
-       url('../font/dcamp-icons.ttf?99610033') format('truetype'),
-       url('../font/dcamp-icons.svg?99610033#dcamp-icons') format('svg');
+  src: url('../font/dcamp-icons.eot?32651765');
+  src: url('../font/dcamp-icons.eot?32651765#iefix') format('embedded-opentype'),
+       url('../font/dcamp-icons.woff2?32651765') format('woff2'),
+       url('../font/dcamp-icons.woff?32651765') format('woff'),
+       url('../font/dcamp-icons.ttf?32651765') format('truetype'),
+       url('../font/dcamp-icons.svg?32651765#dcamp-icons') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -15,7 +15,7 @@
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: 'dcamp-icons';
-    src: url('../font/dcamp-icons.svg?99610033#dcamp-icons') format('svg');
+    src: url('../font/dcamp-icons.svg?32651765#dcamp-icons') format('svg');
   }
 }
 */
@@ -73,3 +73,5 @@
 .icon-zig-zag:before { content: '\e811'; } /* '' */
 .icon-twitter:before { content: '\f099'; } /* '' */
 .icon-facebook:before { content: '\f09a'; } /* '' */
+.icon-angle-right:before { content: '\f105'; } /* '' */
+.icon-angle-down:before { content: '\f107'; } /* '' */

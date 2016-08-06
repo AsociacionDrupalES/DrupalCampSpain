@@ -11,26 +11,21 @@
           css3: true,
           navigationPosition: 'right',
           navigation: true,
-          responsiveWidth: 980,
-          responsiveHeight: 750,
+          responsiveWidth: 960,
+          responsiveHeight: 700,
+          scrollBar: true,
           afterRender: function () {
-            setTimeout(
-              function () {
-                $('img.d').plaxify({"xRange": 40, "yRange": 40});
-                $('img.r').plaxify({"xRange": 20, "yRange": 20});
-                $('img.u').plaxify({"xRange": 10, "yRange": 10, "invert": true});
-                $('img.p').plaxify({"xRange": 40, "yRange": 40, "invert": true});
-                $('img.al').plaxify({"xRange": 30, "yRange": 30});
-                $.plax.enable();
-              },
-              100
-            );
-
+            $('img.d').plaxify({"xRange": 40, "yRange": 40});
+            $('img.r').plaxify({"xRange": 20, "yRange": 20});
+            $('img.u').plaxify({"xRange": 10, "yRange": 10, "invert": true});
+            $('img.p').plaxify({"xRange": 40, "yRange": 40, "invert": true});
+            $('img.al').plaxify({"xRange": 30, "yRange": 30});
+            $.plax.enable();
           }
         }
       );
 
-      $('.arrow.flash').css('cursor', 'pointer').bind(
+      $('.scroll-down').bind(
         'click',
         function () {
           $.fn.fullpage.moveSectionDown();
@@ -43,13 +38,25 @@
        * @todo move this to Dcamp module.
        */
 
-      var endDate = "may 24, 2017 23:59:59";
-
       $("#countdown").countdown({
-        htmlTemplate: '<div id="countdown_day" class="countdown count"><div><span>%d Días</span></div></div><div id="coundown_hour" class="countdown count"><div><span>%h Horas</span></div></div><div id="coundown_min" class="countdown count"><div><span>%i Minutos</span></div></div><div id="coundown_sec" class="countdown count c_last"><div><span>%s Segundos</span></div></div>',
-        date: endDate,
+        htmlTemplate: '<div id="countdown_day" class="countdown count"><div><span>%d ' + Drupal.t('Days') + '</span></div></div><div id="coundown_hour" class="countdown count"><div><span>%h ' + Drupal.t('Hours') + '</span></div></div><div id="coundown_min" class="countdown count"><div><span>%i '+Drupal.t('Minutes')+'</span></div></div><div id="coundown_sec" class="countdown count c_last"><div><span>%s '+Drupal.t('Seconds')+'</span></div></div>',
+        date: $('#countdown').data('date'),
         hoursOnly: false,
         leadingZero: true
+      });
+
+      /**
+       * Hand made Parallax effect for background images.
+       */
+      var depthCoeficient = 80;
+      $(window).scroll(function () {
+        var scrollTop = $(this).scrollTop();
+        var screenHeight = $(window).height();
+        $('.section:not(#intro)').each(function (index) {
+          var top = $(this).offset().top;
+          var transitionCoeficient = 50 - ((scrollTop - top) / screenHeight) * depthCoeficient;
+          $(this).css('background-position', '50% ' + transitionCoeficient + '%');
+        });
       });
 
     }

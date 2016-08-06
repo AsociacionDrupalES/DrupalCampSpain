@@ -1,0 +1,38 @@
+#block-languageswitcher {
+  .language-switcher-wrapper {
+    background: $main-color;
+    text-transform: uppercase;
+    width: 102px;
+    ul{
+      display:none;
+      list-style:none;
+      li{
+        list-style:none;
+        a{
+          padding:10px 25px;
+          display:block;
+          color:white;
+          text-decoration:none;
+          background: darken($main-color, 5);
+
+          &:hover{
+            background:$secondary-color;
+          }
+        }
+      }
+    }
+    .current-language{
+      padding:10px 25px;
+      &:after{
+        font-family:'icons';
+        content: '\F107';
+        margin-left:10px;
+      }
+    }
+    &:hover{
+      ul{
+        display:block;
+      }
+    }
+  }
+}

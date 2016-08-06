@@ -23,7 +23,8 @@ fullPage.js:
   js:
     vendor/alvarotrigo/fullPage.js/jquery.fullPage.js: {}
   css:
-    vendor/alvarotrigo/fullPage.js/jquery.fullPage.css: {}
+    theme:
+      vendor/alvarotrigo/fullPage.js/jquery.fullPage.css: {}
 
 
 #Plax
