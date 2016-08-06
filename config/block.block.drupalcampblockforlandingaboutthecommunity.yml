@@ -19,4 +19,6 @@ settings:
   label_display: '0'
   title: 'Join the community'
   body: '<p>The Spanish Drupal community is growing bigger  year by year as more  and more companies, freelancers and  students join  one of the most influential families of national web development.</p>'
+  link_text: 'Join the Asociation'
+  link_url: 'http://asociaciondrupal.es/'
 visibility: {  }

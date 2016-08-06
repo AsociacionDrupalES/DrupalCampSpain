@@ -1,0 +1,31 @@
+uuid: 80d0b475-a0bf-4785-a72c-d00497a4167b
+langcode: en
+status: null
+dependencies: {  }
+id: dcamp_mailchimp
+title: 'Dcamp mailchimp'
+mc_lists:
+  d2ac87ce62: d2ac87ce62
+  5ec5525e17: 0
+  fd8afe05d1: 0
+mode: 1
+mergefields:
+  EMAIL: true
+  FNAME: 0
+  LNAME: 0
+description: ''
+doublein: false
+send_welcome: null
+include_interest_groups: false
+settings:
+  path: ''
+  submit_button: Submit
+  confirmation_message: 'You have been successfully subscribed.'
+  destination: ''
+  mergefields:
+    EMAIL: 'O:8:"stdClass":8:{s:3:"tag";s:5:"EMAIL";s:4:"name";s:13:"Email Address";s:4:"type";s:5:"email";s:8:"required";b:1;s:13:"default_value";s:0:"";s:6:"public";b:1;s:13:"display_order";i:1;s:7:"options";O:8:"stdClass":1:{s:4:"size";i:25;}}'
+    FNAME: 0
+    LNAME: 0
+  description: ''
+  doublein: 0
+  include_interest_groups: 0
