@@ -3,18 +3,20 @@
 // Breakpoints
 
 @mixin breakpoint($class) {
-  @if $class == md {
-    @media (min-width: 767px) {
+  @if $class == mobile {
+    @media (max-width: $tablet) {
       @content;
     }
   }
-  @else if $class == lg {
+  @if $class == tablet {
+    @media (min-width: $tablet) and (max-width: $desktop) {
+      @content;
+    }
+  }
+  @else if $class == desktop {
     @media (min-width: 1200px) {
       @content;
     }
-  }
-  @else {
-    @warn "Breakpoint mixin supports: md, lg";
   }
 }
 
@@ -42,4 +44,24 @@
   top: 50%;
   transform: translateY(-50%);
   transform-style: preserve-3d;
+}
+
+@mixin button {
+  font-family: $header-font;
+  display: inline-block;
+  padding: 30px 40px 30px 40px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 120%;
+  background:  $secondary-color none no-repeat left 30px center;
+  max-width: 90%;
+  &:hover{
+    background:$main-color;
+  }
+  @include breakpoint(mobile){
+    padding: 20px 30px 20px 30px;
+  }
 }

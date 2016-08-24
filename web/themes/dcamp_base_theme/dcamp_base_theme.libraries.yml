@@ -4,7 +4,6 @@ global:
   css:
     theme:
       styles/main.css: { weight: -1 }
-
   js:
     scripts/main.js: { scope: footer, weight: -6 }
   dependencies:
@@ -15,8 +14,15 @@ global:
     - core/jquery.once
     - core/modernizr
 
-#Vendor Library
-vendor:
+#Fastclick Library
+fastclick:
   version: 1.x
   js:
-    scripts/vendor/fastclick.js: { scope: footer , weight: -8 }
+    vendor/ftlabs/fastclick/lib/fastclick.js: { scope: footer , weight: -8 }
+
+#Paid Typekit Account (WildWildWeb)
+typekit:
+  version: 1.x
+  js:
+    https://use.typekit.net/vcu3qeq.js: { type: external, minified: true }
+    scripts/typekit.js: { scope: header }

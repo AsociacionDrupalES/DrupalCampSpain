@@ -6,7 +6,8 @@ version: 0.1-dev
 core: 8.x
 libraries:
  - dcamp_base_theme/global
- - dcamp_base_theme/vendor
+ - dcamp_base_theme/typekit # @todo revise dependency of specific WWW typekit account.
+ - dcamp_base_theme/fastclick
 
 stylesheets-remove:
   - core/assets/vendor/normalize-css/normalize.css

@@ -1,0 +1,20 @@
+uuid: b13bd1ba-4d1d-4f13-8d0c-7ced935a39bb
+langcode: en
+status: true
+dependencies:
+  module:
+    - mailchimp_signup
+  theme:
+    - dcamp_2017_theme
+id: mailchimpsubscriptionformdcampmailchimp
+theme: dcamp_2017_theme
+region: content
+weight: -8
+provider: null
+plugin: 'mailchimp_signup_subscribe_block:dcamp_mailchimp'
+settings:
+  id: 'mailchimp_signup_subscribe_block:dcamp_mailchimp'
+  label: 'Mailchimp Subscription Form: Dcamp mailchimp'
+  provider: mailchimp_signup
+  label_display: visible
+visibility: {  }

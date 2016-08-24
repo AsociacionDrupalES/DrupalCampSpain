@@ -5,15 +5,8 @@
  */
 
 namespace Drupal\dcamp\Plugin\Block;
-
-use Drupal\Core\Block\BlockBase;
-use Drupal\Core\Block\BlockPluginInterface;
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
-use Drupal\Core\Routing\CurrentRouteMatch;
-use Drupal\Core\Routing\RouteMatch;
-use Symfony\Component\DependencyInjection\ContainerInterface;
-
+use Drupal\Core\Url;
 
 /**
  * Provides a Description block with Countdown
@@ -23,75 +16,21 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  *   admin_label = @Translation("DrupalCamp block for landing about the community")
  * )
  */
-class DcampLandingAboutCommunityBlock extends BlockBase implements BlockPluginInterface, ContainerFactoryPluginInterface{
-
-
-  /**
-   * @var RouteMatch
-   */
-  protected $currentRouteMatch;
-
-  /**
-   * Constructs a new Node Type object.
-   */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, CurrentRouteMatch $current_route_match) {
-    parent::__construct($configuration, $plugin_id, $plugin_definition);
-    $this->currentRouteMatch = $current_route_match;
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
-    return new static(
-      $configuration,
-      $plugin_id,
-      $plugin_definition,
-      $container->get('current_route_match')
-    );
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public function defaultConfiguration() {
-    return ['label_display' => FALSE];
-  }
-
-  /**
-   * {@inheritdoc}
-   *
-   * @todo Add the countdown
-   */
-  public function build() {
-    $config = $this->getConfiguration();
-    $dcamp = $this->currentRouteMatch->getParameter('dcamp');
-    return [
-      '#theme' => 'landing_block',
-      '#title' => $config['title'],
-      '#body' => $config['body'],
-      '#countdown' => '@todo countdown to '. $dcamp->get('starting_date'),
-    ];
-  }
-
+class DcampLandingAboutCommunityBlock extends DcampLandingBlockBase{
   /**
    * {@inheritdoc}
    */
   public function blockForm($form, FormStateInterface $form_state) {
-    $form =  parent::blockForm($form, $form_state);
-
-    $config = $this->getConfiguration();
-    $form['title'] = [
+    $form = parent::blockForm($form, $form_state);
+    $form['link_text'] = [
       '#type' => 'textfield',
-      '#title' => $this->t('Title'),
-      '#default_value' => $config['title'],
-      '#required' => TRUE,
+      '#title' => $this->t('Text for link'),
+      '#default_value' => isset($config['link_text']) ? $config['link_text'] : '',
     ];
-    $form['body'] = [
-      '#type' => 'textarea',
-      '#title' => $this->t('Body'),
-      '#default_value' => $config['body'],
-      '#required' => TRUE,
+    $form['link_url'] = [
+      '#type' => 'url',
+      '#title' => $this->t('URL for link'),
+      '#default_value' => isset($config['link_url']) ? $config['link_url']: '',
     ];
     return $form;
   }
@@ -100,7 +39,26 @@ class DcampLandingAboutCommunityBlock extends BlockBase implements BlockPluginIn
    * {@inheritdoc}
    */
   public function blockSubmit($form, FormStateInterface $form_state) {
-    $this->setConfigurationValue('title', $form_state->getValue('title'));
-    $this->setConfigurationValue('body', $form_state->getValue('body'));
+    parent::blockSubmit($form, $form_state);
+    $this->setConfigurationValue('link_text', $form_state->getValue('link_text'));
+    $this->setConfigurationValue('link_url', $form_state->getValue('link_url'));
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function build() {
+    $build = parent::build();
+    $config = $this->getConfiguration();
+    if(!empty($config['link_text']) && !empty($config['link_url'])){
+      try {
+        $url = Url::fromUri($config['link_url'],['attributes' => ['class' => ['button']]]);
+        $link = \Drupal::linkGenerator()->generate($config['link_text'],$url);
+        $build['#link'] = $link;
+      } catch (\Exception $e){
+        \Drupal::logger()->error($e->getMessage());
+      }
+    }
+    return $build;
   }
 }

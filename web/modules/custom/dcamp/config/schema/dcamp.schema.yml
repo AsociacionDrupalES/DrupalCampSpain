@@ -18,7 +18,63 @@ dcamp.dcamp.*:
       type: string
       label: 'Starting Date'
 
-block.settings.dcamp_landing_info_with_countdown_block:
+block.settings.dcamp_landing_about_event_block:
+  type: block_settings
+  label: 'Landing Info With Countdown Block'
+  mapping:
+    title:
+      type: text
+      label: 'Title'
+    body:
+      type: text
+      label: 'Body'
+
+block.settings.dcamp_landing_about_community_block:
+  type: block_settings
+  label: 'Landing Info With Countdown Block'
+  mapping:
+    title:
+      type: text
+      label: 'Title'
+    body:
+      type: text
+      label: 'Body'
+    link_text:
+      type: text
+      label: 'Link text'
+    link_url:
+      type: url
+      label: 'Link URL'
+
+block.settings.dcamp_landing_about_location_block:
+  type: block_settings
+  label: 'Landing Info With Countdown Block'
+  mapping:
+    title:
+      type: text
+      label: 'Title'
+    body:
+      type: text
+      label: 'Body'
+
+block.settings.dcamp_landing_about_sponsor_block:
+  type: block_settings
+  label: 'Landing Info With Countdown Block'
+  mapping:
+    title:
+      type: text
+      label: 'Title'
+    body:
+      type: text
+      label: 'Body'
+    download_text:
+      type: text
+      label: 'Download text'
+    download_url:
+      type: url
+      label: 'Download URL'
+
+block.settings.dcamp_landing_stay_updated_block:
   type: block_settings
   label: 'Landing Info With Countdown Block'
   mapping:

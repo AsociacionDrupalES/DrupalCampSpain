@@ -6,12 +6,10 @@
 
 namespace Drupal\dcamp\Plugin\Block;
 
-use Drupal\Core\Block\BlockBase;
-use Drupal\Core\Block\BlockPluginInterface;
-use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Routing\CurrentRouteMatch;
 use Drupal\Core\Routing\RouteMatch;
+use Drupal\dcamp\Entity\Dcamp;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 
@@ -23,7 +21,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  *   admin_label = @Translation("DrupalCamp block for landing about event")
  * )
  */
-class DcampLandingAboutEventBlock extends BlockBase implements BlockPluginInterface, ContainerFactoryPluginInterface{
+class DcampLandingAboutEventBlock extends DcampLandingBlockBase implements ContainerFactoryPluginInterface{
 
 
   /**
@@ -53,54 +51,18 @@ class DcampLandingAboutEventBlock extends BlockBase implements BlockPluginInterf
 
   /**
    * {@inheritdoc}
-   */
-  public function defaultConfiguration() {
-    return ['label_display' => FALSE];
-  }
-
-  /**
-   * {@inheritdoc}
    *
    * @todo Add the countdown
    */
   public function build() {
-    $config = $this->getConfiguration();
+    $build = parent::build();
+    /** @var Dcamp $dcamp */
     $dcamp = $this->currentRouteMatch->getParameter('dcamp');
-    return [
-      '#theme' => 'landing_block',
-      '#title' => $config['title'],
-      '#body' => $config['body'],
-      '#countdown' => '@todo countdown to '. $dcamp->get('starting_date'),
-    ];
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public function blockForm($form, FormStateInterface $form_state) {
-    $form =  parent::blockForm($form, $form_state);
-
-    $config = $this->getConfiguration();
-    $form['title'] = [
-      '#type' => 'textfield',
-      '#title' => $this->t('Title'),
-      '#default_value' => $config['title'],
-      '#required' => TRUE,
-    ];
-    $form['body'] = [
-      '#type' => 'textarea',
-      '#title' => $this->t('Body'),
-      '#default_value' => $config['body'],
-      '#required' => TRUE,
-    ];
-    return $form;
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public function blockSubmit($form, FormStateInterface $form_state) {
-    $this->setConfigurationValue('title', $form_state->getValue('title'));
-    $this->setConfigurationValue('body', $form_state->getValue('body'));
+    /**
+     * @todo replace depricated format_date.
+     */
+    $date = format_date($dcamp->get('starting_date'), 'custom', 'F d, Y H:i:s', NULL, 'en');
+    $build['#countdown']['#markup'] = '<div id="countdown" data-date="'.$date.'"></div>';
+    return $build;
   }
 }

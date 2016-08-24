@@ -15,7 +15,6 @@ function dcamp_theme($existing, $type, $theme, $path){
        'body' => NULL,
        'countdown' => NULL,
        'form' => NULL,
-       'download' => NULL,
        'link' => NULL,
      ],
      'template' => 'landing-block'

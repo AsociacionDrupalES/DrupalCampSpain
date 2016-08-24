@@ -6,15 +6,11 @@
 
 namespace Drupal\dcamp\Plugin\Block;
 
-use Drupal\Core\Block\BlockBase;
-use Drupal\Core\Block\BlockPluginInterface;
-use Drupal\Core\Form\FormStateInterface;
+
+use Drupal\Core\Entity\Query\QueryFactory;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
-use Drupal\Core\Routing\CurrentRouteMatch;
-use Drupal\Core\Routing\RouteMatch;
+use Drupal\mailchimp_signup\Form\MailchimpSignupPageForm;
 use Symfony\Component\DependencyInjection\ContainerInterface;
-
-
 /**
  * Provides a Description block with Countdown
  *
@@ -23,20 +19,19 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  *   admin_label = @Translation("DrupalCamp block for landing for staying updated")
  * )
  */
-class DcampLandingStayUpdatedBlockBlock extends BlockBase implements BlockPluginInterface, ContainerFactoryPluginInterface{
-
+class DcampLandingStayUpdatedBlock extends DcampLandingBlockBase implements ContainerFactoryPluginInterface{
 
   /**
-   * @var RouteMatch
+   * @var QueryFactory $queryFactory
    */
-  protected $currentRouteMatch;
+  protected $queryFactory;
 
   /**
    * Constructs a new Node Type object.
    */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, CurrentRouteMatch $current_route_match) {
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, QueryFactory $query_factory) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
-    $this->currentRouteMatch = $current_route_match;
+    $this->queryFactory = $query_factory;
   }
 
   /**
@@ -47,60 +42,42 @@ class DcampLandingStayUpdatedBlockBlock extends BlockBase implements BlockPlugin
       $configuration,
       $plugin_id,
       $plugin_definition,
-      $container->get('current_route_match')
+      $container->get('entity.query')
     );
   }
 
   /**
    * {@inheritdoc}
    */
-  public function defaultConfiguration() {
-    return ['label_display' => FALSE];
-  }
-
-  /**
-   * {@inheritdoc}
-   *
-   * @todo Add the countdown
-   */
   public function build() {
-    $config = $this->getConfiguration();
-    $dcamp = $this->currentRouteMatch->getParameter('dcamp');
-    return [
-      '#theme' => 'landing_block',
-      '#title' => $config['title'],
-      '#body' => $config['body'],
-      '#countdown' => '@todo countdown to '. $dcamp->get('starting_date'),
-    ];
+    $build = parent::build();
+    $mailchimp_config = $this->queryFactory->get('mailchimp_signup')->execute();
+
+    // We assume there is only one mailchimp signup configuration entity.
+
+    if(empty($mailchimp_config)){
+      drupal_set_message($this->t('Please configure a Mailchimp service'));
+      return $build;
+    }
+
+    $signup_id = reset($mailchimp_config);
+    $signup = mailchimp_signup_load($signup_id);
+
+    $form = new MailchimpSignupPageForm();
+
+    $form_id = 'mailchimp_signup_subscribe_block_' . $signup->id . '_form';
+    $form->setFormID($form_id);
+    $form->setSignup($signup);
+
+    $form_array = \Drupal::formBuilder()->getForm($form);
+
+    // Tweak the form.
+    $form_array['#prefix'] = '<h3>' . $this->t('Subscribe to the newsletter') .'</h3>';
+    $form_array['mergevars']['EMAIL']['#title'] = '';
+    $form_array['mergevars']['EMAIL']['#attributes']['placeholder'] = $this->t('Your email');
+    $form_array['#suffix'] = '<div class="note">' . $this->t("Don't worry, we won't spam you.") .'</div>';
+    $build['#form'] = $form_array;
+    return $build;
   }
 
-  /**
-   * {@inheritdoc}
-   */
-  public function blockForm($form, FormStateInterface $form_state) {
-    $form =  parent::blockForm($form, $form_state);
-
-    $config = $this->getConfiguration();
-    $form['title'] = [
-      '#type' => 'textfield',
-      '#title' => $this->t('Title'),
-      '#default_value' => $config['title'],
-      '#required' => TRUE,
-    ];
-    $form['body'] = [
-      '#type' => 'textarea',
-      '#title' => $this->t('Body'),
-      '#default_value' => $config['body'],
-      '#required' => TRUE,
-    ];
-    return $form;
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public function blockSubmit($form, FormStateInterface $form_state) {
-    $this->setConfigurationValue('title', $form_state->getValue('title'));
-    $this->setConfigurationValue('body', $form_state->getValue('body'));
-  }
 }

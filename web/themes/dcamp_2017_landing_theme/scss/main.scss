@@ -16,8 +16,284 @@
 @import "components/drupal-overrides";
 @import "components/form-elements.scss";
 @import "components/animations";
+@import "components/blocks";
 //  Layout
 @import "layout/layout";
 @import "layout/header";
 @import "layout/footer";
 @import "layout/offcanvas";
+
+
+/*!
+ * styles for drupalcamp spain 2017
+ * cesar alvarez & javier del campo
+ * https://wildwildweb.es/
+ */
+
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+
+
+/* intro */
+
+
+#intro .letter {
+  position: absolute;
+  z-index: -1;
+}
+
+.letter.d {
+  left: 0;
+  top: 50px;
+}
+
+.letter.r {
+  left: 37%;
+  top: 0;
+}
+
+.letter.u {
+  right: 14px;
+  top: 0;
+}
+
+.letter.p {
+  bottom: -20%;
+  left: 15%;
+}
+
+.letter.al {
+  bottom: -40%;
+  right: 10%;
+}
+
+.arrow {
+  bottom: 10%;
+  left: 0;
+  margin: 0 auto;
+  position: absolute;
+  right: 0;
+}
+
+
+/* slogan */
+#slogan {
+  color: #fff;
+  background: #4b26e6;
+}
+
+#slogan .ico {
+  position: absolute;
+}
+
+.ico.thunder {
+  right: 15%;
+  top: 5%;
+}
+
+.ico.saturn {
+  right: 45%;
+  top: 15%;
+}
+
+.ico.cloud {
+  right: 15%;
+  top: 35%;
+}
+
+.ico.drop {
+  right: 30%;
+  top: 45%;
+}
+
+.ico.computer {
+  right: 22%;
+  top: 65%;
+}
+
+.ico.mobile {
+  right: 50%;
+  top: 75%;
+}
+
+.count {
+  display: inline-block;
+}
+
+.countdown div {
+  overflow: hidden;
+  text-align: left;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #fff;
+  margin-right: 20px;
+}
+
+.countdown div span {
+  color: #9e87f9;
+  display: block;
+  font-size: 150%;
+  font-family: "futura-pt-condensed",sans-serif;
+}
+
+
+
+#newsletter .ico {
+  position: absolute;
+}
+
+.ico.code {
+  right: 15%;
+  top: 20%;
+}
+
+.ico.diamond {
+  right: 40%;
+  top: 30%;
+}
+
+.ico.taxonomy {
+  right: 27%;
+  top: 45%;
+}
+
+.ico.newsletter {
+  right: 50%;
+  top: 65%;
+}
+
+.ico.mouse {
+  right: 22%;
+  top: 75%;
+}
+
+
+
+/* MEDIA QUERIES */
+@media only screen and (max-width: 1400px) {
+
+  h1 {
+    width: 645px;
+    height: 90px;
+  }
+
+  h2 {
+    font-size: 400%;
+  }
+
+
+  .description {
+    font-size: 130%;
+  }
+
+  .ico {
+    opacity: 0.5;
+  }
+
+  #intro .letter.p {
+    display: none;
+  }
+
+}
+
+@media only screen and (max-width: 1024px) {
+
+
+  h2 {
+    font-size: 300%;
+  }
+
+  .description {
+    font-size: 120%;
+  }
+
+  #newsletter .ico {
+    opacity: 0.1;
+  }
+
+  #slogan .ico {
+    opacity: 0.2;
+  }
+
+  #intro .letter.r,
+  #intro .letter.al {
+    display: none;
+  }
+
+}
+
+
+@media only screen and (max-width: 550px) {
+
+
+  #intro .letter.u {
+    display: none;
+  }
+
+  h2 {
+    font-size: 200%;
+    margin-bottom: 24px;
+  }
+
+  .zig-zag {
+    height: 15px;
+  }
+
+  #footer .rrss {
+    margin: 0 auto;
+    max-width: 150px;
+    text-align: left;
+  }
+
+  #footer .rrss a {
+    margin: 0 0 8%;
+  }
+
+  #footer a.aed {
+    width: 109px;
+    height: 50px;
+    margin-bottom: 50px;
+    background-size: cover;
+  }
+
+  #footer span {
+    margin-bottom: 26px;
+  }
+  .fp-section {
+    padding: 20px 0;
+    box-sizing: unset;
+  }
+
+  #intro.fp-section {
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .button {
+    padding: 15px 15px 15px 45px;
+    background-position: 15px center;
+  }
+
+  .countdown div {
+    margin-right: 10px;
+  }
+
+  .countdown div span {
+    font-size: 100%;
+  }
+
+  #newsletter .ico {
+    opacity: 0.1;
+    width: 27px;
+  }
+
+  #slogan .ico {
+    opacity: 0.2;
+    width: 27px;
+  }
+
+}
+
+
