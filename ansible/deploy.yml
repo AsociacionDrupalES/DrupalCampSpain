@@ -7,7 +7,7 @@
       - 'web/sites/default/private'
       - 'web/sites/default/settings.local.php'
     ansistrano_keep_releases: 5
-    ansistrano_rsync_extra_params: "--exclude '.git' --exclude 'ansible'  --exclude '.DS_Store' --exclude 'ehthumbs.db' --exclude 'Thumbs.db' --delete-excluded"
+    ansistrano_rsync_extra_params: "--exclude '.git' --exclude 'ansible'  --exclude '.DS_Store' --exclude 'ehthumbs.db' --exclude 'Thumbs.db' --exclude 'web/sites/default/settings.local.php' --delete-excluded"
     ansistrano_allow_anonymous_stats: false
     ansistrano_after_symlink_tasks_file: "{{ playbook_dir }}/tasks/after-symlink-tasks.yml"
     drupal_rel_path : '/web'
