@@ -1,0 +1,12 @@
+---
+
+- name: 'drush cim sync'
+  shell: 'drush cim sync -y {{ drush_args }}' 
+  args: 
+    chdir: "{{ ansistrano_release_path.stdout }}{{ drupal_rel_path }}"
+
+- name: 'drush cr'
+  shell: 'drush cr {{ drush_args }}' 
+  args: 
+    chdir: "{{ ansistrano_release_path.stdout }}{{ drupal_rel_path }}"
+
