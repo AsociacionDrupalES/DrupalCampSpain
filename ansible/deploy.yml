@@ -5,6 +5,7 @@
     ansistrano_shared_paths:
       - 'web/sites/default/files'
       - 'web/sites/default/private'
+    ansistrano_shared_files:
       - 'web/sites/default/settings.local.php'
     ansistrano_keep_releases: 5
     ansistrano_rsync_extra_params: "--exclude '.git' --exclude 'ansible'  --exclude '.DS_Store' --exclude 'ehthumbs.db' --exclude 'Thumbs.db' --exclude 'web/sites/default/settings.local.php' --delete-excluded"
