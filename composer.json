@@ -13,42 +13,6 @@
     {
       "type": "composer",
       "url": "https://packagist.drupal-composer.org"
-    },
-    {
-      "type": "package",
-      "package": {
-        "name": "ftlabs/fastclick",
-        "version": "1.0.6",
-        "source": {
-          "url": "https://github.com/ftlabs/fastclick",
-          "type": "git",
-          "reference": "master"
-        }
-      }
-    },
-    {
-      "type": "package",
-      "package": {
-        "name": "alvarotrigo/fullPage.js",
-        "version": "2.8.2",
-        "source": {
-          "url": "https://github.com/alvarotrigo/fullPage.js",
-          "type": "git",
-          "reference": "master"
-        }
-      }
-    },
-    {
-      "type": "package",
-      "package": {
-        "name": "cameronmcefee/plax",
-        "version": "dev",
-        "source": {
-          "url": "https://github.com/cameronmcefee/plax",
-          "type": "git",
-          "reference": "master"
-        }
-      }
     }
   ],
   "require": {
@@ -59,10 +23,6 @@
     "drush/drush": "~8.0",
     "drupal/console": "~1.0",
     "drupal/mailchimp": "^8.1",
-    "drupal/features": "8.*",
-    "ftlabs/fastclick": "1.0.6",
-    "alvarotrigo/fullPage.js": "2.8.2",
-    "cameronmcefee/plax": "dev"
   },
   "require-dev": {
     "behat/mink": "~1.7",
@@ -108,7 +68,7 @@
       ],
       "drush/contrib/{$name}": [
         "type:drupal-drush"
-      ]
+      ],
     }
   }
 }

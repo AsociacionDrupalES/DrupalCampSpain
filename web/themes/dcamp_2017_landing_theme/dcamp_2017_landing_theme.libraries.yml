@@ -21,14 +21,14 @@ global:
 fullPage.js:
   version: 2.8.2
   js:
-    /../vendor/alvarotrigo/fullPage.js/jquery.fullPage.js: {}
+    /libraries/fullPage.js/jquery.fullPage.js: {}
   css:
     theme:
-      /../vendor/alvarotrigo/fullPage.js/jquery.fullPage.css: {}
+      /libraries/fullPage.js/jquery.fullPage.css: {}
 
 
 #Plax
 plax:
   version: dev
   js:
-    /../vendor/cameronmcefee/plax/js/plax.js: {}
+    /libraries/plax/plax.js: {}
