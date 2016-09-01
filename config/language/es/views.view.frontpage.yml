@@ -1,3 +1,4 @@
+label: Frontpage
 description: 'Todo el contenido promovido a la página principal.'
 display:
   default:
@@ -21,7 +22,7 @@ display:
             items_per_page_options_all_label: '— Todo(s) —'
             offset_label: Desplazamiento
           tags:
-            previous: '‹ Previous'
+            next: 'Siguiente ›'
             first: '« First'
             last: 'Last »'
     display_title: Máster

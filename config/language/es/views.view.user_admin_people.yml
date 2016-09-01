@@ -14,7 +14,7 @@ display:
       pager:
         options:
           tags:
-            previous: '‹ Previous'
+            next: 'Siguiente ›'
             first: '« First'
             last: 'Last »'
           expose:
