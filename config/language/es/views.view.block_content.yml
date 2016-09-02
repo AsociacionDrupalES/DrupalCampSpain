@@ -14,7 +14,7 @@ display:
       pager:
         options:
           tags:
-            next: 'Siguiente ›'
+            previous: '‹ Previous'
           expose:
             items_per_page_label: 'elementos por página'
             items_per_page_options_all_label: '— Todo(s) —'
