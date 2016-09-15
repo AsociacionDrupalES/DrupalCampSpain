@@ -18,7 +18,7 @@ global:
 fastclick:
   version: 1.x
   js:
-    vendor/ftlabs/fastclick/lib/fastclick.js: { scope: footer , weight: -8 }
+    /libraries/fastclick.js: { scope: footer , weight: -8 }
 
 #Paid Typekit Account (WildWildWeb)
 typekit:
