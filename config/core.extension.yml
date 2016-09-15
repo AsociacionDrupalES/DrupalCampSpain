@@ -16,8 +16,6 @@ module:
   dcamp: 0
   dynamic_page_cache: 0
   editor: 0
-  features: 0
-  features_ui: 0
   field: 0
   field_ui: 0
   file: 0
