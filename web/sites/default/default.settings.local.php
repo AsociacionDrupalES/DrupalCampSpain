@@ -20,8 +20,11 @@ $databases['default']['default'] = array(
 // There is no need to change the following setting.
 $config_directories['sync'] = 'sites/default/files/config_42L9pXMBOiVVCE4Uwm980e5dPPvCUGGohXIDjAnfPDhs5jR-iDRJVuKXs1kVxcDX6vB0TPaNeQ/sync';
 
-// If you need to test the newsletter widget, set your Mailchimp API key below.
+// If you need to test the newsletter widget, set your Mailchimp API key and List ID below.
 $config['mailchimp.settings']['api_key'] = 'foo';
+$config['mailchimp_signup.mailchimp_signup.dcamp_mailchimp']['mc_lists'] = [
+  'bar' => 'bar',
+];
 
 /**
  * Set development friendly settings and configurations.

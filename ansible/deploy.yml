@@ -17,12 +17,6 @@
   pre_tasks: 
   - name: 'Run composer'
     local_action: composer command=install no-dev=yes optimize-autoloader=yes working_dir="{{ ansistrano_deploy_from }}"
-  - name: 'Run composer dcamp_base_theme'
-    local_action: composer command=install no-dev=yes optimize-autoloader=yes working_dir="{{ ansistrano_deploy_from }}/web/themes/dcamp_base_theme"
-#  - name: 'Run composer dcamp_2017_theme'
-#    local_action: composer command=install no-dev=yes optimize-autoloader=yes working_dir="{{ ansistrano_deploy_from }}/web/themes/dcamp_2017_theme"
-  - name: 'Run composer dcamp_2017_landing_theme'
-    local_action: composer command=install no-dev=yes optimize-autoloader=yes working_dir="{{ ansistrano_deploy_from }}/web/themes/dcamp_2017_landing_theme"
 
   roles:
     - role: carlosbuenosvinos.ansistrano-deploy
