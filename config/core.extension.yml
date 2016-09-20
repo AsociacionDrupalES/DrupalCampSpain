@@ -8,7 +8,6 @@ module:
   comment: 0
   config: 0
   config_translation: 0
-  config_update: 0
   contact: 0
   contextual: 0
   datetime: 0
@@ -48,7 +47,7 @@ module:
   menu_link_content: 1
   content_translation: 10
   views: 10
-  standard: 1000
+  minimal: 1000
 theme:
   stable: 0
   classy: 0

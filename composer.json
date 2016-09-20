@@ -21,7 +21,8 @@
     "cweagans/composer-patches": "~1.0",
     "drupal/core": "~8.0",
     "drush/drush": "~8.0",
-    "drupal/mailchimp": "^8.1"
+    "drupal/mailchimp": "^8.1",
+    "drupal/features": "~8.3"
    },
   "require-dev": {
     "behat/mink": "~1.7",
