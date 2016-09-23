@@ -55,7 +55,7 @@ class DcampLandingAboutSponsorBlock extends DcampLandingBlockBase{
     $config = $this->getConfiguration();
     if(!empty($config['download_text']) && !empty($config['download_url'])){
       try {
-        $url = Url::fromUri($config['download_url'], ['attributes' => ['class' => ['button']]]);
+        $url = Url::fromUri($config['download_url'], ['attributes' => ['class' => ['button'], 'target' => '_blank']]);
         $link = \Drupal::linkGenerator()->generate($config['download_text'],$url);
         $build['#link'] = $link;
       } catch (\Exception $e){
