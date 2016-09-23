@@ -7,6 +7,6 @@ _core:
 id: feedback
 label: 'Website feedback'
 recipients:
-  - admin@example.com
+  - drupalcamp@drupal.es
 reply: ''
 weight: 0
