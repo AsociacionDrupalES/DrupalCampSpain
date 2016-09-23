@@ -26,6 +26,9 @@ $config['mailchimp_signup.mailchimp_signup.dcamp_mailchimp']['mc_lists'] = [
   'bar' => 'bar',
 ];
 
+// Set the Google Analytics Account ID here
+$config['google_analytics.settings']['account'] = 'foo';
+
 /**
  * Set development friendly settings and configurations.
  *
