@@ -1,4 +1,4 @@
-api_key: foo
+api_key: 'foo'
 cron: true
 batch_limit: 100
 api_classname: Mailchimp\Mailchimp
