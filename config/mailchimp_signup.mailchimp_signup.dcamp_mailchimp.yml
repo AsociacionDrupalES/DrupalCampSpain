@@ -5,7 +5,6 @@ dependencies: {  }
 id: dcamp_mailchimp
 title: 'Dcamp mailchimp'
 mc_lists:
-  foo: bar
 mode: 1
 mergefields:
   EMAIL: true
