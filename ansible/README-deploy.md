@@ -5,7 +5,7 @@ Prerequisites
 -------------
 
 * ansible with ansible-galaxy
-* ansistrano-deploy (install: ```ansible-galaxy install carlosbuenosvinos.ansistrano-deploy```)
+* ansistrano-deploy locally installed (install: ```ansible-galaxy install -r ansible/requirements-deploy.yml```)
 
 Deployment
 ----------
