@@ -5,9 +5,10 @@ base theme: classy
 version: 0.1-dev
 core: 8.x
 libraries:
- - dcamp_base_theme/global
- - dcamp_base_theme/typekit # @todo revise dependency of specific WWW typekit account.
- - dcamp_base_theme/fastclick
+  - dcamp_base_theme/global
+  - dcamp_base_theme/typekit # @todo revise dependency of specific WWW typekit account.
+library_dependencies:
+  - fastclick
 
 stylesheets-remove:
   - core/assets/vendor/normalize-css/normalize.css

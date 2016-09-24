@@ -8,7 +8,6 @@ module:
   comment: 0
   config: 0
   config_translation: 0
-  config_update: 0
   contact: 0
   contextual: 0
   datetime: 0
@@ -16,12 +15,11 @@ module:
   dcamp: 0
   dynamic_page_cache: 0
   editor: 0
-  features: 0
-  features_ui: 0
   field: 0
   field_ui: 0
   file: 0
   filter: 0
+  google_analytics: 0
   help: 0
   history: 0
   image: 0
@@ -50,7 +48,7 @@ module:
   menu_link_content: 1
   content_translation: 10
   views: 10
-  standard: 1000
+  minimal: 1000
 theme:
   stable: 0
   classy: 0
