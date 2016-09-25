@@ -3,7 +3,6 @@
 }
 
 #fullpage {
-
   #block-languageswitcher {
     position: absolute;
     right: 0;
@@ -78,6 +77,11 @@
         position: absolute;
         right: -25%;
         top: -53%;
+        z-index:0;
+      }
+      .content{
+        z-index: 1;
+        position:relative;
       }
       a {
         @include button;
@@ -134,6 +138,9 @@
         width: 90%;
         z-index: 99;
         position: relative;
+        @include breakpoint(mobile){
+          width:100%;
+        }
         .form-item{
           margin:0;
         }
@@ -167,6 +174,10 @@
         cursor: pointer;
         &:hover {
           background-color: $secondary-color;
+        }
+
+        @include breakpoint(mobile) {
+        padding:0;
         }
       }
 
