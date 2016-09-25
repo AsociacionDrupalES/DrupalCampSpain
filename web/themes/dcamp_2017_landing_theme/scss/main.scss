@@ -30,13 +30,12 @@
  * https://wildwildweb.es/
  */
 
+/* @todo Organise this code */
+
 *, *::after, *::before {
   box-sizing: border-box;
 }
 
-
-
-/* intro */
 
 
 #intro .letter {
@@ -75,6 +74,10 @@
   margin: 0 auto;
   position: absolute;
   right: 0;
+  animation: bounce 2s infinite;
+  -webkit-animation: bounce 2s infinite;
+  -moz-animation: bounce 2s infinite;
+  -o-animation: bounce 2s infinite;
 }
 
 
@@ -249,6 +252,7 @@
 
   #footer .rrss a {
     margin: 0 0 8%;
+
   }
 
   #footer a.aed {

@@ -72,7 +72,8 @@
 
     &#sponsor {
       color: $secondary-color;
-      background: white;
+      background: white url(../images/circle.svg) no-repeat -30% -30%;
+      background-position: top -400px right -400px !important;
       .circle {
         position: absolute;
         right: -25%;
@@ -219,6 +220,10 @@
       padding-left: 45px;
       &:hover {
         color: $main-color;
+      }
+      @include breakpoint(mobile){
+        margin: 5px 0;
+        width:100%;
       }
     }
     a.contact {
