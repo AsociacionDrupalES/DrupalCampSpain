@@ -54,7 +54,7 @@
         var screenHeight = $(window).height();
         $('.section:not(#intro)').each(function (index) {
           var top = $(this).offset().top;
-          var transitionCoeficient = 50 - ((scrollTop - top) / screenHeight) * depthCoeficient;
+          var transitionCoeficient = 100 - ((scrollTop - top) / screenHeight) * depthCoeficient;
           $(this).css('background-position', '50% ' + transitionCoeficient + '%');
         });
       });
