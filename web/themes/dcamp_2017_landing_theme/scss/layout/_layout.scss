@@ -3,7 +3,6 @@
 }
 
 #fullpage {
-
   #block-languageswitcher {
     position: absolute;
     right: 0;
@@ -73,11 +72,17 @@
 
     &#sponsor {
       color: $secondary-color;
-      background: white;
+      background: white url(../images/circle.svg) no-repeat -30% -30%;
+      background-position: top -400px right -400px !important;
       .circle {
         position: absolute;
         right: -25%;
         top: -53%;
+        z-index:0;
+      }
+      .content{
+        z-index: 1;
+        position:relative;
       }
       a {
         @include button;
@@ -134,6 +139,9 @@
         width: 90%;
         z-index: 99;
         position: relative;
+        @include breakpoint(mobile){
+          width:100%;
+        }
         .form-item{
           margin:0;
         }
@@ -167,6 +175,10 @@
         cursor: pointer;
         &:hover {
           background-color: $secondary-color;
+        }
+
+        @include breakpoint(mobile) {
+        padding:0;
         }
       }
 
@@ -208,6 +220,10 @@
       padding-left: 45px;
       &:hover {
         color: $main-color;
+      }
+      @include breakpoint(mobile){
+        margin: 5px 0;
+        width:100%;
       }
     }
     a.contact {
