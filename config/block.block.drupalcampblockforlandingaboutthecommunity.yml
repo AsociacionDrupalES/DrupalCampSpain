@@ -18,7 +18,7 @@ settings:
   provider: dcamp
   label_display: '0'
   title: 'Join the community'
-  body: '<p>The Spanish Drupal community is growing bigger  year by year as more  and more companies, freelancers and  students join  one of the most influential families of national web development.</p>'
-  link_text: 'Join the Asociation'
+  body: '<p>The Spanish Drupal community grows every year. Companies, freelancers, and students are part of one of the most influential families in the web industry.</p>'
+  link_text: 'Join the Spanish Drupal Association'
   link_url: 'http://asociaciondrupal.es/'
 visibility: {  }

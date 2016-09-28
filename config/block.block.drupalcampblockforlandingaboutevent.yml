@@ -18,5 +18,5 @@ settings:
   provider: dcamp
   label_display: '0'
   title: 'Short N Sweet'
-  body: "<p>DrupalCamp Spain gathers together the industry’s top experts for one weekend.</p>\r\n<p>The DrupalCamp goal is to spread and share Drupal web development industry trends and to be a meeting point for the Spanish community.</p>"
+  body: "<p>Two days of sessions, workshops and networking on the Drupal CMS.</p>\r\n<p>The DrupalCamp's goal is to spread and share the use of Drupal within the web development industry, and to be a meeting point for the Spanish community.</p>"
 visibility: {  }
