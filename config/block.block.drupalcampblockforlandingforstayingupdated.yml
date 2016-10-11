@@ -17,6 +17,6 @@ settings:
   label: 'DrupalCamp block for landing for staying updated'
   provider: dcamp
   label_display: '0'
-  title: 'Stay informed'
+  title: 'Stay up to date'
   body: '<p>Subscribe to our mailing list and don’t miss any updates about DrupalCamp.</p>'
 visibility: {  }
