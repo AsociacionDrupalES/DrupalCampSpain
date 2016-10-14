@@ -1,0 +1,13 @@
+uuid: b594dacb-42fa-4525-9362-51f22629fd2a
+langcode: en
+status: true
+dependencies: {  }
+id: editor
+label: Editor
+weight: -8
+is_admin: null
+permissions:
+  - 'translate interface'
+  - 'access administration pages'
+  - 'view the administration theme'
+  - 'access toolbar'
