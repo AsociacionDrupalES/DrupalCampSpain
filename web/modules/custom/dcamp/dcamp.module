@@ -21,3 +21,22 @@ function dcamp_theme($existing, $type, $theme, $path){
    ),
  ];
 }
+
+/**
+ * Implements hook_form_alter().
+ *
+ * Make the mailchimp submit button translatable.
+ *
+ * This should be fixed on Mailchimp level.
+ *
+ * @todo Submit a patch to the Mailchimp module.
+ *
+ * @param $form
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ * @param $form_id
+ */
+function dcamp_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  if("mailchimp_signup_subscribe_block_dcamp_mailchimp_form" == $form_id){
+    $form['submit']['#value'] = t('Submit');
+  }
+}
