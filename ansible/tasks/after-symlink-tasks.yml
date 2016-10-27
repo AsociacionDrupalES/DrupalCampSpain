@@ -1,6 +1,6 @@
 ---
 - name: 'drush updb'
-  shell: 'drush updb {{ drush_args }}'
+  shell: 'drush updb -y {{ drush_args }}'
   args:
     chdir: "{{ ansistrano_release_path.stdout }}{{ drupal_rel_path }}"
 
