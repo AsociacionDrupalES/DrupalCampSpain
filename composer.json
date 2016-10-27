@@ -71,5 +71,10 @@
         "type:drupal-drush"
       ]
     }
+    "patches": {
+      "drupal/mailchimp": {
+        "Allow translating signup forms": "https://www.drupal.org/files/issues/translation_for_email-2821153-3.patch"
+      }
+    }
   }
 }
