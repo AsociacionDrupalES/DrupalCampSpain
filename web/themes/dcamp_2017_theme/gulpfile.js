@@ -6,6 +6,8 @@ var browserSync = require('browser-sync');
 var reload = browserSync.reload;
 var sass = require('gulp-sass');
 var livereload = require('gulp-livereload');
+var sassGlob = require('gulp-sass-glob');
+
 
 // Error notifications
 var reportError = function(error) {
@@ -21,6 +23,7 @@ var reportError = function(error) {
 gulp.task('sass', function() {
   return gulp.src('scss/**/*.scss')
     .pipe($.sourcemaps.init())
+    .pipe(sassGlob())
     // Convert sass into css
     .pipe($.sass({
       outputStyle: 'nested', // libsass doesn't support expanded yet
