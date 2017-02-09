@@ -73,7 +73,8 @@
     },
     "patches": {
       "drupal/mailchimp": {
-        "Allow translating signup forms": "https://www.drupal.org/files/issues/translation_for_email-2821153-3.patch"
+        "Allow translating signup forms": "https://www.drupal.org/files/issues/translation_for_email-2821153-3.patch",
+        "Don't show a signup form if there aren't lists": "https://www.drupal.org/files/issues/don_t_render_a_signup-2822659-2.patch"
       }
     }
   }
