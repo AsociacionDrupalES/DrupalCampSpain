@@ -33,5 +33,14 @@ function dcamp_update_8101(&$sandbox) {
       ))->save();
     }
   }
+}
 
+/**
+ * Adjusts the URL of the sponsor prospect.
+ */
+function dcamp_update_8102(&$sandbox) {
+  $config = \Drupal::configFactory()->getEditable('block.block.drupalcampblockforlandingaboutsponsoring');
+  $settings = $config->get('settings');
+  $settings['download_url'] = 'https://drive.google.com/open?id=0B5Zv1LP5pgikSmo1dGFaRHdQWmM';
+  $config->set('settings', $settings)->save();
 }
