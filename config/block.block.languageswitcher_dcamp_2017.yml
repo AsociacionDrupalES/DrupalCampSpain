@@ -1,0 +1,20 @@
+uuid: 9acf0417-1f32-4c8c-b30d-652fbaaff8d5
+langcode: en
+status: true
+dependencies:
+  module:
+    - language
+  theme:
+    - dcamp_2017_theme
+id: languageswitcher_dcamp_2017
+theme: dcamp_2017_theme
+region: header
+weight: null
+provider: null
+plugin: 'language_block:language_interface'
+settings:
+  id: 'language_block:language_interface'
+  label: 'Language switcher'
+  provider: language
+  label_display: '0'
+visibility: {  }

@@ -9,7 +9,7 @@ _core:
 id: dcamp_2017_theme_page_title
 theme: dcamp_2017_theme
 region: content
-weight: -6
+weight: -7
 provider: null
 plugin: page_title_block
 settings:

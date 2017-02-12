@@ -44,30 +44,21 @@
  */
 #}
 <div class="layout-container">
-
   <header role="banner">
+    <a class="logo" href="@todo front link">
+      <img class="logo" src="{{ base_path ~ directory }}/logo.svg?20161114"/>
+    </a>
     {{ page.header }}
   </header>
-  {% if page.messages %}
-  <div class="messages">
-    {{ page.messages }}
-  </div>
-  {% endif %}
-  {% if page.breadcrumb %}
-    <div class="breadcrumb">
-      {{ page.breadcrumb }}
-    </div>
-  {% endif %}
   <main role="main">
-    <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
+    <a id="main-content" tabindex="-1"></a>
     <div class="layout-content">
       {{ page.content }}
-    </div>{# /.layout-content #}
+    </div>
   </main>
   {% if page.footer %}
     <footer role="contentinfo">
       {{ page.footer }}
     </footer>
   {% endif %}
-
-</div>{# /.layout-container #}
+</div>

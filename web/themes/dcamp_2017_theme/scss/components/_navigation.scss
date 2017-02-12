@@ -1,0 +1,109 @@
+#fp-nav ul li a span, .fp-slidesNav ul li a span {
+  background-color: darken($secondary-color, 10) !important;
+}
+
+.close-trigger,
+.main-menu-trigger {
+  height: $header-height;
+  width: $header-height;
+  background: $main-color;
+  color: white;
+  display: block;
+  cursor:pointer;
+}
+
+.close-trigger {
+  background-color: $secondary-color;
+}
+
+body {
+  position: relative;
+  margin-left: 0;
+  width: 100%;
+  @include transition(margin .3s ease);
+  &.main-menu-enabled {
+    margin-left: -100%;
+  }
+}
+
+.main-menu-wrapper {
+  @include linear-gradient(right, $main-color, $tertiary-color);
+  @include transition(all .3s ease);
+  margin-left: 100%;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  color: white;
+  left: 0;
+  top: 0;
+  z-index: 999;
+  .toolbar-vertical & {
+    margin-top: 39px;
+  }
+  .main-menu-header {
+    @include clearfix;
+    .close-trigger {
+      float: right;
+    }
+  }
+  .main-menu-enabled & {
+    display: block;
+    margin-left: 0;
+  }
+  .main-menu-inner {
+    max-width: $desktop;
+    margin: 40px auto;
+    .event-info {
+      float: right;
+      color: blue;
+      font-family: $header-font;
+      font-size: 18px;
+      text-transform: uppercase;
+      font-weight: 600;
+      line-height: 2em;
+      a.how-to-get-there {
+        color: white;
+
+        display: block;
+        clear: both;
+        text-decoration: none;
+        &:before {
+          font-family: 'icons';
+          content: '\E801';
+          margin-right: 10px;
+        }
+      }
+      a.buy-tickets {
+        @include button(white, $secondary-color, $main-color, 10px 20px);
+        display: inline-block;
+        clear: both;
+        margin-top: 30px;
+      }
+    }
+    ul {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      li {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        a {
+          &:before {
+            content: '\E803';
+            font-family: 'icons';
+            margin-right:10px;
+          }
+          margin-bottom: 30px;
+          text-transform: uppercase;
+          font-size: 24px;
+          font-family: $header-font;
+          color: white;
+          text-decoration: none;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+
+}

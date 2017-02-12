@@ -1,6 +1,6 @@
 uuid: 2cb28bd2-0a06-47b8-a57e-d3d1975942bc
 langcode: en
-status: true
+status: false
 dependencies:
   module:
     - system
@@ -10,7 +10,7 @@ _core:
   default_config_hash: oXUb3JZR2WW5VOdw4HrhRicCsq51mCgLfRyvheG68ck
 id: dcamp_base_theme_breadcrumbs
 theme: dcamp_base_theme
-region: breadcrumb
+region: '-1'
 weight: -6
 provider: null
 plugin: system_breadcrumb_block

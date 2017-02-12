@@ -2,9 +2,12 @@
 
   Drupal.behaviors.dcamp2017ThemeBehaviors = {
     attach: function (context, settings) {
-
-      //JS Here.
-
+      $('.main-menu-trigger').click(function () {
+        $('body').addClass('main-menu-enabled');
+      });
+      $('.close-trigger').click(function () {
+        $('body').removeClass('main-menu-enabled');
+      })
     }
   };
 })(jQuery, Drupal);

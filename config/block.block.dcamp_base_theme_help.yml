@@ -1,6 +1,6 @@
 uuid: 8f937606-290f-4def-9638-024a3c7dbfd1
 langcode: en
-status: true
+status: false
 dependencies:
   module:
     - help
@@ -10,7 +10,7 @@ _core:
   default_config_hash: 8I8iACSa0sKO3k3jlvUG1ge52rfcKX7USJAQYnzuBgg
 id: dcamp_base_theme_help
 theme: dcamp_base_theme
-region: help
+region: '-1'
 weight: -6
 provider: null
 plugin: help_block

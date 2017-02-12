@@ -1,0 +1,27 @@
+header {
+  @include clearfix;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: $secondary-color;
+  width: 100%;
+  z-index: 99;
+  .toolbar-vertical & {
+    margin-top: 39px;
+  }
+  a.logo {
+    height: $header-height;
+    float: left;
+    img.logo {
+      height: 100%;
+      width:auto;
+    }
+  }
+  .language-switcher-language-url {
+    float: right;
+  }
+  .navigation.menu--main {
+    float: right;
+  }
+
+}
