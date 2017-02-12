@@ -43,7 +43,7 @@ block.settings.dcamp_landing_about_community_block:
       type: text
       label: 'Link text'
     link_url:
-      type: url
+      type: uri
       label: 'Link URL'
 
 block.settings.dcamp_landing_about_location_block:
@@ -71,7 +71,7 @@ block.settings.dcamp_landing_about_sponsor_block:
       type: text
       label: 'Download text'
     download_url:
-      type: url
+      type: text
       label: 'Download URL'
 
 block.settings.dcamp_landing_stay_updated_block:
