@@ -4,7 +4,7 @@ status: null
 dependencies: {  }
 id: dcamp_mailchimp
 title: 'Dcamp mailchimp'
-mc_lists:
+mc_lists: null
 mode: 1
 mergefields:
   EMAIL: true
