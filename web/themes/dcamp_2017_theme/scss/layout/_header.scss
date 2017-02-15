@@ -11,17 +11,37 @@ header {
   }
   a.logo {
     height: $header-height;
+    @include breakpoint(mobile) {
+      height: $header-height-mobile;
+    }
     float: left;
     img.logo {
       height: 100%;
-      width:auto;
+      width: auto;
     }
   }
   .language-switcher-language-url {
     float: right;
+    .language-switcher-wrapper {
+      height: $header-height;
+      @include breakpoint(mobile) {
+        height: $header-height-mobile;
+      }
+    }
   }
   .navigation.menu--main {
     float: right;
   }
-
+  #block-userlogin {
+    position: relative;
+    float: right;
+    &:hover {
+      form {
+        display: block;
+      }
+    }
+    form {
+      display: none;
+    }
+  }
 }

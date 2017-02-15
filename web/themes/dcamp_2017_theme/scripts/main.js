@@ -7,7 +7,9 @@
       });
       $('.close-trigger').click(function () {
         $('body').removeClass('main-menu-enabled');
-      })
+      });
+
+      $('#block-userlogin').prepend('<div class="user-login-trigger">'+Drupal.t('Login')+'</div>');
     }
   };
 })(jQuery, Drupal);

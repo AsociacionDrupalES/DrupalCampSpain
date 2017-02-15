@@ -1,6 +1,6 @@
 (function ($, Drupal) {
 
-  Drupal.behaviors.dcamp2017ThemeBehaviors = {
+  Drupal.behaviors.dcamp2017LandingThemeBehaviors = {
     attach: function (context, settings) {
 
       /**

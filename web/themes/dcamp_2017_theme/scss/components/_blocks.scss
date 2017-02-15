@@ -1,39 +1,157 @@
+@mixin header-menu-link {
+  padding: 12px 25px;
+  display: block;
+  color: white;
+  text-decoration: none;
+  background: $secondary-color;
+  font-size: 13px;
+  text-transform: uppercase;
+  height: $header-height;
+  border-left: 1px solid lighten($secondary-color, 10);
+  &:hover {
+    background: darken($secondary-color, 10);
+  }
+  cursor: pointer;
+  box-sizing: border-box;
+  @include breakpoint(mobile) {
+    padding: 6px 10px 7px;
+    height: $header-height-mobile;
+  }
+}
+
 #block-languageswitcher-dcamp-2017,
 #block-languageswitcher {
   .language-switcher-wrapper {
     background: $main-color;
     text-transform: uppercase;
-    width: 102px;
-    ul{
-      display:none;
-      list-style:none;
-      li{
-        list-style:none;
-        a{
-          padding:10px 25px;
-          display:block;
-          color:white;
-          text-decoration:none;
+    position: relative;
+    ul {
+      display: none;
+      list-style: none;
+      li {
+        list-style: none;
+        a {
+          font-size: 13px;
+          padding: 10px 25px;
+          display: block;
+          color: white;
+          text-decoration: none;
           background: darken($main-color, 5);
-
-          &:hover{
-            background:$secondary-color;
+          height: $header-height;
+          box-sizing: border-box;
+          @include breakpoint(mobile) {
+            padding: 6px 10px 7px;
+            height: $header-height-mobile;
+          }
+          &:hover {
+            background: $secondary-color;
           }
         }
       }
     }
-    .current-language{
-      padding:10px 25px;
-      &:after{
-        font-family:'icons';
+    .current-language {
+      @include header-menu-link;
+      &:after {
+        font-family: 'icons';
         content: '\F107';
-        margin-left:10px;
+        margin-left: 10px;
       }
     }
-    &:hover{
-      ul{
-        display:block;
+    &:hover {
+      ul {
+        display: block;
+        position: absolute;
+        width: 100%;
       }
     }
+  }
+}
+
+#block-languageswitcher-dcamp-2017 {
+  .language-switcher-wrapper {
+  }
+}
+
+#block-userlogin {
+  .user-login-trigger {
+    @include header-menu-link;
+    @include breakpoint(mobile) {
+      display: none;
+    }
+  }
+  form {
+    min-width: 300px;
+    z-index:9999;
+    position: relative;
+    @include breakpoint(mobile) {
+      width: 100%;
+      left: 0;
+    }
+    background: darken($secondary-color, 10);
+    position: absolute;
+    right: 0;
+    .form-item {
+      padding: 0 40px;
+      padding-top:10px;
+      display:block;
+    }
+    input[type="text"],
+    input[type="password"],
+    input[type="email"],
+    select {
+      background: darken($secondary-color, 20);
+      width: calc(100% - 20px);
+      color:white;
+    }
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom:3px;
+      color: lighten($secondary-color, 20);
+      &:after {
+        display: none;
+      }
+      a{
+        color:white;
+        text-decoration: none;
+        &:hover{
+          text-decoration: underline;
+        }
+      }
+    }
+    .form-actions{
+      margin-top:30px;
+      @include clearfix;
+      margin-bottom:0;
+      input, a{
+        width: 50%;
+        height: 45px;
+        float: left;
+        border: none;
+        padding: 10px 0;
+        text-align: center;
+        margin: 0;
+        vertical-align: middle;
+        display: block;
+        box-sizing: border-box;
+        color:white;
+        font-weight:bold;
+text-decoration: none;
+        background:darken($secondary-color,20);
+      }
+
+      input{
+
+        text-transform: uppercase;
+        cursor:pointer;
+        @include linear-gradient(right, $main-color, $tertiary-color);
+        &:hover{
+        }
+      }
+    }
+  }
+
+  .item-list {
+    display: none;
   }
 }

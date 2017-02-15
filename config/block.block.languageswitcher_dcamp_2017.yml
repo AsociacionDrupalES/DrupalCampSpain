@@ -9,7 +9,7 @@ dependencies:
 id: languageswitcher_dcamp_2017
 theme: dcamp_2017_theme
 region: header
-weight: null
+weight: -6
 provider: null
 plugin: 'language_block:language_interface'
 settings:
