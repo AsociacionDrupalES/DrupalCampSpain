@@ -8,7 +8,6 @@ var sass = require('gulp-sass');
 var livereload = require('gulp-livereload');
 var sassGlob = require('gulp-sass-glob');
 
-
 // Error notifications
 var reportError = function(error) {
   $.notify({
@@ -23,8 +22,8 @@ var reportError = function(error) {
 gulp.task('sass', function() {
   return gulp.src('scss/**/*.scss')
     .pipe($.sourcemaps.init())
-    .pipe(sassGlob())
     // Convert sass into css
+    .pipe(sassGlob())
     .pipe($.sass({
       outputStyle: 'nested', // libsass doesn't support expanded yet
       precision: 10
@@ -44,8 +43,8 @@ gulp.task('sass', function() {
 
 // process JS files and return the stream.
 gulp.task('js', function () {
-    return gulp.src('scripts/**/*.js')
-        .pipe(gulp.dest('scripts'));
+  return gulp.src('scripts/**/*.js')
+    .pipe(gulp.dest('scripts'));
 });
 
 // Optimize Images
@@ -106,8 +105,8 @@ gulp.task('compress', function() {
 // Run drush to clear the theme registry
 gulp.task('drush', function() {
   return gulp.src('', {
-      read: false
-    })
+    read: false
+  })
     .pipe($.shell([
       'drush cc css-js',
     ]))

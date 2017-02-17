@@ -1,4 +1,8 @@
 <?php
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Link;
+use Drupal\Core\StringTranslation\TranslatableMarkup;
+use Drupal\Core\Url;
 
 /**
  * Implements theme_preprocess().
@@ -11,4 +15,12 @@
  */
 function dcamp_2017_theme_preprocess(&$variables, $hook) {
   $variables['path_to_dcamp_2017_theme'] = base_path() . drupal_get_path('theme', 'dcamp_2017_theme');
+}
+
+
+function dcamp_2017_theme_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if ("user_login_form" == $form_id) {
+$form['pass']['#title'] = t('Password. @link', ['@link' => Link::fromTextAndUrl(t('Did you forget?'), Url::fromUserInput('/user/password'))->toString()]);
+$form['actions']['submit']['#suffix'] = Link::fromTextAndUrl(t("No account?"), Url::fromUserInput('/user/create'))->toString();
+  }
 }

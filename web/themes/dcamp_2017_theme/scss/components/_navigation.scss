@@ -1,0 +1,188 @@
+#fp-nav ul li a span, .fp-slidesNav ul li a span {
+  background-color: darken($secondary-color, 10) !important;
+}
+
+.close-trigger,
+.main-menu-trigger {
+  height: $header-height;
+  width: $header-height;
+  @include breakpoint(mobile){
+    height:$header-height-mobile;
+    width:$header-height-mobile;
+  }
+  &:before{
+    font-family:icons;
+    padding:12px;
+    text-align:center;
+    display:block;
+    @include breakpoint(mobile){
+      padding:6px;
+    }
+  }
+  background: $main-color;
+  color: white;
+  display: block;
+  cursor:pointer;
+}
+
+.main-menu-trigger{
+  &:before{
+    content:'\F0C9';
+  }
+  &:hover{
+    background:darken($main-color,10);
+  }
+}
+
+.close-trigger {
+  background-color: $secondary-color;
+  &:hover{
+    background:darken($secondary-color,10);
+  }
+  &:before{
+    content:'\E81B';
+   }
+}
+
+body {
+  position: relative;
+  margin-left: 0;
+  width: 100%;
+  @include transition(margin .3s ease);
+  &.main-menu-enabled {
+    //margin-left: -100%;
+    overflow: hidden;
+  }
+}
+
+.main-menu-wrapper {
+  @include linear-gradient(right, $main-color, $tertiary-color);
+  @include transition(all .3s ease);
+  margin-left: 100%;
+  position: fixed;
+  overflow: auto;
+  height: 100%;
+  width: 100%;
+  color: white;
+  left: 0;
+  top: 0;
+  z-index: 999;
+  .toolbar-vertical & {
+    margin-top: 39px;
+  }
+  .main-menu-header {
+    background:url(../images/menu-lines.png) repeat-x;
+    @include clearfix;
+    .close-trigger {
+      float: right;
+    }
+  }
+  .main-menu-enabled & {
+    display: block;
+    margin-left: 0;
+  }
+  .main-menu-inner {
+    max-width: $menu-width;
+    margin: 70px auto;
+    padding:20px;
+    .event-info {
+      @include breakpoint(mobile){
+        display:none;
+      }
+      float: right;
+      color: $secondary-color;
+      font-family: $header-font;
+      font-size: 18px;
+      text-transform: uppercase;
+      font-weight: 600;
+      line-height: 1.6em;
+      a.how-to-get-there {
+        color: white;
+        display: block;
+        clear: both;
+        text-decoration: none;
+        &:before {
+          font-family: 'icons';
+          content: '\E803';
+          margin-right: 5px;
+          font-weight:normal;
+          font-size:14px;
+          vertical-align: top;
+        }
+      }
+      a.buy-tickets {
+        @include button(white, $secondary-color, $main-color, 10px 30px);
+        display: inline-block;
+        clear: both;
+        margin-top: 30px;
+        font-size:18px;
+      }
+    }
+    ul {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      li {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        a {
+          margin-bottom:30px;
+          display:block;
+          &:hover{
+            text-decoration: underline;
+          }
+          &:before {
+            font-family: 'icons';
+            margin-right:10px;
+            font-weight:normal;
+            font-size:16px;
+            vertical-align: middle;
+            margin-bottom:5px;
+            display:inline-block;
+          }
+          &.agenda:before{
+            content: '\E813';
+          }
+
+          &.business-day:before{
+            content: '\E815';
+          }
+
+          &.survival-guide:before{
+            content: '\E803';
+          }
+
+          &.speakers:before{
+            content: '\E817';
+          }
+
+          &.sponsors:before{
+            content: '\E812';
+          }
+
+          &.attendees:before{
+            content: '\E814';
+          }
+
+          &.news:before{
+            content: '\E816';
+          }
+
+          &.sprints:before{
+            content: '\E802';
+          }
+
+          margin-bottom: 30px;
+          text-transform: uppercase;
+          font-size: 24px;
+          font-family: $header-font;
+          color: white;
+          text-decoration: none;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+
+}

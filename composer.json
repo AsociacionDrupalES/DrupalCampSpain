@@ -23,7 +23,8 @@
     "drush/drush": "8.*",
     "drupal/mailchimp": "1.*",
     "drupal/features": "3.*",
-    "drupal/google_analytics": "2.*"
+    "drupal/google_analytics": "2.*",
+    "drupal/menu_link_attributes": "1.*"
   },
   "require-dev": {
     "behat/mink": "~1.7",

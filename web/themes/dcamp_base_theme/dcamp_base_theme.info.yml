@@ -18,7 +18,4 @@ stylesheets-remove:
 regions:
   header: Header
   footer: Footer
-  messages: 'Messages'
-  help: 'Help'
-  breadcrumb: Breadcrumb
   content: Content

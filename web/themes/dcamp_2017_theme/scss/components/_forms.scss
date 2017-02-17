@@ -1,0 +1,13 @@
+form{
+  input[type="text"],
+  input[type="password"],
+  input[type="email"],
+  select{
+    border:none;
+    -webkit-appearance:none;
+    background:$form-input-color;
+    height:20px;
+    padding:10px;
+  }
+
+}

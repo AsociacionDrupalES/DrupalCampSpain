@@ -9,7 +9,7 @@ _core:
 id: dcamp_2017_theme_local_tasks
 theme: dcamp_2017_theme
 region: content
-weight: -5
+weight: -6
 provider: null
 plugin: local_tasks_block
 settings:

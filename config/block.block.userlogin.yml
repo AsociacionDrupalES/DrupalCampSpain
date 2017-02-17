@@ -1,0 +1,20 @@
+uuid: aaacd023-a4d2-4f78-ad68-63571604ac75
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+  theme:
+    - dcamp_2017_theme
+id: userlogin
+theme: dcamp_2017_theme
+region: header
+weight: -7
+provider: null
+plugin: user_login_block
+settings:
+  id: user_login_block
+  label: 'User login'
+  provider: user
+  label_display: '0'
+visibility: {  }

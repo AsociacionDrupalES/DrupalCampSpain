@@ -28,6 +28,7 @@ module:
   locale: 0
   mailchimp: 0
   mailchimp_signup: 0
+  menu_link_attributes: 0
   menu_ui: 0
   node: 0
   options: 0

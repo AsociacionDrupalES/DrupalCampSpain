@@ -7,8 +7,8 @@ core: 8.x
 
 regions:
   header: Header
-  footer: Footer
-  messages: 'Messages'
-  help: 'Help'
-  breadcrumb: Breadcrumb
   content: Content
+  footer: Footer
+
+libraries:
+ - dcamp_2017_theme/global
