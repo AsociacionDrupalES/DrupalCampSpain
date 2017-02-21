@@ -7,19 +7,29 @@
 /**
  * Implements hook_theme.
  */
-function dcamp_theme($existing, $type, $theme, $path){
- return [
-   'landing_block' => array(
-     'variables' => [
-       'title' => NULL,
-       'body' => NULL,
-       'countdown' => NULL,
-       'form' => NULL,
-       'link' => NULL,
-     ],
-     'template' => 'landing-block'
-   ),
- ];
+function dcamp_theme($existing, $type, $theme, $path) {
+  return [
+    'landing_block' => array(
+      'variables' => [
+        'title' => NULL,
+        'body' => NULL,
+        'countdown' => NULL,
+        'form' => NULL,
+        'link' => NULL,
+      ],
+      'template' => 'landing-block'
+    ),
+    'frontpage' => [
+      'variables' => [
+        'speakers' => NULL,
+        'sponsors' => NULL,
+        'venue' => NULL,
+        'become_a_sponsor' => NULL,
+        'business_day' => NULL,
+      ],
+      'template' => 'frontpage',
+    ],
+  ];
 }
 
 /**
@@ -36,7 +46,7 @@ function dcamp_theme($existing, $type, $theme, $path){
  * @param $form_id
  */
 function dcamp_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
-  if("mailchimp_signup_subscribe_block_dcamp_mailchimp_form" == $form_id){
+  if ("mailchimp_signup_subscribe_block_dcamp_mailchimp_form" == $form_id) {
     $form['submit']['#value'] = t('Submit');
   }
 }
