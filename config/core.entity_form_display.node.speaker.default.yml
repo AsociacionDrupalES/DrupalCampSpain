@@ -4,7 +4,12 @@ status: true
 dependencies:
   config:
     - field.field.node.speaker.body
+    - field.field.node.speaker.field_bitbucket
     - field.field.node.speaker.field_company
+    - field.field.node.speaker.field_drupal_org
+    - field.field.node.speaker.field_facebook
+    - field.field.node.speaker.field_full_name
+    - field.field.node.speaker.field_github
     - field.field.node.speaker.field_photo
     - field.field.node.speaker.field_twitter
     - image.style.thumbnail
@@ -32,8 +37,43 @@ content:
     weight: 10
     settings: {  }
     third_party_settings: {  }
+  field_bitbucket:
+    weight: 36
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
   field_company:
     weight: 33
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+  field_drupal_org:
+    weight: 37
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+  field_facebook:
+    weight: 35
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+  field_full_name:
+    weight: 39
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  field_github:
+    weight: 38
     settings:
       placeholder_url: ''
       placeholder_title: ''

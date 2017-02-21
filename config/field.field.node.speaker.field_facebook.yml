@@ -1,0 +1,23 @@
+uuid: 6d9ff99e-12a3-4111-ba68-432c04ec65c2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_facebook
+    - node.type.speaker
+  module:
+    - link
+id: node.speaker.field_facebook
+field_name: field_facebook
+entity_type: node
+bundle: speaker
+label: Facebook
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 2
+field_type: link
