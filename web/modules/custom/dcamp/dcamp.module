@@ -26,6 +26,7 @@ function dcamp_theme($existing, $type, $theme, $path) {
         'venue' => NULL,
         'become_a_sponsor' => NULL,
         'business_day' => NULL,
+        'community' => NULL,
       ],
       'template' => 'frontpage',
     ],
