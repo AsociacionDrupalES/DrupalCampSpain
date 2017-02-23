@@ -104,3 +104,16 @@
   background: -moz-linear-gradient($direction, $color1, $color2); /* For Firefox 3.6 to 15 */
   background: linear-gradient(to $direction, $color1, $color2); /* Standard syntax */
 }
+
+@mixin bounce-arrow {
+  bottom: 15%;
+  left: 0;
+  margin: 0 auto;
+  position: absolute;
+  right: 0;
+  animation: bounce 2s infinite;
+  -webkit-animation: bounce 2s infinite;
+  -moz-animation: bounce 2s infinite;
+  -o-animation: bounce 2s infinite;
+
+}

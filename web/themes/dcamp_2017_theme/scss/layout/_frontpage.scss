@@ -1,0 +1,47 @@
+.frontpage-wrapper {
+  #intro {
+    position:relative;
+    overflow: hidden;
+    background: #fff url('../images/pattern.jpg') repeat top left;
+    z-index: 1;
+    .letter {
+      position: absolute;
+      z-index: -1;
+      &.d {
+        left: 0;
+        top: 50px;
+      }
+      &.r {
+        left: 37%;
+        top: 0;
+      }
+      &.u {
+        right: 14px;
+        top: 0;
+      }
+      &.p {
+        bottom: 0%;
+        left: 15%;
+      }
+      &.al {
+        bottom: 0%;
+        right: 10%;
+      }
+
+    }
+    .bottom-area{
+      background:$secondary-color;
+      font-family: $header-font;
+      font-weight:600;
+      text-transform:uppercase;
+      text-align:center;
+      font-size:30px;
+      padding:20px;
+    }
+    .top-area{
+      .arrow{
+        @include bounce-arrow;
+      }
+    }
+  }
+}

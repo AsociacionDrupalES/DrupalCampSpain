@@ -1,86 +1,89 @@
-<section id="intro" class="section">
-  <div class="sub">
-    <div class="content">
-      <div class="top-area">
-        <h1 class="page-title">{% trans %} Sweet and short {% endtrans %}</h1>
-        <img class="logo" src="{{ base_path ~ directory }}/logo.svg?20161114"/>
-        <img class="letter d" src="{{ base_path ~ directory }}/images/letter-d.svg" width="250px"/>
-        <img class="letter r" src="{{ base_path ~ directory }}/images/letter-r.svg" width="280px"/>
-        <img class="letter u" src="{{ base_path ~ directory }}/images/letter-u.svg" width="440px"/>
-        <img class="letter p" src="{{ base_path ~ directory }}/images/letter-p.svg" width="300px"/>
-        <img class="letter al" src="{{ base_path ~ directory }}/images/letter-a.svg" width="540px"/>
-        <a class="scroll-down" href="#"><img class="arrow" src="{{ base_path ~ directory }}/images/arrow.svg"
-                                             alt="Arrow down"/></a>
-      </div>
-      <div class="bottom-area">
-        {% trans %} Two days of Drupal presentations, workshops and networking. {% endtrans %}
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="speakers" class="section">
-  <div class="sub">
-    <div class="content">
-      <h2>{% trans %}Confirmed speakers{% endtrans %}</h2>
-      {{ speakers }}
-      <a class="button" href="{{ url('<front>') }}">{% trans %} See all {% endtrans %}</a>
-      <div class="send-proposals">
-        <div class="content">
-          <h3>{% trans %}Join the club{% endtrans %}</h3>
-          <div class="deadline">{% trans %}Deadline: 3rd of february 2017{% endtrans %}</div>
+<div class="frontpage-wrapper">
+  <section id="intro" class="section">
+    <div class="sub">
+      <div class="content">
+        <div class="top-area">
+          <h1 class="page-title">{% trans %} Sweet and short {% endtrans %}</h1>
+          <img class="letter d" src="{{ base_path ~ directory }}/images/letter-d.svg" width="250px"/>
+          <img class="letter r" src="{{ base_path ~ directory }}/images/letter-r.svg" width="280px"/>
+          <img class="letter u" src="{{ base_path ~ directory }}/images/letter-u.svg" width="440px"/>
+          <img class="letter p" src="{{ base_path ~ directory }}/images/letter-p.svg" width="300px"/>
+          <img class="letter al" src="{{ base_path ~ directory }}/images/letter-a.svg" width="540px"/>
+          <a class="scroll-down" href="#"><img class="arrow" src="{{ base_path ~ directory }}/images/arrow.svg"
+                                               alt="Arrow down"/></a>
         </div>
-        <a class="button" href="{{ url('<front>') }}">Submit your proposal</a>
+        <div class="bottom-area">
+          {% trans %} Two days of Drupal presentations, workshops and networking. {% endtrans %}
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="location" class="section">
-  <div class="sub">
-    <div class="content">
-      <div class="maps">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3038.1250180372567!2d-3.7021128843044817!3d40.40608116421036!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd42262c501652cd%3A0x610543bed2cd3041!2sLa+Casa+Encendida!5e0!3m2!1sen!2ses!4v1487744705148" width="100%"  frameborder="0" style="border:0" allowfullscreen>
+  <section id="speakers" class="section">
+    <div class="sub">
+      <div class="content">
+        <h2>{% trans %}Confirmed speakers{% endtrans %}</h2>
+        {{ speakers }}
+        <a class="button" href="{{ url('<front>') }}">{% trans %} See all {% endtrans %}</a>
+        <div class="send-proposals">
+          <div class="content">
+            <h3>{% trans %}Join the club{% endtrans %}</h3>
+            <div class="deadline">{% trans %}Deadline: 3rd of february 2017{% endtrans %}</div>
+          </div>
+          <a class="button" href="{{ url('<front>') }}">Submit your proposal</a>
+        </div>
       </div>
-      </iframe>
-      <h2>{% trans %}La Casa Encendida, Madrid {% endtrans %}</h2>
-      {{ venue }}
-      <a href="{{ url('<front>') }}" class="button">{% trans %} Survival Guide {% endtrans %}</a>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="become-a-sponsor" class="section">
-  <div class="sub">
-    <div class="content">
-      <h2>{% trans %}Become a sponsor{% endtrans %}</h2>
-      {{ become_a_sponsor }}
+  <section id="location" class="section">
+    <div class="sub">
+      <div class="content">
+        <div class="maps">
+          <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3038.1250180372567!2d-3.7021128843044817!3d40.40608116421036!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd42262c501652cd%3A0x610543bed2cd3041!2sLa+Casa+Encendida!5e0!3m2!1sen!2ses!4v1487744705148"
+              width="100%" frameborder="0" style="border:0" allowfullscreen>
+        </div>
+        </iframe>
+        <h2>{% trans %}La Casa Encendida, Madrid {% endtrans %}</h2>
+        {{ venue }}
+        <a href="{{ url('<front>') }}" class="button">{% trans %} Survival Guide {% endtrans %}</a>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="business-day" class="section">
-  <div class="sub">
-    <div class="content">
-      <h2>{% trans %}Business day{% endtrans %}</h2>
-      {{ business_day }}
+  <section id="become-a-sponsor" class="section">
+    <div class="sub">
+      <div class="content">
+        <h2>{% trans %}Become a sponsor{% endtrans %}</h2>
+        {{ become_a_sponsor }}
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="community" class="section">
-  <div class="sub">
-    <div class="content">
-      <h2>{% trans %}Join our community{% endtrans %}</h2>
-      {{ commmunity }}
+  <section id="business-day" class="section">
+    <div class="sub">
+      <div class="content">
+        <h2>{% trans %}Business day{% endtrans %}</h2>
+        {{ business_day }}
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="sponsors" class="section">
-  <div class="sub">
-    <div class="content">
-      {{ sponsors }}
+  <section id="community" class="section">
+    <div class="sub">
+      <div class="content">
+        <h2>{% trans %}Join our community{% endtrans %}</h2>
+        {{ commmunity }}
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+
+  <section id="sponsors" class="section">
+    <div class="sub">
+      <div class="content">
+        {{ sponsors }}
+      </div>
+    </div>
+  </section>
+</div>

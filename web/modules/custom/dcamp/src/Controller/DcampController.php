@@ -7,10 +7,10 @@
 
 namespace Drupal\dcamp\Controller;
 
-use Drupal\block\BlockInterface;
-use Drupal\block\Entity\Block;
-use Drupal\Core\Block\BlockManager;
+use Drupal\block_content\BlockContentViewBuilder;
+use Drupal\block_content\Entity\BlockContent;
 use Drupal\Core\Controller\ControllerBase;
+use Drupal\Core\Entity\EntityRepository;
 use Drupal\Core\Render\Renderer;
 use Drupal\dcamp\Entity\Dcamp;
 
@@ -44,9 +44,6 @@ class DcampController extends ControllerBase {
     /** @var BlockManager $blockManager */
     $blockManager =     \Drupal::getContainer()->get('plugin.manager.block');
 
-    /** @var Renderer $renderer */
-    $renderer = \Drupal::getContainer()->get('renderer');
-
    return [
      '#theme' => 'frontpage',
      '#business_day' => $blockManager->createInstance('block_content:dcamp_2017_business_day')->build(),
@@ -55,6 +52,12 @@ class DcampController extends ControllerBase {
      '#become_a_sponsor' => $blockManager->createInstance('block_content:dcamp_20017_become_a_sponsor')->build(),
      '#speakers' =>  views_embed_view('featured_speakers', 'block'),
      '#community' => $blockManager->createInstance('block_content:dcamp_20017_community')->build(),
+     '#attached' => [
+       'library' => [
+         'dcamp_2017_theme/frontpage',
+         'dcamp_2017_landing_theme/plax'
+       ]
+     ]
    ];
   }
 
