@@ -68,8 +68,8 @@ display:
               field: field_sponsor_type
               rendered: true
               rendered_strip: false
-          row_class: ''
-          default_row_class: true
+          row_class: '{{ field_sponsor_type }}'
+          default_row_class: false
       row:
         type: fields
       fields:
@@ -427,7 +427,7 @@ display:
           exclude: true
           alter:
             alter_text: true
-            text: '<h3 class="{{ field_sponsor_type__value }}">{{ field_sponsor_type }}</h3>'
+            text: '{{ field_sponsor_type__value }}'
             make_link: false
             path: ''
             absolute: false
@@ -458,8 +458,8 @@ display:
           element_label_class: ''
           element_label_colon: false
           element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: false
+          element_wrapper_class: '{{field_sponsor_type__value}}'
+          element_default_classes: true
           empty: ''
           hide_empty: false
           empty_zero: false
