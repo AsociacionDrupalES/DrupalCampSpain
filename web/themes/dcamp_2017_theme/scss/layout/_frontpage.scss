@@ -1,5 +1,5 @@
 @mixin frontpage-section-width-bg {
-  text-align:center;
+  text-align: center;
   h2 {
     color: white;
     margin-bottom: .1em;
@@ -211,7 +211,7 @@
   #become-a-sponsor {
     @include linear-gradient();
     @include frontpage-section-width-bg;
-    h2:before{
+    h2:before {
       content: '\E812';
     }
   }
@@ -229,17 +229,54 @@
     background-size: cover;
     color: white;
     @include frontpage-section-width-bg;
-    h2:before{
+    h2:before {
       content: '\E800';
     }
   }
-  #sponsors{
-    h3{
-      font-size:1em;
-      font-weight:normal;
-      font-family: $body-font;
-      color:$secondary-color;
-      border-bottom: 1px solid #ddd;
+  #sponsors {
+    h3 {
+
     }
+    .view.view-sponsors .view-content{
+      width: calc(100% + #{$gutter-width}*2);
+      text-align:center;
+      h3{
+        clear:both;
+        text-align:left;
+        font-size: 1em;
+        font-weight: normal;
+        font-family: $body-font;
+        color: $secondary-color;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 1em;
+        margin: 2em $gutter-width;
+      }
+      > div{
+        display:inline-block;
+        margin:$gutter-width -1px;
+
+        &.platinum{
+          width:calc(100%/2 - #{$gutter-width}*2);
+        }
+        &.diamond{
+          width:calc(100%/3 - #{$gutter-width}*2);
+        }
+
+        &.gold{
+          width:calc(100%/4 - #{$gutter-width}*2);
+        }
+        &.silver{
+          width:calc(100%/6 - #{$gutter-width}*2);
+        }
+        > div{
+          margin:$gutter-width;
+          img{
+            width:100%;
+            height:auto;
+          }
+        }
+      }
+    }
+
   }
 }

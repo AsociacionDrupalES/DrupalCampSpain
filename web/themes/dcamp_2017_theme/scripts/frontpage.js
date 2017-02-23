@@ -25,8 +25,16 @@
       $('img.p').plaxify({"xRange": 40, "yRange": 40, "invert": true});
       $('img.al').plaxify({"xRange": 30, "yRange": 30});
       $.plax.enable();
+
+      $(".scroll-down").click(function() {
+        $('html, body').animate({
+          scrollTop: $("#scroll-to-anchor").offset().top
+        }, 500);
+      });
       
       // Avoid scroll on google maps.
+      $('.maps iframe').css("pointer-events", "none");
+      
       $('.maps').click(function () {
         $('.maps iframe').css("pointer-events", "auto");
       });
