@@ -19,15 +19,18 @@ html {
   body {
     font-family: $body-font;
     font-weight: 400;
-    color: #ffffff;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-
-
     p {
-      margin: 1em 0;
+      line-height: 1.6;
+      margin: 2em 0;
     }
-
+    h1, h2, h3 {
+      font-weight: bold;
+      text-transform: uppercase;
+      font-family: $header-font;
+      font-size:3em;
+    }
 
   }
 }

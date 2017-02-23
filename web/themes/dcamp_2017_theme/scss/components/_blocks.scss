@@ -144,7 +144,7 @@ text-decoration: none;
 
         text-transform: uppercase;
         cursor:pointer;
-        @include linear-gradient(right, $main-color, $tertiary-color);
+        @include linear-gradient();
         &:hover{
         }
       }

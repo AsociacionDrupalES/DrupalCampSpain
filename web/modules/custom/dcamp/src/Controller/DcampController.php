@@ -48,10 +48,10 @@ class DcampController extends ControllerBase {
      '#theme' => 'frontpage',
      '#business_day' => $blockManager->createInstance('block_content:dcamp_2017_business_day')->build(),
      '#venue' => $blockManager->createInstance('block_content:dcamp_2017_venue')->build(),
-     '#sponsors' =>  views_embed_view('sponsors', 'block'),
-     '#become_a_sponsor' => $blockManager->createInstance('block_content:dcamp_20017_become_a_sponsor')->build(),
+     '#sponsors' =>  views_embed_view('sponsors', 'all_sponsors'),
+     '#become_a_sponsor' => $blockManager->createInstance('block_content:dcamp_2017_become_a_sponsor')->build(),
      '#speakers' =>  views_embed_view('featured_speakers', 'block'),
-     '#community' => $blockManager->createInstance('block_content:dcamp_20017_community')->build(),
+     '#community' => $blockManager->createInstance('block_content:dcamp_2017_community')->build(),
      '#attached' => [
        'library' => [
          'dcamp_2017_theme/frontpage',
