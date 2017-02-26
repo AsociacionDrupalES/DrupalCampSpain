@@ -8,3 +8,9 @@ entity.dcamp.canonical:
     parameters:
       dcamp_entity:
         type: entity:dcamp
+frontpage:
+  path: '/frontpage'
+  defaults:
+    _controller: '\Drupal\dcamp\Controller\DcampController::frontpage'
+  requirements:
+    _permission: 'access content'

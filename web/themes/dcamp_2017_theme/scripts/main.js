@@ -10,6 +10,7 @@
       });
 
       $('#block-userlogin').prepend('<div class="user-login-trigger">'+Drupal.t('Login')+'</div>');
+
     }
   };
 })(jQuery, Drupal);

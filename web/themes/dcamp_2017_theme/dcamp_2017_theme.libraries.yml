@@ -14,3 +14,9 @@ global:
     - core/drupalSettings
     - core/jquery.once
     - core/modernizr
+
+#Frontpage
+frontpage:
+  version: dev
+  js:
+    scripts/frontpage.js: { scope: footer, weight: -7}

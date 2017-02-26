@@ -12,17 +12,17 @@ type: list_string
 settings:
   allowed_values:
     -
-      value: silver
-      label: Silver
-    -
-      value: gold
-      label: Gold
+      value: diamond
+      label: Diamond
     -
       value: platinium
       label: Platinium
     -
-      value: diamond
-      label: Diamond
+      value: gold
+      label: Gold
+    -
+      value: silver
+      label: Silver
   allowed_values_function: ''
 module: options
 locked: false

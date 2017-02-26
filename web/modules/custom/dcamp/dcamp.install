@@ -4,7 +4,18 @@
  *
  * Install hooks for dcamp module.
  */
+
+use Drupal\node\Entity\Node;
+use Drupal\block_content\Entity\BlockContent;
 use Psr\Log\LogLevel;
+
+/**
+ * Implements hook_install().
+ */
+function dcamp_install(){
+  _dcamp_add_dummy_sponsors_and_default_logo();
+  _dcamp_add_content_blocks_for_frontpage();
+}
 
 /**
  * Adds several translations to the landing page.
@@ -21,7 +32,7 @@ function dcamp_update_8101(&$sandbox) {
   foreach ($translations as $source => $target) {
     // Find existing source string.
     $string = $locale_storage->findString(array('source' => $source));
-    if (empty($string)){
+    if (empty($string)) {
       drush_log('Source string ' . $source . 'was not found.', LogLevel::WARNING);
     }
     else {
@@ -39,8 +50,114 @@ function dcamp_update_8101(&$sandbox) {
  * Adjusts the URL of the sponsor prospect.
  */
 function dcamp_update_8102(&$sandbox) {
-  $config = \Drupal::configFactory()->getEditable('block.block.drupalcampblockforlandingaboutsponsoring');
+  $config = \Drupal::configFactory()
+    ->getEditable('block.block.drupalcampblockforlandingaboutsponsoring');
   $settings = $config->get('settings');
   $settings['download_url'] = 'https://drive.google.com/open?id=0B5Zv1LP5pgikSmo1dGFaRHdQWmM';
   $config->set('settings', $settings)->save();
+}
+
+/**
+ * Add dummy sponsors for easy theming and default company logo.
+ */
+function dcamp_update_8103() {
+  _dcamp_add_dummy_sponsors_and_default_logo();
+}
+
+/**
+ * Add default blocks for frontpage.
+ */
+function dcamp_update_8104() {
+  _dcamp_add_content_blocks_for_frontpage();
+}
+
+/**
+ * Function to add some dummy content for easy theming.
+ */
+function _dcamp_add_dummy_sponsors_and_default_logo() {
+  $data = file_get_contents(drupal_get_path('module', 'dcamp') . '/images/default_company_logo.png');
+  $file = file_save_data($data, 'public://default_company_logo.png', FILE_EXISTS_REPLACE);
+  $file->set('uuid', 'default_company_logo');
+  $file->save();
+
+  $dummySponsors = [
+    'diamond_a' => [
+      'title' => 'Sponsor Diamond Foo',
+      'sponsor_type' => 'diamond',
+    ],
+    'diamond_b' => [
+      'title' => 'Sponsor Diamond Bar',
+      'sponsor_type' => 'diamond',
+    ],
+    'gold_a' => [
+      'title' => 'Sponsor Diamond Foo',
+      'sponsor_type' => 'gold',
+    ],
+    'gold_b' => [
+      'title' => 'Sponsor Diamond Bar',
+      'sponsor_type' => 'gold',
+    ],
+    'platinum_a' => [
+      'title' => 'Sponsor Platinum Foo',
+      'sponsor_type' => 'platinum',
+    ],
+    'platinum_b' => [
+      'title' => 'Sponsor Platinum Bar',
+      'sponsor_type' => 'platinum',
+    ],
+    'silver_a' => [
+      'title' => 'Sponsor Silver Foo',
+      'sponsor_type' => 'silver',
+    ],
+    'silver_b' => [
+      'title' => 'Sponsor Silver Bar',
+      'sponsor_type' => 'silver',
+    ],
+    'silver_c' => [
+      'title' => 'Sponsor Silver Lorum',
+      'sponsor_type' => 'silver',
+    ],
+    'silver_d' => [
+      'title' => 'Sponsor Silver Ipsum',
+      'sponsor_type' => 'silver',
+    ],
+  ];
+  foreach ($dummySponsors as $sponsor) {
+    Node::create([
+      'type' => 'sponsor',
+      'title' => $sponsor['title'],
+      'field_url' => 'http://2017.drupalcamp.es',
+      'field_sponsor_type' => $sponsor['sponsor_type'],
+    ])->save();
+  }
+}
+
+/**
+ * Add content blocks for the frontpage.
+ */
+function _dcamp_add_content_blocks_for_frontpage(){
+  $contentBlocks = [
+    'business_day' => t('Dcamp 2017 Business day'),
+    'venue' => t('Dcamp 2017 Venue'),
+    'become_a_sponsor' => t('Dcamp 2017 Become a sponsor'),
+    'community' => t('Dcamp 2017 Community'),
+  ];
+  foreach ($contentBlocks as $blockUuid => $label) {
+    BlockContent::create([
+      'type' => 'basic',
+      'uuid' => 'dcamp_2017_' . $blockUuid,
+      'info' => $label,
+      'body' => [
+        'value' => '<p>Nulla porttitor accumsan tincidunt. Vivamus suscipit tortor
+              eget felis porttitor volutpat. Sed porttitor lectus nibh. Proin
+              eget tortor risus. Vivamus suscipit tortor eget felis porttitor
+              volutpat. Donec sollicitudin molestie malesuada.</p>
+              <p>Sed porttitor lectus nibh. Praesent sapien massa, convallis a
+              pellentesque nec, egestas non nisi. Vivamus suscipit tortor eget
+              felis porttitor volutpat. Vivamus suscipit.</p>
+              <p><a href="@todo">Link to something</a></p>',
+        'format' => 'basic_html',
+        ]
+    ])->save();
+  }
 }

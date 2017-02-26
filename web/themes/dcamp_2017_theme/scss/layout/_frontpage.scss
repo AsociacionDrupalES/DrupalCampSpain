@@ -1,0 +1,282 @@
+@mixin frontpage-section-width-bg {
+  text-align: center;
+  h2 {
+    color: white;
+    margin-bottom: .1em;
+    &:after {
+      display: none;
+    }
+    &:before {
+
+      font-family: icons;
+      display: block;
+      clear: both;
+      font-weight: normal;
+      font-size: 2.7em;
+      margin-bottom: .4em;
+    }
+  }
+  .field--name-body {
+    max-width: 600px;
+    margin: 0 auto;
+    color: white;
+    a {
+      margin-top: 2em;
+      background: white;
+      color: $main-color;
+      &:hover {
+        background: $secondary-color;
+        color: white;
+      }
+    }
+  }
+}
+
+.frontpage-wrapper {
+  .section {
+    padding: 5em 0;
+    .sub {
+      max-width: $desktop;
+      margin: 0 auto;
+      .field--name-body {
+        a {
+          @include button-gradient();
+        }
+      }
+    }
+    h2 {
+      margin-bottom: 2em;
+      color: $secondary-color;
+      position: relative;
+      font-size: 2.7em;
+      &:after {
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        width: 30px;
+        height: 4px;
+        background-color: $secondary-color;
+        content: ' ';
+      }
+    }
+  }
+  #intro {
+    .sub {
+      max-width: 100%;
+    }
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+    background: #fff url('../images/pattern.jpg') repeat top left;
+    z-index: 1;
+    .letter {
+      position: absolute;
+      z-index: -1;
+      &.d {
+        left: 0;
+        top: 50px;
+      }
+      &.r {
+        left: 37%;
+        top: 0;
+      }
+      &.u {
+        right: 14px;
+        top: 0;
+      }
+      &.p {
+        bottom: 0%;
+        left: 15%;
+      }
+      &.al {
+        bottom: 0%;
+        right: 10%;
+      }
+
+    }
+    .top-area {
+      display: table;
+      width: 100%;
+      .inner {
+        display: table-cell;
+        vertical-align: middle;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        h1 {
+          @include linear-gradient-text('left', $main-color, $tertiary-color);
+          display: inline-block;
+          font-size: 6em;
+        }
+        .arrow {
+          @include bounce-arrow;
+        }
+      }
+    }
+    .bottom-area {
+      background: $secondary-color;
+      font-family: $header-font;
+      color: white;
+      font-weight: 600;
+      text-transform: uppercase;
+      text-align: center;
+      font-size: 30px;
+      padding: 20px;
+    }
+  }
+  .maps {
+    iframe {
+      height: 500px;
+    }
+  }
+  #speakers {
+    .sub {
+      > .content {
+        .view {
+          @include clearfix;
+          margin-bottom: 4em;
+          width: calc(100% + #{$gutter-width} * 2);
+          margin-left: -$gutter-width;
+          .views-field {
+            margin: 0 $gutter-width;
+            width: calc(100% / 4);
+            float: left;
+          }
+        }
+        > .button {
+          margin-bottom: 4em;
+        }
+        .send-proposals {
+          padding: 2em 2em;
+          border-radius: 10px;
+          @include linear-gradient();
+
+          .button {
+            float: right;
+            background: white;
+            color: $main-color;
+            position: relative;
+            z-index: 99;
+            &:hover {
+              background: $secondary-color;
+              color: white;
+            }
+          }
+          .content {
+            padding-left: 100px;
+            position: relative;
+            &:before {
+              position: absolute;
+              left: 0;
+              top: 0;
+              content: '\E818';
+              font-family: icons;
+              color: white;
+              font-size: 4em;
+            }
+            h3 {
+              line-height: 1;
+              font-size: 2.2em;
+              color: white;
+            }
+            .deadline {
+              color: $fourth-color;
+              font-family: $header-font;
+              text-transform: uppercase;
+              font-weight: bold;
+              font-size: 1.2em;
+            }
+          }
+        }
+      }
+    }
+  }
+  #location {
+    z-index: 2;
+    position: relative;
+    padding-top: 0;
+    margin-bottom: 3em;
+    h2 {
+      margin-top: 1em;
+      margin-bottom: 1em;
+    }
+    .venue-image {
+      float: right;
+      width: 50%;
+      margin-left: 1em;
+      height: auto;
+      margin-top: -8em;
+    }
+  }
+  #become-a-sponsor {
+    @include linear-gradient();
+    @include frontpage-section-width-bg;
+    h2:before {
+      content: '\E812';
+    }
+  }
+  #business-day {
+    .business-day-image {
+      float: right;
+      width: 50%;
+      margin-left: 1em;
+      height: auto;
+    }
+  }
+  #community {
+    background-image: url(../images/photos/bg-hazte-socio.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    @include frontpage-section-width-bg;
+    h2:before {
+      content: '\E800';
+    }
+  }
+  #sponsors {
+    h3 {
+
+    }
+    .view.view-sponsors .view-content{
+      width: calc(100% + #{$gutter-width}*2);
+      text-align:center;
+      h3{
+        clear:both;
+        text-align:left;
+        font-size: 1em;
+        font-weight: normal;
+        font-family: $body-font;
+        color: $secondary-color;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 1em;
+        margin: 2em $gutter-width;
+      }
+      > div{
+        display:inline-block;
+        margin:$gutter-width -1px;
+
+        &.platinum{
+          width:calc(100%/2 - #{$gutter-width}*2);
+        }
+        &.diamond{
+          width:calc(100%/3 - #{$gutter-width}*2);
+        }
+
+        &.gold{
+          width:calc(100%/4 - #{$gutter-width}*2);
+        }
+        &.silver{
+          width:calc(100%/6 - #{$gutter-width}*2);
+        }
+        > div{
+          margin:$gutter-width;
+          img{
+            width:100%;
+            height:auto;
+          }
+        }
+      }
+    }
+
+  }
+}
