@@ -1,0 +1,14 @@
+uuid: 95fcd107-3d55-4198-8eb3-17cb14666848
+langcode: en
+status: true
+dependencies: {  }
+name: top_detail_xxl
+label: 'Top Detail XXL (1405×385)'
+effects:
+  1de7f0db-4a20-4a26-8a48-722234dc7ab4:
+    uuid: 1de7f0db-4a20-4a26-8a48-722234dc7ab4
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 1405
+      height: 385

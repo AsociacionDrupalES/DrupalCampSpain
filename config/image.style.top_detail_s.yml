@@ -1,0 +1,14 @@
+uuid: 64e4a3c8-19f5-4ea1-8c5a-c2b54fd7f5ae
+langcode: en
+status: true
+dependencies: {  }
+name: top_detail_s
+label: 'Top Detail S (575×305)'
+effects:
+  b745fc55-e491-498d-8eaf-a590da361e9f:
+    uuid: b745fc55-e491-498d-8eaf-a590da361e9f
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 575
+      height: 305
