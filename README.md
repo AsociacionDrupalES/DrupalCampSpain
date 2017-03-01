@@ -7,11 +7,9 @@
    web/sites/default/settings.local.php.
 1. Open web/sites/default/settings.local.php and adjust it
    to your local environment needs.
-1. Go to the web folder in terminal and run 'drush si --config-dir=../config -y'
-1. In case of an error run 'drush cim sync' a couple of times until errors disappear and all config is imported.
-1. Once the installation completes, you should see the landing
-   page as the homepage.
-
+1. Download a database dump from Jenkins (ask the maintainers for the URL).
+1. Run database updates.
+1. Open the homepage as administrator with `drush uli`.
 
 ## Development
 

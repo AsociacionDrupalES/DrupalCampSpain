@@ -135,29 +135,64 @@ function _dcamp_add_dummy_sponsors_and_default_logo() {
 /**
  * Add content blocks for the frontpage.
  */
-function _dcamp_add_content_blocks_for_frontpage(){
+function _dcamp_add_content_blocks_for_frontpage() {
   $contentBlocks = [
-    'business_day' => t('Dcamp 2017 Business day'),
-    'venue' => t('Dcamp 2017 Venue'),
-    'become_a_sponsor' => t('Dcamp 2017 Become a sponsor'),
-    'community' => t('Dcamp 2017 Community'),
+    'business_day' => [
+      'title' => t('Dcamp 2017 Business day'),
+      'body' => <<<'EOD'
+<p>On Friday, in parallel with DrupalCamp, we will host a Business Day for
+the Spanish Drupal market leaders.<p>
+<p>This is a perfect opportunity to meet other companies, take the pulse of
+ the market establish synergies.</p>
+EOD
+    ],
+    'venue' => [
+      'title' => t('Dcamp 2017 venue'),
+      'body' => <<<'EOD'
+<p><a href="http://www.lacasaencendida.es">La Casa Encendida will host the
+event. It's renowed for its environmental friendly approach and for
+hosting all kinds of national an international events.</p>
+<p>Located at the heart of Madrid, and a ten minutes walk from the main Railway
+station, La Casa Encendida offers a superb foundation for this year's
+DrupalCamp.</p>
+EOD
+    ],
+    'become_a_sponsor' => [
+      'title' => t('Dcamp 2017 Become a sponsor'),
+      'body' => <<<'EOD'
+<p>Become part of DrupalCamp Spain by sponsoring the event.</p>
+EOD
+    ],
+    'community' => [
+      'title' => t('Dcamp 2017 Community'),
+      'body' => <<<'EOD'
+<p>Join the Spanish Drupal Association as an organization or an individual
+to increase your presence within the community and support its events.</p>
+EOD
+    ],
   ];
-  foreach ($contentBlocks as $blockUuid => $label) {
+  foreach ($contentBlocks as $blockUuid => $data) {
     BlockContent::create([
       'type' => 'basic',
       'uuid' => 'dcamp_2017_' . $blockUuid,
-      'info' => $label,
+      'info' => $data['title'],
       'body' => [
-        'value' => '<p>Nulla porttitor accumsan tincidunt. Vivamus suscipit tortor
-              eget felis porttitor volutpat. Sed porttitor lectus nibh. Proin
-              eget tortor risus. Vivamus suscipit tortor eget felis porttitor
-              volutpat. Donec sollicitudin molestie malesuada.</p>
-              <p>Sed porttitor lectus nibh. Praesent sapien massa, convallis a
-              pellentesque nec, egestas non nisi. Vivamus suscipit tortor eget
-              felis porttitor volutpat. Vivamus suscipit.</p>
-              <p><a href="@todo">Link to something</a></p>',
+        'value' => $data['body'],
         'format' => 'basic_html',
-        ]
+      ]
     ])->save();
   }
+}
+
+/**
+ * Sets the new theme and homepage.
+ */
+function dcamp_update_8105() {
+  $entity = \Drupal::entityTypeManager()->getStorage('dcamp')->load('2017');
+  $entity->set('landing_theme', 'dcamp_2017_theme');
+  $entity->save();
+
+  $config = \Drupal::configFactory()->getEditable('system.site');
+  $config->set('page.front', '/frontpage');
+  $config->save();
 }
