@@ -2,14 +2,24 @@
 
 ## Installation
 1. Clone this repository.
-1. Run 'composer install' in the document root.
-1. Copy web/sites/default/default.settings.local.php into
+2. Run 'composer install' in the document root.
+3. Copy web/sites/default/default.settings.local.php into
    web/sites/default/settings.local.php.
-1. Open web/sites/default/settings.local.php and adjust it
-   to your local environment needs.
-1. Download a database dump from Jenkins (ask the maintainers for the URL).
-1. Run database updates.
-1. Open the homepage as administrator with `drush uli`.
+4. Open web/sites/default/settings.local.php and adjust it
+   to your local environment needs. Make sure that you create the database.
+5. Download a database dump from Jenkins (ask the maintainers for the URL).
+6. Run:
+```bash
+cd web
+drush sql-cli < dump.sql
+drush updb -y
+drush cim sync -y
+drush cr
+```
+7. Open the homepage as administrator with `drush uli`.
+
+## Updating your local environment
+Repeat steps 5th onwards from the above section.
 
 ## Development
 
