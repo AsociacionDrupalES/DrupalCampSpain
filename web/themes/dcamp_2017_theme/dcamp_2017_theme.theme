@@ -24,3 +24,25 @@ $form['pass']['#title'] = t('Password. @link', ['@link' => Link::fromTextAndUrl(
 $form['actions']['submit']['#suffix'] = Link::fromTextAndUrl(t("No account?"), Url::fromUserInput('/user/create'))->toString();
   }
 }
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function dcamp_2017_theme_theme_suggestions_page_alter(array &$suggestions, array $variables) {
+  // Add page template name suggestion based on content types.
+  if ($node = \Drupal::routeMatch()->getParameter('node')) {
+    $content_type = $node->bundle();
+    $suggestions[] = 'page__' . $content_type;
+  }
+}
+
+/**
+ * Template_theme_suggestions_field_alter().
+ */
+function dcamp_2017_theme_theme_suggestions_field_alter(&$suggestions, $variables) {
+  // Add a suggestion field template for all the fields of a viewmode.
+  $suggestions[] = 'field__' . $variables['element']['#view_mode'];
+  // Add a suggestion field template for a fild depending on entity, on bundle,
+  // on field and on viewmode.
+  $suggestions[] = 'field__' . $variables['element']['#field_name'] . '__' . $variables['element']['#entity_type'] . '_' . $variables['element']['#bundle'] . '__' . $variables['element']['#view_mode'];
+}
