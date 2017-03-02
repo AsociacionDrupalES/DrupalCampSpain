@@ -14,7 +14,7 @@ use Drupal\Core\Form\FormStateInterface;
 /**
  * Provides a Base block definition for Landing bocks.
  */
-abstract class DcampLandingBlockBase extends BlockBase implements BlockPluginInterface {
+abstract class DcampBlockBase extends BlockBase implements BlockPluginInterface {
 
   /**
    * {@inheritdoc}

@@ -18,7 +18,7 @@ use Drupal\Core\Url;
  *   admin_label = @Translation("DrupalCamp block for landing about sponsoring")
  * )
  */
-class DcampLandingAboutSponsorBlock extends DcampLandingBlockBase{
+class DcampAboutSponsorBlock extends DcampBlockBase{
 
   /**
    * {@inheritdoc}
