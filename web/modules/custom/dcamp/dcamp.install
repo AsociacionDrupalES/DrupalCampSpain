@@ -161,3 +161,12 @@ function _dcamp_add_content_blocks_for_frontpage(){
     ])->save();
   }
 }
+
+/**
+ * Set the new home page.
+ */
+function dcamp_update_8105() {
+  $config = \Drupal::configFactory()->getEditable('system.site');
+  $config->get('settings')['page.front'] = '/frontpage';
+  $config->save();
+}
