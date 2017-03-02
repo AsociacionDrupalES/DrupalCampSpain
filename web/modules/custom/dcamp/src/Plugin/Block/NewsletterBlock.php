@@ -11,6 +11,7 @@ use Drupal\Core\Entity\Query\QueryFactory;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\mailchimp_signup\Form\MailchimpSignupPageForm;
 use Symfony\Component\DependencyInjection\ContainerInterface;
+
 /**
  * Provides a Description block with Countdown
  *
@@ -19,7 +20,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  *   admin_label = @Translation("Newsletter block")
  * )
  */
-class NewsletterBlock extends DcampBlockBase implements ContainerFactoryPluginInterface{
+class NewsletterBlock extends DcampBlockBase implements ContainerFactoryPluginInterface {
 
   /**
    * @var QueryFactory $queryFactory
@@ -55,7 +56,7 @@ class NewsletterBlock extends DcampBlockBase implements ContainerFactoryPluginIn
 
     // We assume there is only one mailchimp signup configuration entity.
 
-    if(empty($mailchimp_config)){
+    if (empty($mailchimp_config)) {
       drupal_set_message($this->t('Please configure a Mailchimp service'));
       return $build;
     }
@@ -72,10 +73,9 @@ class NewsletterBlock extends DcampBlockBase implements ContainerFactoryPluginIn
     $form_array = \Drupal::formBuilder()->getForm($form);
 
     // Tweak the form.
-    $form_array['#prefix'] = '<h3>' . $this->t('Subscribe to the newsletter') .'</h3>';
     $form_array['mergevars']['EMAIL']['#title'] = '';
     $form_array['mergevars']['EMAIL']['#attributes']['placeholder'] = $this->t('Your email');
-    $form_array['#suffix'] = '<div class="note">' . $this->t("Don't worry, we won't spam you.") .'</div>';
+    $form_array['#suffix'] = '<div class="note">' . $this->t("Don't worry, we won't spam you.") . '</div>';
     $build['#form'] = $form_array;
     return $build;
   }

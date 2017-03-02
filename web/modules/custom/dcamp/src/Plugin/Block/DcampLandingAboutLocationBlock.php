@@ -15,6 +15,6 @@ namespace Drupal\dcamp\Plugin\Block;
  *   admin_label = @Translation("DrupalCamp block for landing about the location")
  * )
  */
-class DcampAboutLocationBlock extends DcampBlockBase{
+class DcampLandingAboutLocationBlock extends DcampBlockBase{
 
 }

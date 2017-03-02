@@ -21,7 +21,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  *   admin_label = @Translation("DrupalCamp block for landing about event")
  * )
  */
-class DcampAboutEventBlock extends DcampBlockBase implements ContainerFactoryPluginInterface{
+class DcampLandingAboutEventBlock extends DcampBlockBase implements ContainerFactoryPluginInterface{
 
 
   /**

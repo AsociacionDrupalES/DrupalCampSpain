@@ -16,7 +16,7 @@ use Drupal\Core\Url;
  *   admin_label = @Translation("DrupalCamp block for landing about the community")
  * )
  */
-class DcampAboutCommunityBlock extends DcampBlockBase{
+class DcampLandingAboutCommunityBlock extends DcampBlockBase{
   /**
    * {@inheritdoc}
    */
