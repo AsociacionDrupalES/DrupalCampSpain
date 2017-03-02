@@ -12,7 +12,13 @@
     @media (min-width: $tablet) and (max-width: $desktop) {
       @content;
     }
-  } @else if $class == desktop {
+  }
+  @if $class == big {
+    @media (min-width: $tablet) {
+      @content;
+    }
+  }
+  @else if $class == desktop {
     @media (min-width: 1200px) {
       @content;
     }
