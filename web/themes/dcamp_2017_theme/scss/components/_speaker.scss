@@ -1,60 +1,141 @@
-.speaker {
-  &__field-company {
-    margin: 0.6rem 0 1rem;
-    text-transform: uppercase;
+.speaker--full {
+  .speaker {
+    &__field-company {
+      margin: 0.6rem 0 1rem;
+      text-transform: uppercase;
 
-    a {
-      font-family: $header-font;
-      font-size: 2rem;
-      font-weight: 700;
-      color: $main-color;
-      text-decoration: none;
-    }
-  }
-
-  &__field-twitter,
-  &__field-drupal-org,
-  &__field-facebook,
-  &__field-bitbucket,
-  &__field-github {
-    display: inline-block;
-    margin-right: 0.75rem;
-
-    a {
-      display: inline-block;
-      overflow: hidden;
-      width: 40px;
-      height: 40px;
-      border-radius: 100%;
-      text-indent: -1000px;
-      transition: all .2s ease-in-out;
-      background: url("../images/twitter-white.svg") no-repeat center center $main-color;
-      background: url("../images/twitter-white.svg") no-repeat center center, linear-gradient(45deg, $main-color 42%, $tertiary-color 62%);
-
-      &:hover {
-        transition: all .2s ease-in-out;
-        transform: scale(1.1);
+      a {
+        font-family: $header-font;
+        font-size: 2rem;
+        font-weight: 700;
+        color: $main-color;
+        text-decoration: none;
       }
     }
-  }
 
-  &__field-drupal-org a {
-    background: url("../images/drop-white.svg") no-repeat center center, linear-gradient(45deg, $main-color 42%, $tertiary-color 62%);
-  }
+    &__field-photo {
+      text-align: center;
+      background: $grey;
+      line-height: 1;
+      padding: 0;
+      position: relative;
+      z-index: 5;
+      img {
+        z-index: 99;
+        display: inline-block;
+        width: auto;
+        line-height: 1;
+        vertical-align: bottom;
+        position: relative;
+        @include breakpoint(mobile) {
+          width: 100%;
+          height: auto;
+        }
+      }
+      &:before {
+        z-index: 8;
+        background: url(../images/pattern.png) repeat;
+        display: block;
+        position: absolute;
+        width: 50%;
+        left: 50%;
+        height: 100%;
+        content: ' ';
+      }
+    }
 
-  &__field-facebook a {
-    background: url("../images/facebook-white.svg") no-repeat center center, linear-gradient(45deg, $main-color 42%, $tertiary-color 62%);
-  }
+    &__field-twitter,
+    &__field-drupal-org,
+    &__field-facebook,
+    &__field-bitbucket,
+    &__field-github {
+      display: inline-block;
+      margin-right: 0.75rem;
 
-  &__field-bitbucket a {
-    background: url("../images/bitbucket-white.svg") no-repeat center center, linear-gradient(45deg, $main-color 42%, $tertiary-color 62%);
-  }
+      a {
+        display: inline-block;
+        overflow: hidden;
+        width: 40px;
+        height: 40px;
+        border-radius: 100%;
+        text-indent: -1000px;
+        transition: all .2s ease-in-out;
+        background: url("../images/twitter-white.svg") no-repeat center center $main-color;
+        background: url("../images/twitter-white.svg") no-repeat center center, linear-gradient(45deg, $main-color 42%, $tertiary-color 62%);
 
-  &__field-github a {
-    background: url("../images/github-white.svg") no-repeat center center, linear-gradient(45deg, $main-color 42%, $tertiary-color 62%);
-  }
+        &:hover {
+          transition: all .2s ease-in-out;
+          transform: scale(1.1);
+        }
+      }
+    }
 
-  &__field-linkedin a {
-    background: url("../images/linkedin-white.svg") no-repeat center center, linear-gradient(45deg, $main-color 42%, $tertiary-color 62%);
+    &__field-drupal-org a {
+      background: url("../images/drop-white.svg") no-repeat center center, linear-gradient(45deg, $main-color 42%, $tertiary-color 62%);
+    }
+
+    &__field-facebook a {
+      background: url("../images/facebook-white.svg") no-repeat center center, linear-gradient(45deg, $main-color 42%, $tertiary-color 62%);
+    }
+
+    &__field-bitbucket a {
+      background: url("../images/bitbucket-white.svg") no-repeat center center, linear-gradient(45deg, $main-color 42%, $tertiary-color 62%);
+    }
+
+    &__field-github a {
+      background: url("../images/github-white.svg") no-repeat center center, linear-gradient(45deg, $main-color 42%, $tertiary-color 62%);
+    }
+
+    &__field-linkedin a {
+      background: url("../images/linkedin-white.svg") no-repeat center center, linear-gradient(45deg, $main-color 42%, $tertiary-color 62%);
+    }
+  }
+}
+
+.speaker.teaser {
+  .speaker__field-photo {
+    background: $grey;
+    text-align: center;
+    overflow:hidden;
+    margin-bottom: 10px;
+    img {
+      display: inline-block;
+      vertical-align: bottom;
+      height:180px;
+      width: auto;
+    }
+  }
+  a {
+    text-decoration: none;
+    h3 {
+      color: $secondary-color;
+      font-size: 24px;
+      line-height: 1.3em;
+    }
+    &:hover h3 {
+      color: $main-color;
+    }
+  }
+  .field--name-field-company a{
+    color:$main-color;
+    font-family:$header-font;
+    font-weight:bold;
+    text-transform: uppercase;
+    font-size:20px;
+    line-height: 1em;
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+  .field--name-field-twitter a{
+    color: $text-color;
+    font-family:$header-font;
+    font-weight:bold;
+    text-transform: uppercase;
+    font-size:14px;
+    line-height: 1em;
+    &:hover{
+      text-decoration: underline;
+    }
   }
 }

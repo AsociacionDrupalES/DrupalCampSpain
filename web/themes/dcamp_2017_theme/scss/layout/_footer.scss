@@ -106,6 +106,19 @@
 
 #block-dcamp-2017-theme-footer {
   background: darken($secondary-color, 15);
+  .copyright{
+color:white;
+ font-weight:bold;
+    text-transform: uppercase;
+    margin-top:30px;
+    a{
+    text-decoration: none;
+      color:$main-color;
+      &:hover{
+        color:white;
+      }
+    }
+  }
 }
 
 #block-mainnavigation {

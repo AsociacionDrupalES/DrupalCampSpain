@@ -4,25 +4,25 @@
  * Theme override to display a node type Speaker.
  */
 #}
-{%
-  set classes = [
-    'node',
-    node.bundle|clean_class,
-    node.isPromoted() ? 'node--promoted',
-    node.isSticky() ? 'node--sticky',
-    not node.isPublished() ? 'node--unpublished',
-    view_mode ? node.bundle|clean_class ~ '--' ~ view_mode|clean_class,
-    'clearfix'
-  ]
-%}
+{% set classes = [
+'node',
+node.bundle|clean_class,
+node.isPromoted() ? 'node--promoted',
+node.isSticky() ? 'node--sticky',
+not node.isPublished() ? 'node--unpublished',
+view_mode ? node.bundle|clean_class ~ '--' ~ view_mode|clean_class,
+'clearfix'
+] %}
 
 {% set title_classes = [
-  'node__title',
-  node.bundle|clean_class ~ '__title',
+'node__title',
+node.bundle|clean_class ~ '__title',
 ] %}
 {{ attach_library('classy/node') }}
 <article{{ attributes.addClass(classes) }}>
-  {{ content.field_photo }}
+  <div class="speaker-photo">
+    {{ content.field_photo }}
+  </div>
   <div class="node__content-wrapper">
     <header{{ content_attributes.addClass('node__header') }}>
       <h1 property="schema:name" {{ title_attributes.addClass(title_classes) }}>

@@ -12,11 +12,11 @@ dependencies:
     - field.field.node.speaker.field_github
     - field.field.node.speaker.field_photo
     - field.field.node.speaker.field_twitter
+    - image.style.speaker
     - node.type.speaker
-    - responsive_image.styles.top_detail
   module:
+    - image
     - link
-    - responsive_image
     - text
     - user
 id: node.speaker.full
@@ -89,10 +89,10 @@ content:
     weight: 0
     label: hidden
     settings:
-      responsive_image_style: top_detail
+      image_style: speaker
       image_link: ''
     third_party_settings: {  }
-    type: responsive_image
+    type: image
   field_twitter:
     weight: 3
     label: hidden

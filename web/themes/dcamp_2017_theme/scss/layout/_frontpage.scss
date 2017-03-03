@@ -37,7 +37,7 @@
 
     padding: 5em 1em;
     .sub {
-      max-width: $desktop;
+      max-width: $max-width;
       margin: 0 auto;
       .field--name-body {
         a {
@@ -71,7 +71,7 @@
     padding: 0;
     position: relative;
     overflow: hidden;
-    background: #fff url('../images/pattern.jpg') repeat top left;
+    background: #fff url('../images/pattern.png') repeat top left;
     z-index: 1;
     .letter {
       position: absolute;
@@ -150,8 +150,15 @@
           margin-left: -$gutter-width;
           .views-field {
             margin: 0 $gutter-width;
-            width: calc(100% / 4);
+            width: calc(100% / 4 - #{$gutter-width}*2);
             float: left;
+            margin-bottom:2em;
+            @include breakpoint(tablet){
+              width: calc(100% / 2 - #{$gutter-width}*2);
+            }
+            @include breakpoint(mobile){
+              width: calc(100% / 1 - #{$gutter-width}*2);
+            }
           }
         }
         > .button {
@@ -167,7 +174,7 @@
             background: white;
             color: $main-color;
             position: relative;
-            z-index: 99;
+            z-index: 2;
             &:hover {
               background: $secondary-color;
               color: white;
@@ -270,7 +277,6 @@
     }
     .view.view-sponsors .view-content {
       width: 100%;
-      text-align: center;
       h3 {
         clear: both;
         text-align: left;
