@@ -129,3 +129,13 @@ function _dcamp_add_dummy_sponsors_and_default_logo() {
     ])->save();
   }
 }
+
+/**
+ * Add default speaker image
+ */
+function _dcamp_add_default_speaker_image(){
+  $data = file_get_contents(drupal_get_path('module', 'dcamp') . '/images/default_speaker_image.png');
+  $file = file_save_data($data, 'public://default_speaker_image.png', FILE_EXISTS_REPLACE);
+  $file->set('uuid', 'default_speaker_image');
+  $file->save();
+}
