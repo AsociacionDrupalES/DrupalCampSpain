@@ -26,7 +26,7 @@
   <div class="node__content-wrapper">
     <header{{ content_attributes.addClass('node__header') }}>
       <h1 property="schema:name" {{ title_attributes.addClass(title_classes) }}>
-        {{ content.field_full_name }}
+        {{ label }}
       </h1>
       {% if display_submitted %}
         <footer class="node__meta">
