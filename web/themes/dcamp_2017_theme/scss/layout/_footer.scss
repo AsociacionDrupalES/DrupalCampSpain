@@ -1,11 +1,14 @@
 #block-newsletterblock {
   text-align: center;
-  padding: 4em 0;
+  padding: 4em 1em;
   @include linear-gradient();
   h2 {
     color: $secondary-color;
     font-size: 2.4em;
     margin-bottom: 0;
+    @include breakpoint(mobile) {
+      font-size: 1.8em;
+    }
   }
   .description {
     color: white;
@@ -14,19 +17,19 @@
     font-weight: 600;
   }
 
-  .note{
-    max-width:500px;
-    text-align:left;
-    color:white;
-    margin:0 auto;
-    font-weight:bold;
+  .note {
+    max-width: 500px;
+    text-align: left;
+    color: white;
+    margin: 0 auto;
+    font-weight: bold;
     opacity: .5;
-margin-top:4px;
+    margin-top: 4px;
   }
 
   form {
-    max-width:500px;
-    margin:0 auto;
+    max-width: 500px;
+    margin: 0 auto;
     input[type="email"] {
       border: medium none;
       font-size: 80%;
@@ -35,23 +38,23 @@ margin-top:4px;
       padding: 0 0 0 20px;
       color: #000;
       border-radius: 0;
-      width:100%;
+      width: 100%;
 
     }
-    label{
-      display:none;
+    label {
+      display: none;
     }
-    .form-type-email{
-      width:80%;
-      margin:0;
-      float:left;
+    .form-type-email {
+      width: 80%;
+      margin: 0;
+      float: left;
     }
     @include form-placeholder();
 
     input[type="submit"] {
       @include button;
       margin: 0;
-      width:20%;
+      width: 20%;
       background: darken($main-color, 10) none repeat scroll 0 0;
       border: medium none;
       height: 50px;
@@ -69,29 +72,80 @@ margin-top:4px;
     }
   }
 }
+
 #block-dcamp-2017-theme-footer,
-#block-mainnavigation{
-  background:$secondary-color;
-  text-align:center;
-  padding:2em 0;
+#block-mainnavigation {
+  background: $secondary-color;
+  text-align: center;
+  padding: 2em 1em;
   ul.menu,
-  ul{
-    margin:0;
-    padding:0;
-    text-align:center;
-    li{
-      margin:10px;
-      display:inline-block;
-      a{
-        color:white;
-        text-transform:uppercase;
-        text-decoration:none;
-        font-weight:bold;
-        font-size:.9em;
+  ul {
+    &:not(.contextual-links) {
+
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      li {
+        margin: 10px;
+        display: inline-block;
+        @include breakpoint(mobile) {
+          display: block;
+          text-align: left;
+        }
+        a {
+          color: white;
+          text-transform: uppercase;
+          text-decoration: none;
+          font-weight: bold;
+          font-size: 1em;
+        }
       }
     }
   }
 }
-#block-dcamp-2017-theme-footer{
-  background:darken($secondary-color,10);
+
+#block-dcamp-2017-theme-footer {
+  background: darken($secondary-color, 15);
+}
+
+#block-mainnavigation {
+
+}
+
+footer {
+  .social {
+    height: 0;
+    display: block;
+    text-align: center;
+    a {
+      display: inline-block;
+      margin: 0 5px;
+      height: 40px;
+      position: relative;
+      z-index: 99;
+      width: 40px;
+      border-radius: 50%;
+      color: $tertiary-color;
+      background: white;
+      margin-top: -20px;
+      &:before {
+        content: '\F099';
+        font-family: 'icons';
+        position: absolute;
+        font-size: 20px;
+        left: 50%;
+        top: 50%;
+        margin-left: -10px;
+        margin-top: -10px;
+        width: 20px;
+      }
+      &.facebook:before {
+        content: '\F09A';
+      }
+      &:hover {
+        background: $tertiary-color;
+        color: white;
+      }
+    }
+  }
 }

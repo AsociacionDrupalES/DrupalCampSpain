@@ -34,7 +34,8 @@
 
 .frontpage-wrapper {
   .section {
-    padding: 5em 0;
+
+    padding: 5em 1em;
     .sub {
       max-width: $desktop;
       margin: 0 auto;
@@ -49,6 +50,9 @@
       color: $secondary-color;
       position: relative;
       font-size: 2.7em;
+      @include breakpoint(mobile) {
+        font-size: 1.8em;
+      }
       &:after {
         position: absolute;
         bottom: -10px;
@@ -107,6 +111,9 @@
           @include linear-gradient-text('left', $main-color, $tertiary-color);
           display: inline-block;
           font-size: 6em;
+          @include breakpoint(mobile) {
+            font-size: 2em;
+          }
         }
         .arrow {
           @include bounce-arrow;
@@ -122,6 +129,9 @@
       text-align: center;
       font-size: 30px;
       padding: 20px;
+      @include breakpoint(mobile) {
+        font-size: 14px;
+      }
     }
   }
   .maps {
@@ -130,6 +140,7 @@
     }
   }
   #speakers {
+    overflow: hidden;
     .sub {
       > .content {
         .view {
@@ -187,6 +198,26 @@
               font-size: 1.2em;
             }
           }
+          @include breakpoint(mobile) {
+            padding: 1em;
+            .button {
+              float: none;
+              display: block;
+              margin-bottom: 20px;
+            }
+            .content {
+              padding-left: 30px;
+              &:before {
+                font-size: 20px;
+              }
+              h3 {
+                font-size: 20px;
+              }
+              .deadline {
+                font-size: 16px;
+              }
+            }
+          }
         }
       }
     }
@@ -237,12 +268,12 @@
     h3 {
 
     }
-    .view.view-sponsors .view-content{
-      width: calc(100% + #{$gutter-width}*2);
-      text-align:center;
-      h3{
-        clear:both;
-        text-align:left;
+    .view.view-sponsors .view-content {
+      width: 100%;
+      text-align: center;
+      h3 {
+        clear: both;
+        text-align: left;
         font-size: 1em;
         font-weight: normal;
         font-family: $body-font;
@@ -251,32 +282,42 @@
         padding-bottom: 1em;
         margin: 2em $gutter-width;
       }
-      > div{
-        display:inline-block;
-        margin:$gutter-width -1px;
+      > div {
+        display: inline-block;
+        margin: $gutter-width -1px;
 
-        &.platinum{
-          width:calc(100%/2 - #{$gutter-width}*2);
+        &.platinum {
+          width: calc(100% / 2 - #{$gutter-width} * 2);
         }
-        &.diamond{
-          width:calc(100%/3 - #{$gutter-width}*2);
+        &.diamond {
+          width: calc(100% / 3 - #{$gutter-width} * 2);
         }
 
-        &.gold{
-          width:calc(100%/4 - #{$gutter-width}*2);
+        &.gold {
+          width: calc(100% / 4 - #{$gutter-width} * 2);
         }
-        &.silver{
-          width:calc(100%/6 - #{$gutter-width}*2);
+        &.silver {
+          width: calc(100% / 6 - #{$gutter-width} * 2);
         }
-        > div{
-          margin:$gutter-width;
-          img{
-            width:100%;
-            height:auto;
+        > div {
+          margin: $gutter-width;
+          img {
+            width: 100%;
+            height: auto;
           }
         }
       }
-    }
 
+      @include breakpoint(mobile) {
+
+        width: 100%;
+        > div {
+          width: calc(100% / 2 - #{$gutter-width}) !important;
+        }
+        h3 {
+          margin: 0;
+        }
+      }
+    }
   }
 }

@@ -1,3 +1,6 @@
 main{
   margin-top:$header-height;
+  @include breakpoint(mobile){
+    margin-top:$header-height-mobile;
+  }
 }
