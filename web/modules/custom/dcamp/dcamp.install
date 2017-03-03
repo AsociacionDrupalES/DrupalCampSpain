@@ -13,6 +13,7 @@ use Psr\Log\LogLevel;
  */
 function dcamp_install(){
   _dcamp_add_dummy_sponsors_and_default_logo();
+  _dcamp_add_default_speaker_image();
 }
 
 /**
@@ -131,6 +132,13 @@ function _dcamp_add_dummy_sponsors_and_default_logo() {
 }
 
 /**
+ * Add default speaker image.
+ */
+function dcamp_update_8105() {
+  _dcamp_add_default_speaker_image();
+}
+
+/**
  * Add default speaker image
  */
 function _dcamp_add_default_speaker_image(){
@@ -139,3 +147,4 @@ function _dcamp_add_default_speaker_image(){
   $file->set('uuid', 'default_speaker_image');
   $file->save();
 }
+
