@@ -1,6 +1,6 @@
 uuid: a0b8267c-00b5-4eea-8adc-177ede02dafe
 langcode: en
-status: true
+status: false
 dependencies:
   module:
     - node
@@ -10,8 +10,8 @@ _core:
   default_config_hash: 7rR9chwXvdM2H8OYMAYx9Zj3GGlPMrZp_M3ZA4thYTk
 id: dcamp_2017_theme_page_title
 theme: dcamp_2017_theme
-region: content
-weight: -7
+region: '-1'
+weight: 0
 provider: null
 plugin: page_title_block
 settings:

@@ -9,7 +9,7 @@ dependencies:
 id: mailchimpsubscriptionformdcampmailchimp
 theme: dcamp_2017_theme
 region: '-1'
-weight: -5
+weight: -7
 provider: null
 plugin: 'mailchimp_signup_subscribe_block:dcamp_mailchimp'
 settings:
