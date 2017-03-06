@@ -1,3 +1,24 @@
 main{
   margin-top:$header-height;
+  @include breakpoint(mobile){
+    margin-top:$header-height-mobile;
+  }
+  .messages{
+    background:$grey;
+    padding:$gutter-width;
+    &.messages--status{
+      background:green;
+      color:white;
+      a{
+        color:white;
+        font-weight:bold;
+      }
+    }
+  }
+  nav.tabs{
+    margin: 20px $gutter-width 0 $gutter-width;
+    ul{
+      margin:0;
+    }
+  }
 }

@@ -5,8 +5,8 @@
  * Install hooks for dcamp module.
  */
 
-use Drupal\node\Entity\Node;
 use Drupal\block_content\Entity\BlockContent;
+use Drupal\node\Entity\Node;
 use Psr\Log\LogLevel;
 
 /**
@@ -14,7 +14,7 @@ use Psr\Log\LogLevel;
  */
 function dcamp_install(){
   _dcamp_add_dummy_sponsors_and_default_logo();
-  _dcamp_add_content_blocks_for_frontpage();
+  _dcamp_add_default_speaker_image();
 }
 
 /**
@@ -133,62 +133,74 @@ function _dcamp_add_dummy_sponsors_and_default_logo() {
 }
 
 /**
- * Add content blocks for the frontpage.
+ * Add default speaker image.
  */
-function _dcamp_add_content_blocks_for_frontpage() {
-  $contentBlocks = [
-    'business_day' => [
-      'title' => t('Dcamp 2017 Business day'),
-      'body' => <<<'EOD'
-<p>On Friday, in parallel with DrupalCamp, we will host a Business Day for
-the Spanish Drupal market leaders.<p>
-<p>This is a perfect opportunity to meet other companies, take the pulse of
- the market establish synergies.</p>
-EOD
-    ],
-    'venue' => [
-      'title' => t('Dcamp 2017 venue'),
-      'body' => <<<'EOD'
-<p><a href="http://www.lacasaencendida.es">La Casa Encendida will host the
-event. It's renowed for its environmental friendly approach and for
-hosting all kinds of national an international events.</p>
-<p>Located at the heart of Madrid, and a ten minutes walk from the main Railway
-station, La Casa Encendida offers a superb foundation for this year's
-DrupalCamp.</p>
-EOD
-    ],
-    'become_a_sponsor' => [
-      'title' => t('Dcamp 2017 Become a sponsor'),
-      'body' => <<<'EOD'
-<p>Become part of DrupalCamp Spain by sponsoring the event.</p>
-EOD
-    ],
-    'community' => [
-      'title' => t('Dcamp 2017 Community'),
-      'body' => <<<'EOD'
-<p>Join the Spanish Drupal Association as an organization or an individual
-to increase your presence within the community and support its events.</p>
-EOD
-    ],
-  ];
-  foreach ($contentBlocks as $blockUuid => $data) {
-    BlockContent::create([
-      'type' => 'basic',
-      'uuid' => 'dcamp_2017_' . $blockUuid,
-      'info' => $data['title'],
-      'body' => [
-        'value' => $data['body'],
-        'format' => 'basic_html',
-      ]
-    ])->save();
-  }
+function dcamp_update_8105() {
+  _dcamp_add_default_speaker_image();
+}
+
+/**
+ * Add default speaker image
+ */
+function _dcamp_add_default_speaker_image(){
+  $data = file_get_contents(drupal_get_path('module', 'dcamp') . '/images/default_speaker_image.png');
+  $file = file_save_data($data, 'public://default_speaker_image.png', FILE_EXISTS_REPLACE);
+  $file->set('uuid', 'default_speaker_image');
+  $file->save();
 }
 
 /**
  * Sets the new theme and homepage.
  */
-function dcamp_update_8105() {
+function dcamp_update_8106() {
   $config = \Drupal::configFactory()->getEditable('system.site');
   $config->set('page.front', '/frontpage');
   $config->save();
+}
+
+/**
+ * Update contents for some of the dummy blocks.
+ */
+function dcamp_update_8107() {
+  $entity_repository = \Drupal::service('entity.repository');
+
+  $content_blocks = [
+    'business_day' => <<<'EOD'
+  <p>On Friday, in parallel with DrupalCamp, we will host a Business Day for
+  the Spanish Drupal market leaders.<p>
+  <p>This is a perfect opportunity to meet other companies, take the pulse of
+  the market establish synergies.</p>
+EOD
+    ,
+    'venue' => <<<'EOD'
+  <p>The venue for this year's DrupalCamp is
+  <a href="http://www.lacasaencendida.es">La Casa Encendida</a>. It's renowned
+  for its environmental friendly approach and for hosting all kinds of national
+  an international events.</p>
+  <p>Located at the heart of Madrid, and a ten minutes walk from the main Railway
+  station, La Casa Encendida offers a superb foundation for this year's
+  DrupalCamp.</p>
+EOD
+    ,
+    'become_a_sponsor' => <<<'EOD'
+  <p>Become part of DrupalCamp Spain by sponsoring the event.</p>
+  <p><a href="https://drive.google.com/open?id=0B2z682qPZOUremtDWVdNbjJ2M0k" target="_blank">Download the PDF</a></p> 
+EOD
+    ,
+    'community' => <<<'EOD'
+  The Spanish Drupal community grows every year. Companies, freelancers, and
+  students are part of one of the most influential families in the web industry.
+  <p><a href="http://asociaciondrupal.es/" class="button" target="_blank">Join
+  the Spanish Drupal Association</a><p>
+EOD
+    ,
+  ];
+
+  foreach ($content_blocks as $uuid => $body) {
+    $block = $entity_repository->loadEntityByUuid('block_content', 'dcamp_2017_' . $uuid);
+    $block->set('body', [
+      'value' => t($body),
+      'format' => 'basic_html',
+    ])->save();
+  }
 }

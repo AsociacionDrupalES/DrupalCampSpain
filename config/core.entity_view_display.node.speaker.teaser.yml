@@ -9,11 +9,10 @@ dependencies:
     - field.field.node.speaker.field_company
     - field.field.node.speaker.field_drupal_org
     - field.field.node.speaker.field_facebook
-    - field.field.node.speaker.field_full_name
     - field.field.node.speaker.field_github
     - field.field.node.speaker.field_photo
     - field.field.node.speaker.field_twitter
-    - image.style.thumbnail
+    - image.style.speaker
     - node.type.speaker
   module:
     - image
@@ -26,7 +25,7 @@ mode: teaser
 content:
   field_company:
     type: link
-    weight: 3
+    weight: 1
     label: hidden
     settings:
       trim_length: 80
@@ -35,20 +34,24 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-  field_full_name:
-    type: string
-    weight: 6
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
   field_photo:
     type: image
     weight: 0
     label: hidden
     settings:
-      image_style: thumbnail
-      image_link: content
+      image_style: speaker
+      image_link: ''
+    third_party_settings: {  }
+  field_twitter:
+    type: link
+    weight: 2
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
     third_party_settings: {  }
 hidden:
   body: true
@@ -56,6 +59,5 @@ hidden:
   field_drupal_org: true
   field_facebook: true
   field_github: true
-  field_twitter: true
   langcode: true
   links: true

@@ -1,0 +1,22 @@
+uuid: 2ef10f22-1e1b-42a3-a754-5ac1753a9a24
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.speaker
+id: node.speaker.promote
+field_name: promote
+entity_type: node
+bundle: speaker
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

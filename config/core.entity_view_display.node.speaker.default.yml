@@ -8,7 +8,6 @@ dependencies:
     - field.field.node.speaker.field_company
     - field.field.node.speaker.field_drupal_org
     - field.field.node.speaker.field_facebook
-    - field.field.node.speaker.field_full_name
     - field.field.node.speaker.field_github
     - field.field.node.speaker.field_photo
     - field.field.node.speaker.field_twitter
@@ -74,13 +73,6 @@ content:
       target: ''
     third_party_settings: {  }
     type: link
-  field_full_name:
-    weight: 1
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
   field_github:
     weight: 8
     label: hidden

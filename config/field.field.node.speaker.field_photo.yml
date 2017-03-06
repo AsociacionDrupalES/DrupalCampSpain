@@ -28,7 +28,7 @@ settings:
   title_field: false
   title_field_required: false
   default_image:
-    uuid: ''
+    uuid: default_speaker_image
     alt: ''
     title: ''
     width: null

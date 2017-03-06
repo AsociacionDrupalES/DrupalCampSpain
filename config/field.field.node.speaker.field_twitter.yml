@@ -12,7 +12,7 @@ field_name: field_twitter
 entity_type: node
 bundle: speaker
 label: Twitter
-description: ''
+description: 'Link text for Twitter handle'
 required: false
 translatable: false
 default_value: {  }

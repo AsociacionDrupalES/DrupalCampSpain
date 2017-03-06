@@ -19,58 +19,15 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  *   admin_label = @Translation("DrupalCamp block for landing for staying updated")
  * )
  */
-class DcampLandingStayUpdatedBlock extends DcampLandingBlockBase implements ContainerFactoryPluginInterface{
-
-  /**
-   * @var QueryFactory $queryFactory
-   */
-  protected $queryFactory;
-
-  /**
-   * Constructs a new Node Type object.
-   */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, QueryFactory $query_factory) {
-    parent::__construct($configuration, $plugin_id, $plugin_definition);
-    $this->queryFactory = $query_factory;
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
-    return new static(
-      $configuration,
-      $plugin_id,
-      $plugin_definition,
-      $container->get('entity.query')
-    );
-  }
+class DcampLandingStayUpdatedBlock extends NewsletterBlock implements ContainerFactoryPluginInterface{
 
   /**
    * {@inheritdoc}
    */
   public function build() {
     $build = parent::build();
-    $mailchimp_config = $this->queryFactory->get('mailchimp_signup')->execute();
 
-    // We assume there is only one mailchimp signup configuration entity.
-
-    if(empty($mailchimp_config)){
-      drupal_set_message($this->t('Please configure a Mailchimp service'));
-      return $build;
-    }
-
-    $signup_id = reset($mailchimp_config);
-    $signup = mailchimp_signup_load($signup_id);
-
-    $form = new MailchimpSignupPageForm();
-
-    $form_id = 'mailchimp_signup_subscribe_block_' . $signup->id . '_form';
-    $form->setFormID($form_id);
-    $form->setSignup($signup);
-
-    $form_array = \Drupal::formBuilder()->getForm($form);
-
+    $form_array = $build['#form'];
     // Tweak the form.
     $form_array['#prefix'] = '<h3>' . $this->t('Subscribe to the newsletter') .'</h3>';
     $form_array['mergevars']['EMAIL']['#title'] = '';

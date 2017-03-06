@@ -37,4 +37,6 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
+  comment: true
+  field_tags: true
   langcode: true

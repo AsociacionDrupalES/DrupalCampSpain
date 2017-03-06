@@ -35,5 +35,7 @@ content:
     third_party_settings: {  }
     label: hidden
 hidden:
+  comment: true
+  field_tags: true
   langcode: true
   links: true
