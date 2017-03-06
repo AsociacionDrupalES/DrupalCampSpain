@@ -1,0 +1,67 @@
+.node {
+  &__content {
+    @include breakpoint(big) {
+      width: 60%;
+      float: right;
+      margin-right: 0;
+    }
+
+    &-wrapper {
+      max-width: $max-width;
+      margin: 4rem auto 0;
+      padding: 0 10px;
+
+      @include breakpoint(big) {
+        padding: 0 $gutter-width;
+      }
+    }
+  }
+
+  &__header {
+    position: inherit;
+    background: transparent;
+
+    @include breakpoint(big) {
+      width: 35%;
+      float: left;
+      margin-right: 4%;
+    }
+  }
+
+  &__title {
+    margin-top: 1rem;
+    font-family: $header-font;
+    text-transform: uppercase;
+    color: $secondary-color;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 35px;
+      height: 5px;
+      margin-top: 5px;
+      background-color: $secondary-color;
+    }
+  }
+
+  &__field-photo {
+    width: 100%;
+
+    img,
+    picture {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  &__body {
+    @include breakpoint(mobile) {
+      margin-top: 3rem;
+    }
+  }
+}
+
+// Avoid overrides.
+.toolbar-vertical header.node__header {
+  margin-top: 0rem;
+}

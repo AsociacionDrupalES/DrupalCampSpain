@@ -1,0 +1,117 @@
+uuid: 7096e86b-b2d3-424f-bd08-269aacc9b380
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.speaker.body
+    - field.field.node.speaker.field_bitbucket
+    - field.field.node.speaker.field_company
+    - field.field.node.speaker.field_drupal_org
+    - field.field.node.speaker.field_facebook
+    - field.field.node.speaker.field_full_name
+    - field.field.node.speaker.field_github
+    - field.field.node.speaker.field_photo
+    - field.field.node.speaker.field_twitter
+    - node.type.speaker
+    - responsive_image.styles.top_detail
+  module:
+    - link
+    - responsive_image
+    - text
+    - user
+id: node.speaker.full
+targetEntityType: node
+bundle: speaker
+mode: full
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 8
+    settings: {  }
+    third_party_settings: {  }
+  field_bitbucket:
+    weight: 6
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+  field_company:
+    weight: 2
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+  field_drupal_org:
+    weight: 4
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+  field_facebook:
+    weight: 5
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+  field_full_name:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_github:
+    weight: 7
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+  field_photo:
+    weight: 0
+    label: hidden
+    settings:
+      responsive_image_style: top_detail
+      image_link: ''
+    third_party_settings: {  }
+    type: responsive_image
+  field_twitter:
+    weight: 3
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+hidden:
+  langcode: true
+  links: true
