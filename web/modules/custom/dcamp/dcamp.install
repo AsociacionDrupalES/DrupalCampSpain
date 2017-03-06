@@ -188,10 +188,6 @@ EOD
  * Sets the new theme and homepage.
  */
 function dcamp_update_8105() {
-  $entity = \Drupal::entityTypeManager()->getStorage('dcamp')->load('2017');
-  $entity->set('landing_theme', 'dcamp_2017_theme');
-  $entity->save();
-
   $config = \Drupal::configFactory()->getEditable('system.site');
   $config->set('page.front', '/frontpage');
   $config->save();
