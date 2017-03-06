@@ -37,7 +37,7 @@ node.bundle|clean_class ~ '__title',
           </div>
         </footer>
       {% endif %}
-      {{ content|without('field_full_name', 'field_photo', 'body') }}
+      {{ content|without('title', 'field_photo', 'body') }}
     </header>
     <div class="node__content">
       {{ content.body }}
