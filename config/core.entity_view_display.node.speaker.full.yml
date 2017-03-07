@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.speaker.field_drupal_org
     - field.field.node.speaker.field_facebook
     - field.field.node.speaker.field_github
+    - field.field.node.speaker.field_linkedin
     - field.field.node.speaker.field_photo
     - field.field.node.speaker.field_twitter
     - image.style.speaker
@@ -31,39 +32,6 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_bitbucket:
-    weight: 6
-    label: hidden
-    settings:
-      trim_length: 80
-      url_only: false
-      url_plain: false
-      rel: ''
-      target: ''
-    third_party_settings: {  }
-    type: link
-  field_company:
-    weight: 2
-    label: hidden
-    settings:
-      trim_length: 80
-      url_only: false
-      url_plain: false
-      rel: ''
-      target: ''
-    third_party_settings: {  }
-    type: link
-  field_drupal_org:
-    weight: 4
-    label: hidden
-    settings:
-      trim_length: 80
-      url_only: false
-      url_plain: false
-      rel: ''
-      target: ''
-    third_party_settings: {  }
-    type: link
-  field_facebook:
     weight: 5
     label: hidden
     settings:
@@ -74,8 +42,8 @@ content:
       target: ''
     third_party_settings: {  }
     type: link
-  field_github:
-    weight: 7
+  field_company:
+    weight: 1
     label: hidden
     settings:
       trim_length: 80
@@ -85,6 +53,50 @@ content:
       target: ''
     third_party_settings: {  }
     type: link
+  field_drupal_org:
+    weight: 3
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+  field_facebook:
+    weight: 4
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+  field_github:
+    weight: 6
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+  field_linkedin:
+    type: link
+    weight: 7
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
   field_photo:
     weight: 0
     label: hidden
@@ -94,7 +106,7 @@ content:
     third_party_settings: {  }
     type: image
   field_twitter:
-    weight: 3
+    weight: 2
     label: hidden
     settings:
       trim_length: 80

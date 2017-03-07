@@ -11,7 +11,7 @@ id: node.speaker.field_linkedin
 field_name: field_linkedin
 entity_type: node
 bundle: speaker
-label: linkedin
+label: LinkedIn
 description: ''
 required: false
 translatable: false
@@ -19,5 +19,5 @@ default_value: {  }
 default_value_callback: ''
 settings:
   link_type: 16
-  title: 2
+  title: 0
 field_type: link

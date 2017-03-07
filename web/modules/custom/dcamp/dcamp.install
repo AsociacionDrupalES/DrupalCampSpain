@@ -204,3 +204,80 @@ EOD
     ])->save();
   }
 }
+
+/**
+ * Create featured speaker nodes.
+ */
+function dcamp_update_8109() {
+  $headshots_path = 'public://speakers';
+  file_prepare_directory($headshots_path, FILE_CREATE_DIRECTORY);
+
+  $speakers = [
+    'cris' => [
+      'name' => 'Cristina Chumillas',
+      'headshot' => 'https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAdIAAAAJDMxMjUzOWMxLTQ5NDUtNGI2Ni1iNzczLWUzNGJmMWYyZjYwOA.jpg',
+      'bio' => <<<'EOD'
+Currently working as Designer and Drupal Frontend developer. I also have Graphic Design and Online
+Marketing background.
+EOD
+      ,
+      'twitter' => 'https://twitter.com/chumillas',
+    ],
+    'sally' => [
+      'name' => 'Sally Young',
+      'headshot' => 'https://assets.lullabot.com/styles/dynamic_resize/w640/bios/headshots-comp_0004_sally.jpg.jpg',
+      'bio' => <<<'EOD'
+As well as being an experienced back-end Drupal developer, Sally also spends quite a lot of time building APIs,
+writing JavaScript and working on front-end tools. A long-time proponent of open source, her first experiences
+were hacking around with bulletin boards in Perl and PHP, including contributing the original smiley pack for phpBB 1.0.
+
+Sally earned her Masters degree in Computer Science from the University of London, where she applied genetic
+algorithms to the lexical categorisation of words for her dissertation, and thus learned many valuable
+lessons in processing high volumes of data and begging universities for CPU time. During her time there she
+got to work with the BAFTA winning SodaRace project and also worked on a number of courses, helping students
+with their programming in Java, Assembly and Prolog. Between her Bachelors and Masters year she won a grant
+sponsored by the Nuffield Foundation to develop, test and document verification systems in the areas of
+category theory and the verification of properties in signal flow graphs.
+EOD
+      ,
+      'twitter' => 'https://twitter.com/justafish',
+    ],
+    'mike' => [
+      'name' => 'Mike Herchel',
+      'headshot' => 'https://assets.lullabot.com/styles/dynamic_resize/w640/bio_image/headshot-mherchel.jpg',
+      'bio' => <<<'EOD'
+Mike Herchel has been passionate about web development since creating his first website in 2001. He co-owned
+and operated a small development and design agency in the mid-2000s, until moving to a hybrid
+sys-admin / web developer role at a medium size non-profit in 2007.
+
+Mike started using Drupal in 2008, and has been involved in the Drupal community since 2010. He enjoys
+presenting at conferences, sharing knowledge as much as possible, and writing about himself in the third person.
+You can generally find him presenting on usability, front-end development, and many other topics at
+various web development conferences.
+EOD
+      ,
+      'twitter' => 'https://twitter.com/mikeherchel',
+    ],
+  ];
+
+  foreach ($speakers as $key => $speaker) {
+    // Create file object from remote URL.
+    $data = file_get_contents($speaker['headshot']);
+    $file = file_save_data($data, $headshots_path . '/' . $key . '.jpg', FILE_EXISTS_REPLACE);
+
+    // Create node object with attached file.
+    $node = Node::create([
+      'type' => 'speaker',
+      'title' => $speaker['name'],
+      'field_photo' => [
+        'target_id' => $file->id(),
+      ],
+      'body' => [
+        'value' => $speaker['bio'],
+        'format' => 'basic_html',
+      ],
+      'field_twitter' => $speaker['twitter'],
+    ]);
+    $node->save();
+  }
+}
