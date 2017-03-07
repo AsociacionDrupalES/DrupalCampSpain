@@ -184,7 +184,7 @@ EOD
     ,
     'become_a_sponsor' => <<<'EOD'
   <p>Become part of DrupalCamp Spain by sponsoring the event.</p>
-  <p><a href="https://drive.google.com/open?id=0B2z682qPZOUremtDWVdNbjJ2M0k" target="_blank">Download the PDF</a></p> 
+  <p><a href="https://drive.google.com/open?id=0B2z682qPZOUremtDWVdNbjJ2M0k" target="_blank">Download the PDF</a></p>
 EOD
     ,
     'community' => <<<'EOD'
@@ -217,8 +217,9 @@ function dcamp_update_8108() {
       'name' => 'Cristina Chumillas',
       'headshot' => 'https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAdIAAAAJDMxMjUzOWMxLTQ5NDUtNGI2Ni1iNzczLWUzNGJmMWYyZjYwOA.jpg',
       'bio' => <<<'EOD'
-Currently working as Designer and Drupal Frontend developer. I also have Graphic Design and Online
-Marketing background.
+Cristina Chumillas studied design and discovered Drupal while she was a freelancer. She got involved in the Catalan Drupal Community for the Drupal Developer Days Barcelona in 2012 and she has been helping in the Spanish and Catalan communities since then.
+
+Working as a designer and frontend developer at Ymbra, her contributions to Drupal Core are focused on frontend and UX. She is part of the new initiative to create a new user-facing core theme for Drupal 8.
 EOD
       ,
       'twitter' => 'https://twitter.com/chumillas',
