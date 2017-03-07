@@ -208,7 +208,7 @@ EOD
 /**
  * Create featured speaker nodes.
  */
-function dcamp_update_8109() {
+function dcamp_update_8108() {
   $headshots_path = 'public://speakers';
   file_prepare_directory($headshots_path, FILE_CREATE_DIRECTORY);
 
