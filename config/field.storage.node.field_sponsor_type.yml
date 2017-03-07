@@ -23,6 +23,9 @@ settings:
     -
       value: silver
       label: Silver
+    -
+      value: collaborators
+      label: Collaborators
   allowed_values_function: ''
 module: options
 locked: false
