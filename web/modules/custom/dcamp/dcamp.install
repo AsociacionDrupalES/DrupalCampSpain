@@ -184,7 +184,7 @@ EOD
     ,
     'become_a_sponsor' => <<<'EOD'
   <p>Become part of DrupalCamp Spain by sponsoring the event.</p>
-  <p><a href="https://drive.google.com/open?id=0B2z682qPZOUremtDWVdNbjJ2M0k" target="_blank">Download the PDF</a></p> 
+  <p><a href="https://drive.google.com/open?id=0B2z682qPZOUremtDWVdNbjJ2M0k" target="_blank">Download the PDF</a></p>
 EOD
     ,
     'community' => <<<'EOD'
@@ -202,5 +202,86 @@ EOD
       'value' => t($body),
       'format' => 'basic_html',
     ])->save();
+  }
+}
+
+/**
+ * Create featured speaker nodes.
+ */
+function dcamp_update_8108() {
+  $headshots_path = 'public://speakers';
+  file_prepare_directory($headshots_path, FILE_CREATE_DIRECTORY);
+
+  $speakers = [
+    'cris' => [
+      'name' => 'Cristina Chumillas',
+      'headshot' => 'https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAdIAAAAJDMxMjUzOWMxLTQ5NDUtNGI2Ni1iNzczLWUzNGJmMWYyZjYwOA.jpg',
+      'bio' => <<<'EOD'
+Cristina Chumillas studied design and discovered Drupal while she was a freelancer. She got involved in the Catalan
+Drupal Community for the Drupal Developer Days Barcelona in 2012 and she has been helping in the Spanish and
+Catalan communities since then.
+
+Working as a designer and frontend developer at Ymbra, her contributions to Drupal Core are focused on frontend
+and UX. She is part of the new initiative to create a new user-facing core theme for Drupal 8.
+EOD
+      ,
+      'twitter' => 'https://twitter.com/chumillas',
+    ],
+    'sally' => [
+      'name' => 'Sally Young',
+      'headshot' => 'https://assets.lullabot.com/styles/dynamic_resize/w640/bios/headshots-comp_0004_sally.jpg.jpg',
+      'bio' => <<<'EOD'
+As well as being an experienced back-end Drupal developer, Sally also spends quite a lot of time building APIs,
+writing JavaScript and working on front-end tools. A long-time proponent of open source, her first experiences
+were hacking around with bulletin boards in Perl and PHP, including contributing the original smiley pack for phpBB 1.0.
+
+Sally earned her Masters degree in Computer Science from the University of London, where she applied genetic
+algorithms to the lexical categorisation of words for her dissertation, and thus learned many valuable
+lessons in processing high volumes of data and begging universities for CPU time. During her time there she
+got to work with the BAFTA winning SodaRace project and also worked on a number of courses, helping students
+with their programming in Java, Assembly and Prolog. Between her Bachelors and Masters year she won a grant
+sponsored by the Nuffield Foundation to develop, test and document verification systems in the areas of
+category theory and the verification of properties in signal flow graphs.
+EOD
+      ,
+      'twitter' => 'https://twitter.com/justafish',
+    ],
+    'mike' => [
+      'name' => 'Mike Herchel',
+      'headshot' => 'https://assets.lullabot.com/styles/dynamic_resize/w640/bio_image/headshot-mherchel.jpg',
+      'bio' => <<<'EOD'
+Mike Herchel has been creating websites since 2001, and developing with Drupal since 2007. He is one of the lead
+organisers of Florida Drupalcamp, and is always willing to advocate for the Drupal community and the web
+development community at-large. He’s a front-end developer at Lullabot and is a host of the Lullabot podcast,
+which is a bi-weekly podcast on everything Drupal, design, and web development.
+
+Mike actually enjoys solving cross-browser issues, and is passionate about the rapid pace of modern front-end
+development. He lives with his feisty 6 year old daughter, 11 year old golden retriever, and a mischievous
+chocolate lab puppy.
+EOD
+      ,
+      'twitter' => 'https://twitter.com/mikeherchel',
+    ],
+  ];
+
+  foreach ($speakers as $key => $speaker) {
+    // Create file object from remote URL.
+    $data = file_get_contents($speaker['headshot']);
+    $file = file_save_data($data, $headshots_path . '/' . $key . '.jpg', FILE_EXISTS_REPLACE);
+
+    // Create node object with attached file.
+    $node = Node::create([
+      'type' => 'speaker',
+      'title' => $speaker['name'],
+      'field_photo' => [
+        'target_id' => $file->id(),
+      ],
+      'body' => [
+        'value' => $speaker['bio'],
+        'format' => 'basic_html',
+      ],
+      'field_twitter' => $speaker['twitter'],
+    ]);
+    $node->save();
   }
 }

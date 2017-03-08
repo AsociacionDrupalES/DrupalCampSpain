@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.speaker.field_drupal_org
     - field.field.node.speaker.field_facebook
     - field.field.node.speaker.field_github
+    - field.field.node.speaker.field_linkedin
     - field.field.node.speaker.field_photo
     - field.field.node.speaker.field_twitter
     - image.style.thumbnail
@@ -66,6 +67,13 @@ content:
     type: link_default
   field_github:
     weight: 9
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+  field_linkedin:
+    weight: 26
     settings:
       placeholder_url: ''
       placeholder_title: ''

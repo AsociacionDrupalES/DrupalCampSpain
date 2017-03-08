@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.speaker.field_drupal_org
     - field.field.node.speaker.field_facebook
     - field.field.node.speaker.field_github
+    - field.field.node.speaker.field_linkedin
     - field.field.node.speaker.field_photo
     - field.field.node.speaker.field_twitter
     - image.style.speaker
@@ -59,5 +60,6 @@ hidden:
   field_drupal_org: true
   field_facebook: true
   field_github: true
+  field_linkedin: true
   langcode: true
   links: true
