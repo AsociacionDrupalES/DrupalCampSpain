@@ -1,15 +1,17 @@
 uuid: a0b8267c-00b5-4eea-8adc-177ede02dafe
 langcode: en
-status: true
+status: false
 dependencies:
+  module:
+    - node
   theme:
     - dcamp_2017_theme
 _core:
   default_config_hash: 7rR9chwXvdM2H8OYMAYx9Zj3GGlPMrZp_M3ZA4thYTk
 id: dcamp_2017_theme_page_title
 theme: dcamp_2017_theme
-region: content
-weight: -6
+region: '-1'
+weight: 0
 provider: null
 plugin: page_title_block
 settings:
@@ -17,4 +19,13 @@ settings:
   label: 'Page title'
   provider: core
   label_display: '0'
-visibility: {  }
+visibility:
+  node_type:
+    id: node_type
+    bundles:
+      article: article
+      page: page
+      sponsor: sponsor
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

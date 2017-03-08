@@ -1,6 +1,6 @@
 uuid: b13bd1ba-4d1d-4f13-8d0c-7ced935a39bb
 langcode: en
-status: true
+status: false
 dependencies:
   module:
     - mailchimp_signup
@@ -8,8 +8,8 @@ dependencies:
     - dcamp_2017_theme
 id: mailchimpsubscriptionformdcampmailchimp
 theme: dcamp_2017_theme
-region: content
-weight: -8
+region: '-1'
+weight: -7
 provider: null
 plugin: 'mailchimp_signup_subscribe_block:dcamp_mailchimp'
 settings:

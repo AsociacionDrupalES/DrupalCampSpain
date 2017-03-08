@@ -3,7 +3,7 @@ global:
   version: 1.x
   css:
     theme:
-      styles/main.css: { weight: -1 }
+      styles/main.css: { weight: -2 }
 
   js:
     scripts/main.js: { scope: footer, weight: -6 }

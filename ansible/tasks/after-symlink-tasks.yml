@@ -14,3 +14,8 @@
   args: 
     chdir: "{{ ansistrano_release_path.stdout }}{{ drupal_rel_path }}"
 
+- name: 'varnish clean domain all'
+  shell: 'curl -X BAN "http://{{ item }}/.*" -H "Host: {{ varnish_domain }}" --fail -s  -o /dev/null'
+  with_items: "{{ varnish_servers }}"
+  run_once: true
+

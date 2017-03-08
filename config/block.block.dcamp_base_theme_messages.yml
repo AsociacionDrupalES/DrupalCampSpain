@@ -1,6 +1,6 @@
 uuid: b6bda203-ea92-42a7-bb00-a7f3c346d0d1
 langcode: en
-status: true
+status: false
 dependencies:
   module:
     - system
@@ -10,7 +10,7 @@ _core:
   default_config_hash: KHQIJ7Vfl25lTjzIc7qIvnuistt-Mw2O0kG4jCofmkI
 id: dcamp_base_theme_messages
 theme: dcamp_base_theme
-region: messages
+region: '-1'
 weight: -6
 provider: null
 plugin: system_messages_block

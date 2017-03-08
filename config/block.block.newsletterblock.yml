@@ -1,0 +1,22 @@
+uuid: 72cc40b2-cfb3-4451-b19f-48cc4a714c0e
+langcode: en
+status: true
+dependencies:
+  module:
+    - dcamp
+  theme:
+    - dcamp_2017_theme
+id: newsletterblock
+theme: dcamp_2017_theme
+region: footer
+weight: -9
+provider: null
+plugin: dcamp_newsletter_block
+settings:
+  id: dcamp_newsletter_block
+  label: 'Newsletter block'
+  provider: dcamp
+  label_display: '0'
+  title: 'Sign up to our newsletter'
+  body: 'Don''t miss any news about the DrupalCamp'
+visibility: {  }

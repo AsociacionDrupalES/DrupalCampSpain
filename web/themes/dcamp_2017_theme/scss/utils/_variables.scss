@@ -1,0 +1,24 @@
+$main-color: #be3272;
+$secondary-color: #452ae2;
+$tertiary-color:#C44635;
+$fourth-color: #EAD872;
+$grey: #DCDCDC;
+$text-color:#444;
+
+$linear-gradient: linear-gradient(45deg, $main-color 42%, $tertiary-color 62%);
+
+$form-input-color:#EEE;
+
+$desktop : 1024px;
+$wide: 1200px;
+$tablet: 720px;
+
+$max-width: $wide;
+$gutter-width:20px;
+
+$menu-width: 800px;
+$header-font: "futura-pt-condensed",sans-serif;
+$body-font: "futura-pt",sans-serif;
+
+$header-height:41px;
+$header-height-mobile:30px;

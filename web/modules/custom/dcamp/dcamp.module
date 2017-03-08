@@ -4,22 +4,35 @@
  * Contains dcamp.module
  */
 
+use Drupal\block_content\Entity\BlockContent;
+
 /**
  * Implements hook_theme.
  */
-function dcamp_theme($existing, $type, $theme, $path){
- return [
-   'landing_block' => array(
-     'variables' => [
-       'title' => NULL,
-       'body' => NULL,
-       'countdown' => NULL,
-       'form' => NULL,
-       'link' => NULL,
-     ],
-     'template' => 'landing-block'
-   ),
- ];
+function dcamp_theme($existing, $type, $theme, $path) {
+  return [
+    'landing_block' => array(
+      'variables' => [
+        'title' => NULL,
+        'body' => NULL,
+        'countdown' => NULL,
+        'form' => NULL,
+        'link' => NULL,
+      ],
+      'template' => 'landing-block'
+    ),
+    'frontpage' => [
+      'variables' => [
+        'speakers' => NULL,
+        'sponsors' => NULL,
+        'venue' => NULL,
+        'become_a_sponsor' => NULL,
+        'business_day' => NULL,
+        'community' => NULL,
+      ],
+      'template' => 'frontpage',
+    ],
+  ];
 }
 
 /**
@@ -36,7 +49,39 @@ function dcamp_theme($existing, $type, $theme, $path){
  * @param $form_id
  */
 function dcamp_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
-  if("mailchimp_signup_subscribe_block_dcamp_mailchimp_form" == $form_id){
+  if ("mailchimp_signup_subscribe_block_dcamp_mailchimp_form" == $form_id) {
     $form['submit']['#value'] = t('Submit');
+  }
+}
+
+
+
+/**
+ * Add content blocks for the frontpage.
+ */
+function _dcamp_add_content_blocks_for_frontpage(){
+  $contentBlocks = [
+    'business_day' => t('Dcamp 2017 Business day'),
+    'venue' => t('Dcamp 2017 Venue'),
+    'become_a_sponsor' => t('Dcamp 2017 Become a sponsor'),
+    'community' => t('Dcamp 2017 Community'),
+  ];
+  foreach ($contentBlocks as $blockUuid => $label) {
+    BlockContent::create([
+      'type' => 'basic',
+      'uuid' => 'dcamp_2017_' . $blockUuid,
+      'info' => $label,
+      'body' => [
+        'value' => '<p>Nulla porttitor accumsan tincidunt. Vivamus suscipit tortor
+              eget felis porttitor volutpat. Sed porttitor lectus nibh. Proin
+              eget tortor risus. Vivamus suscipit tortor eget felis porttitor
+              volutpat. Donec sollicitudin molestie malesuada.</p>
+              <p>Sed porttitor lectus nibh. Praesent sapien massa, convallis a
+              pellentesque nec, egestas non nisi. Vivamus suscipit tortor eget
+              felis porttitor volutpat. Vivamus suscipit.</p>
+              <p><a href="@todo">Link to something</a></p>',
+        'format' => 'basic_html',
+      ]
+    ])->save();
   }
 }

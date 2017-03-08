@@ -1,0 +1,21 @@
+uuid: 0a2b8025-6164-4a34-a564-14b91ca066dc
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - node.type.sponsor
+  module:
+    - user
+id: node.sponsor.teaser
+targetEntityType: node
+bundle: sponsor
+mode: teaser
+content:
+  links:
+    weight: 100
+hidden:
+  field_logo: true
+  field_sponsor_type: true
+  field_url: true
+  langcode: true
