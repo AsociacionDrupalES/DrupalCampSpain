@@ -1,0 +1,33 @@
+uuid: b4fb1851-2f27-469e-943f-3855ca2ccf95
+langcode: en
+status: true
+dependencies:
+  module:
+    - language
+    - node
+id: speakers
+label: Speakers
+type: 'canonical_entities:node'
+pattern: 'speakers/[node:title]'
+selection_criteria:
+  f434c4dd-0c49-4419-ba55-176b47458fcd:
+    id: node_type
+    bundles:
+      speaker: speaker
+    negate: false
+    context_mapping:
+      node: node
+    uuid: f434c4dd-0c49-4419-ba55-176b47458fcd
+  9725d69d-ecfb-47ba-a2e7-6e8d9c4816b5:
+    id: language
+    langcodes:
+      en: en
+    negate: false
+    context_mapping:
+      language: 'node:langcode:language'
+    uuid: 9725d69d-ecfb-47ba-a2e7-6e8d9c4816b5
+selection_logic: and
+weight: -10
+relationships:
+  'node:langcode:language':
+    label: Language
