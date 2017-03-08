@@ -217,9 +217,12 @@ function dcamp_update_8108() {
       'name' => 'Cristina Chumillas',
       'headshot' => 'https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAdIAAAAJDMxMjUzOWMxLTQ5NDUtNGI2Ni1iNzczLWUzNGJmMWYyZjYwOA.jpg',
       'bio' => <<<'EOD'
-Cristina Chumillas studied design and discovered Drupal while she was a freelancer. She got involved in the Catalan Drupal Community for the Drupal Developer Days Barcelona in 2012 and she has been helping in the Spanish and Catalan communities since then.
+Cristina Chumillas studied design and discovered Drupal while she was a freelancer. She got involved in the Catalan
+Drupal Community for the Drupal Developer Days Barcelona in 2012 and she has been helping in the Spanish and
+Catalan communities since then.
 
-Working as a designer and frontend developer at Ymbra, her contributions to Drupal Core are focused on frontend and UX. She is part of the new initiative to create a new user-facing core theme for Drupal 8.
+Working as a designer and frontend developer at Ymbra, her contributions to Drupal Core are focused on frontend
+and UX. She is part of the new initiative to create a new user-facing core theme for Drupal 8.
 EOD
       ,
       'twitter' => 'https://twitter.com/chumillas',
@@ -247,14 +250,14 @@ EOD
       'name' => 'Mike Herchel',
       'headshot' => 'https://assets.lullabot.com/styles/dynamic_resize/w640/bio_image/headshot-mherchel.jpg',
       'bio' => <<<'EOD'
-Mike Herchel has been passionate about web development since creating his first website in 2001. He co-owned
-and operated a small development and design agency in the mid-2000s, until moving to a hybrid
-sys-admin / web developer role at a medium size non-profit in 2007.
+Mike Herchel has been creating websites since 2001, and developing with Drupal since 2007. He is one of the lead
+organisers of Florida Drupalcamp, and is always willing to advocate for the Drupal community and the web
+development community at-large. He’s a front-end developer at Lullabot and is a host of the Lullabot podcast,
+which is a bi-weekly podcast on everything Drupal, design, and web development.
 
-Mike started using Drupal in 2008, and has been involved in the Drupal community since 2010. He enjoys
-presenting at conferences, sharing knowledge as much as possible, and writing about himself in the third person.
-You can generally find him presenting on usability, front-end development, and many other topics at
-various web development conferences.
+Mike actually enjoys solving cross-browser issues, and is passionate about the rapid pace of modern front-end
+development. He lives with his feisty 6 year old daughter, 11 year old golden retriever, and a mischievous
+chocolate lab puppy.
 EOD
       ,
       'twitter' => 'https://twitter.com/mikeherchel',
