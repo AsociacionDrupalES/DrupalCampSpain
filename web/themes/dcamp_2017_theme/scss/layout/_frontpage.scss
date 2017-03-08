@@ -40,7 +40,7 @@
       max-width: $max-width;
       margin: 0 auto;
       .field--name-body {
-        a {
+        a.button {
           @include button-gradient();
         }
       }
