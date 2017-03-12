@@ -1,0 +1,45 @@
+version: '2'
+services:
+  web:
+    # keopx/apache-php available tags: latest, 7.0, 5.6.
+    image: keopx/apache-php:7.0
+    ports:
+      # 8008 works without varnish.
+      - "80:80"
+      - "443:443"
+    links:
+      - mysql
+      - mail
+    volumes:
+      # at this time, docker-lamp has to be in <root>/scripts/docker-lamp
+      - .:/var/www # Data.
+      - ./docker-lamp/config/vhosts:/etc/apache2/sites-enabled
+      # php.ini for php 7.0 and remove environment varibles.
+      - ./docker-lamp/config/php/7.0/php.ini:/etc/php/7.0/apache2/php.ini
+      # Xdebug for php 7.0
+      - ./docker-lamp/config/php/xdebug.ini:/etc/php/7.0/apache2/conf.d/20-xdebug.ini
+      # OpCache only for php 7.0
+      - ./docker-lamp/config/php/opcache-recommended.ini:/etc/php/7.0/apache2/conf.d/10-opcache.ini
+    working_dir: /var/www
+    environment:
+      - SERVER_NAME=dc2017.local
+      - DOCROOT=/var/www/web
+  mysql:
+    # keopx/mysql available tags: latest, 5.7, 5.6, 5.5.
+    image: keopx/mysql:5.6
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./docker-lamp/data/database:/var/lib/mysql
+      ## Custom setup for MySQL
+      # - ./config/mysql/my.cnf:/etc/mysql/my.cnf
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=dc2017
+      - MYSQL_USER=''
+      - MYSQL_PASSWORD=''
+  mail:
+    image: mailhog/mailhog
+    ports:
+      - "8025:8025"
+      - "1025:1025"
