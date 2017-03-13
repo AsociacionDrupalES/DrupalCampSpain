@@ -51,7 +51,8 @@ We based our local environment in the[https://github.com/keopx/docker-lamp](keop
 You need to have installer docker and docker-compose. 
 Assure that you don't have running anything in the 80, 443, 1025, 3306 and 8025 ports
 #### Use
-Everything is configured to setup the local environment. Just follow this steps
+Everything is configured to setup the local environment. Just follow this steps:
+
 1. Host domain is set as `dc2017.local`, so add to your hosts files `127.0.0.1  dc2017.local`
 2. There is a helper script, in `docker-lamp/local-docker.sh`. With this script you are able to:
     1. `./docker-lamp/local-docker.sh start`: Start services
