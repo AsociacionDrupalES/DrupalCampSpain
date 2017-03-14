@@ -25,7 +25,9 @@
     "drupal/features": "3.*",
     "drupal/google_analytics": "2.*",
     "drupal/menu_link_attributes": "1.*",
-    "drupal/views_list_sort": "1.*"
+    "drupal/views_list_sort": "1.*",
+    "drupal/pathauto": "1.x-dev",
+    "drupal/redirect": "1.x-dev"
   },
   "require-dev": {
     "behat/mink": "~1.7",

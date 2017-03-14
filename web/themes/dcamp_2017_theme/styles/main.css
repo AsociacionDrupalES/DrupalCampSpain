@@ -490,6 +490,33 @@ article.node--type-page {
   max-width: 1200px;
   margin: 3em auto; }
 
+.speaker--full .node__content-wrapper {
+  max-width: 1200px;
+  padding: 20px;
+  margin: 30px auto; }
+  .speaker--full .node__content-wrapper:before, .speaker--full .node__content-wrapper:after {
+    content: "";
+    display: table; }
+  .speaker--full .node__content-wrapper:after {
+    clear: both; }
+  .speaker--full .node__content-wrapper .node__header {
+    float: left;
+    width: 35%; }
+    .speaker--full .node__content-wrapper .node__header h1 {
+      position: relative;
+      margin-bottom: 30px; }
+      .speaker--full .node__content-wrapper .node__header h1:after {
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        width: 40px;
+        height: 4px;
+        background-color: #452ae2;
+        content: ' '; }
+  .speaker--full .node__content-wrapper .node__content {
+    float: right;
+    width: 60%; }
+
 .speaker--full .speaker__field-company {
   margin: 0.6rem 0 1rem;
   text-transform: uppercase; }
@@ -1096,44 +1123,44 @@ footer .social {
       .frontpage-wrapper #sponsors .view.view-sponsors .view-content h3 {
         margin: 0; } }
 
-header {
+.layout-container > header {
   position: fixed;
   top: 0;
   left: 0;
   background: #452ae2;
   width: 100%;
   z-index: 99; }
-  header:before, header:after {
+  .layout-container > header:before, .layout-container > header:after {
     content: "";
     display: table; }
-  header:after {
+  .layout-container > header:after {
     clear: both; }
-  .toolbar-vertical header {
+  .toolbar-vertical .layout-container > header {
     margin-top: 39px; }
-  header a.logo {
+  .layout-container > header a.logo {
     height: 41px;
     float: left; }
     @media (max-width: 720px) {
-      header a.logo {
+      .layout-container > header a.logo {
         height: 30px; } }
-    header a.logo img.logo {
+    .layout-container > header a.logo img.logo {
       height: 100%;
       width: auto; }
-  header .language-switcher-language-url {
+  .layout-container > header .language-switcher-language-url {
     float: right; }
-    header .language-switcher-language-url .language-switcher-wrapper {
+    .layout-container > header .language-switcher-language-url .language-switcher-wrapper {
       height: 41px; }
       @media (max-width: 720px) {
-        header .language-switcher-language-url .language-switcher-wrapper {
+        .layout-container > header .language-switcher-language-url .language-switcher-wrapper {
           height: 30px; } }
-  header .navigation.menu--main {
+  .layout-container > header .navigation.menu--main {
     float: right; }
-  header #block-userlogin {
+  .layout-container > header #block-userlogin {
     position: relative;
     float: right; }
-    header #block-userlogin:hover form {
+    .layout-container > header #block-userlogin:hover form {
       display: block; }
-    header #block-userlogin form {
+    .layout-container > header #block-userlogin form {
       display: none; }
 
 main {

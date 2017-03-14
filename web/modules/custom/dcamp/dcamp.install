@@ -213,7 +213,7 @@ function dcamp_update_8108() {
   file_prepare_directory($headshots_path, FILE_CREATE_DIRECTORY);
 
   $speakers = [
-    'cris' => [
+    'ckrina' => [
       'name' => 'Cristina Chumillas',
       'headshot' => 'https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAdIAAAAJDMxMjUzOWMxLTQ5NDUtNGI2Ni1iNzczLWUzNGJmMWYyZjYwOA.jpg',
       'bio' => <<<'EOD'
@@ -227,7 +227,7 @@ EOD
       ,
       'twitter' => 'https://twitter.com/chumillas',
     ],
-    'sally' => [
+    'justafish' => [
       'name' => 'Sally Young',
       'headshot' => 'https://assets.lullabot.com/styles/dynamic_resize/w640/bios/headshots-comp_0004_sally.jpg.jpg',
       'bio' => <<<'EOD'
@@ -246,7 +246,7 @@ EOD
       ,
       'twitter' => 'https://twitter.com/justafish',
     ],
-    'mike' => [
+    'mherchel' => [
       'name' => 'Mike Herchel',
       'headshot' => 'https://assets.lullabot.com/styles/dynamic_resize/w640/bio_image/headshot-mherchel.jpg',
       'bio' => <<<'EOD'
@@ -281,6 +281,7 @@ EOD
         'format' => 'basic_html',
       ],
       'field_twitter' => $speaker['twitter'],
+      'path' =>  ['alias' => '/speakers/' . $key],
     ]);
     $node->save();
   }

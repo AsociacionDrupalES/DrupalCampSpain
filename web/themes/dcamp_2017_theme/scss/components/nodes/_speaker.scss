@@ -1,5 +1,36 @@
 .speaker--full {
+
+  .node__content-wrapper {
+    max-width: $max-width;
+    padding: $gutter-width;
+    margin: 30px auto;
+    @include clearfix;
+    .node__header {
+      float: left;
+      width: 35%;
+
+      h1{
+        position:relative;
+        margin-bottom:30px;
+        &:after {
+          position: absolute;
+          bottom: -10px;
+          left: 0;
+          width: 40px;
+          height: 4px;
+          background-color: $secondary-color;
+          content: ' ';
+        }
+      }
+    }
+    .node__content {
+      float: right;
+      width: 60%;
+    }
+  }
+
   .speaker {
+
     &__field-company {
       margin: 0.6rem 0 1rem;
       text-transform: uppercase;
@@ -96,12 +127,12 @@
   .speaker__field-photo {
     background: $grey;
     text-align: center;
-    overflow:hidden;
+    overflow: hidden;
     margin-bottom: 10px;
     img {
       display: inline-block;
       vertical-align: bottom;
-      height:180px;
+      height: 180px;
       width: auto;
     }
   }
@@ -116,25 +147,25 @@
       color: $main-color;
     }
   }
-  .field--name-field-company a{
-    color:$main-color;
-    font-family:$header-font;
-    font-weight:bold;
+  .field--name-field-company a {
+    color: $main-color;
+    font-family: $header-font;
+    font-weight: bold;
     text-transform: uppercase;
-    font-size:20px;
+    font-size: 20px;
     line-height: 1em;
-    &:hover{
+    &:hover {
       text-decoration: underline;
     }
   }
-  .field--name-field-twitter a{
+  .field--name-field-twitter a {
     color: $text-color;
-    font-family:$header-font;
-    font-weight:bold;
+    font-family: $header-font;
+    font-weight: bold;
     text-transform: uppercase;
-    font-size:14px;
+    font-size: 14px;
     line-height: 1em;
-    &:hover{
+    &:hover {
       text-decoration: underline;
     }
   }
