@@ -23,6 +23,11 @@ content:
     weight: 3
   language:
     weight: 0
+  path:
+    type: path
+    weight: 30
+    settings: {  }
+    third_party_settings: {  }
   timezone:
     weight: 6
   user_picture:

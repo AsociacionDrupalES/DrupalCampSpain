@@ -1,0 +1,5 @@
+name: DrupalCamp Sponsors
+description: Defines Sponsor content type
+package: dcamp
+type: module
+core: 8.x
