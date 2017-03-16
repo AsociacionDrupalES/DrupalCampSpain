@@ -180,6 +180,7 @@ EOD
   <p>Located at the heart of Madrid, and a ten minutes walk from the main Railway
   station, La Casa Encendida offers a superb foundation for this year's
   DrupalCamp.</p>
+  <p><a href="/node/1" class="button">Survival Guide</a></p>
 EOD
     ,
     'become_a_sponsor' => <<<'EOD'
