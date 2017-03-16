@@ -8,6 +8,8 @@ third_party_settings:
   menu_ui:
     available_menus: {  }
     parent: ''
+_core:
+  default_config_hash: S39Mt9L4GR8RunHx1ts6etsO11wyPTYjflYqSZb-iWg
 name: Sponsor
 type: sponsor
 description: 'Drupalcamp sponsor'
