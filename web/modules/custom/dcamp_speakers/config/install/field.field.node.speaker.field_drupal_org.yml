@@ -1,0 +1,23 @@
+uuid: 754f5200-a7ae-436c-93c2-ccddb38deb50
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_drupal_org
+    - node.type.speaker
+  module:
+    - link
+id: node.speaker.field_drupal_org
+field_name: field_drupal_org
+entity_type: node
+bundle: speaker
+label: Drupal.org
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 0
+field_type: link

@@ -207,9 +207,28 @@ EOD
 }
 
 /**
- * Create featured speaker nodes.
+ * Install speaker module.
  */
 function dcamp_update_8108() {
+  \Drupal::service('module_installer')->install(['dcamp_speakers']);
+}
+
+/**
+ * Create featured speaker nodes.
+ */
+function dcamp_update_8109() {
+  // First, cleanup field_photo and field_twitter as they contain corrupt
+  // data that points to entities that don't exist.
+  $query = \Drupal::database()->delete('node__field_photo');
+  $query->execute();
+  $query = \Drupal::database()->delete('node_revision__field_photo');
+  $query->execute();
+  $query = \Drupal::database()->delete('node__field_twitter');
+  $query->execute();
+  $query = \Drupal::database()->delete('node_revision__field_twitter');
+  $query->execute();
+
+  // Next, create the speaker nodes.
   $headshots_path = 'public://speakers';
   file_prepare_directory($headshots_path, FILE_CREATE_DIRECTORY);
 
@@ -276,7 +295,9 @@ EOD
       'uid' => 1,
       'title' => $speaker['name'],
       'field_photo' => [
-        'target_id' => $file->id(),
+        [
+          'target_id' => $file->id(),
+        ]
       ],
       'body' => [
         'value' => $speaker['bio'],
@@ -292,14 +313,14 @@ EOD
 /**
  * Install sponsor module.
  */
-function dcamp_update_8109() {
+function dcamp_update_8110() {
   \Drupal::service('module_installer')->install(['dcamp_sponsors']);
 }
 
 /**
  * Delete dummy sponsors and create the confirmed ones.
  */
-function dcamp_update_8110() {
+function dcamp_update_8111() {
   // First, delete all sponsors since they are all dummy data.
   /** @var \Drupal\Core\Entity\EntityTypeManager $entity_type_manager */
   $entity_type_manager = \Drupal::service('entity_type.manager');

@@ -1,0 +1,5 @@
+name: DrupalCamp Speakers
+description: Defines Speaker content type
+package: dcamp
+type: module
+core: 8.x

@@ -1,0 +1,23 @@
+uuid: b7e09ed5-eaf4-413a-a710-7b1b79647fa7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_github
+    - node.type.speaker
+  module:
+    - link
+id: node.speaker.field_github
+field_name: field_github
+entity_type: node
+bundle: speaker
+label: GitHub
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 0
+field_type: link
