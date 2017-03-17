@@ -2,8 +2,6 @@ uuid: 92ba21f1-102d-42b3-8087-eb12608ac4ba
 langcode: en
 status: true
 dependencies: {  }
-_core:
-  default_config_hash: hcGGCTt6L4-gcUgBXrQs8sk-_23x5y-ZC10KfvVgkDQ
 name: sponsor_logo
 label: 'Sponsor logo (Heigth: 75)'
 effects:

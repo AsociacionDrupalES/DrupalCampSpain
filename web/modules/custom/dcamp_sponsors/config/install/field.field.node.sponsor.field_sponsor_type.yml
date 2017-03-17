@@ -7,8 +7,6 @@ dependencies:
     - node.type.sponsor
   module:
     - options
-_core:
-  default_config_hash: 3lxn81KrCb7aujXAjkj-dZUOzxEtpwy06AaULgIt5EY
 id: node.sponsor.field_sponsor_type
 field_name: field_sponsor_type
 entity_type: node

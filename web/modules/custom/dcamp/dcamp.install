@@ -76,7 +76,7 @@ function dcamp_update_8104() {
  */
 function _dcamp_add_dummy_sponsors_and_default_logo() {
   $data = file_get_contents(drupal_get_path('module', 'dcamp') . '/images/default_company_logo.png');
-  $file = file_save_data($data, 'public://default_company_logo.png', FILE_EXISTS_REPLACE);
+  $file = file_save_data($data, 'public://sponsors/default_company_logo.png', FILE_EXISTS_REPLACE);
   $file->set('uuid', 'default_company_logo');
   $file->save();
 
@@ -272,6 +272,7 @@ EOD
     // Create node object with attached file.
     $node = Node::create([
       'type' => 'speaker',
+      'uid' => 1,
       'title' => $speaker['name'],
       'field_photo' => [
         'target_id' => $file->id(),
@@ -282,6 +283,75 @@ EOD
       ],
       'field_twitter' => $speaker['twitter'],
       'path' =>  ['alias' => '/speakers/' . $key],
+    ]);
+    $node->save();
+  }
+}
+
+/**
+ * Install sponsor module.
+ */
+function dcamp_update_8109() {
+  \Drupal::service('module_installer')->install(['dcamp_sponsors']);
+}
+
+/**
+ * Delete dummy sponsors and create the confirmed ones.
+ */
+function dcamp_update_8110() {
+  // First, delete all sponsors since they are all dummy data.
+  /** @var \Drupal\Core\Entity\EntityTypeManager $entity_type_manager */
+  $entity_type_manager = \Drupal::service('entity_type.manager');
+  $nids = $entity_type_manager->getStorage('node')->getQuery()->condition('type', 'sponsor')->execute();
+  $entities = $entity_type_manager->getStorage('node')->loadMultiple($nids);
+  $entity_type_manager->getStorage('node')->delete($entities);
+
+  // Next, create the confirmed ones.
+  $sponsors_path = 'public://sponsors';
+  file_prepare_directory($sponsors_path, FILE_CREATE_DIRECTORY);
+
+  $sponsors = [
+    'autentia' => [
+      'name' => 'Autentia',
+      'logo' => 'https://media.licdn.com/mpr/mpr/shrink_200_200/AAEAAQAAAAAAAAO3AAAAJDZhODg5ZDgwLTViMzktNDNmOS05MmI2LTBlYjFkNjI0OWQyZA.png',
+      'type' => 'platinium',
+      'website' => 'https://www.autentia.com',
+    ],
+    'sbit' => [
+      'name' => 'sbit',
+      'logo' => 'http://sbit.io/sites/default/files/logo.png',
+      'type' => 'silver',
+      'website' => 'http://sbit.io',
+    ],
+    'openexpo' => [
+      'name' => 'OpenExpo',
+      'logo' => 'https://trello-attachments.s3.amazonaws.com/5745764996fb85475c78a609/58b03811787b5fc88a61a8fa/8e0acaf4b77bd0f60e10f0aa057d57b5/OpenExpo_2017_-_banner_vert.png',
+      'type' => 'collaborators',
+      'website' => 'http://www.openexpo.es',
+    ],
+    'aed' => [
+      'name' => 'Asociación Española de Drupal',
+      'logo' => 'https://asociaciondrupal.es/sites/all/themes/aed/logo.png',
+      'type' => 'collaborators',
+      'website' => 'https://asociaciondrupal.es',
+    ],
+  ];
+
+  foreach ($sponsors as $key => $sponsor) {
+    // Create file object from remote URL.
+    $data = file_get_contents($sponsor['logo']);
+    $file = file_save_data($data, $sponsors_path . '/' . $key . '.png', FILE_EXISTS_REPLACE);
+
+    // Create node object with attached file.
+    $node = Node::create([
+      'type' => 'sponsor',
+      'uid' => 1,
+      'title' => $sponsor['name'],
+      'field_logo' => [
+        'target_id' => $file->id(),
+      ],
+      'field_sponsor_type' => $sponsor['type'],
+      'field_url' => $sponsor['website'],
     ]);
     $node->save();
   }
