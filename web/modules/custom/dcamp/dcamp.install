@@ -75,6 +75,8 @@ function dcamp_update_8104() {
  * Function to add some dummy content for easy theming.
  */
 function _dcamp_add_dummy_sponsors_and_default_logo() {
+  $directory = 'public://sponsors';
+  file_prepare_directory($directory, FILE_CREATE_DIRECTORY);
   $data = file_get_contents(drupal_get_path('module', 'dcamp') . '/images/default_company_logo.png');
   $file = file_save_data($data, 'public://sponsors/default_company_logo.png', FILE_EXISTS_REPLACE);
   $file->set('uuid', 'default_company_logo');
@@ -378,4 +380,13 @@ function dcamp_update_8111() {
     ]);
     $node->save();
   }
+}
+
+/**
+ * Publish the Survival Guide.
+ */
+function dcamp_update_8112() {
+  $node = \Drupal::service('entity_type.manager')->getStorage('node')->load(1);
+  $node->set('status', TRUE);
+  $node->save();
 }
