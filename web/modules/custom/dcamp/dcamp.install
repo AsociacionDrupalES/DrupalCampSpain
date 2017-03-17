@@ -170,6 +170,7 @@ function dcamp_update_8107() {
   the Spanish Drupal market leaders.<p>
   <p>This is a perfect opportunity to meet other companies, take the pulse of
   the market establish synergies.</p>
+  <p>If you are interested, <a href="/contact">get in touch with us</a>.</p>
 EOD
     ,
     'venue' => <<<'EOD'
