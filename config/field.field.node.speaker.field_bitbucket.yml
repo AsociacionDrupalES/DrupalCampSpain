@@ -7,6 +7,8 @@ dependencies:
     - node.type.speaker
   module:
     - link
+_core:
+  default_config_hash: dk_iLjK3ZaFzTJmF19GRg5VOWLODuxJFDFO6692gMMc
 id: node.speaker.field_bitbucket
 field_name: field_bitbucket
 entity_type: node

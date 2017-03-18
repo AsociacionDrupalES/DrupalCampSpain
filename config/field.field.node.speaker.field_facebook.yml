@@ -7,6 +7,8 @@ dependencies:
     - node.type.speaker
   module:
     - link
+_core:
+  default_config_hash: 9pEYWMKcmnrumY8Y3t7xo68NE6iNtMi8G_WvMl39w0E
 id: node.speaker.field_facebook
 field_name: field_facebook
 entity_type: node

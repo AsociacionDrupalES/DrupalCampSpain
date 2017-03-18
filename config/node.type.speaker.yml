@@ -8,6 +8,8 @@ third_party_settings:
   menu_ui:
     available_menus: {  }
     parent: ''
+_core:
+  default_config_hash: T2F2iI8MT3FpBhkwuJTo_zSzuyX4BX_VjlTqxSyNtt4
 name: Speaker
 type: speaker
 description: ''

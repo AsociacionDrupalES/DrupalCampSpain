@@ -5,6 +5,8 @@ dependencies:
   module:
     - link
     - node
+_core:
+  default_config_hash: '-ZMvt0zApnjpqubRZImxWXm7JtNor-JdOIK83kphJdk'
 id: node.field_bitbucket
 field_name: field_bitbucket
 entity_type: node

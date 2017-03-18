@@ -7,6 +7,8 @@ dependencies:
     - node.type.speaker
   module:
     - link
+_core:
+  default_config_hash: 4Xsggkc97VrY8XQF2OLj07QtA9SLx5rZezlmjX58F50
 id: node.speaker.field_drupal_org
 field_name: field_drupal_org
 entity_type: node

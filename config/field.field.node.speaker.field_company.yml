@@ -7,6 +7,8 @@ dependencies:
     - node.type.speaker
   module:
     - link
+_core:
+  default_config_hash: veGD58h6ApkqDPgOrKTtnPKp_vD_I88izaKeyg_rBII
 id: node.speaker.field_company
 field_name: field_company
 entity_type: node

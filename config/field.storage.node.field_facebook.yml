@@ -5,6 +5,8 @@ dependencies:
   module:
     - link
     - node
+_core:
+  default_config_hash: QSzMtwSJy90S-v0ajrptzS1ww3Nv7rqs0KnXlCGFSlI
 id: node.field_facebook
 field_name: field_facebook
 entity_type: node

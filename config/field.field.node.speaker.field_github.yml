@@ -7,6 +7,8 @@ dependencies:
     - node.type.speaker
   module:
     - link
+_core:
+  default_config_hash: IAdAcPa5wZXt3ewi844ZZ5gzNWP1Y7KtJX1iVnYyPuw
 id: node.speaker.field_github
 field_name: field_github
 entity_type: node

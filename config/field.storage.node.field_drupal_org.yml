@@ -5,6 +5,8 @@ dependencies:
   module:
     - link
     - node
+_core:
+  default_config_hash: FdDGSRP2zpjckWgdQs73GPXCdV0ry5Nf1jjKKYPaJpE
 id: node.field_drupal_org
 field_name: field_drupal_org
 entity_type: node
