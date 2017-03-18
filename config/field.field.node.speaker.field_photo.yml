@@ -7,6 +7,8 @@ dependencies:
     - node.type.speaker
   module:
     - image
+_core:
+  default_config_hash: Pd7XOB2vXEtuhfCr9VMz92RZncCKgLdKpNZO4rWJ2M0
 id: node.speaker.field_photo
 field_name: field_photo
 entity_type: node

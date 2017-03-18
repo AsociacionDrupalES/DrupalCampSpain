@@ -7,6 +7,8 @@ dependencies:
     - node.type.speaker
   module:
     - link
+_core:
+  default_config_hash: EZeIttk4_nuQW04nk_YZkHvlf2EOXquTl80yiUEybyI
 id: node.speaker.field_twitter
 field_name: field_twitter
 entity_type: node

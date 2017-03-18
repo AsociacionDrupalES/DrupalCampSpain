@@ -5,6 +5,8 @@ dependencies:
   module:
     - link
     - node
+_core:
+  default_config_hash: H4G45_K9DCH3_gMn_t882Hrl4WLezlq1QwvM9SD1Big
 id: node.field_company
 field_name: field_company
 entity_type: node

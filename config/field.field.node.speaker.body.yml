@@ -7,6 +7,8 @@ dependencies:
     - node.type.speaker
   module:
     - text
+_core:
+  default_config_hash: oHs_LgD9PuyOlN9Hna_P8UejFffRWMzS8NgA78LCL6s
 id: node.speaker.body
 field_name: body
 entity_type: node

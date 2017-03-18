@@ -7,6 +7,8 @@ dependencies:
     - node.type.speaker
   module:
     - link
+_core:
+  default_config_hash: Wx3-Jg3b3yk8NULO5p8hSHSLcpDbW8d1U2vVoewoUHc
 id: node.speaker.field_linkedin
 field_name: field_linkedin
 entity_type: node

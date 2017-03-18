@@ -5,6 +5,8 @@ dependencies:
   module:
     - link
     - node
+_core:
+  default_config_hash: pB_PLpKcBcxR2GiT4aUV2H3tHXigt0uu3LLGGYimlgo
 id: node.field_github
 field_name: field_github
 entity_type: node
