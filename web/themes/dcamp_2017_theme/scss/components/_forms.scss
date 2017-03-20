@@ -2,6 +2,7 @@ form{
   input[type="text"],
   input[type="password"],
   input[type="email"],
+  textarea,
   select{
     border:none;
     -webkit-appearance:none;
@@ -9,5 +10,11 @@ form{
     height:20px;
     padding:10px;
   }
-
+  textarea{
+    height:auto;
+  }
+  input[type="submit"]{
+    @include button();
+    padding:10px;
+  }
 }
