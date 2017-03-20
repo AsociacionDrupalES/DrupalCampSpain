@@ -1,20 +1,20 @@
-uuid: 2ef10f22-1e1b-42a3-a754-5ac1753a9a24
+uuid: 894d1589-66de-43b0-ae1f-8a0d499c8c61
 langcode: en
 status: true
 dependencies:
   config:
     - node.type.speaker
-id: node.speaker.promote
-field_name: promote
+id: node.speaker.status
+field_name: status
 entity_type: node
 bundle: speaker
-label: 'Promoted to front page'
-description: ''
+label: 'Publishing status'
+description: 'A boolean indicating whether the node is published.'
 required: false
 translatable: false
 default_value:
   -
-    value: 0
+    value: 1
 default_value_callback: ''
 settings:
   on_label: 'On'

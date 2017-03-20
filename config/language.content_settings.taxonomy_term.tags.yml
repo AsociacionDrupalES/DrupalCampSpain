@@ -1,16 +1,16 @@
-uuid: c2ece097-882a-446e-94fa-20bdd3ae1f9a
+uuid: 02539bb6-89fe-48ec-a6ea-5f2bbb73b0cd
 langcode: en
 status: true
 dependencies:
   config:
-    - node.type.sponsor
+    - taxonomy.vocabulary.tags
   module:
     - content_translation
 third_party_settings:
   content_translation:
     enabled: false
-id: node.sponsor
-target_entity_type_id: node
-target_bundle: sponsor
+id: taxonomy_term.tags
+target_entity_type_id: taxonomy_term
+target_bundle: tags
 default_langcode: site_default
 language_alterable: false

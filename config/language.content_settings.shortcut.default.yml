@@ -1,16 +1,16 @@
-uuid: c2ece097-882a-446e-94fa-20bdd3ae1f9a
+uuid: bd1fad4f-a79d-4f89-ab13-61201c4e7768
 langcode: en
 status: true
 dependencies:
   config:
-    - node.type.sponsor
+    - shortcut.set.default
   module:
     - content_translation
 third_party_settings:
   content_translation:
     enabled: false
-id: node.sponsor
-target_entity_type_id: node
-target_bundle: sponsor
+id: shortcut.default
+target_entity_type_id: shortcut
+target_bundle: default
 default_langcode: site_default
 language_alterable: false

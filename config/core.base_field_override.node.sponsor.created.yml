@@ -1,0 +1,18 @@
+uuid: bb87d20a-d962-4130-b122-b303f35eda2c
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.sponsor
+id: node.sponsor.created
+field_name: created
+entity_type: node
+bundle: sponsor
+label: 'Authored on'
+description: 'The time that the node was created.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created
