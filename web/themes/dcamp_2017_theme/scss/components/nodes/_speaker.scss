@@ -9,9 +9,9 @@
       float: left;
       width: 35%;
 
-      h1{
-        position:relative;
-        margin-bottom:30px;
+      h1 {
+        position: relative;
+        margin-bottom: 30px;
         &:after {
           position: absolute;
           bottom: -10px;
@@ -26,6 +26,14 @@
     .node__content {
       float: right;
       width: 60%;
+    }
+    @include breakpoint('mobile') {
+      .node__header,
+      .node__content {
+        float: none;
+        width: 100%;
+      }
+
     }
   }
 

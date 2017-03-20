@@ -69,6 +69,8 @@
   font-size: 120%;
   background: $background-color none no-repeat left 30px center;
   max-width: 90%;
+  border:none;
+  cursor:pointer;
   &:hover {
     color: white;
     background: $background-hover-color;

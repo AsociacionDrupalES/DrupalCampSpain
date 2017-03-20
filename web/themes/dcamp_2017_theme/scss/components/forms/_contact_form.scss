@@ -1,0 +1,29 @@
+.contact-message-feedback-form {
+  max-width: $form-width;
+  margin: 10em auto;
+  padding: $gutter-width;
+  @include breakpoint('mobile') {
+    margin:3em auto;
+  }
+  display: block;
+  .form-type-email,
+  .form-type-textfield {
+    @include clearfix;
+    > label {
+      width: 20%;
+      float: left;
+    }
+    > input {
+      width: 70%;
+      float: right;
+    }
+    @include breakpoint('mobile') {
+
+      > label,
+      > input {
+        float: none;
+        width: calc(100% - #{$gutter-width});
+      }
+    }
+  }
+}
