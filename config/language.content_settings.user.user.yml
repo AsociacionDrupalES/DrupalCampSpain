@@ -1,16 +1,15 @@
-uuid: c2ece097-882a-446e-94fa-20bdd3ae1f9a
+uuid: 0752a370-7ec9-43d4-8102-12ddddd45c94
 langcode: en
 status: true
 dependencies:
-  config:
-    - node.type.sponsor
   module:
     - content_translation
+    - user
 third_party_settings:
   content_translation:
     enabled: false
-id: node.sponsor
-target_entity_type_id: node
-target_bundle: sponsor
+id: user.user
+target_entity_type_id: user
+target_bundle: user
 default_langcode: site_default
 language_alterable: false

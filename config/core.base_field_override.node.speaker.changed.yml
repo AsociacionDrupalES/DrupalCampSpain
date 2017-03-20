@@ -1,0 +1,18 @@
+uuid: 2e0d4d87-8d1d-4c8a-876e-d4aa290bcc31
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.speaker
+id: node.speaker.changed
+field_name: changed
+entity_type: node
+bundle: speaker
+label: Changed
+description: 'The time that the node was last edited.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

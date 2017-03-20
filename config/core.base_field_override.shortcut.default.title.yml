@@ -1,15 +1,15 @@
-uuid: 3c4cecb9-ff95-4f10-9096-0ae80dc24fb8
+uuid: 07823847-d8ff-4b3e-a9c8-b74174e5e737
 langcode: en
 status: true
 dependencies:
   config:
-    - node.type.sponsor
-id: node.sponsor.title
+    - shortcut.set.default
+id: shortcut.default.title
 field_name: title
-entity_type: node
-bundle: sponsor
+entity_type: shortcut
+bundle: default
 label: Name
-description: ''
+description: 'The name of the shortcut.'
 required: true
 translatable: false
 default_value: {  }

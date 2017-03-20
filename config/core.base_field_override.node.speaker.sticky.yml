@@ -1,14 +1,14 @@
-uuid: 2ef10f22-1e1b-42a3-a754-5ac1753a9a24
+uuid: 21416a5e-88a3-4b9c-97a9-41b952150d9d
 langcode: en
 status: true
 dependencies:
   config:
     - node.type.speaker
-id: node.speaker.promote
-field_name: promote
+id: node.speaker.sticky
+field_name: sticky
 entity_type: node
 bundle: speaker
-label: 'Promoted to front page'
+label: 'Sticky at top of lists'
 description: ''
 required: false
 translatable: false
