@@ -34,7 +34,6 @@
 
 .frontpage-wrapper {
   .section {
-
     padding: 5em 1em;
     .sub {
       max-width: $max-width;
@@ -277,6 +276,7 @@
     }
     .view.view-sponsors .view-content {
       width: 100%;
+      margin-bottom:2em;
       h3 {
         clear: both;
         text-align: left;
@@ -286,12 +286,11 @@
         color: $secondary-color;
         border-bottom: 1px solid #ddd;
         padding-bottom: 1em;
-        margin: 2em $gutter-width;
+        margin: 3em $gutter-width 1em $gutter-width;
       }
       > div {
         display: inline-block;
         margin: $gutter-width -1px;
-
         &.platinum {
           width: calc(100% / 2 - #{$gutter-width} * 2);
         }
