@@ -8,9 +8,9 @@ dependencies:
     - content_translation
 third_party_settings:
   content_translation:
-    enabled: false
+    enabled: true
 id: node.speaker
 target_entity_type_id: node
 target_bundle: speaker
 default_langcode: site_default
-language_alterable: false
+language_alterable: true
