@@ -1,0 +1,13 @@
+dcamp_sessions.settings:
+  type: config_object
+  label: 'DrupalCamp Session settings'
+  mapping:
+   service_account_file:
+     type: string
+     label: 'Service account file'
+   spreadsheet_id:
+     type: string
+     label: 'Spreadsheet id'
+   spreadsheet_range:
+    type: string
+    lable: 'Spreadsheet range'

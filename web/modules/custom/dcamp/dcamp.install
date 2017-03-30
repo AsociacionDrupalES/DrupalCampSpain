@@ -390,3 +390,10 @@ function dcamp_update_8112() {
   $node->set('status', TRUE);
   $node->save();
 }
+
+/**
+ * Install sessions module.
+ */
+function dcamp_update_8113() {
+  \Drupal::service('module_installer')->install(['dcamp_sessions']);
+}

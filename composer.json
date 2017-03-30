@@ -27,7 +27,8 @@
     "drupal/menu_link_attributes": "1.*",
     "drupal/views_list_sort": "1.*",
     "drupal/pathauto": "1.x-dev",
-    "drupal/redirect": "1.x-dev"
+    "drupal/redirect": "1.x-dev",
+    "google/apiclient": "^2.0"
   },
   "require-dev": {
     "behat/mink": "~1.7",
