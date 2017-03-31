@@ -1,0 +1,15 @@
+dcamp_sessions.list:
+  path: '/sessions/proposed'
+  defaults:
+    _controller: '\Drupal\dcamp_sessions\Controller\DcampSessionsController::list'
+    _title: 'Proposed Sessions'
+  requirements:
+    _permission: 'access content'
+
+dcamp_sessions.view:
+  path: '/sessions/proposed/{submission_id}'
+  defaults:
+    _controller: '\Drupal\dcamp_sessions\Controller\DcampSessionsController::view'
+  requirements:
+    _permission: 'access content'
+    submission_id: '[0-9]+'
