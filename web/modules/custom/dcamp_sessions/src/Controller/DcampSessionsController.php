@@ -16,7 +16,7 @@ class DcampSessionsController extends ControllerBase {
    *
    * @return array
    */
-  public function list() {
+  public function listSessions() {
     $sessions = $this->getProposals();
     $list_items = [];
     foreach ($sessions as $submission_id => $session) {
