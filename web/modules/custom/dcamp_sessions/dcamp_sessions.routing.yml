@@ -1,7 +1,7 @@
 dcamp_sessions.list:
   path: '/sessions/proposed'
   defaults:
-    _controller: '\Drupal\dcamp_sessions\Controller\DcampSessionsController::list'
+    _controller: '\Drupal\dcamp_sessions\Controller\DcampSessionsController::listSessions'
     _title: 'Proposed Sessions'
   requirements:
     _permission: 'access content'
