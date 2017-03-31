@@ -57,5 +57,7 @@ $config['dcamp_sessions.settings'] = [
   'service_account_file' => 'full-path-to-service-account.json',
   'spreadsheet_id' => 'identifier-from-spreadsheet-in-URL',
   'spreadsheet_range' => 'sheet-name',
+  // Set this to FALSE if you have the above and want to see real data.
+  'debugging' => TRUE,
 ];
 

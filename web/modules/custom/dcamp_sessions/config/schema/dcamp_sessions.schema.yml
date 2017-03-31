@@ -11,3 +11,6 @@ dcamp_sessions.settings:
    spreadsheet_range:
     type: string
     lable: 'Spreadsheet range'
+   debugging:
+      type: boolean
+      lable: 'Debugging mode'

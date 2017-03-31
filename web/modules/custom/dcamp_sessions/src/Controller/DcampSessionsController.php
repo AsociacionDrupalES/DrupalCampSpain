@@ -130,6 +130,14 @@ class DcampSessionsController extends ControllerBase {
    */
   protected function getProposals() {
     $config = \Drupal::config('dcamp_sessions.settings');
+
+    // First check if we are in developer mode.
+    if ($config->get('debugging')) {
+      $path = \Drupal::service('module_handler')->getModule('dcamp_sessions')->getPath();
+      $sessions = file_get_contents($path . '/fixtures/sessions.json');
+      return json_decode($sessions);
+    }
+
     if (empty($config->get('service_account_file'))) {
       throw new \RuntimeException('The path of the service account file has not been set.');
     }
