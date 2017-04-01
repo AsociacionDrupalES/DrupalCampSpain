@@ -24,15 +24,14 @@ class DcampSessionsController extends ControllerBase {
         'submission_id' => $submission_id,
       ]);
       $list_items[] = [
-        '#markup' => '<a href="' . $url->toString() . '">' . $session[10] . '</a></br>'. $session[2] . '</p>',
+        '#markup' => '<h2 class="teaser-list__title"><a href="' . $url->toString() . '">' . $session[10] . '</a></h2><div class="teaser-list__subtitle">'. $session[2] . '</div>',
       ];
     }
 
     // @TODO set caching.
     return [
-      '#theme' => 'item_list',
+      '#theme' => 'proposed_sessions',
       '#items' => $list_items,
-      '#title' => $this->t('Proposed sessions'),
       '#cache' => [
         'max-age' => 0,
       ],

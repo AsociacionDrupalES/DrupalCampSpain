@@ -1,0 +1,23 @@
+{#
+/**
+ * @file
+ * Custim theme implementation for an sessions list.
+ *
+ */
+#}
+{% if items or empty %}
+  <section class="teaser-list__page">
+
+    <h1 class="teaser-list__page-title">{{ 'Proposed sessions'|trans }}</h1>
+
+    {%- if items -%}
+      <ul class="teaser-list">
+        {%- for item in items -%}
+          <li class="teaser-list__item">{{ item }}</li>
+        {%- endfor -%}
+      </li>
+    {%- else -%}
+      {{- empty -}}
+    {%- endif -%}
+  </section>
+{%- endif %}
