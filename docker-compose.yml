@@ -36,8 +36,8 @@ services:
     environment:
       - MYSQL_ROOT_PASSWORD=root
       - MYSQL_DATABASE=dc2017
-      - MYSQL_USER=''
-      - MYSQL_PASSWORD=''
+      - MYSQL_USER=dev
+      - MYSQL_PASSWORD=dev
   mail:
     image: mailhog/mailhog
     ports:
