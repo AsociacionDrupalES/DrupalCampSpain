@@ -1,0 +1,116 @@
+form {
+  @include clearfix();
+}
+
+input[type=search],
+input[type=text],
+input[type=password],
+input[type=email] {
+  box-sizing: border-box;
+  background: white;
+  border: 1px solid lightgrey;
+  padding: 5px 10px;
+  max-width: 100%;
+}
+
+input[type=submit] {
+  border: 0;
+  padding: 6px 10px;
+  text-transform: uppercase;
+  color: white;
+  cursor: pointer;
+  @include button();
+}
+
+label {
+  cursor: pointer;
+  color: black;
+  display: block;
+  margin-bottom: 5px;
+
+  .form-item-radios &,
+  .form-item-checkboxes & {
+    display: inline;
+  }
+}
+
+input[type=checkbox],
+input[type=radio] {
+  display: none;
+}
+
+input[type=checkbox] + label::before,
+input[type=radio] + label::before {
+  content: '';
+  display: inline-block;
+  width: 17px;
+  height: 17px;
+  border: 1px solid $grey;
+  vertical-align: top;
+  margin-right: 5px;
+}
+
+input[type=radio] + label::before {
+  border-radius: 50px;
+}
+
+input[type=checkbox]:checked + label::before {
+  background: url('../images/tick.svg') center center no-repeat;
+  background-size: 20px auto;
+}
+
+input[type=radio] {
+  background: white;
+  border: 1px solid grey;
+  padding: 5px;
+}
+
+input[type=radio]:checked + label::before {
+  background: url('../images/radiobutton-circle.svg') center center no-repeat;
+  background-size: 16px auto;
+}
+
+select {
+  box-sizing: border-box;
+  appearance: none;
+  background: transparent url('../images/caret-down.svg') right 10px center no-repeat;
+  background-size: 10px auto;
+  border: 1px solid $grey;
+  border-radius: 0;
+  padding: 5px 30px 5px 10px;
+}
+
+label.form-required::after {
+  content: "*";
+  color: #8a171a;
+  font-size: 75%;
+  top: -0.3em;
+  position: relative;
+  vertical-align: baseline;
+}
+
+.form-item {
+  margin-bottom: 10px;
+
+  .description {
+    font-size: 11px;
+    color: grey;
+  }
+
+  .field-suffix {
+    display: block;
+  }
+}
+
+//.form-actions {
+//  float: right;
+//}
+
+legend {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.vertical-tabs__pane {
+  padding: 10px 20px;
+}

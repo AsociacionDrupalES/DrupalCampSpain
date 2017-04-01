@@ -1,24 +1,30 @@
-main{
-  margin-top:$header-height;
-  @include breakpoint(mobile){
-    margin-top:$header-height-mobile;
+main {
+  margin-top: $header-height;
+  @include breakpoint(mobile) {
+    margin-top: $header-height-mobile;
   }
-  .messages{
-    background:$grey;
-    padding:$gutter-width;
-    &.messages--status{
-      background:green;
-      color:white;
-      a{
-        color:white;
-        font-weight:bold;
-      }
+  .messages {
+    background: $grey;
+    padding: $gutter-width;
+    color: black;
+    a {
+      color: black;
+      font-weight: bold;
+    }
+    &.messages--status {
+      background: #89ec89;
+    }
+    &.messages--warning {
+      background: #eaec89;
+    }
+    &.messages--error {
+      background: #ec8989;
     }
   }
-  nav.tabs{
+  nav.tabs {
     margin: 20px $gutter-width 0 $gutter-width;
-    ul{
-      margin:0;
+    ul {
+      margin: 0;
     }
   }
 }
