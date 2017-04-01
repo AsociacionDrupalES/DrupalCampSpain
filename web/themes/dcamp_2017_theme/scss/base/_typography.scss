@@ -63,5 +63,12 @@ html {
       font-family: $body-font;
     }
 
+    ul {
+      line-height: 1.3rem;
+      margin: .5em 0 1em 0;
+      font-size: 1.1em;
+      padding-left: 2em;
+    }
+
   }
 }
