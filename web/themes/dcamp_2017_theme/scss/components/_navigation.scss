@@ -13,11 +13,13 @@
     }
     &:before {
       font-family: icons;
-      padding: 12px;
+      padding: 14px;
       text-align: center;
       display: block;
+      font-size: 28px;
       @include breakpoint(mobile) {
         padding: 6px;
+        font-size: 18px;
       }
     }
     background: $main-color;

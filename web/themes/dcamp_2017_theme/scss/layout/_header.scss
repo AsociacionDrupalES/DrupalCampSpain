@@ -6,6 +6,7 @@
   background: $secondary-color;
   width: 100%;
   z-index: 99;
+  min-width: $min-width;
   .toolbar-vertical & {
     margin-top: 39px;
   }

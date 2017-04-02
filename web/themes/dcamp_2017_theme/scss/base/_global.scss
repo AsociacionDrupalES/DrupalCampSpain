@@ -2,6 +2,10 @@ a.button{
   @include button-gradient;
 }
 
+body {
+  min-width: $min-width;
+}
+
 em {
   font-style: italic;
 }
