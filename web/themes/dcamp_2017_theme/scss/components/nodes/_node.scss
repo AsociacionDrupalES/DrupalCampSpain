@@ -7,13 +7,19 @@ article {
   max-width: $max-width;
   margin: 2em auto;
   padding: $gutter-width;
+  position: relative;
   @include clearfix;
   .content {
     h1 {
       margin-bottom: 1em;
+      @include breakpoint(big) {
+        position: absolute;
+        left:0;
+        width: 35%;
+      }
     }
     @include breakpoint(big) {
-      width: 65%;
+      width: 60%;
       float: right;
       margin-right: 0;
     }

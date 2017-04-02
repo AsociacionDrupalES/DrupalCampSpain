@@ -1,0 +1,32 @@
+uuid: 572fbe5d-5b87-464a-a250-6a2b05b6696c
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.highlighted_image
+  module:
+    - ctools
+    - views
+  theme:
+    - dcamp_2017_theme
+id: views_block__highlighted_image_block_highlighted_image
+theme: dcamp_2017_theme
+region: content
+weight: -7
+provider: null
+plugin: 'views_block:highlighted_image-block_highlighted_image'
+settings:
+  id: 'views_block:highlighted_image-block_highlighted_image'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      page: page
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
