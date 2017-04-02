@@ -7,8 +7,8 @@ input[type=text],
 input[type=password],
 input[type=email] {
   box-sizing: border-box;
-  background: white;
-  border: 1px solid lightgrey;
+  background: $bg-grey;
+  border: 0;
   padding: 5px 10px;
   max-width: 100%;
 }
@@ -73,9 +73,9 @@ input[type=radio]:checked + label::before {
 select {
   box-sizing: border-box;
   appearance: none;
-  background: transparent url('../images/caret-down.svg') right 10px center no-repeat;
-  background-size: 10px auto;
-  border: 1px solid $grey;
+  background: $bg-grey url('../images/caret-icon.png') right 5px center no-repeat;
+  background-size: 20px;
+  border: 0;
   border-radius: 0;
   padding: 5px 30px 5px 10px;
 }
