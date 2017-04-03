@@ -14,6 +14,7 @@ module:
   datetime: 0
   dblog: 0
   dcamp: 0
+  dcamp_api: 0
   dcamp_sessions: 0
   dynamic_page_cache: 0
   editor: 0
@@ -25,6 +26,7 @@ module:
   help: 0
   history: 0
   image: 0
+  jsonapi: 0
   language: 0
   link: 0
   locale: 0
@@ -41,6 +43,7 @@ module:
   redirect: 0
   responsive_image: 0
   search: 0
+  serialization: 0
   shortcut: 0
   system: 0
   taxonomy: 0
