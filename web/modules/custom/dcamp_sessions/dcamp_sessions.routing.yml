@@ -22,3 +22,12 @@ dcamp_sessions.view:
   requirements:
     _permission: 'access content'
     submission_id: '[0-9]+'
+
+dcamp_sessions.api.view:
+  path: '/sessions/proposed/{submission_id}'
+  defaults:
+    _controller: '\Drupal\dcamp_sessions\Controller\DcampSessionsController::view'
+  requirements:
+    _permission: 'access content'
+    submission_id: '[0-9]+'
+    _format: json
