@@ -1,0 +1,21 @@
+<?php
+/**
+ * @file
+ *
+ * Install hooks for dcamp_sessions module.
+ */
+
+use Drupal\menu_link_content\Entity\MenuLinkContent;
+
+/**
+ * Implements hook_install().
+ */
+function dcamp_sessions_install(){
+  $menu_link = MenuLinkContent::create([
+    'title' => 'Proposed sessions',
+    'link' => ['uri' => 'internal:/sessions/proposed'],
+    'menu_name' => 'main',
+    'expanded' => TRUE,
+  ]);
+  $menu_link->save();
+}
