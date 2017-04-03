@@ -2,29 +2,47 @@
 
 namespace Drupal\dcamp_sessions\Controller;
 
-use Drupal\Core\Cache\Cache;
+use Drupal\Core\Cache\CacheableJsonResponse;
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\Url;
 use Google_Client;
 use Google_Service_Sheets;
+use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 
 class DcampSessionsController extends ControllerBase {
 
   /**
+   * The amount of seconds to cache session listings.
+   *
+   * @var int
+   */
+  protected $maxAge;
+
+  /**
    * Lists proposed sessions
    *
-   * @return array
+   * @return mixed
+   *   JsonResponse when requested via API request. A render array
+   *   otherwise.
    */
   public function listSessions() {
     $sessions = $this->getProposals();
+
+    // Check if this is an API request.
+    if (\Drupal::request()->query->get('_format') == 'json') {
+      // Prepare and send response.
+      $headers = [
+        'max-age' => $this->maxAge,
+      ];
+      return new JsonResponse($sessions, Response::HTTP_OK, $headers);
+    }
+
     $list_items = [];
     foreach ($sessions as $submission_id => $session) {
-      $url = Url::fromRoute('dcamp_sessions.view', [
-        'submission_id' => $submission_id,
-      ]);
       $list_items[] = [
-        '#markup' => '<h2 class="teaser-list__title"><a href="' . $url->toString() . '">' . $session[10] . '</a></h2><div class="teaser-list__subtitle">'. $session[2] . '</div>',
+        '#markup' => '<h2 class="teaser-list__title"><a href="' . $session[13] . '">' . $session[10] . '</a></h2><div class="teaser-list__subtitle">'. $session[2] . '</div>',
       ];
     }
 
@@ -32,19 +50,21 @@ class DcampSessionsController extends ControllerBase {
       '#theme' => 'proposed_sessions',
       '#items' => $list_items,
       '#cache' => [
-        'max-age' => 300,
+        'max-age' => $this->maxAge,
       ],
     ];
   }
 
   /**
-   * Views session details
+   * View session details
    *
    * @param int $submission_id
    *   The identifier of the submission id, which maps to the row
    *   in the spreadsheet.
    *
-   * @return array
+   * @return mixed
+   *   JsonResponse when requested via API request. A render array
+   *   otherwise.
    */
   public function view($submission_id) {
     $submission_id = (int) $submission_id;
@@ -55,13 +75,23 @@ class DcampSessionsController extends ControllerBase {
 
     // Extract session details.
     $session = $sessions[$submission_id];
+
+    // Check if this is an API request.
+    if (\Drupal::request()->query->get('_format') == 'json') {
+      // Prepare and send response.
+      $headers = [
+        'max-age' => $this->maxAge,
+      ];
+      return new JsonResponse($session, Response::HTTP_OK, $headers);
+    }
+
     $build = [
       '#type' => 'table',
       '#caption' => $session[10],
       '#prefix' => '<a href="/sessions/proposed">' . $this->t('List proposed sessions') . '</a>',
       '#header' => ['Field', 'Value'],
       '#cache' => [
-        'max-age' => 300,
+        'max-age' => $this->maxAge,
       ],
     ];
 
@@ -159,7 +189,23 @@ class DcampSessionsController extends ControllerBase {
     // Create aliases for session proposals.
     $this->createAliases($sessions);
 
-    return $sessions;
+    // Add URLs to session proposals.
+    $sessions_with_urls = [];
+    foreach ($sessions as $submission_id => $session) {
+      $url = Url::fromRoute('dcamp_sessions.view', [
+        'submission_id' => $submission_id,
+      ]);
+      if (count($session) == 12) {
+        // Argh! This proposal does not have the last question filled up,
+        // and Google prefers to remove the cell rather than sending and empty
+        // cell.
+        $session[] = '';
+      }
+      $session[] = $url->toString();
+      $sessions_with_urls[] = $session;
+    }
+
+    return $sessions_with_urls;
   }
 
   /**

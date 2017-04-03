@@ -6,6 +6,15 @@ dcamp_sessions.list:
   requirements:
     _permission: 'access content'
 
+dcamp_sessions.api.list:
+  path: '/sessions/proposed'
+  defaults:
+    _controller: '\Drupal\dcamp_sessions\Controller\DcampSessionsController::listSessions'
+    _title: 'Proposed Sessions'
+  requirements:
+    _permission: 'access content'
+    _format: json
+
 dcamp_sessions.view:
   path: '/sessions/proposed/{submission_id}'
   defaults:
@@ -13,3 +22,12 @@ dcamp_sessions.view:
   requirements:
     _permission: 'access content'
     submission_id: '[0-9]+'
+
+dcamp_sessions.api.view:
+  path: '/sessions/proposed/{submission_id}'
+  defaults:
+    _controller: '\Drupal\dcamp_sessions\Controller\DcampSessionsController::view'
+  requirements:
+    _permission: 'access content'
+    submission_id: '[0-9]+'
+    _format: json
