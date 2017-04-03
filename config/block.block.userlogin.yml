@@ -1,6 +1,6 @@
 uuid: aaacd023-a4d2-4f78-ad68-63571604ac75
 langcode: en
-status: true
+status: false
 dependencies:
   module:
     - user
@@ -8,8 +8,8 @@ dependencies:
     - dcamp_2017_theme
 id: userlogin
 theme: dcamp_2017_theme
-region: header
-weight: -7
+region: '-1'
+weight: 1
 provider: null
 plugin: user_login_block
 settings:

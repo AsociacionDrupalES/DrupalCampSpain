@@ -11,7 +11,7 @@ _core:
 id: dcamp_2017_theme_page_title
 theme: dcamp_2017_theme
 region: '-1'
-weight: 0
+weight: -6
 provider: null
 plugin: page_title_block
 settings:
