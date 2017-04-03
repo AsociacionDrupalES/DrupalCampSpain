@@ -28,12 +28,11 @@ class DcampSessionsController extends ControllerBase {
       ];
     }
 
-    // @TODO set caching.
     return [
       '#theme' => 'proposed_sessions',
       '#items' => $list_items,
       '#cache' => [
-        'max-age' => 0,
+        'max-age' => 300,
       ],
     ];
   }
@@ -55,14 +54,14 @@ class DcampSessionsController extends ControllerBase {
     }
 
     // Extract session details.
-    // @TODO set caching.
     $session = $sessions[$submission_id];
     $build = [
       '#type' => 'table',
       '#caption' => $session[10],
+      '#prefix' => '<a href="/sessions/proposed">' . $this->t('List proposed sessions') . '</a>',
       '#header' => ['Field', 'Value'],
       '#cache' => [
-        'max-age' => 0,
+        'max-age' => 300,
       ],
     ];
 
@@ -153,9 +152,32 @@ class DcampSessionsController extends ControllerBase {
     $service = new Google_Service_Sheets($client);
 
     $result = $service->spreadsheets_values->get($config->get('spreadsheet_id'), $config->get('spreadsheet_range'));
-    $sessions = $result->getValues();
-    // Skip the first row as it contain heading titles.
-    return array_slice($sessions, 1);
+
+    // Skip the first row from the spreadsheet values as it contains heading titles.
+    $sessions = array_slice($result->getValues(), 1);
+
+    // Create aliases for session proposals.
+    $this->createAliases($sessions);
+
+    return $sessions;
+  }
+
+  /**
+   * Create aliases for session proposals.
+   *
+   * @param array
+   *   Array of session proposals.
+   */
+  protected function createAliases($sessions) {
+    /** @var \Drupal\Core\Path\AliasStorage $aliasStorage */
+    $aliasStorage = \Drupal::service('path.alias_storage');
+    $pathAutoAliasCleaner = \Drupal::service('pathauto.alias_cleaner');
+    foreach ($sessions as $key => $session) {
+      $session_alias = '/sessions/' . $pathAutoAliasCleaner->cleanString($session[10]);
+      if (!$aliasStorage->load(['alias' => $session_alias])) {
+        $aliasStorage->save('/sessions/proposed/' . $key, $session_alias);
+      }
+    }
   }
 
 }
