@@ -14,6 +14,7 @@ module:
   datetime: 0
   dblog: 0
   dcamp: 0
+  dcamp_sessions: 0
   dynamic_page_cache: 0
   editor: 0
   field: 0
