@@ -3,11 +3,19 @@
   shell: 'drush updb -y {{ drush_args }}'
   args:
     chdir: "{{ ansistrano_release_path.stdout }}{{ drupal_rel_path }}"
+  register: updb
+
+- name: 'debug: drush updb'
+  debug: var=updb
 
 - name: 'drush cim sync'
   shell: 'drush cim sync -y {{ drush_args }}' 
   args: 
     chdir: "{{ ansistrano_release_path.stdout }}{{ drupal_rel_path }}"
+  register: cim_sync
+
+- name: 'debug: drush cim sync'
+  debug: var=cim_sync
 
 - name: 'drush cr'
   shell: 'drush cr {{ drush_args }}' 
