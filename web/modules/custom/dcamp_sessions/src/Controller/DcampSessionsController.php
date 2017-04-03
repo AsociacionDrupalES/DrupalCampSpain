@@ -3,6 +3,7 @@
 namespace Drupal\dcamp_sessions\Controller;
 
 use Drupal\Core\Cache\Cache;
+use Drupal\Core\Cache\CacheableJsonResponse;
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\Url;
 use Google_Client;
@@ -18,6 +19,12 @@ class DcampSessionsController extends ControllerBase {
    */
   public function listSessions() {
     $sessions = $this->getProposals();
+
+    // Check if this is an API request.
+    if (\Drupal::request()->query->get('format') == 'json') {
+      return new CacheableJsonResponse($sessions);
+    }
+
     $list_items = [];
     foreach ($sessions as $submission_id => $session) {
       $url = Url::fromRoute('dcamp_sessions.view', [
@@ -38,7 +45,7 @@ class DcampSessionsController extends ControllerBase {
   }
 
   /**
-   * Views session details
+   * View session details
    *
    * @param int $submission_id
    *   The identifier of the submission id, which maps to the row
