@@ -2,15 +2,22 @@
 
 namespace Drupal\dcamp_sessions\Controller;
 
-use Drupal\Core\Cache\Cache;
 use Drupal\Core\Cache\CacheableJsonResponse;
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\Url;
 use Google_Client;
 use Google_Service_Sheets;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 
 class DcampSessionsController extends ControllerBase {
+
+  /**
+   * The amount of seconds to cache session listings.
+   *
+   * @var int
+   */
+  protected $maxAge;
 
   /**
    * Lists proposed sessions
@@ -22,7 +29,10 @@ class DcampSessionsController extends ControllerBase {
 
     // Check if this is an API request.
     if (\Drupal::request()->query->get('format') == 'json') {
-      return new CacheableJsonResponse($sessions);
+      $headers = [
+        'max-age' => $this->maxAge,
+      ];
+      return new CacheableJsonResponse($sessions, Response::HTTP_OK, $headers);
     }
 
     $list_items = [];
@@ -39,7 +49,7 @@ class DcampSessionsController extends ControllerBase {
       '#theme' => 'proposed_sessions',
       '#items' => $list_items,
       '#cache' => [
-        'max-age' => 300,
+        'max-age' => $this->maxAge,
       ],
     ];
   }
@@ -68,7 +78,7 @@ class DcampSessionsController extends ControllerBase {
       '#prefix' => '<a href="/sessions/proposed">' . $this->t('List proposed sessions') . '</a>',
       '#header' => ['Field', 'Value'],
       '#cache' => [
-        'max-age' => 300,
+        'max-age' => $this->maxAge,
       ],
     ];
 
