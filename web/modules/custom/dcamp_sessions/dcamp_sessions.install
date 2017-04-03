@@ -10,7 +10,7 @@ use Drupal\menu_link_content\Entity\MenuLinkContent;
 /**
  * Implements hook_install().
  */
-function dcamp_sessions_install(){
+function dcamp_sessions_install() {
   $menu_link = MenuLinkContent::create([
     'title' => 'Proposed sessions',
     'link' => ['uri' => 'internal:/sessions/proposed'],
