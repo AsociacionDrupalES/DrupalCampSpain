@@ -140,11 +140,6 @@ class DcampSessionsController extends ControllerBase {
       'value' => ['#markup' => !empty($session[11]) ? $session[11] : ''],
     ];
 
-    $build[] = [
-      'name' => ['#markup' => 'Extra'],
-      'value' => ['#markup' => !empty($session[12]) ? $session[12] : ''],
-    ];
-
     return $build;
   }
 
