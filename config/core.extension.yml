@@ -15,6 +15,7 @@ module:
   dblog: 0
   dcamp: 0
   dcamp_api: 0
+  dcamp_attendees: 0
   dcamp_sessions: 0
   dynamic_page_cache: 0
   editor: 0
