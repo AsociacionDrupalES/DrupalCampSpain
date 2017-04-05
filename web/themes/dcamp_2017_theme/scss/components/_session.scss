@@ -1,0 +1,16 @@
+.session {
+  max-width: $max-width;
+  margin: 2em auto;
+  padding: $gutter-width;
+  @include clearfix;
+  .content {
+    h1 {
+      margin-bottom: 1em;
+    }
+    @include breakpoint(big) {
+      width: 65%;
+      float: right;
+      margin-right: 0;
+    }
+  }
+}

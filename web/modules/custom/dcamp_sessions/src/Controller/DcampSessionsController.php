@@ -5,6 +5,7 @@ namespace Drupal\dcamp_sessions\Controller;
 use Drupal\Core\Cache\CacheableJsonResponse;
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\Url;
+use Drupal\dcamp_sessions\Session;
 use Google_Client;
 use Google_Service_Sheets;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -86,58 +87,11 @@ class DcampSessionsController extends ControllerBase {
     }
 
     $build = [
-      '#type' => 'table',
-      '#caption' => $session[10],
-      '#prefix' => '<a href="/sessions/proposed">' . $this->t('List proposed sessions') . '</a>',
-      '#header' => ['Field', 'Value'],
+      '#theme' => 'proposed_session',
+      '#session' => new Session($session),
       '#cache' => [
         'max-age' => $this->maxAge,
       ],
-    ];
-
-    $build[] = [
-      'name' => ['#markup' => 'Name'],
-      'value' => ['#markup' => !empty($session[2]) ? $session[2] : ''],
-    ];
-
-    $build[] = [
-      'name' => ['#markup' => 'Drupal.org'],
-      'value' => ['#markup' => !empty($session[3]) ? $session[3] : ''],
-    ];
-
-    $build[] = [
-      'name' => ['#markup' => 'Photo'],
-      'value' => ['#markup' => '<img src="' . (!empty($session[4]) ? $session[4] : '') . '"/>'],
-    ];
-
-    $build[] = [
-      'name' => ['#markup' => 'Twitter'],
-      'value' => ['#markup' => !empty($session[5]) ? $session[5] : ''],
-    ];
-
-    $build[] = [
-      'name' => ['#markup' => 'Bio'],
-      'value' => ['#markup' => !empty($session[6]) ? $session[6] : ''],
-    ];
-
-    $build[] = [
-      'name' => ['#markup' => 'Session type'],
-      'value' => ['#markup' => !empty($session[7]) ? $session[7] : ''],
-    ];
-
-    $build[] = [
-      'name' => ['#markup' => 'Session level'],
-      'value' => ['#markup' => !empty($session[8]) ? $session[8] : ''],
-    ];
-
-    $build[] = [
-      'name' => ['#markup' => 'Language'],
-      'value' => ['#markup' => !empty($session[9]) ? $session[9] : ''],
-    ];
-
-    $build[] = [
-      'name' => ['#markup' => 'Description'],
-      'value' => ['#markup' => !empty($session[11]) ? $session[11] : ''],
     ];
 
     return $build;
