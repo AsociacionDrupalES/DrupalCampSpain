@@ -1,0 +1,17 @@
+label: 'Editing languages'
+tips:
+  language-edit-overview:
+    label: 'Editing languages'
+    body: '<p>This page provides the ability to edit a language on your site, including custom languages.</p>'
+  language-edit-langcode:
+    label: 'Language code'
+    body: '<p>You cannot change the code of a language on the site, since it is used by the system to keep track of the language.</p>'
+  language-edit-label:
+    label: 'Language name'
+    body: '<p>The language name is used throughout the site for all users and is written in English. Names of built-in languages can be translated using the Interface Translation module, and names of both built-in and custom languages can be translated using the Configuration Translation module.</p>'
+  language-edit-direction:
+    label: 'Language direction'
+    body: '<p>Choose if the language is a "Left to right" or "Right to left" language.</p><p>Note that not all themes support "Right to left" layouts, so test your theme if you are using "Right to left".</p>'
+  language-edit-continue:
+    label: 'Continuing on'
+    body: '<p>Now that you have an overview of the "Edit language" feature, you can continue by:<ul><li>Editing a language</li><li><a href="[site:url]/admin/config/regional/language">Viewing configured languages</a></li></ul></p>'

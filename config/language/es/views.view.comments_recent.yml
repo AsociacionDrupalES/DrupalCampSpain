@@ -1,3 +1,15 @@
+label: 'Recent comments'
+description: 'Recent comments.'
 display:
   default:
     display_title: Máster
+    display_options:
+      title: 'Recent comments'
+      empty:
+        area_text_custom:
+          content: 'No comments available.'
+  block_1:
+    display_title: Bloque
+    display_options:
+      block_description: 'Recent comments'
+      block_category: 'Lists (Views)'
