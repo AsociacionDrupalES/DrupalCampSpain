@@ -52,12 +52,12 @@ $settings['extension_discovery_scan_tests'] = TRUE;
 $settings['rebuild_access'] = TRUE;
 $settings['skip_permissions_hardening'] = TRUE;
 
-// Session settings
+// Session settings.
 $config['dcamp_sessions.settings'] = [
-  'service_account_file' => 'full-path-to-service-account.json',
-  'spreadsheet_id' => 'identifier-from-spreadsheet-in-URL',
-  'spreadsheet_range' => 'sheet-name',
-  // Set this to FALSE if you have the above and want to see real data.
   'debugging' => TRUE,
 ];
 
+// Attendees settings.
+$config['dcamp_attendees.settings'] = [
+  'debugging' => TRUE,
+];
