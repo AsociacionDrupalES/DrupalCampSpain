@@ -404,3 +404,10 @@ function dcamp_update_8113() {
 function dcamp_update_8114() {
   \Drupal::service('module_installer')->install(['dcamp_api']);
 }
+
+/**
+ * Install attendees module.
+ */
+function dcamp_update_8115() {
+  \Drupal::service('module_installer')->install(['dcamp_attendees']);
+}

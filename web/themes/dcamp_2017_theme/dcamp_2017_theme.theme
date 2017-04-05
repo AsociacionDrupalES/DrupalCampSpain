@@ -17,14 +17,19 @@ function dcamp_2017_theme_preprocess(&$variables, $hook) {
   $variables['path_to_dcamp_2017_theme'] = base_path() . drupal_get_path('theme', 'dcamp_2017_theme');
 }
 
+/**
+ * @file
+ * Provides hook implementations for testing purposes.
+ */
 
-function dcamp_2017_theme_form_alter(&$form, FormStateInterface $form_state, $form_id) {
-  if ("user_login_form" == $form_id) {
-$form['pass']['#title'] = t('Password. @link', ['@link' => Link::fromTextAndUrl(t('Did you forget?'), Url::fromUserInput('/user/password'))->toString()]);
-$form['actions']['submit']['#suffix'] = Link::fromTextAndUrl(t("No account?"), Url::fromUserInput('/user/create'))->toString();
-  }
+/**
+ * Implements hook_preprocess_HOOK().
+ *
+ * Adds the list of individual sponsors to the sponsors views block.
+ */
+function dcamp_2017_theme_preprocess_frontpage(&$variables) {
+  $variables['individual_sponsors'] = \Drupal::service('dcamp_attendees.eventbrite')->getIndividualSponsors();
 }
-
 /**
  * Implements hook_theme_suggestions_HOOK_alter().
  */
