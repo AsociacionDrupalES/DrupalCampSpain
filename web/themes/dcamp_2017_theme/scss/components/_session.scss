@@ -19,9 +19,10 @@
   max-width: $max-width;
   margin: 0 auto;
   padding: 0 $gutter-width;
+  width: 100%;
   @include clearfix;
   @include breakpoint(big) {
-    width: 65%;
+    width: 60%;
     float: right;
     margin-right: 0;
   }
@@ -45,6 +46,7 @@
 .session-sidebar {
   max-width: $max-width;
   margin: 0 auto;
+  width: 100%;
   padding: $gutter-width;
   @include clearfix;
   @include breakpoint(big) {
