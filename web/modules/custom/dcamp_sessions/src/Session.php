@@ -2,6 +2,8 @@
 
 namespace Drupal\dcamp_sessions;
 
+use Drupal\Component\Utility\Xss;
+
 /**
  * Class to interact with session data
  */
@@ -31,42 +33,69 @@ class Session {
   }
 
   public function getAuthorsName() {
-    return $this->sessionGathered[$this::NAME];
+    return Xss::filter($this->sessionGathered[$this::NAME]);
   }
 
   public function getAuthorsDrupalName() {
-    return $this->sessionGathered[$this::DRUPAL_ORG];
+    $user_input = Xss::filter($this->sessionGathered[$this::DRUPAL_ORG]);
+    $url = NULL;
+    if (strpos($user_input, "drupal.org") > 4) {
+      // The input is like https://drupal.org/u/username or
+      // https://drupal.org/user/{user_id}
+      $url = $user_input;
+    }
+    elseif (strpos($user_input,"/") == FALSE) {
+      // The used sent his/her drupal username, like 'isholgueras'
+      $url = "https://drupal.org/u/" . $user_input;
+    }
+    return $url;
   }
 
   public function getAuthorsPhoto() {
-    return $this->sessionGathered[$this::PHOTO];
+    return Xss::filter($this->sessionGathered[$this::PHOTO]);
   }
 
   public function getAuthorsTwitter() {
-    return $this->sessionGathered[$this::TWITTER];
+    $user_input = Xss::filter($this->sessionGathered[$this::TWITTER]);
+    $url = NULL;
+    if (strpos($user_input, "twitter.com") > 4) {
+      // The input is like https://twitter.com/username or
+      // https://twitter.com/{user_id}
+      $url = $user_input;
+    }
+    elseif (strpos($user_input,"@") !== FALSE) {
+      // The used sent his/her drupal username, like '@isholgueras'
+      $username = explode("@", $user_input)[1];
+      $url = "https://twitter.com/" . $username;
+    }
+    elseif (strpos($user_input,"/") === FALSE) {
+      // The used sent his/her twitter username, like 'isholgueras'
+      $url = "https://twitter.com/" . $user_input;
+    }
+    return $url;
   }
 
   public function getAuthorsBio() {
-    return $this->sessionGathered[$this::BIO];
+    return Xss::filter($this->sessionGathered[$this::BIO]);
   }
 
   public function getType() {
-    return $this->sessionGathered[$this::SESSION_TYPE];
+    return Xss::filter($this->sessionGathered[$this::SESSION_TYPE]);
   }
 
   public function getLevel() {
-    return $this->sessionGathered[$this::SESSION_LEVEL];
+    return Xss::filter($this->sessionGathered[$this::SESSION_LEVEL]);
   }
 
   public function getLanguage() {
-    return $this->sessionGathered[$this::LANGUAGE];
+    return Xss::filter($this->sessionGathered[$this::LANGUAGE]);
   }
 
   public function getTitle() {
-    return $this->sessionGathered[$this::TITLE];
+    return Xss::filter($this->sessionGathered[$this::TITLE]);
   }
 
   public function getDescription() {
-    return $this->sessionGathered[$this::DESCRIPTION];
+    return Xss::filter($this->sessionGathered[$this::DESCRIPTION]);
   }
 }

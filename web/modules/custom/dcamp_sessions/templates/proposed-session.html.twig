@@ -8,33 +8,44 @@
  */
 #}
 <div class="session">
-  <div class="session-sidebar">
-    <h1 class="session__title">{{ session.getTitle }}</h1>
-  </div>
 
-  <div class="session__author">
-    {% if session.getAuthorsPhoto %}
-      <img src="{{ session.getAuthorsPhoto }}" class="author-sphoto" />
-    {% endif %}
-    <span class="authors-name">{{ session.getAuthorsName }}</span>
-    {% if session.getAuthorsDrupalName %}
-      <a href="{{ session.getAuthorsDrupalName }}" class="authors-drupal">Drupal's profile of {{ session.getAuthorsName }}</a>
-    {% endif %}
-    {% if session.getAuthorsTwitter %}
-      <a href="{{ session.getAuthorsTwitter }}" class="authors-twitter">Twitter's profile of {{ session.getAuthorsName }}</a>
-    {% endif %}
-    {% if session.getAuthorsBio %}
-      <div class="authors-bio">{{ session.getAuthorsBio }}</div>
-    {% endif %}
-  </div>
   <div class="session-content">
-    <div class="session-meta">
-      <span class="session-type">{{ session.getType }}</span>
-      <span class="session-level">{{ session.getLevel }}</span>
-      <span class="session-level">{{ session.getLanguage }}</span>
+    <h1 class="session__title">{{ session.getTitle }}</h1>
+    <div class="session__meta">
+      <span class="session__type">{{ session.getType }}</span>
+      <span class="session__level">{{ session.getLevel }}</span>
+      <span class="session__language">{{ session.getLanguage }}</span>
     </div>
     <div class="session__description">
       {{ session.getDescription }}
+    </div>
+  </div>
+
+  <div class="session-sidebar">
+    <div class="session__author">
+      {% if session.getAuthorsPhoto %}
+        <div class="authors-photo__mask">
+          <img src="{{ session.getAuthorsPhoto }}" class="authors-photo"/>
+        </div>
+      {% endif %}
+      <span class="authors-name">{{ session.getAuthorsName }}</span>
+      {% if session.getAuthorsDrupalName or session.getAuthorsTwitter%}
+      <div class="authors-meta">
+        {% if session.getAuthorsDrupalName %}
+          <a href="{{ session.getAuthorsDrupalName }}" class="authors-drupal">
+            Drupal's profile of {{ session.getAuthorsName }}
+          </a>
+        {% endif %}
+        {% if session.getAuthorsTwitter %}
+          <a href="{{ session.getAuthorsTwitter }}" class="authors-twitter">
+            Twitter's profile of {{ session.getAuthorsName }}
+          </a>
+        {% endif %}
+      </div>
+      {% endif %}
+      {% if session.getAuthorsBio %}
+        <div class="authors-bio">{{ session.getAuthorsBio }}</div>
+      {% endif %}
     </div>
   </div>
 </div>
