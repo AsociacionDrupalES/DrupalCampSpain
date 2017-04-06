@@ -54,7 +54,7 @@
     "refunded": false,
     "affiliate": "es2",
     "status": "Attending",
-    "ticket_class_name": "Patrocinador individual",
+    "ticket_class_name": "Patrocinador individual"
   },
   {
     "team": null,
@@ -111,7 +111,7 @@
     "refunded": false,
     "affiliate": null,
     "status": "Attending",
-    "ticket_class_name": "Patrocinador individual",
+    "ticket_class_name": "Patrocinador individual"
   },
   {
     "team": null,
@@ -169,7 +169,7 @@
     "refunded": false,
     "affiliate": null,
     "status": "Attending",
-    "ticket_class_name": "Patrocinador individual",
+    "ticket_class_name": "Patrocinador individual"
   },
   {
     "team": null,
@@ -224,6 +224,6 @@
     "refunded": false,
     "affiliate": null,
     "status": "Attending",
-    "ticket_class_name": "Patrocinador individual",
+    "ticket_class_name": "Patrocinador individual"
   }
 ]
