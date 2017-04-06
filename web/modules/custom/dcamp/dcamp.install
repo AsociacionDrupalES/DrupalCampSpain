@@ -411,3 +411,12 @@ function dcamp_update_8114() {
 function dcamp_update_8115() {
   \Drupal::service('module_installer')->install(['dcamp_attendees']);
 }
+
+/**
+ * Install sponsors module.
+ *
+ * Got uninstalled by drush cim sync, hence reinstalling again.
+ */
+function dcamp_update_8116() {
+  \Drupal::service('module_installer')->install(['dcamp_sponsors']);
+}
