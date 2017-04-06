@@ -1,0 +1,97 @@
+.session {
+  max-width: $max-width;
+  margin: 2em auto;
+  padding: $gutter-width;
+  @include clearfix;
+  .content {
+    h1 {
+      margin-bottom: 1em;
+    }
+    @include breakpoint(big) {
+      width: 65%;
+      float: right;
+      margin-right: 0;
+    }
+  }
+}
+
+.session-content {
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 0 $gutter-width;
+  width: 100%;
+  @include clearfix;
+  @include breakpoint(big) {
+    width: 60%;
+    float: right;
+    margin-right: 0;
+  }
+}
+
+.session__meta {
+  margin-top: 30px;
+}
+.session__type,
+.session__level,
+.session__language {
+  display: block;
+}
+
+.session__description {
+  display: block;
+  margin-top:30px;
+}
+
+
+.session-sidebar {
+  max-width: $max-width;
+  margin: 0 auto;
+  width: 100%;
+  padding: $gutter-width;
+  @include clearfix;
+  @include breakpoint(big) {
+    width: calc(30% - 20px); /*$gutter-width*/
+    float: left;
+    margin-right: 0;
+  }
+}
+
+.authors-photo__mask {
+  float: left;
+  width: 45%;
+  height: 105px;
+  position: relative;
+  overflow: hidden;
+  .authors-photo {
+    position: absolute;
+    width: 100%;
+    top: 0;
+  }
+}
+
+.authors-name {
+  font-size: 24px;
+  color: #452ae2;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family: "futura-pt-condensed", sans-serif;
+}
+
+.authors-meta,
+.authors-bio {
+  display: block;
+  margin-top: 15px;
+}
+
+.authors-drupal,
+.authors-twitter {
+  display: inline-block;
+  text-indent: -9999px;
+  width: 30px;
+  height: 30px;
+  background: transparent url("../images/twitter.svg") 50% 50% no-repeat;
+  background-size: 30px;
+}
+.authors-drupal {
+  background-image:url("../images/drupal.png");
+}
