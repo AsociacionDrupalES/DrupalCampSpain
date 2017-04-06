@@ -272,22 +272,19 @@
   }
   #sponsors {
     h3 {
-
+      clear: both;
+      text-align: left;
+      font-size: 1em;
+      font-weight: normal;
+      font-family: $body-font;
+      color: $secondary-color;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 1em;
+      margin: 3em $gutter-width 1em $gutter-width;
     }
     .view.view-sponsors .view-content {
       width: 100%;
       margin-bottom:2em;
-      h3 {
-        clear: both;
-        text-align: left;
-        font-size: 1em;
-        font-weight: normal;
-        font-family: $body-font;
-        color: $secondary-color;
-        border-bottom: 1px solid #ddd;
-        padding-bottom: 1em;
-        margin: 3em $gutter-width 1em $gutter-width;
-      }
       > div {
         display: inline-block;
         margin: $gutter-width -1px;
@@ -321,6 +318,26 @@
         }
         h3 {
           margin: 0;
+        }
+      }
+    }
+
+    #individual_sponsors {
+      width: 100%;
+      margin-bottom:2em;
+      > ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        > li {
+          float: left;
+          margin: $gutter-width;
+          img {
+            width: $gutter-width * 8;
+            height: $gutter-width * 8;
+            border-radius: 50%;
+          }
         }
       }
     }
