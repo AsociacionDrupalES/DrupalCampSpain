@@ -24,6 +24,7 @@ function dcamp_2017_theme_preprocess(&$variables, $hook) {
  */
 function dcamp_2017_theme_preprocess_frontpage(&$variables) {
   $variables['individual_sponsors'] = \Drupal::service('dcamp_attendees.eventbrite')->getIndividualSponsors();
+  $variables['default_headshot'] = \Drupal::theme()->getActiveTheme()->getPath() . '/images/drupal.png';
 }
 /**
  * Implements hook_theme_suggestions_HOOK_alter().
