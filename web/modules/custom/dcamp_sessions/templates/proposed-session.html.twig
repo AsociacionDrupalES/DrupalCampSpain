@@ -1,7 +1,7 @@
 {#
 /**
  * @file
- * Custim theme implementation for an sessions detail.
+ * Custom theme implementation for an sessions detail.
  *
  * Available variables:
  * - session: Session (object)
@@ -17,34 +17,34 @@
       <span class="session__language">{{ session.getLanguage }}</span>
     </div>
     <div class="session__description">
-      {{ session.getDescription }}
+      {{ session.getDescription | nl2br }}
     </div>
   </div>
 
   <div class="session-sidebar">
     <div class="session__author">
-      {% if session.getAuthorsPhoto %}
+      {% if session.getHeadshot %}
         <div class="authors-photo__mask">
-          <img src="{{ session.getAuthorsPhoto }}" class="authors-photo"/>
+          <img src="{{ session.getHeadshot }}" class="authors-photo"/>
         </div>
       {% endif %}
-      <span class="authors-name">{{ session.getAuthorsName }}</span>
-      {% if session.getAuthorsDrupalName or session.getAuthorsTwitter%}
+      <span class="authors-name">{{ session.getName }}</span>
+      {% if session.getDrupal or session.getTwitter %}
       <div class="authors-meta">
-        {% if session.getAuthorsDrupalName %}
-          <a href="{{ session.getAuthorsDrupalName }}" class="authors-drupal">
-            Drupal's profile of {{ session.getAuthorsName }}
+        {% if session.getDrupal %}
+          <a href="{{ session.getDrupalUrl(session.getDrupal) }}" class="authors-drupal">
+            {{ session.getAuthorsName }}
           </a>
         {% endif %}
-        {% if session.getAuthorsTwitter %}
-          <a href="{{ session.getAuthorsTwitter }}" class="authors-twitter">
-            Twitter's profile of {{ session.getAuthorsName }}
+        {% if session.getTwitter %}
+          <a href="{{ session.getTwitterUrl(session.getTwitter) }}" class="authors-twitter">
+            {{ session.getAuthorsName }}
           </a>
         {% endif %}
       </div>
       {% endif %}
-      {% if session.getAuthorsBio %}
-        <div class="authors-bio">{{ session.getAuthorsBio }}</div>
+      {% if session.getBio %}
+        <div class="authors-bio">{{ session.getBio | nl2br }}</div>
       {% endif %}
     </div>
   </div>

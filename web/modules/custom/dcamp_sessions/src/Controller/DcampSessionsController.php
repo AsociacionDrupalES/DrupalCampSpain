@@ -2,10 +2,11 @@
 
 namespace Drupal\dcamp_sessions\Controller;
 
+use Drupal\Component\Utility\Xss;
 use Drupal\Core\Cache\CacheableJsonResponse;
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\Url;
-use Drupal\dcamp_sessions\Session;
+use Drupal\dcamp_sessions\Entity\Session;
 use Google_Client;
 use Google_Service_Sheets;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -41,9 +42,9 @@ class DcampSessionsController extends ControllerBase {
     }
 
     $list_items = [];
-    foreach ($sessions as $submission_id => $session) {
+    foreach ($sessions as $session) {
       $list_items[] = [
-        '#markup' => '<h2 class="teaser-list__title"><a href="' . $session[13] . '">' . $session[10] . '</a></h2><div class="teaser-list__subtitle">'. $session[2] . '</div>',
+        '#markup' => '<h2 class="teaser-list__title"><a href="' . $session->getUrl() . '">' . Xss::filter($session->getTitle()) . '</a></h2><div class="teaser-list__subtitle">'. Xss::filter($session->getName()) . '</div>',
       ];
     }
 
@@ -88,7 +89,7 @@ class DcampSessionsController extends ControllerBase {
 
     $build = [
       '#theme' => 'proposed_session',
-      '#session' => new Session($session),
+      '#session' => $session,
       '#cache' => [
         'max-age' => $this->maxAge,
       ],
@@ -100,79 +101,60 @@ class DcampSessionsController extends ControllerBase {
   /**
    * Returns the spreadsheet values.
    *
-   * @return array
+   * @return \Drupal\dcamp_sessions\Entity\Session[]
    *   The array of session proposals.
    * @throws \RuntimeException
    *   If there is no credentials file to authenticate against Google.
    */
   protected function getProposals() {
     $config = \Drupal::config('dcamp_sessions.settings');
+    /** @var \Drupal\Core\Path\AliasStorage $aliasStorage */
+    $aliasStorage = \Drupal::service('path.alias_storage');
+    $pathAutoAliasCleaner = \Drupal::service('pathauto.alias_cleaner');
+    $sessions = [];
 
     // First check if we are in developer mode.
     if ($config->get('debugging')) {
       $path = \Drupal::service('module_handler')->getModule('dcamp_sessions')->getPath();
-      $sessions = file_get_contents($path . '/fixtures/sessions.json');
-      return json_decode($sessions);
+      $sessions_raw = file_get_contents($path . '/fixtures/sessions.json');
+      $sessions_json = json_decode($sessions_raw);
     }
-
-    if (empty($config->get('service_account_file'))) {
-      throw new \RuntimeException('The path of the service account file has not been set.');
-    }
-    if (empty($config->get('spreadsheet_id'))) {
-      throw new \RuntimeException('The identifier of the spreadsheet has not been set.');
-    }
-    if (empty($config->get('spreadsheet_range'))) {
-      throw new \RuntimeException('The range of the spreadsheet has not been set.');
-    }
-    putenv('GOOGLE_APPLICATION_CREDENTIALS=' . $config->get('service_account_file'));
-    $client = new Google_Client();
-    $client->useApplicationDefaultCredentials();
-    $client->addScope(Google_Service_Sheets::SPREADSHEETS_READONLY);
-    $service = new Google_Service_Sheets($client);
-
-    $result = $service->spreadsheets_values->get($config->get('spreadsheet_id'), $config->get('spreadsheet_range'));
-
-    // Skip the first row from the spreadsheet values as it contains heading titles.
-    $sessions = array_slice($result->getValues(), 1);
-
-    // Create aliases for session proposals.
-    $this->createAliases($sessions);
-
-    // Add URLs to session proposals.
-    $sessions_with_urls = [];
-    foreach ($sessions as $submission_id => $session) {
-      $url = Url::fromRoute('dcamp_sessions.view', [
-        'submission_id' => $submission_id,
-      ]);
-      if (count($session) == 12) {
-        // Argh! This proposal does not have the last question filled up,
-        // and Google prefers to remove the cell rather than sending and empty
-        // cell.
-        $session[] = '';
+    else {
+      if (empty($config->get('service_account_file'))) {
+        throw new \RuntimeException('The path of the service account file has not been set.');
       }
-      $session[] = $url->toString();
-      $sessions_with_urls[] = $session;
-    }
-
-    return $sessions_with_urls;
-  }
-
-  /**
-   * Create aliases for session proposals.
-   *
-   * @param array
-   *   Array of session proposals.
-   */
-  protected function createAliases($sessions) {
-    /** @var \Drupal\Core\Path\AliasStorage $aliasStorage */
-    $aliasStorage = \Drupal::service('path.alias_storage');
-    $pathAutoAliasCleaner = \Drupal::service('pathauto.alias_cleaner');
-    foreach ($sessions as $key => $session) {
-      $session_alias = '/sessions/' . $pathAutoAliasCleaner->cleanString($session[10]);
-      if (!$aliasStorage->load(['alias' => $session_alias])) {
-        $aliasStorage->save('/sessions/proposed/' . $key, $session_alias);
+      if (empty($config->get('spreadsheet_id'))) {
+        throw new \RuntimeException('The identifier of the spreadsheet has not been set.');
       }
+      if (empty($config->get('spreadsheet_range'))) {
+        throw new \RuntimeException('The range of the spreadsheet has not been set.');
+      }
+      putenv('GOOGLE_APPLICATION_CREDENTIALS=' . $config->get('service_account_file'));
+      $client = new Google_Client();
+      $client->useApplicationDefaultCredentials();
+      $client->addScope(Google_Service_Sheets::SPREADSHEETS_READONLY);
+      $service = new Google_Service_Sheets($client);
+
+      $result = $service->spreadsheets_values->get($config->get('spreadsheet_id'), $config->get('spreadsheet_range'));
+
+      // Skip the first row from the spreadsheet values as it contains heading titles.
+      $sessions_json = array_slice($result->getValues(), 1);
     }
+
+    // Turn raw session proposals into Session objects.
+    foreach ($sessions_json as $key => $session_json) {
+      $session = new Session($session_json);
+
+      // Check if we need to create an alias.
+      $alias = '/sessions/' . $pathAutoAliasCleaner->cleanString($session->getTitle());
+      if (!$aliasStorage->load(['alias' => $alias])) {
+        $aliasStorage->save('/sessions/proposed/' . $key, $alias);
+      }
+      $session->setUrl($alias);
+      $sessions[] = $session;
+    }
+
+    return $sessions;
   }
 
 }

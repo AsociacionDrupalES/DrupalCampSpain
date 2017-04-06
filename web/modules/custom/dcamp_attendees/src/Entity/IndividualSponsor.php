@@ -2,8 +2,11 @@
 
 namespace Drupal\dcamp_attendees\Entity;
 
+use Drupal\dcamp\NicknameParserTrait;
+
 class IndividualSponsor {
 
+  use NicknameParserTrait;
 
   /**
    * The full name.
@@ -121,10 +124,10 @@ class IndividualSponsor {
     $url = '';
 
     if (!empty($this->getTwitter())) {
-      $url = 'https://twitter.com/' . $this->extractNickname($this->getTwitter());
+      $url = $this->getTwitterUrl($this->getTwitter());
     }
     elseif (!empty($this->getDrupal())) {
-      $url = 'https://www.drupal.org/u/' . $this->extractNickname($this->getDrupal());
+      $url = $this->getDrupalUrl($this->getDrupal());
     }
 
     return $url;
@@ -146,30 +149,6 @@ class IndividualSponsor {
     elseif (!empty($this->getDrupal())) {
       $nickname = $this->extractNickname($this->getDrupal());
     }
-
-    return $nickname;
-  }
-
-  /**
-   * Removes the URL from a profile URL and keeps the nickname.
-   *
-   * @param string $url
-   *   The profile URL.
-   *
-   * @return string
-   *   The nickname.
-   */
-  private function extractNickname($url) {
-    $nickname = $url;
-
-    // First extract everything until the last forwardslash.
-    $slash_pos = strrpos($nickname, '/');
-    if ($slash_pos) {
-      $nickname = substr($nickname, $slash_pos + 1);
-    }
-
-    // Next, remove the @ symbol that Twitter nicknames may have.
-    $nickname = str_replace('@', '', $nickname);
 
     return $nickname;
   }
