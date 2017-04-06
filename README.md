@@ -70,6 +70,6 @@ The following resources are available:
 * Pages: https://2017.drupalcamp.es/jsonapi/node/page
 * Sponsors: https://2017.drupalcamp.es/jsonapi/node/sponsor
 * Speakers: https://2017.drupalcamp.es/jsonapi/node/speaker
-* Sessions: https://2017.drupalcamp.es/sessions/proposed?format=json
+* Sessions: https://2017.drupalcamp.es/sessions/proposed?_format=json
 * Session detail: https://2017.drupalcamp.es/sessions/vue-meets-drupal?_format=json
 * Sponsors: https://2017.drupalcamp.es/sponsors/list
