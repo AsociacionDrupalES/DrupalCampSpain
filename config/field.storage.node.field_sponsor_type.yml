@@ -26,6 +26,9 @@ settings:
       value: silver
       label: Silver
     -
+      value: bronze
+      label: Bronze
+    -
       value: collaborators
       label: Collaborators
   allowed_values_function: ''
