@@ -42,7 +42,7 @@ class EventBriteService {
     $response_data = json_decode($response->getBody());
     $individual_sponsors = [];
     foreach ($response_data->attendees as $attendee) {
-      if ($attendee->ticket_class_name = 'Patrocinador individual') {
+      if (in_array($attendee->ticket_class_name, ['Patrocinador individual', 'Patrocinador individual SIN entrada'])) {
         $individual_sponsors[] = new IndividualSponsor($attendee);
       }
     }
