@@ -703,6 +703,28 @@ $settings['container_yamls'][] = __DIR__ . '/services.yml';
  * will allow the site to run off of all variants of example.com and
  * example.org, with all subdomains included.
  */
+$settings['trusted_host_patterns'] = [
+  'drupalcamp\.es$',
+  '^dc2017\.local$',
+];
+
+/**
+ * Use sample data for listing sessions.
+ *
+ * Override this at settings.local.php if you want real data.
+ */
+$config['dcamp_sessions.settings'] = [
+  'debugging' => TRUE,
+];
+
+/**
+ * Use sample data for listing attendees and individual sponsors.
+ *
+ * Override this at settings.local.php if you want real data.
+ */
+$config['dcamp_attendees.settings'] = [
+  'debugging' => TRUE,
+];
 
 /**
  * Load local development override configuration, if available.
