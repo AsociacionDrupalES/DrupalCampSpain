@@ -64,4 +64,12 @@ Everything is configured to setup the local environment. Just follow this steps:
     
 We are aware that this docker configuration has some problems. Feel free to create any issue here. 
 
+## API
+The following resources are available:
 
+* Pages: https://2017.drupalcamp.es/jsonapi/node/page
+* Sponsors: https://2017.drupalcamp.es/jsonapi/node/sponsor
+* Speakers: https://2017.drupalcamp.es/jsonapi/node/speaker
+* Sessions: https://2017.drupalcamp.es/sessions/proposed?format=json
+* Session detail: https://2017.drupalcamp.es/sessions/vue-meets-drupal?_format=json
+* Sponsors: https://2017.drupalcamp.es/sponsors/list

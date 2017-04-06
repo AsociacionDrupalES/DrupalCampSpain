@@ -1,0 +1,7 @@
+dcamp_sponsors.api.list:
+  path: '/sponsors/list'
+  defaults:
+    _controller: '\Drupal\dcamp_sponsors\Controller\DcampSponsorsController::listSponsors'
+    _title: 'Sponsors'
+  requirements:
+    _permission: 'access content'

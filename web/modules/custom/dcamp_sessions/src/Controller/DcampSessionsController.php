@@ -20,7 +20,7 @@ class DcampSessionsController extends ControllerBase {
    *
    * @var int
    */
-  protected $maxAge;
+  protected $maxAge = 120;
 
   /**
    * Lists proposed sessions
