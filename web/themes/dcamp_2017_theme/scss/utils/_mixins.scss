@@ -13,6 +13,13 @@
       @content;
     }
   }
+
+  @if $class == to_tablet {
+    @media (max-width: $desktop) {
+      @content;
+    }
+  }
+
   @if $class == big {
     @media (min-width: $tablet) {
       @content;
