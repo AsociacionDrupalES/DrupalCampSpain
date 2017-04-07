@@ -52,10 +52,12 @@ class EventBriteService {
   public function getAttendees() {
     $attendees_raw = $this->doGetAttendees();
 
-    // Extract individual sponsors from the list of attendees.
+    // Remove individual sponsors who did not get a ticket from the list.
     $attendees = [];
     foreach ($attendees_raw as $attendee) {
-      $attendees[] = new Attendee($attendee);
+      if ($attendee->ticket_class_name != 'Patrocinador individual SIN entrada') {
+        $attendees[] = new Attendee($attendee);
+      }
     }
 
     return $attendees;
