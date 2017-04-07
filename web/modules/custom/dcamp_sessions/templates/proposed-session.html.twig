@@ -10,15 +10,6 @@
 <div class="session--full">
 
   <article class="node__content-wrapper">
-    {#
-    {% if session.getHeadshot %}
-      <header>
-        <div class="author__photo-mask">
-          <img src="{{ session.getHeadshot }}" class="author__photo"/>
-        </div>
-      </header>
-    {% endif %}
-    #}
     <aside class="node__header clearfix">
       <h1 class="session__title">{{ session.getTitle }}</h1>
       <div class="session__author">
