@@ -3,95 +3,138 @@
   margin: 2em auto;
   padding: $gutter-width;
   @include clearfix;
-  .content {
-    h1 {
-      margin-bottom: 1em;
-    }
+
+  &__title {
+    position: relative;
+    line-height: 1em;
+    font-size: 2.5rem;
+
     @include breakpoint(big) {
-      width: 65%;
-      float: right;
-      margin-right: 0;
+      max-width: 80%;
+      font-size: 3rem;
+    }
+
+    &:after {
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 40px;
+      height: 4px;
+      background-color: $secondary-color;
+      content: ' ';
+    }
+  }
+
+  &__label {
+    font-family: $header-font;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  &__meta {
+    margin-top: 4rem;
+
+    @include breakpoint(big) {
+      margin-top: 0.5rem;
+    }
+  }
+
+  &__type,
+  &__level,
+  &__language {
+    display: block;
+  }
+
+  &__description {
+    display: block;
+    margin-top:30px;
+  }
+
+  &--full {
+    // To remove when sessions have images.
+    @include breakpoint(big) {
+      margin-top: 4rem;
+      @include clearfix;
     }
   }
 }
 
-.session-content {
-  max-width: $max-width;
-  margin: 0 auto;
-  padding: 0 $gutter-width;
-  width: 100%;
-  @include clearfix;
-  @include breakpoint(big) {
-    width: 60%;
-    float: right;
-    margin-right: 0;
-  }
-}
-
-.session__meta {
-  margin-top: 30px;
-}
-.session__type,
-.session__level,
-.session__language {
-  display: block;
-}
-
-.session__description {
-  display: block;
-  margin-top:30px;
-}
-
-
-.session-sidebar {
-  max-width: $max-width;
-  margin: 0 auto;
-  width: 100%;
-  padding: $gutter-width;
-  @include clearfix;
-  @include breakpoint(big) {
-    width: calc(30% - 20px); /*$gutter-width*/
+.author {
+  &__photo-mask {
     float: left;
-    margin-right: 0;
+    width: 45%;
+    height: 105px;
+    position: relative;
+    overflow: hidden;
   }
-}
 
-.authors-photo__mask {
-  float: left;
-  width: 45%;
-  height: 105px;
-  position: relative;
-  overflow: hidden;
-  .authors-photo {
+  &__photo {
     position: absolute;
     width: 100%;
     top: 0;
   }
-}
 
-.authors-name {
-  font-size: 24px;
-  color: #452ae2;
-  text-transform: uppercase;
-  font-weight: bold;
-  font-family: "futura-pt-condensed", sans-serif;
-}
+  &__name {
+    clear: both;
+    float: left;
+    font-size: 1.8rem;
+    color: $main-color;
+    font-family: $header-font;
+    font-weight: 700;
+    text-transform: uppercase;
 
-.authors-meta,
-.authors-bio {
-  display: block;
-  margin-top: 15px;
-}
+    @include breakpoint(big) {
+      font-size: 2rem;
+    }
+  }
 
-.authors-drupal,
-.authors-twitter {
-  display: inline-block;
-  text-indent: -9999px;
-  width: 30px;
-  height: 30px;
-  background: transparent url("../images/twitter.svg") 50% 50% no-repeat;
-  background-size: 30px;
-}
-.authors-drupal {
-  background-image:url("../images/drupal.png");
+  &__meta,
+  &__bio {
+    clear: both;
+    float: left;
+    display: block;
+  }
+
+  &__meta {
+    margin-top: 1rem;
+  }
+
+  &__bio {
+    margin-top: 4rem;
+
+    &-label {
+      font-family: $header-font;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: $secondary-color;
+    }
+
+    &-text {
+      margin-top: 1rem;
+    }
+  }
+
+  &__drupal,
+  &__twitter {
+    display: inline-block;
+    overflow: hidden;
+    margin-right: 0.75rem;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    text-indent: -1000px;
+    transition: all .2s ease-in-out;
+    background: url("../images/twitter-white.svg") no-repeat center center $main-color;
+    background: url("../images/twitter-white.svg") no-repeat center center, linear-gradient(45deg, $main-color 42%, $tertiary-color 62%);
+
+    &:hover {
+      transition: all .2s ease-in-out;
+      transform: scale(1.1);
+    }
+  }
+
+  &__drupal {
+    background: url("../images/drop-white.svg") no-repeat center center $main-color;
+    background: url("../images/drop-white.svg") no-repeat center center, linear-gradient(45deg, $main-color 42%, $tertiary-color 62%);
+  }
 }

@@ -57,8 +57,11 @@
   }
 
   &__title {
+    line-height: 1.7rem;
+    font-family: $header-font;
+    margin-bottom: 0.25rem;
+
     a {
-      font-family: $header-font;
       text-decoration: none;
       color: $secondary-color;
 
