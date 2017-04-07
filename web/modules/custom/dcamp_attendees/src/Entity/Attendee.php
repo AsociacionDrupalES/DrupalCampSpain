@@ -82,9 +82,18 @@ class Attendee implements JsonSerializable {
   }
 
   /**
+   * Returns the headshot URL.
+   *
+   * Checks if the URL ends with .jpg or .png. Otherwise it assumes
+   * that this is not an image and returns an empty string. Some people
+   * submitted Google Drive images, which are not an actual image)
    * @return string
    */
   public function getHeadshot() {
+    $extension = pathinfo(parse_url($this->headshot,PHP_URL_PATH),PATHINFO_EXTENSION);
+    if (!in_array($extension, ['png', 'gif', 'jpg', 'jpeg'])) {
+      return '';
+    }
     return $this->headshot;
   }
 
