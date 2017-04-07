@@ -2,7 +2,7 @@
 
 namespace Drupal\dcamp_attendees;
 
-use Drupal\dcamp_attendees\Entity\IndividualSponsor;
+use Drupal\dcamp_attendees\Entity\Attendee;
 
 class EventBriteService {
 
@@ -26,22 +26,61 @@ class EventBriteService {
   /**
    * Return the list of individual sponsors
    *
-   * @return \Drupal\dcamp_attendees\Entity\IndividualSponsor[]
-   *   Array of IndividualSponsor objects
+   * @return \Drupal\dcamp_attendees\Entity\Attendee[]
+   *   Array of Attendee objects
    */
   public function getIndividualSponsors() {
+    $attendees_raw = $this->doGetAttendees();
+
+    // Extract individual sponsors from the list of attendees.
+    $individual_sponsors = [];
+    foreach ($attendees_raw as $attendee) {
+      if (in_array($attendee->ticket_class_name, ['Patrocinador individual', 'Patrocinador individual SIN entrada'])) {
+        $individual_sponsors[] = new Attendee($attendee);
+      }
+    }
+
+    return $individual_sponsors;
+  }
+
+  /**
+   * Return the list of attendees
+   *
+   * @return \Drupal\dcamp_attendees\Entity\Attendee[]
+   *   Array of Attendee objects
+   */
+  public function getAttendees() {
+    $attendees_raw = $this->doGetAttendees();
+
+    // Extract individual sponsors from the list of attendees.
+    $attendees = [];
+    foreach ($attendees_raw as $attendee) {
+      $attendees[] = new Attendee($attendee);
+    }
+
+    return $attendees;
+  }
+
+  /**
+   * Request the list of attendees to Eventbrite.
+   *
+   * @return array
+   *   The raw array of attendees from Eventbrite.
+   */
+  protected function doGetAttendees() {
     $config = \Drupal::config('dcamp_attendees.settings');
+    $attendees_json = [];
 
     // Check if we are in developer mode.
     if ($config->get('debugging')) {
       $path = \Drupal::service('module_handler')->getModule('dcamp_attendees')->getPath();
-      $individual_sponsors_json = json_decode(file_get_contents($path . '/fixtures/individual_sponsors.json'));
+      $attendees_json = json_decode(file_get_contents($path . '/fixtures/individual_sponsors.json'));
     }
     else {
       // Check if there is a cached value and it has not expire.
       $data = NULL;
       if ($cache = \Drupal::cache()->get($this->attendees_cid)) {
-        $individual_sponsors_json = $cache->data;
+        $attendees_json = $cache->data;
       }
       if (($cache == FALSE) || ($cache->expire < time())) {
         // Request the list of attendees to EventBrite and filter individual sponsors.
@@ -59,21 +98,14 @@ class EventBriteService {
         }
 
         $response_data = json_decode($response->getBody());
-        $individual_sponsors_json = $response_data->attendees;
+        $attendees_json = $response_data->attendees;
 
         // Store this data in cache.
-        \Drupal::cache()->set($this->attendees_cid, $individual_sponsors_json, strtotime($this->attendees_lifetime));
+        \Drupal::cache()->set($this->attendees_cid, $attendees_json, strtotime($this->attendees_lifetime));
       }
     }
 
-    // Extract individual sponsors from the list of attendees.
-    foreach ($individual_sponsors_json as $attendee) {
-      if (in_array($attendee->ticket_class_name, ['Patrocinador individual', 'Patrocinador individual SIN entrada'])) {
-        $individual_sponsors[] = new IndividualSponsor($attendee);
-      }
-    }
-
-    return $individual_sponsors;
+    return $attendees_json;
   }
 
 }

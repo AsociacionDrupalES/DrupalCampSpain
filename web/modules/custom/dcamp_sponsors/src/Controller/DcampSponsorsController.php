@@ -43,7 +43,7 @@ class DcampSponsorsController extends ControllerBase {
 
     // Next, find individual sponsors from EventBrite.
     $individual_sponsors = \Drupal::service('dcamp_attendees.eventbrite')->getIndividualSponsors();
-    /** @var \Drupal\dcamp_attendees\Entity\IndividualSponsor $sponsor */
+    /** @var \Drupal\dcamp_attendees\Entity\Attendee $sponsor */
     foreach ($individual_sponsors as $sponsor) {
       $sponsors[] = [
         'name' => $sponsor->getName(),

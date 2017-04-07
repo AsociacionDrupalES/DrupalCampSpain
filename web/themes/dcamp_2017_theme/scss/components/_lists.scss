@@ -49,6 +49,13 @@
     }
   }
 
+  &__headshot {
+    img {
+      width: $gutter-width * 8;
+      height: $gutter-width * 8;
+    }
+  }
+
   &__title {
     a {
       font-family: $header-font;
