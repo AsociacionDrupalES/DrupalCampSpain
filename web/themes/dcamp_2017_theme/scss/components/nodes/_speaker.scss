@@ -1,44 +1,8 @@
+/**
+ * Specific speaker styles.
+ */
 .speaker--full {
-
-  .node__content-wrapper {
-    max-width: $max-width;
-    padding: $gutter-width;
-    margin: 30px auto;
-    @include clearfix;
-    .node__header {
-      float: left;
-      width: 35%;
-
-      h1 {
-        position: relative;
-        margin-bottom: 30px;
-        &:after {
-          position: absolute;
-          bottom: -10px;
-          left: 0;
-          width: 40px;
-          height: 4px;
-          background-color: $secondary-color;
-          content: ' ';
-        }
-      }
-    }
-    .node__content {
-      float: right;
-      width: 60%;
-    }
-    @include breakpoint('mobile') {
-      .node__header,
-      .node__content {
-        float: none;
-        width: 100%;
-      }
-
-    }
-  }
-
   .speaker {
-
     &__field-company {
       margin: 0.6rem 0 1rem;
       text-transform: uppercase;
