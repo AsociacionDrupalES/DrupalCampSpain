@@ -14,12 +14,12 @@
   <h1 class="teaser-list__page-title">{{ 'Attendees'|trans }}</h1>
 
   {%- if attendees -%}
-    <ul class="teaser-list">
+    <ul class="teaser-list--small">
       {%- for attendee in attendees -%}
-        <li class="teaser-list__item">
-          <div class="teaser-list__headshot"><img src="{{ attendee.getHeadshot() ?: default_headshot  }}"/></div>
-          <div class="teaser-list__title">{{ attendee.getName }}</div>
-          <div class="teaser-list__subtitle">{{ attendee.getCompany }}</div>
+        <li class="teaser-list__item--small">
+          <div class="attendee__headshot"><img src="{{ attendee.getHeadshot() ?: default_headshot  }}"/></div>
+          <h2 class="attendee__title">{{ attendee.getName }}</h2>
+          <h3 class="attendee__subtitle">{{ attendee.getCompany }}</h3>
         </li>
       {%- endfor -%}
     </ul>
