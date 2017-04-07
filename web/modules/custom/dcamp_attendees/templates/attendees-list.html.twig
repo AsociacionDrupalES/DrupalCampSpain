@@ -1,0 +1,29 @@
+{#
+/**
+ * @file
+ *
+ * Lists attenddees.
+ *
+ * Available variables:
+ * - attendeees: a list of Attendee objects.
+ */
+#}
+
+<section class="teaser-list__page">
+
+  <h1 class="teaser-list__page-title">{{ 'Attendees'|trans }}</h1>
+
+  {%- if attendees -%}
+    <ul class="teaser-list">
+      {%- for attendee in attendees -%}
+        <li class="teaser-list__item">
+          <div class="teaser-list__headshot"><img src="{{ attendee.getHeadshot() ?: default_headshot  }}"/></div>
+          <div class="teaser-list__title">{{ attendee.getName }}</div>
+          <div class="teaser-list__subtitle">{{ attendee.getCompany }}</div>
+        </li>
+      {%- endfor -%}
+    </ul>
+  {%- else -%}
+    {{- empty -}}
+  {%- endif -%}
+</section>

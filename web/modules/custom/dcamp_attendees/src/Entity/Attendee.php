@@ -3,8 +3,9 @@
 namespace Drupal\dcamp_attendees\Entity;
 
 use Drupal\dcamp\NicknameParserTrait;
+use JsonSerializable;
 
-class IndividualSponsor {
+class Attendee implements JsonSerializable {
 
   use NicknameParserTrait;
 
@@ -36,14 +37,22 @@ class IndividualSponsor {
   protected $drupal;
 
   /**
-   * IndividualSponsor constructor.
+   * The company name.
    *
-   * @param stdClass $individual_sponsor
+   * @var string
+   */
+  protected $company;
+
+  /**
+   * Attendee constructor.
+   *
+   * @param stdClass $attendee
    *   The raw object from EventBrite.
    */
-  public function __construct($individual_sponsor) {
-    $this->name = $individual_sponsor->profile->name;
-    foreach ($individual_sponsor->answers as $answer) {
+  public function __construct($attendee) {
+    $this->name = $attendee->profile->name;
+    $this->company = !empty($attendee->profile->company) ? $attendee->profile->company : '';
+    foreach ($attendee->answers as $answer) {
       if (!empty($answer->answer)) {
         if ($answer->question_id == '15019980') {
           $this->headshot = $answer->answer;
@@ -115,6 +124,20 @@ class IndividualSponsor {
   }
 
   /**
+   * @return string
+   */
+  public function getCompany() {
+    return $this->company;
+  }
+
+  /**
+   * @param string $company
+   */
+  public function setCompany($company) {
+    $this->company = $company;
+  }
+
+  /**
    * Returns the Twitter or Drupal Link URL.
    *
    * @return string
@@ -151,6 +174,19 @@ class IndividualSponsor {
     }
 
     return $nickname;
+  }
+
+  /**
+   * Prepares object for conversion to JSON.
+   */
+  public function jsonSerialize() {
+    return [
+      'name' => $this->getName(),
+      'company' => $this->getCompany(),
+      'headshot' => $this->getHeadshot(),
+      'twitter_url' => $this->getTwitter() ? $this->getTwitterUrl($this->getTwitter()) : '',
+      'drupal_url' => $this->getDrupal() ? $this->getDrupalUrl($this->getDrupal()) : '',
+    ];
   }
 
 }

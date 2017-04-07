@@ -73,3 +73,4 @@ The following resources are available:
 * Sessions: https://2017.drupalcamp.es/sessions/proposed?_format=json
 * Session detail: https://2017.drupalcamp.es/sessions/vue-meets-drupal?_format=json
 * Sponsors: https://2017.drupalcamp.es/sponsors/list
+* Attendees: http://dc2017.local/attendees/list?_format=json
