@@ -1,0 +1,54 @@
+.attendee {
+  &__headshot {
+    height: $gutter-width * 8;
+
+    @include breakpoint(big) {
+      margin-top: 0.25rem;
+    }
+
+    @include breakpoint(desktop) {
+      margin-top: 1rem;
+    }
+
+    img {
+      filter: grayscale(100%);
+      max-width: 100%;
+      max-height: $gutter-width * 8;
+      width: auto;
+      height: auto;
+    }
+  }
+
+  &__title,
+  &__title a {
+    margin: 0.5rem 0 0;
+    font-size: 20px;
+    line-height: 1.1rem;
+    font-family: $header-font;
+    color: $secondary-color;
+    text-decoration: none;
+
+    @include breakpoint(big) {
+      margin: 1rem 0 0.25rem;
+      font-size: 24px;
+      line-height: 1.5rem;
+    }
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__subtitle {
+    color: $main-color;
+    font-family: $header-font;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 14px;
+    line-height: 1em;
+
+    @include breakpoint(big) {
+      font-size: 20px;
+    }
+  }
+}
