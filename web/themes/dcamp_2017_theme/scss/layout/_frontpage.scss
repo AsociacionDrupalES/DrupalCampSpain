@@ -311,11 +311,16 @@
         &.diamond {
           width: calc(100% / 3 - #{$gutter-width} * 2);
         }
-
         &.gold {
           width: calc(100% / 4 - #{$gutter-width} * 2);
         }
         &.silver {
+          width: calc(100% / 5 - #{$gutter-width} * 2);
+        }
+        &.bronze {
+          width: calc(100% / 6 - #{$gutter-width} * 2);
+        }
+        &.collaborators {
           width: calc(100% / 6 - #{$gutter-width} * 2);
         }
         > div {
@@ -350,10 +355,14 @@
         > li {
           float: left;
           margin: $gutter-width;
-          img {
-            width: $gutter-width * 8;
-            height: $gutter-width * 8;
-            border-radius: 50%;
+          width: $gutter-width * 5;
+          a {
+            text-decoration: none;
+            > img {
+              width: $gutter-width * 4;
+              height: $gutter-width * 4;
+              border-radius: 50%;
+            }
           }
         }
       }
