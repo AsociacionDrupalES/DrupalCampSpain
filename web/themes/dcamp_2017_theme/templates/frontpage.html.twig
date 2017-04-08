@@ -109,8 +109,8 @@
                 <li>
                   <a href="{{ individual_sponsor.getProfileUrl() }}" target="_blank">
                     <img src="{{ individual_sponsor.getHeadshot() ?: default_headshot  }}"/>
-                  </a><br/><br/>
-                  {{ individual_sponsor.getName() }}<br/><br/>
+                  </a><br/>
+                  {{ individual_sponsor.getName() }}<br/>
                   (<a href="{{ individual_sponsor.getProfileUrl() }}" target="_blank">{{ individual_sponsor.getNickname() }}</a>)
                 </li>
               {% endfor %}
