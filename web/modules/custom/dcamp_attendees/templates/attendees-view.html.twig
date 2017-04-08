@@ -7,16 +7,19 @@
  * - attendee: Attendee (object)
  */
 #}
-<div class="attendee--full">
-  Name: {{ attendee.getName }}
-  <br/>
-  Headshot: <img src="{{ attendee.getHeadshot() ?: default_headshot  }}"/>
-  <br/>
-  Twitter: {{ attendee.getTwitterUrl(attendee.getTwitter) }}
-  <br/>
-  Drupal: {{ attendee.getDrupalUrl(attendee.getDrupal) }}
-  <br/>
-  Company: {{ attendee.getCompany }}
-  <br/>
-  Is individual sponsor: {{ attendee.isIndividualSponsor ? 'yes' : 'no' }}
+<header class="attendee__header">
+  <img class="attendee__img--full" src="{{ attendee.getHeadshot() ?: default_headshot  }}"/>
+</header>
+<div class="attendee--full node__content-wrapper">
+  <div class="node__header clearfix">
+    <h1 class="attendee__title">{{ attendee.getName }}</h1>
+    <h2 class="attendee__company--full">{{ attendee.getCompany }}</h2>
+    <div class="social-media">
+        <a class="social-media__link" href="{{ attendee.getTwitterUrl(attendee.getTwitter) }}">Twitter</a>
+        <a class="social-media__link--drupal" href="{{ attendee.getDrupalUrl(attendee.getDrupal) }}">Drupal</a>
+    </div>
+    {%- if attendee.isIndividualSponsor -%}
+      <div class="attendee__sponsor--full">Sponsor</div>
+    {%- endif -%}
+  </div>
 </div>

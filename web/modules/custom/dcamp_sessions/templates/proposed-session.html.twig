@@ -18,12 +18,12 @@
         {% if session.getDrupal or session.getTwitter %}
         <div class="author__meta">
           {% if session.getDrupal %}
-            <a href="{{ session.getDrupalUrl(session.getDrupal) }}" class="author__drupal">
+            <a href="{{ session.getDrupalUrl(session.getDrupal) }}" class="social-media__link--drupal">
               {{ session.getAuthorsName }}
             </a>
           {% endif %}
           {% if session.getTwitter %}
-            <a href="{{ session.getTwitterUrl(session.getTwitter) }}" class="author__twitter">
+            <a href="{{ session.getTwitterUrl(session.getTwitter) }}" class="social-media__link">
               {{ session.getAuthorsName }}
             </a>
           {% endif %}

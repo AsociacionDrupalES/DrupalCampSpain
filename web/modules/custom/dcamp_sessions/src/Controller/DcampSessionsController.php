@@ -44,7 +44,7 @@ class DcampSessionsController extends ControllerBase {
     $list_items = [];
     foreach ($sessions as $session) {
       $list_items[] = [
-        '#markup' => '<h2 class="teaser-list__title"><a href="' . $session->getUrl() . '">' . Xss::filter($session->getTitle()) . '</a></h2><div class="teaser-list__subtitle">'. Xss::filter($session->getName()) . '</div>',
+        '#markup' => '<h2 class="session__title--list"><a href="' . $session->getUrl() . '">' . Xss::filter($session->getTitle()) . '</a></h2><div class="session__author">'. Xss::filter($session->getName()) . '</div>',
       ];
     }
 
