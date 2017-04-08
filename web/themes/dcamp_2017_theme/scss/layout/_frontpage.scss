@@ -292,19 +292,20 @@
       clear: both;
       text-align: left;
       font-size: 1em;
-      font-weight: normal;
+      font-weight: 600;
       font-family: $body-font;
+      letter-spacing: 0.05rem;
       color: $secondary-color;
       border-bottom: 1px solid #ddd;
       padding-bottom: 1em;
-      margin: 3em $gutter-width 1em $gutter-width;
+      margin: 4rem $gutter-width 1em $gutter-width;
     }
     .view.view-sponsors .view-content {
       width: 100%;
       margin-bottom:2em;
       > div {
         display: inline-block;
-        margin: $gutter-width -1px;
+        margin: calc(#{$gutter-width} / 2) -1px $gutter-width;
         &.platinum {
           width: calc(100% / 2 - #{$gutter-width} * 2);
         }
@@ -343,29 +344,63 @@
         }
       }
     }
+  }
+}
 
-    #individual_sponsors {
-      width: 100%;
-      margin-bottom:2em;
-      > ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-        > li {
-          float: left;
-          margin: $gutter-width;
-          width: $gutter-width * 5;
-          a {
-            text-decoration: none;
-            > img {
-              width: $gutter-width * 4;
-              height: $gutter-width * 4;
-              border-radius: 50%;
-            }
-          }
-        }
-      }
+.individual-sponsors {
+  width: 100%;
+
+  &__list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  &__item {
+    float: left;
+    width: $gutter-width * 9;
+    margin: $gutter-width / 2;
+    min-height: 180px;
+
+    @include breakpoint(tablet) {
+      padding: 2%;
+      width: 21%;
+      margin: 0;
     }
+
+    @include breakpoint(mobile) {
+      padding: 2%;
+      width: 46%;
+      margin: 0;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    text-align: center;
+    display: block;
+  }
+
+  &__img {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    filter: grayscale(100%);
+  }
+
+  &__name,
+  &__nick {
+    color: $text-color;
+    text-transform: uppercase;
+    color: #444;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.05rem;
+  }
+
+  &__nick {
+    opacity: 0.8;
   }
 }
