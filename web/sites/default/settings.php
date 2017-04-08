@@ -727,6 +727,13 @@ $config['dcamp_attendees.settings'] = [
 ];
 
 /**
+ * Useful for local development. Install stage_file_proxy
+ * after downloading the production database from Jenkins
+ * to see images stored in Production's files directory.
+ */
+$config['stage_file_proxy.settings']['origin'] = 'https://2017.drupalcamp.es';
+
+/**
  * Load local development override configuration, if available.
  *
  * Use settings.local.php to override variables on secondary (staging,

@@ -17,6 +17,7 @@ drush sql-cli < dump.sql
 drush updb -y
 drush cim sync -y
 drush cr
+drush en stage_file_proxy -y
 ```
 7. Open the homepage as administrator with `drush uli`.
 

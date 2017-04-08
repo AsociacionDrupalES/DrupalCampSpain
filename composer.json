@@ -29,7 +29,8 @@
     "drupal/pathauto": "1.x-dev",
     "drupal/redirect": "1.x-dev",
     "google/apiclient": "^2.0",
-    "drupal/jsonapi": "1.x-dev"
+    "drupal/jsonapi": "1.x-dev",
+    "drupal/stage_file_proxy": "^1.0@alpha"
   },
   "require-dev": {
     "behat/mink": "~1.7",
