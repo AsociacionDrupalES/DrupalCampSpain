@@ -26,7 +26,7 @@ html {
 
       margin: .5em 0 1em 0;
       font-size:1.1em;
-      a{
+      a {
         color:$main-color;
         font-weight:bold;
         text-decoration: none;
@@ -46,6 +46,12 @@ html {
       text-transform: uppercase;
       font-family: $header-font;
       font-size:3em;
+      > a {
+        text-decoration: none;
+        &:visited {
+          color:$secondary-color;
+        }
+      }
     }
     h1{
       color:$secondary-color;
