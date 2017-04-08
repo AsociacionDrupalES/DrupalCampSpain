@@ -1,0 +1,49 @@
+.social-media,
+%social-media {
+  margin: 1rem 0;
+
+  &__link {
+    display: inline-block;
+    margin-right: 0.75rem;
+    display: inline-block;
+    overflow: hidden;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    text-indent: -1000px;
+    transition: all .2s ease-in-out;
+    background: url("../images/twitter-white.svg") no-repeat center center $main-color;
+    background: url("../images/twitter-white.svg") no-repeat center center, linear-gradient(45deg, $main-color 42%, $tertiary-color 62%);
+
+    &:hover {
+      transition: all .2s ease-in-out;
+      transform: scale(1.1);
+    }
+
+
+    &--drupal {
+      @extend %social-media__link;
+      background: url("../images/drop-white.svg") no-repeat center center, linear-gradient(45deg, $main-color 42%, $tertiary-color 62%);
+    }
+
+    &--facebook {
+      @extend %social-media__link;
+      background: url("../images/facebook-white.svg") no-repeat center center, linear-gradient(45deg, $main-color 42%, $tertiary-color 62%);
+    }
+
+    &--bitbucket {
+      @extend %social-media__link;
+      background: url("../images/bitbucket-white.svg") no-repeat center center, linear-gradient(45deg, $main-color 42%, $tertiary-color 62%);
+    }
+
+    &--github {
+      @extend %social-media__link;
+      background: url("../images/github-white.svg") no-repeat center center, linear-gradient(45deg, $main-color 42%, $tertiary-color 62%);
+    }
+
+    &--linkedin {
+      @extend %social-media__link;
+      background: url("../images/linkedin-white.svg") no-repeat center center, linear-gradient(45deg, $main-color 42%, $tertiary-color 62%);
+    }
+  }
+}

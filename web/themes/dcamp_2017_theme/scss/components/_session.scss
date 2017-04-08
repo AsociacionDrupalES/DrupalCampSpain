@@ -23,6 +23,24 @@
       background-color: $secondary-color;
       content: ' ';
     }
+
+    &--list {
+      font-size: 32px;
+      line-height: 1.9rem;
+
+      &:hover{
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__author {
+    font-size: 20px;
+    color: $main-color;
+    font-family: $header-font;
+    font-weight: 700;
+    text-transform: uppercase;
+
   }
 
   &__label {

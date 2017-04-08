@@ -17,16 +17,16 @@
     <ul class="teaser-list--small">
       {%- for attendee in attendees -%}
         <li class="teaser-list__item--small">
-          <div class="attendee__headshot">
-            <a href="{{ path('dcamp_attendees.view', {'attendee': attendee.getId}) }}">
-              <img src="{{ attendee.getHeadshot() ?: default_headshot  }}"/>
+          <a class="attendee__link" href="{{ path('dcamp_attendees.view', {'attendee': attendee.getId}) }}">
+            <div class="attendee__headshot">
+              <img class="attendee__img" src="{{ attendee.getHeadshot() ?: default_headshot  }}"/>
               {%- if attendee.isIndividualSponsor -%}
-                <div class="sponsor">Sponsor</div>
+                <div class="attendee__sponsor">Sponsor</div>
               {%- endif -%}
-            </a>
-          </div>
-          <h2 class="attendee__title">{{ attendee.getName }}</h2>
-          <h3 class="attendee__subtitle">{{ attendee.getCompany }}</h3>
+            </div>
+            <h2 class="attendee__title">{{ attendee.getName }}</h2>
+          </a>
+          <h3 class="attendee__company">{{ attendee.getCompany }}</h3>
         </li>
       {%- endfor -%}
     </ul>

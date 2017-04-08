@@ -1,5 +1,32 @@
-.attendee {
+.attendee,
+%attendee {
+  &__header {
+    text-align: center;
+    background: $grey;
+    line-height: 1;
+    padding: 0;
+    position: relative;
+    z-index: 5;
+
+    &:before {
+      z-index: 8;
+      background: url(../images/pattern.png) repeat;
+      display: block;
+      position: absolute;
+      width: 50%;
+      left: 50%;
+      height: 100%;
+      content: ' ';
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+  }
+
   &__headshot {
+    position: relative;
+    display: block;
     height: $gutter-width * 8;
 
     @include breakpoint(big) {
@@ -9,27 +36,68 @@
     @include breakpoint(desktop) {
       margin-top: 1rem;
     }
+  }
 
-    img {
-      filter: grayscale(100%);
-      max-width: 100%;
-      max-height: $gutter-width * 8;
+  &__img {
+    display: block;
+    filter: grayscale(100%);
+    max-width: 100%;
+    max-height: $gutter-width * 8;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transition: ease 0.5s all;
+
+    &:hover {
+      filter: grayscale(0%);
+    }
+
+    &--full {
+      z-index: 99;
+      display: inline-block;
       width: auto;
-      height: auto;
+      max-height: 400px;
+      line-height: 1;
+      vertical-align: bottom;
+      position: relative;
+      filter: grayscale(100%);
+
+      @include breakpoint(mobile) {
+        max-width: 100%;
+        height: auto;
+      }
     }
   }
 
-  &__title,
-  &__title a {
+  &__sponsor {
+    position: absolute;
+    bottom: 0;
+    padding: 0.4rem 1rem 0.1rem;
+    height: 30px;
+    color: white;
+    background: $linear-gradient;
+    font-family: $header-font;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+
+    &--full {
+      @extend %attendee__sponsor;
+      display: inline-block;
+      position: inherit;
+      margin-top: 2rem;
+    }
+  }
+
+  &__title {
     margin: 0.5rem 0 0;
     font-size: 20px;
     line-height: 1.1rem;
     font-family: $header-font;
     color: $secondary-color;
-    text-decoration: none;
 
     @include breakpoint(big) {
-      margin: 1rem 0 0.25rem;
+      margin: 1rem 0 0.1rem;
       font-size: 24px;
       line-height: 1.5rem;
     }
@@ -39,16 +107,21 @@
     }
   }
 
-  &__subtitle {
+  &__company {
     color: $main-color;
     font-family: $header-font;
-    font-weight: bold;
+    font-weight: 700;
     text-transform: uppercase;
     font-size: 14px;
     line-height: 1em;
 
     @include breakpoint(big) {
       font-size: 20px;
+    }
+
+    &--full {
+      @extend %attendee__company;
+      font-size: 2rem;
     }
   }
 }
