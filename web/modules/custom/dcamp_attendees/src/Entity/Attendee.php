@@ -10,6 +10,13 @@ class Attendee implements JsonSerializable {
   use NicknameParserTrait;
 
   /**
+   * The identifier in Eventbrite.
+   *
+   * @var int
+   */
+  protected $id;
+
+  /**
    * The full name.
    *
    * @var string
@@ -44,14 +51,25 @@ class Attendee implements JsonSerializable {
   protected $company;
 
   /**
+   * The ticket class name.
+   *
+   * Used to identify whether this is an individual sponsor or not.
+   *
+   * @var string
+   */
+  protected $ticketClassName;
+
+  /**
    * Attendee constructor.
    *
    * @param stdClass $attendee
    *   The raw object from EventBrite.
    */
   public function __construct($attendee) {
+    $this->id = $attendee->id;
     $this->name = $attendee->profile->name;
     $this->company = !empty($attendee->profile->company) ? $attendee->profile->company : '';
+    $this->ticketClassName = $attendee->ticket_class_name;
     foreach ($attendee->answers as $answer) {
       if (!empty($answer->answer)) {
         if ($answer->question_id == '15019980') {
@@ -65,6 +83,20 @@ class Attendee implements JsonSerializable {
         }
       }
     }
+  }
+
+  /**
+   * @return int
+   */
+  public function getId(){
+    return $this->id;
+  }
+
+  /**
+   * @param int $id
+   */
+  public function setId($id) {
+    $this->id = $id;
   }
 
   /**
@@ -147,6 +179,30 @@ class Attendee implements JsonSerializable {
   }
 
   /**
+   * @return string
+   */
+  public function getTicketClassName() {
+    return $this->ticketClassName;
+  }
+
+  /**
+   * @param string $ticketClassName
+   */
+  public function setTicketClassName($ticket_class_name) {
+    $this->ticketClassName = $ticket_class_name;
+  }
+
+  /**
+   * Checks if this attendee is an individual sponsor.
+   *
+   * @return bool
+   *   TRUE if this attendee is an individual sponsor.
+   */
+  public function isIndividualSponsor() {
+    return $this->ticketClassName == 'Patrocinador individual';
+  }
+
+  /**
    * Returns the Twitter or Drupal Link URL.
    *
    * @return string
@@ -190,11 +246,13 @@ class Attendee implements JsonSerializable {
    */
   public function jsonSerialize() {
     return [
+      'id' => $this->getId(),
       'name' => $this->getName(),
       'company' => $this->getCompany(),
       'headshot' => $this->getHeadshot(),
       'twitter_url' => $this->getTwitter() ? $this->getTwitterUrl($this->getTwitter()) : '',
       'drupal_url' => $this->getDrupal() ? $this->getDrupalUrl($this->getDrupal()) : '',
+      'individual_sponsor' => $this->isIndividualSponsor(),
     ];
   }
 

@@ -6,6 +6,7 @@ use Drupal\Component\Utility\Xss;
 use Drupal\Core\Cache\CacheableJsonResponse;
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\Url;
+use Drupal\dcamp_attendees\Entity\Attendee;
 use Google_Client;
 use Google_Service_Sheets;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -43,6 +44,32 @@ class DcampAttendeesController extends ControllerBase {
     return [
       '#theme' => 'attendees_list',
       '#attendees' => $attendees,
+      '#cache' => [
+        'max-age' => $this->maxAge,
+      ],
+    ];
+  }
+
+  /**
+   * Shows an attendee profile.
+   *
+   * @return mixed
+   *   JsonResponse when requested via API request. A render array
+   *   otherwise.
+   */
+  public function viewAttendee(Attendee $attendee) {
+    // Check if this is an API request.
+    if (\Drupal::request()->query->get('_format') == 'json') {
+      // Prepare and send response.
+      $headers = [
+        'max-age' => $this->maxAge,
+      ];
+      return new JsonResponse($attendee, Response::HTTP_OK, $headers);
+    }
+
+    return [
+      '#theme' => 'attendees_view',
+      '#attendee' => $attendee,
       '#cache' => [
         'max-age' => $this->maxAge,
       ],
