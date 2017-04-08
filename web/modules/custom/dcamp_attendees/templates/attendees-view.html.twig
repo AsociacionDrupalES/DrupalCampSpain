@@ -1,0 +1,22 @@
+{#
+/**
+ * @file
+ * Custom theme implementation for an attendee detail.
+ *
+ * Available variables:
+ * - attendee: Attendee (object)
+ */
+#}
+<div class="attendee--full">
+  Name: {{ attendee.getName }}
+  <br/>
+  Headshot: <img src="{{ attendee.getHeadshot() ?: default_headshot  }}"/>
+  <br/>
+  Twitter: {{ attendee.getTwitterUrl(attendee.getTwitter) }}
+  <br/>
+  Drupal: {{ attendee.getDrupalUrl(attendee.getDrupal) }}
+  <br/>
+  Company: {{ attendee.getCompany }}
+  <br/>
+  Is individual sponsor: {{ attendee.isIndividualSponsor ? 'yes' : 'no' }}
+</div>

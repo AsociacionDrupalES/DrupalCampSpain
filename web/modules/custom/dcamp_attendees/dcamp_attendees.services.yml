@@ -1,3 +1,7 @@
 services:
   dcamp_attendees.eventbrite:
     class: Drupal\dcamp_attendees\EventBriteService
+  dcamp_attendees.attendee:
+    class: Drupal\dcamp_attendees\ParamConverter\AttendeeParamConverter
+    tags:
+      - { name: paramconverter }
