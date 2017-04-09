@@ -4,8 +4,10 @@ status: true
 dependencies:
   config:
     - field.field.node.page.body
+    - field.field.node.page.field_image
     - node.type.page
   module:
+    - image
     - text
     - user
 _core:
@@ -21,6 +23,14 @@ content:
     weight: 100
     settings: {  }
     third_party_settings: {  }
+  field_image:
+    weight: 102
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
   links:
     weight: 101
 hidden:
