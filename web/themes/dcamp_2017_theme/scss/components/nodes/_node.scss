@@ -58,10 +58,19 @@ article {
   max-width: $max-width;
   margin: 2em auto;
   padding: $gutter-width;
+  position: relative;
+
   @include clearfix;
   .content {
     h1 {
       margin-bottom: 1em;
+      box-sizing: border-box;
+      padding-right: 30px;
+      @include breakpoint(big) {
+        position: absolute;
+        left:0;
+        width: 35%;
+      }
     }
     @include breakpoint(big) {
       width: 65%;
