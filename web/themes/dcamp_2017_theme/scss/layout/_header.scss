@@ -9,6 +9,12 @@
   .toolbar-vertical & {
     margin-top: 39px;
   }
+  .toolbar-horizontal & {
+    top: 40px;
+  }
+  .toolbar-horizontal.toolbar-tray-open & {
+    top: 80px;
+  }
   a.logo {
     height: $header-height;
     @include breakpoint(mobile) {

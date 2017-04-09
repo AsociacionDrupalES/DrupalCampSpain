@@ -1,3 +1,7 @@
+body,
+header {
+  min-width: $min-width;
+}
 main{
   margin-top:$header-height;
   @include breakpoint(mobile){
@@ -9,7 +13,7 @@ main{
     &.messages--status{
       background:green;
       color:white;
-      a{
+      a {
         color:white;
         font-weight:bold;
       }
