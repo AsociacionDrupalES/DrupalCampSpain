@@ -76,3 +76,10 @@ article {
 .toolbar-vertical header.node__header {
   margin-top: 0rem;
 }
+
+.block--highlighted-image {
+  text-align: center;
+  .view-content {
+    margin: 0 auto;
+  }
+}

@@ -1,0 +1,24 @@
+uuid: 33d09b1f-e63b-416a-9333-5ef2c95f8644
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.highlighted
+  module:
+    - views
+  theme:
+    - dcamp_2017_theme
+id: views_block__highlighted_block_highlighted_image
+theme: dcamp_2017_theme
+region: content
+weight: -9
+provider: null
+plugin: 'views_block:highlighted-block_highlighted_image'
+settings:
+  id: 'views_block:highlighted-block_highlighted_image'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility: {  }
