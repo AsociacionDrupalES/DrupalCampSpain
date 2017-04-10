@@ -130,6 +130,15 @@
       height: $header-height;
       @include clearfix;
 
+      .toolbar-tray-open.toolbar-fixed.toolbar-horizontal & {
+        position: relative;
+        margin-top: 80px;
+      }
+      .toolbar-fixed.toolbar-horizontal {
+        position: relative;
+        margin-top: 40px;
+      }
+
       @include breakpoint(mobile) {
         height: $header-height-mobile;
       }
