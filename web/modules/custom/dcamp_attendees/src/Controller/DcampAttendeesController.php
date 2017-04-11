@@ -23,6 +23,13 @@ class DcampAttendeesController extends ControllerBase {
   protected $maxAge = 240;
 
   /**
+   * The amount of attendees to list per page.
+   *
+   * @var int
+   */
+  protected $attendeesPerPage = 50;
+
+  /**
    * Lists attendees.
    *
    * @return mixed
@@ -41,11 +48,20 @@ class DcampAttendeesController extends ControllerBase {
       return new JsonResponse($attendees, Response::HTTP_OK, $headers);
     }
 
+    // Set up the pager.
+    $page = pager_default_initialize(count($attendees), $this->attendeesPerPage);
+    $attendees = array_slice($attendees, $this->attendeesPerPage * $page, $this->attendeesPerPage);
+
     return [
-      '#theme' => 'attendees_list',
-      '#attendees' => $attendees,
-      '#cache' => [
-        'max-age' => $this->maxAge,
+      [
+        '#theme' => 'attendees_list',
+        '#attendees' => $attendees,
+        '#cache' => [
+          'max-age' => $this->maxAge,
+        ],
+      ],
+      [
+        '#type' => 'pager',
       ],
     ];
   }
