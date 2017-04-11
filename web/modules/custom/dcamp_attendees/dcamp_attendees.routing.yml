@@ -14,28 +14,3 @@ dcamp_attendees.api.list:
   requirements:
     _permission: 'access content'
     _format: json
-
-dcamp_attendees.view:
-  path: '/attendees/{attendee}'
-  defaults:
-    _controller: '\Drupal\dcamp_attendees\Controller\DcampAttendeesController::viewAttendee'
-    _title: 'View attendee'
-  requirements:
-    _permission: 'access content'
-  options:
-    parameters:
-      attendee:
-        type: 'attendee'
-
-dcamp_attendees.api.view:
-  path: '/attendees/{attendee}'
-  defaults:
-    _controller: '\Drupal\dcamp_attendees\Controller\DcampAttendeesController::viewAttendee'
-    _title: 'Attendees'
-  requirements:
-    _permission: 'access content'
-    _format: json
-  options:
-    parameters:
-      attendee:
-        type: 'attendee'
