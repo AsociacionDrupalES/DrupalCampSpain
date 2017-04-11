@@ -71,43 +71,81 @@ class EventBriteService {
    */
   protected function doGetAttendees() {
     $config = \Drupal::config('dcamp_attendees.settings');
-    $attendees_json = [];
+    $attendees_list = [];
 
     // Check if we are in developer mode.
     if ($config->get('debugging')) {
       $path = \Drupal::service('module_handler')->getModule('dcamp_attendees')->getPath();
-      $attendees_json = json_decode(file_get_contents($path . '/fixtures/individual_sponsors.json'));
+      $fixture_data = json_decode(file_get_contents($path . '/fixtures/attendees.json'));
+      $attendees_list = $fixture_data->attendees;
     }
     else {
       // Check if there is a cached value and it has not expire.
       $data = NULL;
       if ($cache = \Drupal::cache()->get($this->attendees_cid)) {
-        $attendees_json = $cache->data;
+        $attendees_list = $cache->data->attendees;
       }
       if (($cache == FALSE) || ($cache->expire < time())) {
-        // Request the list of attendees to EventBrite and filter individual sponsors.
-        // TODO take into account paging as the following request returns just the
-        // first 50 results.
-        $client = \Drupal::httpClient();
-        $response = $client->request('GET', 'https://www.eventbriteapi.com/v3/events/' . $config->get('event_id') . '/attendees', [
-          'headers' => [
-            'Authorization' => 'Bearer ' . $config->get('oauth_token'),
-          ]
-        ]);
-
-        if ($response->getStatusCode() !== 200) {
-          throw new \RuntimeException('Bad response from EventBrite');
-        }
-
-        $response_data = json_decode($response->getBody());
-        $attendees_json = $response_data->attendees;
+        // Eventbrite returns paged responses. Go through every page and load
+        // attendee_data into a single array.
+        $eventbrite_data = $this->loadAllAttendees();
+        $attendees_list = $eventbrite_data->attendees;
 
         // Store this data in cache.
-        \Drupal::cache()->set($this->attendees_cid, $attendees_json, strtotime($this->attendees_lifetime));
+        \Drupal::cache()->set($this->attendees_cid, $eventbrite_data, strtotime($this->attendees_lifetime));
       }
     }
 
-    return $attendees_json;
+    return $attendees_list;
   }
 
+  /**
+   * Loads all attendees from Eventbrite recursively.
+   *
+   * @param stdClass $eventbrite_data
+   *   The response from the request of the previous page, which is used
+   *   to accumulate results.
+   *
+   * @return stdClass
+   *   An stdClass object containing the whole list of attendees at the
+   *   attendees property, plus pagination data from the last page at
+   *   the pagination property.
+   */
+  protected function loadAllAttendees($eventbrite_data = NULL) {
+    $config = \Drupal::config('dcamp_attendees.settings');
+    // Request the list of attendees to EventBrite and filter individual sponsors.
+    $client = \Drupal::httpClient();
+    $page = 1;
+    if (!empty($eventbrite_data)) {
+      $page = $eventbrite_data->pagination->page_number;
+    }
+    $uri = 'https://www.eventbriteapi.com/v3/events/' . $config->get('event_id') . '/attendees?page=' . $page;
+    $response = $client->request('GET', $uri, [
+      'headers' => [
+        'Authorization' => 'Bearer ' . $config->get('oauth_token'),
+      ]
+    ]);
+
+    if ($response->getStatusCode() !== 200) {
+      throw new \RuntimeException('Bad response from EventBrite');
+    }
+
+    // Decode and extract pagination and attendees.
+    $response_data = json_decode($response->getBody());
+    if (empty($eventbrite_data)) {
+      $eventbrite_data = $response_data;
+    }
+    else {
+      $eventbrite_data->attendees = array_merge($eventbrite_data->attendees, $response_data->attendees);
+      $eventbrite_data->pagination = $response_data->pagination;
+    }
+
+    // Check if we need to request the next page.
+    if ($response_data->pagination->page_number < $response_data->pagination->page_count) {
+      $eventbrite_data->pagination->page_number++;
+      $eventbrite_data = $this->loadAllAttendees($eventbrite_data);
+    }
+
+    return $eventbrite_data;
+  }
 }
