@@ -25,7 +25,7 @@
           </div>
           <h2 class="attendee__title">{{ attendee.getName }}</h2>
           <h3 class="attendee__company">{{ attendee.getCompany }}</h3>
-          <div class="social-media">
+          <div class="attendee__social">
             {% if attendee.getTwitter %}
              <a class="social-media__link social-media__link--twitter" href="{{ attendee.getTwitter }}" target="_blank"></a>
             {% endif %}
