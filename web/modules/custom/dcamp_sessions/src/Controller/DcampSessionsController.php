@@ -146,7 +146,7 @@ class DcampSessionsController extends ControllerBase {
       $session = new Session($session_json);
 
       // Check if we need to create an alias.
-      $alias = '/sessions/' . $pathAutoAliasCleaner->cleanString($session->getTitle());
+      $alias = '/sessions/' . $pathAutoAliasCleaner->cleanString($session->getTitle() . '-' . $session->getTwitter());
       if (!$aliasStorage->load(['alias' => $alias])) {
         $aliasStorage->save('/sessions/proposed/' . $key, $alias);
       }
