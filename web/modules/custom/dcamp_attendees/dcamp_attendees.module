@@ -17,11 +17,5 @@ function dcamp_attendees_theme($existing, $type, $theme, $path) {
         'default_headshot' => base_path() . drupal_get_path('theme', 'dcamp_2017_theme') . '/images/drupal.png',
       ),
     ),
-    'attendees_view' => array(
-      'variables' => array(
-        'attendee' => NULL,
-        'default_headshot' => base_path() . drupal_get_path('theme', 'dcamp_2017_theme') . '/images/drupal.png',
-      ),
-    ),
   );
 }

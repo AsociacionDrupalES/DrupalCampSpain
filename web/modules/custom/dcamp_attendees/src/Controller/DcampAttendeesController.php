@@ -50,30 +50,4 @@ class DcampAttendeesController extends ControllerBase {
     ];
   }
 
-  /**
-   * Shows an attendee profile.
-   *
-   * @return mixed
-   *   JsonResponse when requested via API request. A render array
-   *   otherwise.
-   */
-  public function viewAttendee(Attendee $attendee) {
-    // Check if this is an API request.
-    if (\Drupal::request()->query->get('_format') == 'json') {
-      // Prepare and send response.
-      $headers = [
-        'max-age' => $this->maxAge,
-      ];
-      return new JsonResponse($attendee, Response::HTTP_OK, $headers);
-    }
-
-    return [
-      '#theme' => 'attendees_view',
-      '#attendee' => $attendee,
-      '#cache' => [
-        'max-age' => $this->maxAge,
-      ],
-    ];
-  }
-
 }
