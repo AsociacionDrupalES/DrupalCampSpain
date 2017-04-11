@@ -122,10 +122,21 @@ class Attendee implements JsonSerializable {
    * @return string
    */
   public function getHeadshot() {
-    $extension = pathinfo(parse_url($this->headshot,PHP_URL_PATH),PATHINFO_EXTENSION);
+    $extension = pathinfo(parse_url($this->headshot, PHP_URL_PATH), PATHINFO_EXTENSION);
     if (!in_array($extension, ['png', 'gif', 'jpg', 'jpeg'])) {
       return '';
     }
+
+    // Add https in cases if there is no scheme.
+    $scheme = parse_url($this->headshot, PHP_URL_SCHEME);
+    if (empty($scheme)) {
+      $this->headshot = 'https://' . $this->headshot;
+    }
+    // Replace http by https.
+    elseif ($scheme == 'http') {
+      $this->headshot = str_replace('http', 'https', $this->headshot);
+    }
+
     return $this->headshot;
   }
 
