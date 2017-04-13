@@ -1,22 +1,23 @@
 dcamp_sessions.list:
-  path: '/sessions/proposed'
+  path: '/sessions/{session_type}'
   defaults:
     _controller: '\Drupal\dcamp_sessions\Controller\DcampSessionsController::listSessions'
-    _title: 'Proposed Sessions'
+    _title_callback: '\Drupal\dcamp_sessions\Controller\DcampSessionsController::getSessionsTitle'
+    session_type: 'proposed'
   requirements:
     _permission: 'access content'
 
 dcamp_sessions.api.list:
-  path: '/sessions/proposed'
+  path: '/sessions/{session_type}'
   defaults:
     _controller: '\Drupal\dcamp_sessions\Controller\DcampSessionsController::listSessions'
-    _title: 'Proposed Sessions'
+    session_type: 'proposed'
   requirements:
     _permission: 'access content'
     _format: json
 
 dcamp_sessions.view:
-  path: '/sessions/proposed/{submission_id}'
+  path: '/sessions/{submission_id}'
   defaults:
     _controller: '\Drupal\dcamp_sessions\Controller\DcampSessionsController::view'
   requirements:
@@ -24,7 +25,7 @@ dcamp_sessions.view:
     submission_id: '[0-9]+'
 
 dcamp_sessions.api.view:
-  path: '/sessions/proposed/{submission_id}'
+  path: '/sessions/{submission_id}'
   defaults:
     _controller: '\Drupal\dcamp_sessions\Controller\DcampSessionsController::view'
   requirements:
