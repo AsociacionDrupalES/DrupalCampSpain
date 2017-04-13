@@ -96,6 +96,11 @@ class EventBriteService {
       }
     }
 
+    // Filter out attendees who cancelled his ticket.
+    $attendees_list = array_filter($attendees_list, function($attendee_data) {
+      return $attendee_data->cancelled == FALSE;
+    });
+
     return $attendees_list;
   }
 
