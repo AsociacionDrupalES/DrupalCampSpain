@@ -71,7 +71,8 @@ The following resources are available:
 * Pages: https://2017.drupalcamp.es/jsonapi/node/page
 * Sponsors: https://2017.drupalcamp.es/jsonapi/node/sponsor
 * Speakers: https://2017.drupalcamp.es/jsonapi/node/speaker
-* Sessions: https://2017.drupalcamp.es/sessions/proposed?_format=json
-* Session detail: https://2017.drupalcamp.es/sessions/vue-meets-drupal?_format=json
+* Proposed Sessions: https://2017.drupalcamp.es/sessions/proposed?_format=json
+* Selected Sessions: https://2017.drupalcamp.es/sessions/selected?_format=json
+* Session detail: https://2017.drupalcamp.es/sessions/vue-meets-drupal-miguelangcaro?_format=json
 * Sponsors: https://2017.drupalcamp.es/sponsors/list
 * Attendees: https://2017.drupalcamp.es/attendees/list?_format=json

@@ -7,8 +7,6 @@ use Drupal\Core\Cache\CacheableJsonResponse;
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\Url;
 use Drupal\dcamp_sessions\Entity\Session;
-use Google_Client;
-use Google_Service_Sheets;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
@@ -22,15 +20,69 @@ class DcampSessionsController extends ControllerBase {
    */
   protected $maxAge = 120;
 
+  protected $selectedSessions = [
+    '/sessions/contribuir-drupal-por-donde-comenzar-de-0-100-regiguren',
+    '/sessions/el-poder-de-webform-antes-yamform-regiguren',
+    '/sessions/responsive-images-under-control-chumillas',
+    '/sessions/todo-lo-que-hay-que-saber-para-enfrentarte-al-marketing-automation-cocinaitaliana',
+    '/sessions/headless-drupal-gizra-way-davidbaltha',
+    '/sessions/test-driven-development-drupal-8-nuezweb',
+    '/sessions/casos-de-exito-de-drupal-en-espana-davidgilbiko2',
+    '/sessions/adventures-apis-justafish',
+    '/sessions/improve-your-testing-experience-migrate-default-content-module-marinero',
+    '/sessions/el-grupo-de-trabajo-de-documentacion-en-espanol-te-necesita-skuark',
+    '/sessions/using-traefikio-your-local-docker-environments-jsbalsera',
+    '/sessions/seleccionando-un-cms-para-la-transformacion-por-que-drupal-javierespadas',
+    '/sessions/caching-post-data-varnish-rodricels',
+    '/sessions/pretendiendo-ser-rockstar-developers-juanolalla',
+    '/sessions/extreme-page-composition-paragraphs-sidddi',
+    '/sessions/lets-encrypt-o-como-tener-tu-pagina-https-tras-5-instrucciones-en-la-linea-de-comandos',
+    '/sessions/pierdele-el-miedo-drupal-console-kikoalonsob',
+    '/sessions/iniciacion-al-profiling-con-webprofiler-kikoalonsob',
+    '/sessions/abstraer-requisitos-de-cliente-en-modulos-para-contribuir',
+    '/sessions/buenas-practicas-front-end-maquetacion-por-componentes',
+    '/sessions/creacion-de-extensiones-de-twig-para-personalizar-la-presentacion-de-campos-vlledo',
+    '/sessions/google-amp-y-drupal-8-antoniogarrod',
+    '/sessions/tu-drupal-esta-listo-lo-sabe-google-beagonpoz',
+    '/sessions/search-api-solr-en-drupal-8-bases-practicas-para-encontrar-lo-buscado-tuwebo',
+    '/sessions/commerce-en-drupal-8-facine',
+    '/sessions/why-drupal-davidbaltha',
+    '/sessions/entidades-en-drupal-8-luisortizramos',
+    '/sessions/migrando-datos-drupal-8-jonhattan',
+    '/sessions/pruebas-de-carga-web-con-gatling-jonhattan',
+    '/sessions/bdd-desarrollo-guiado-por-comportamiento-jltutor',
+    '/sessions/drupal-8s-multilingual-apis-building-entire-world-penyaskito',
+    '/sessions/drupal-instantaneo-con-service-workers-asilgag',
+    '/sessions/introduccion-al-modulo-ui-patterns-usando-atomic-ui-components-en-drupal8-nicolasbottini',
+    '/sessions/grandes-proyectos-desde-la-perspectiva-de-una-pequena-empresa-ii-como-retenerlos-rvilar',
+    '/sessions/css-grid-layout-aless86',
+    '/sessions/putting-yourself-out-there-and-avoiding-what-ifs-mikeherchel',
+    '/sessions/debugging-profiling-rocking-out-browser-based-developer-tools-mikeherchel',
+    '/sessions/scrum-master-story-hackathons-scrum-agile-and-chicken-nancyvb',
+    '/sessions/drupal-8-cache-developers-jjcarrion',
+    '/sessions/synchronize-your-drupal-data-carto-plopesc',
+    '/sessions/explotando-composer-en-drupal-8-con-drupal-project-salvabg',
+  ];
+
   /**
    * Lists proposed sessions
+   *
+   * @param string $session_type
+   *   The type of session to show. Defaults to proposed sessions.
    *
    * @return mixed
    *   JsonResponse when requested via API request. A render array
    *   otherwise.
    */
-  public function listSessions() {
-    $sessions = $this->getProposals();
+  public function listSessions($session_type) {
+    $sessions = \Drupal::service('dcamp_sessions.proposals')->getProposals();
+
+    // Filter out selected sessions if needed.
+    if ($session_type == 'selected') {
+      $sessions = array_values(array_filter($sessions, function($session) {
+        return in_array($session->getUrl(), $this->selectedSessions);
+      }));
+    }
 
     // Check if this is an API request.
     if (\Drupal::request()->query->get('_format') == 'json') {
@@ -50,11 +102,34 @@ class DcampSessionsController extends ControllerBase {
 
     return [
       '#theme' => 'proposed_sessions',
+      '#title' => $this->getSessionsTitle($session_type),
       '#items' => $list_items,
       '#cache' => [
         'max-age' => $this->maxAge,
       ],
     ];
+  }
+
+  /**
+   * Returns the sessions listing title.
+   *
+   * Also does rudimentary validation, since we could not figure out
+   * how to use the Choices route param constraint.
+   *
+   * @param string $session_type
+   *   The type of session to show. Defaults to proposed sessions.
+   */
+  public function getSessionsTitle($session_type) {
+    $title = '';
+
+    if ($session_type == 'proposed') {
+      $title = 'Proposed sessions';
+    }
+    elseif ($session_type == 'selected') {
+      $title = 'Selected sessions';
+    }
+
+    return $title;
   }
 
   /**
@@ -70,7 +145,7 @@ class DcampSessionsController extends ControllerBase {
    */
   public function view($submission_id) {
     $submission_id = (int) $submission_id;
-    $sessions = $this->getProposals();
+    $sessions = \Drupal::service('dcamp_sessions.proposals')->getProposals();
     if (empty($sessions[$submission_id])) {
       throw new BadRequestHttpException(t('Invalid submission id. https://media4.giphy.com/media/uOAXDA7ZeJJzW/giphy.gif'));
     }
@@ -96,65 +171,6 @@ class DcampSessionsController extends ControllerBase {
     ];
 
     return $build;
-  }
-
-  /**
-   * Returns the spreadsheet values.
-   *
-   * @return \Drupal\dcamp_sessions\Entity\Session[]
-   *   The array of session proposals.
-   * @throws \RuntimeException
-   *   If there is no credentials file to authenticate against Google.
-   */
-  protected function getProposals() {
-    $config = \Drupal::config('dcamp_sessions.settings');
-    /** @var \Drupal\Core\Path\AliasStorage $aliasStorage */
-    $aliasStorage = \Drupal::service('path.alias_storage');
-    $pathAutoAliasCleaner = \Drupal::service('pathauto.alias_cleaner');
-    $sessions = [];
-
-    // First check if we are in developer mode.
-    if ($config->get('debugging')) {
-      $path = \Drupal::service('module_handler')->getModule('dcamp_sessions')->getPath();
-      $sessions_raw = file_get_contents($path . '/fixtures/sessions.json');
-      $sessions_json = json_decode($sessions_raw);
-    }
-    else {
-      if (empty($config->get('service_account_file'))) {
-        throw new \RuntimeException('The path of the service account file has not been set.');
-      }
-      if (empty($config->get('spreadsheet_id'))) {
-        throw new \RuntimeException('The identifier of the spreadsheet has not been set.');
-      }
-      if (empty($config->get('spreadsheet_range'))) {
-        throw new \RuntimeException('The range of the spreadsheet has not been set.');
-      }
-      putenv('GOOGLE_APPLICATION_CREDENTIALS=' . $config->get('service_account_file'));
-      $client = new Google_Client();
-      $client->useApplicationDefaultCredentials();
-      $client->addScope(Google_Service_Sheets::SPREADSHEETS_READONLY);
-      $service = new Google_Service_Sheets($client);
-
-      $result = $service->spreadsheets_values->get($config->get('spreadsheet_id'), $config->get('spreadsheet_range'));
-
-      // Skip the first row from the spreadsheet values as it contains heading titles.
-      $sessions_json = array_slice($result->getValues(), 1);
-    }
-
-    // Turn raw session proposals into Session objects.
-    foreach ($sessions_json as $key => $session_json) {
-      $session = new Session($session_json);
-
-      // Check if we need to create an alias.
-      $alias = '/sessions/' . $pathAutoAliasCleaner->cleanString($session->getTitle() . '-' . $session->getTwitter());
-      if (!$aliasStorage->load(['alias' => $alias])) {
-        $aliasStorage->save('/sessions/proposed/' . $key, $alias);
-      }
-      $session->setUrl($alias);
-      $sessions[] = $session;
-    }
-
-    return $sessions;
   }
 
 }
