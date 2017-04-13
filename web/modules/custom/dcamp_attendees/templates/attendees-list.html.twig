@@ -27,10 +27,10 @@
           <h3 class="attendee__company">{{ attendee.getCompany }}</h3>
           <div class="attendee__social">
             {% if attendee.getTwitter %}
-             <a class="social-media__link social-media__link--twitter" href="{{ attendee.getTwitter }}" target="_blank"></a>
+             <a class="social-media__link social-media__link--twitter" href="{{ attendee.getTwitterUrl(attendee.getTwitter) }}" target="_blank"></a>
             {% endif %}
             {% if attendee.getDrupal %}
-              <a class="social-media__link social-media__link--drupal" href="{{ attendee.getDrupal }}" target="_blank"></a>
+              <a class="social-media__link social-media__link--drupal" href="{{ attendee.getDrupalUrl(attendee.getDrupal) }}" target="_blank"></a>
             {% endif %}
           </div>
         </li>

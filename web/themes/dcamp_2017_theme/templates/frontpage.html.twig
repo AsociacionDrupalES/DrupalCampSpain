@@ -106,10 +106,10 @@
                   </a>
                   <div class="individual-sponsors__social">
                     {% if individual_sponsor.getTwitter %}
-                      <a class="social-media__link social-media__link--twitter" href="{{ individual_sponsor.getTwitter }}" target="_blank"></a>
+                      <a class="social-media__link social-media__link--twitter" href="{{ individual_sponsor.getTwitterUrl(individual_sponsor.getTwitter) }}" target="_blank"></a>
                     {% endif %}
                     {% if individual_sponsor.getDrupal %}
-                      <a class="social-media__link social-media__link--drupal" href="{{ individual_sponsor.getDrupal }}" target="_blank"></a>
+                      <a class="social-media__link social-media__link--drupal" href="{{ individual_sponsor.getDrupalUrl(individual_sponsor.getDrupal) }}" target="_blank"></a>
                     {% endif %}
                   </div>
                 </li>
