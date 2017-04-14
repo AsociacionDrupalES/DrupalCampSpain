@@ -1,4 +1,8 @@
 .layout-container > header {
+  @include transition(top .2s ease-in-out);
+  &.nav-up{
+    top:-60px !important;
+  }
   @include clearfix;
   position: fixed;
   top: 0;
