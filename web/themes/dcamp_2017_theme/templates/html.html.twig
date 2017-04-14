@@ -28,23 +28,29 @@ logged_in ? 'user-logged-in',
 not root_path ? 'path-frontpage' : 'path-' ~ root_path|clean_class,
 node_type ? 'page-node-type-' ~ node_type|clean_class,
 db_offline ? 'db-offline',
+access_denied ? 'access-denied',
+not_found ? 'not-found'
 ] %}
 <!DOCTYPE html>
 <html{{ html_attributes }}>
 <head>
   <head-placeholder token="{{ placeholder_token|raw }}">
-  <title>{{ head_title|safe_join(' | ') }}</title>
-  <css-placeholder token="{{ placeholder_token|raw }}">
-  <js-placeholder token="{{ placeholder_token|raw }}">
-  <link rel="apple-touch-icon" sizes="180x180" href="{{ path_to_dcamp_2017_theme }}/images/favicon/apple-touch-icon.png">
-  <link rel="icon" type="image/png" href="{{ path_to_dcamp_2017_theme }}/images/favicon/favicon-32x32.png" sizes="32x32">
-  <link rel="icon" type="image/png" href="{{ path_to_dcamp_2017_theme }}/images/favicon/favicon-16x16.png" sizes="16x16">
-  <link rel="manifest" href="{{ path_to_dcamp_2017_theme }}/images/favicon/manifest.json">
-  <link rel="mask-icon" href="{{ path_to_dcamp_2017_theme }}/images/favicon/safari-pinned-tab.svg" color="#5bbad5">
-  <link rel="shortcut icon" href="{{ path_to_dcamp_2017_theme }}/images/favicon/favicon.ico">
-  <meta name="msapplication-config" content="{{ path_to_dcamp_2017_theme }}/images/favicon/browserconfig.xml">
-  <meta name="theme-color" content="#452AE2">
-</head>
+    <title>{{ head_title|safe_join(' | ') }}</title>
+    <css-placeholder token="{{ placeholder_token|raw }}">
+      <js-placeholder token="{{ placeholder_token|raw }}">
+        <link rel="apple-touch-icon" sizes="180x180"
+              href="{{ path_to_dcamp_2017_theme }}/images/favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" href="{{ path_to_dcamp_2017_theme }}/images/favicon/favicon-32x32.png"
+              sizes="32x32">
+        <link rel="icon" type="image/png" href="{{ path_to_dcamp_2017_theme }}/images/favicon/favicon-16x16.png"
+              sizes="16x16">
+        <link rel="manifest" href="{{ path_to_dcamp_2017_theme }}/images/favicon/manifest.json">
+        <link rel="mask-icon" href="{{ path_to_dcamp_2017_theme }}/images/favicon/safari-pinned-tab.svg"
+              color="#5bbad5">
+        <link rel="shortcut icon" href="{{ path_to_dcamp_2017_theme }}/images/favicon/favicon.ico">
+        <meta name="msapplication-config" content="{{ path_to_dcamp_2017_theme }}/images/favicon/browserconfig.xml">
+        <meta name="theme-color" content="#452AE2">
+        </head>
 
 <body{{ attributes.addClass(body_classes) }}>
 

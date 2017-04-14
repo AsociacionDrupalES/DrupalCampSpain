@@ -21,10 +21,15 @@ html {
     font-weight: 400;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    p {
-      line-height: 1.6;
+    .field--name-body {
+      p{
+        margin: .5em 0 1em 0;
+      }
 
-      margin: .5em 0 1em 0;
+      ul{
+        margin: .5em 0 1em 2em;
+      }
+      line-height: 1.6;
       font-size:1.1em;
       a {
         color:$main-color;
