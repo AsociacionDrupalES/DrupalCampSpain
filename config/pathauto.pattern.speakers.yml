@@ -10,22 +10,23 @@ label: Speakers
 type: 'canonical_entities:node'
 pattern: 'speakers/[node:title]'
 selection_criteria:
-  f434c4dd-0c49-4419-ba55-176b47458fcd:
+  bb8a225d-8e98-4f7c-ad6b-43c959447320:
     id: node_type
     bundles:
       speaker: speaker
     negate: false
     context_mapping:
       node: node
-    uuid: f434c4dd-0c49-4419-ba55-176b47458fcd
-  9725d69d-ecfb-47ba-a2e7-6e8d9c4816b5:
+    uuid: bb8a225d-8e98-4f7c-ad6b-43c959447320
+  f5c253e9-c2a3-48c4-bfa5-04283df1914c:
     id: language
     langcodes:
       en: en
+      es: es
     negate: false
     context_mapping:
       language: 'node:langcode:language'
-    uuid: 9725d69d-ecfb-47ba-a2e7-6e8d9c4816b5
+    uuid: f5c253e9-c2a3-48c4-bfa5-04283df1914c
 selection_logic: and
 weight: -10
 relationships:
