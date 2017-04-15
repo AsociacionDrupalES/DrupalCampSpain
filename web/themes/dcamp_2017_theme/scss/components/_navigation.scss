@@ -126,7 +126,7 @@
       margin-top: 39px;
     }
     .main-menu-header {
-      background: url(../images/menu-lines.png) repeat-x;
+      background: url(../images/menu-lines.png?refresh=2017-04-14) repeat-x;
       height: $header-height;
       @include clearfix;
 
@@ -260,3 +260,5 @@ footer{
     }
   }
 }
+
+

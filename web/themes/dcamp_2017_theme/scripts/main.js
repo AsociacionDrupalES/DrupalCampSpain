@@ -2,7 +2,7 @@
 
   Drupal.behaviors.dcamp2017ThemeBehaviors = {
     attach: function (context, settings) {
-      $('.main-menu__trigger').click(function () {
+      $('.main-menu__trigger').once().click(function () {
         $('body').toggleClass('main-menu-enabled');
       });
 
