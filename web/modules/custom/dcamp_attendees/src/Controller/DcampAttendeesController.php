@@ -27,7 +27,7 @@ class DcampAttendeesController extends ControllerBase {
    *
    * @var int
    */
-  protected $attendeesPerPage = 2;
+  protected $attendeesPerPage = 50;
 
   /**
    * Lists attendees.
