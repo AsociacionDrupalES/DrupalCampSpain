@@ -62,11 +62,10 @@ class DcampController extends ControllerBase {
   }
 
   /**
-   * Title callback for frontpage
+   * Title callback for frontpage.
    */
-
-  public function frontpageTitle(){
-    return $this->t('Two days of Drupal | Madrid May 5-6');
+  public function getFrontpageTitle(){
+    return $this->t('Two days of Drupal presentations, workshops and networking | Madrid, May the 5th and 6th 2017');
   }
 
 }

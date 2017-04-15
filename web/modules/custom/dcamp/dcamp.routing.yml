@@ -12,6 +12,6 @@ frontpage:
   path: '/frontpage'
   defaults:
     _controller: '\Drupal\dcamp\Controller\DcampController::frontpage'
-    _title_callback: '\Drupal\dcamp\Controller\DcampController::frontpageTitle'
+    _title_callback: '\Drupal\dcamp\Controller\DcampController::getFrontpageTitle'
   requirements:
     _permission: 'access content'
