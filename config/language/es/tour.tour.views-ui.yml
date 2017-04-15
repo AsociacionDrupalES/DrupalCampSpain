@@ -28,5 +28,5 @@ tips:
     label: 'Sort actions'
     body: 'Add, rearrange or remove sorting rules.'
   views-ui-preview:
-    label: Preview
+    label: 'Vista previa'
     body: 'Show a preview of the view output.'
