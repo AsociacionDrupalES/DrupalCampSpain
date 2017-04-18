@@ -420,3 +420,10 @@ function dcamp_update_8115() {
 function dcamp_update_8116() {
   \Drupal::service('module_installer')->install(['dcamp_sponsors']);
 }
+
+/**
+ * Install schedule module.
+ */
+function dcamp_update_8117() {
+  \Drupal::service('module_installer')->install(['dcamp_schedule']);
+}

@@ -1,0 +1,6 @@
+name: DrupalCamp Schedule
+description: Schedule Drupalcamp module
+package: dcamp
+
+type: module
+core: 8.x
