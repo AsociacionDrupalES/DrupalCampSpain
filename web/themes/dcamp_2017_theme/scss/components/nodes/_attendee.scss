@@ -21,6 +21,7 @@
   }
 
   &__headshot {
+    background-color: $grey;
     position: relative;
     display: block;
     height: $gutter-width * 8;
@@ -36,6 +37,7 @@
 
   &__img {
     display: block;
+    margin: auto;
     filter: grayscale(100%);
     max-width: 100%;
     max-height: $gutter-width * 8;
