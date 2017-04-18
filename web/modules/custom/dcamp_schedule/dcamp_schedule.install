@@ -1,0 +1,17 @@
+<?php
+/**
+ * @file
+ *
+ * Install hooks for dcamp_schedule module.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function dcamp_schedule_install() {
+  // Fix alias for case studies session.
+  /** @var \Drupal\Core\Path\AliasStorage $aliasStorage */
+  $aliasStorage = \Drupal::service('path.alias_storage');
+  $aliasStorage->delete(['alias' => '/sessions/casos-de-exito-de-drupal-en-espana']);
+  $aliasStorage->save('/sessions/83', '/sessions/casos-de-exito-de-drupal-en-espana');
+}

@@ -27,7 +27,7 @@ class DcampSessionsController extends ControllerBase {
     '/sessions/todo-lo-que-hay-que-saber-para-enfrentarte-al-marketing-automation-cocinaitaliana',
     '/sessions/headless-drupal-gizra-way-davidbaltha',
     '/sessions/test-driven-development-drupal-8-nuezweb',
-    '/sessions/casos-de-exito-de-drupal-en-espana-davidgilbiko2',
+    '/sessions/casos-de-exito-de-drupal-en-espana',
     '/sessions/adventures-apis-justafish',
     '/sessions/improve-your-testing-experience-migrate-default-content-module-marinero',
     '/sessions/el-grupo-de-trabajo-de-documentacion-en-espanol-te-necesita-skuark',
