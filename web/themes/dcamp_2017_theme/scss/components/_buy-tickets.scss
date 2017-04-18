@@ -1,8 +1,15 @@
 #floating-button {
   position: fixed;
-  right: 0;
+  left: 0;
   bottom: 0;
   z-index: 999;
+  width: 100%;
+
+  .button {
+    text-align: center;
+    padding-right: 30px;
+    display: block;
+  }
 }
 
 .buy-tickets {
