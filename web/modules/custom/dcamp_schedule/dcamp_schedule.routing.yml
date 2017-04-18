@@ -1,0 +1,7 @@
+schedule:
+  path: '/schedule'
+  defaults:
+    _controller: '\Drupal\dcamp_schedule\Controller\DcampScheduleController::schedule'
+    _title_callback: '\Drupal\dcamp_schedule\Controller\DcampScheduleController::getScheduleTitle'
+  requirements:
+    _permission: 'access content'
