@@ -18,7 +18,8 @@
       {%- for attendee in attendees -%}
         <li class="teaser-list__item--small">
           <div class="attendee__headshot">
-            <img class="attendee__img" src="{{ attendee.getHeadshot() ?: default_headshot  }}"/>
+            <div class="attendee__image" style="background-image:url({{ attendee.getHeadshot() ?: default_headshot  }})">
+            </div>
             {%- if attendee.isIndividualSponsor -%}
               <div class="attendee__sponsor">Sponsor</div>
             {%- endif -%}
