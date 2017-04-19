@@ -21,9 +21,11 @@
   }
 
   &__headshot {
+    background-color: $grey;
     position: relative;
     display: block;
     height: $gutter-width * 8;
+    overflow-y: hidden;
 
     @include breakpoint(big) {
       margin-top: 0.25rem;
@@ -37,12 +39,13 @@
   &__img {
     display: block;
     filter: grayscale(100%);
-    max-width: 100%;
-    max-height: $gutter-width * 8;
+    min-width: 100%;
     min-height: 100%;
     width: auto;
     height: auto;
     transition: ease 0.5s all;
+    object-fit: cover;
+    margin-top: $gutter-width * -2;
 
     &:hover {
       filter: grayscale(0%);
