@@ -5,13 +5,13 @@ dependencies: {  }
 _core:
   default_config_hash: hcGGCTt6L4-gcUgBXrQs8sk-_23x5y-ZC10KfvVgkDQ
 name: sponsor_logo
-label: 'Sponsor logo (Heigth: 75)'
+label: 'Sponsor logo'
 effects:
   d12b1ce6-9c5d-4d58-87c8-6da1be8294a6:
     uuid: d12b1ce6-9c5d-4d58-87c8-6da1be8294a6
     id: image_scale
     weight: 1
     data:
-      width: null
-      height: 75
+      width: 300
+      height: 300
       upscale: false
