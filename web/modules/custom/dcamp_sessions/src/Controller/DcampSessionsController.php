@@ -63,6 +63,7 @@ class DcampSessionsController extends ControllerBase {
     '/sessions/synchronize-your-drupal-data-carto-plopesc',
     '/sessions/exploring-composer-drupal-8-drupal-project-salvabg',
     '/sessions/patrones-de-diseno-inclusivos-como-abordar-la-accesibilidad-en-el-desarrollo-de-temas-personalizados',
+    '/sessions/empresas-comunidades-opensource-el-cliente-siempre-gana',
   ];
 
   /**
