@@ -61,7 +61,8 @@ class DcampSessionsController extends ControllerBase {
     '/sessions/scrum-master-story-hackathons-scrum-agile-and-chicken-nancyvb',
     '/sessions/drupal-8-cache-developers-jjcarrion',
     '/sessions/synchronize-your-drupal-data-carto-plopesc',
-    '/sessions/explotando-composer-en-drupal-8-con-drupal-project-salvabg',
+    '/sessions/exploring-composer-drupal-8-drupal-project-salvabg',
+    '/sessions/patrones-de-diseno-inclusivos-como-abordar-la-accesibilidad-en-el-desarrollo-de-temas-personalizados',
   ];
 
   /**
