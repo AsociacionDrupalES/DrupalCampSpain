@@ -4,7 +4,9 @@ status: true
 dependencies:
   config:
     - field.field.node.article.body
+    - field.field.node.article.comment
     - field.field.node.article.field_image
+    - field.field.node.article.field_tags
     - image.style.large
     - node.type.article
   module:
@@ -24,6 +26,7 @@ content:
     settings: {  }
     third_party_settings: {  }
     label: hidden
+    region: content
   field_image:
     type: image
     weight: -1
@@ -32,10 +35,12 @@ content:
       image_link: ''
     third_party_settings: {  }
     label: hidden
+    region: content
   links:
     weight: 100
     settings: {  }
     third_party_settings: {  }
+    region: content
 hidden:
   comment: true
   field_tags: true

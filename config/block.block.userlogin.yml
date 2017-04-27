@@ -8,7 +8,7 @@ dependencies:
     - dcamp_2017_theme
 id: userlogin
 theme: dcamp_2017_theme
-region: '-1'
+region: header
 weight: 1
 provider: null
 plugin: user_login_block

@@ -12,7 +12,7 @@ _core:
   default_config_hash: kkISXE1LT2FJEoYnqCrCpeFB-2pmGmMxMklVk7rQcfg
 id: dcamp_2017_landing_theme_footer
 theme: dcamp_2017_landing_theme
-region: '-1'
+region: content
 weight: -5
 provider: null
 plugin: 'system_menu_block:footer'

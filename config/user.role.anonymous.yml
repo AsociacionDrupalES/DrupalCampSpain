@@ -9,9 +9,9 @@ label: 'Anonymous user'
 weight: -10
 is_admin: false
 permissions:
-  - 'access content'
-  - 'use text format restricted_html'
   - 'access comments'
+  - 'access content'
   - 'access site-wide contact form'
   - 'search content'
   - 'skip comment approval'
+  - 'use text format restricted_html'

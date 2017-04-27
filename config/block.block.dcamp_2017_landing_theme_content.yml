@@ -10,7 +10,7 @@ _core:
   default_config_hash: 9EoWV2Lot6FVSr50t4hoKgiz1LIXYWNG-IIPYsWxBqo
 id: dcamp_2017_landing_theme_content
 theme: dcamp_2017_landing_theme
-region: '-1'
+region: content
 weight: 3
 provider: null
 plugin: system_main_block
