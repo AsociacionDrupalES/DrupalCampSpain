@@ -10,7 +10,7 @@ _core:
   default_config_hash: KHQIJ7Vfl25lTjzIc7qIvnuistt-Mw2O0kG4jCofmkI
 id: dcamp_base_theme_messages
 theme: dcamp_base_theme
-region: '-1'
+region: header
 weight: -6
 provider: null
 plugin: system_messages_block

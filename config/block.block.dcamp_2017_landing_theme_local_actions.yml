@@ -8,7 +8,7 @@ _core:
   default_config_hash: 13GQpeITIJsp1kyPniXtWZfyFH87vb1xxJCHifL4UeE
 id: dcamp_2017_landing_theme_local_actions
 theme: dcamp_2017_landing_theme
-region: '-1'
+region: content
 weight: 4
 provider: null
 plugin: local_actions_block

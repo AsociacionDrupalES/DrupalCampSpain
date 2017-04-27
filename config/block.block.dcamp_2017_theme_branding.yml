@@ -10,7 +10,7 @@ _core:
   default_config_hash: NDwadleLD3YVSbDUaakxyYZyINYtkFtOVGShfq4kWy8
 id: dcamp_2017_theme_branding
 theme: dcamp_2017_theme
-region: '-1'
+region: header
 weight: -3
 provider: null
 plugin: system_branding_block

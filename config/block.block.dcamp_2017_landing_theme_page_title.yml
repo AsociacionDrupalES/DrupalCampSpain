@@ -8,7 +8,7 @@ _core:
   default_config_hash: 7rR9chwXvdM2H8OYMAYx9Zj3GGlPMrZp_M3ZA4thYTk
 id: dcamp_2017_landing_theme_page_title
 theme: dcamp_2017_landing_theme
-region: '-1'
+region: content
 weight: -4
 provider: null
 plugin: page_title_block

@@ -4,6 +4,9 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.sponsor.field_logo
+    - field.field.node.sponsor.field_sponsor_type
+    - field.field.node.sponsor.field_url
     - node.type.sponsor
   module:
     - user
@@ -14,6 +17,7 @@ mode: teaser
 content:
   links:
     weight: 100
+    region: content
 hidden:
   field_logo: true
   field_sponsor_type: true
