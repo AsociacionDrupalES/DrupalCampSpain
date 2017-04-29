@@ -166,14 +166,14 @@
           margin-left: -$gutter-width;
           .views-field {
             margin: 0 $gutter-width;
-            width: calc(100% / 4 - #{$gutter-width}*2);
+            width: calc(100% / 4 - #{$gutter-width} * 2);
             float: left;
-            margin-bottom:2em;
-            @include breakpoint(tablet){
-              width: calc(100% / 2 - #{$gutter-width}*2);
+            margin-bottom: 2em;
+            @include breakpoint(tablet) {
+              width: calc(100% / 2 - #{$gutter-width} * 2);
             }
-            @include breakpoint(mobile){
-              width: calc(100% / 1 - #{$gutter-width}*2);
+            @include breakpoint(mobile) {
+              width: calc(100% / 1 - #{$gutter-width} * 2);
             }
           }
         }
@@ -302,7 +302,7 @@
     }
     .view.view-sponsors .view-content {
       width: 100%;
-      margin-bottom:2em;
+      margin-bottom: 2em;
       > div {
         display: inline-block;
         margin: calc(#{$gutter-width} / 2) -1px $gutter-width;
@@ -326,9 +326,11 @@
         }
         > div {
           margin: $gutter-width;
+          text-align: center;
           img {
-            width: 100%;
             height: auto;
+            width: auto;
+            vertical-align: middle;
           }
         }
       }
