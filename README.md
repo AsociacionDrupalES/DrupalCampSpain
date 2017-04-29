@@ -76,3 +76,4 @@ The following resources are available:
 * Session detail: https://2017.drupalcamp.es/sessions/vue-meets-drupal-miguelangcaro?_format=json
 * Sponsors: https://2017.drupalcamp.es/sponsors/list
 * Attendees: https://2017.drupalcamp.es/attendees/list?_format=json
+* Schedule: https://2017.drupalcamp.es/schedule?_format=json

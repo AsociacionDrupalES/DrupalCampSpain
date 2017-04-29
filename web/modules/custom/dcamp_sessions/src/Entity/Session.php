@@ -140,6 +140,27 @@ class Session implements JsonSerializable {
   protected $description;
 
   /**
+   * The day assigned.
+   *
+   * @var string
+   */
+  protected $day;
+
+  /**
+   * The time slot assigned.
+   *
+   * @var string
+   */
+  protected $timeSlot;
+
+  /**
+   * The room name assigned.
+   *
+   * @var string
+   */
+  protected $roomName;
+
+  /**
    * Session constructor.
    *
    * @param $raw_session
@@ -313,6 +334,48 @@ class Session implements JsonSerializable {
   }
 
   /**
+   * @return string
+   */
+  public function getDay() {
+    return $this->day;
+  }
+
+  /**
+   * @param string $day
+   */
+  public function setDay($day) {
+    $this->day = $day;
+  }
+
+  /**
+   * @return string
+   */
+  public function getTimeSlot() {
+    return $this->timeSlot;
+  }
+
+  /**
+   * @param string $timeSlot
+   */
+  public function setTimeSlot($timeSlot) {
+    $this->timeSlot = $timeSlot;
+  }
+
+  /**
+   * @return string
+   */
+  public function getRoomName() {
+    return $this->roomName;
+  }
+
+  /**
+   * @param string $roomName
+   */
+  public function setRoomName($roomName) {
+    $this->roomName = $roomName;
+  }
+
+  /**
    * Prepares object for conversion to JSON.
    */
   public function jsonSerialize() {
@@ -332,6 +395,9 @@ class Session implements JsonSerializable {
       'bio' => $this->getBio(),
       'description' => $this->getDescription(),
       'url' => $this->getUrl(),
+      'room_name' => $this->getRoomName() ?: '',
+      'time_slot' => $this->getTimeSlot() ?: '',
+      'day' => $this->getDay() ?: '',
     ];
   }
 
