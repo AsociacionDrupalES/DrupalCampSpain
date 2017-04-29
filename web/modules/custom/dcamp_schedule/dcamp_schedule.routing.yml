@@ -1,7 +1,15 @@
-schedule:
+dcamp_schedule.view:
   path: '/schedule'
   defaults:
     _controller: '\Drupal\dcamp_schedule\Controller\DcampScheduleController::schedule'
     _title_callback: '\Drupal\dcamp_schedule\Controller\DcampScheduleController::getScheduleTitle'
   requirements:
     _permission: 'access content'
+
+dcamp_schedule.api.view:
+  path: '/schedule'
+  defaults:
+    _controller: '\Drupal\dcamp_schedule\Controller\DcampScheduleController::schedule'
+  requirements:
+    _permission: 'access content'
+    _format: json
