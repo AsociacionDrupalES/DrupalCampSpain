@@ -53,3 +53,13 @@ function dcamp_sessions_update_8101() {
   $redirect->setStatusCode(Response::HTTP_MOVED_PERMANENTLY);
   $redirect->save();
 }
+
+/**
+ * Fix wrong session alias.
+ */
+function dcamp_sessions_update_8102() {
+  /** @var \Drupal\Core\Path\AliasStorage $alias_storage */
+  $alias_storage = \Drupal::service('path.alias_storage');
+  $alias_storage->delete(['alias' => '/sessions/casos-de-exito-de-drupal-en-espana']);
+  $alias_storage->save('/sessions/84', '/sessions/casos-de-exito-de-drupal-en-espana');
+}
