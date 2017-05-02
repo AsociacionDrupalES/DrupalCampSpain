@@ -44,7 +44,7 @@ trait NicknameParserTrait {
    *   The Twitter URL.
    */
   public function getTwitterUrl($nickname) {
-    return 'https://twitter.com/' . $this->extractNickname($nickname);
+    return strtolower('https://twitter.com/' . $this->extractNickname($nickname));
   }
 
   /**
@@ -57,7 +57,7 @@ trait NicknameParserTrait {
    *   The Drupal.org profile URL.
    */
   public function getDrupalUrl($nickname) {
-    return 'https://www.drupal.org/u/' . $this->extractNickname($nickname);
+    return strtolower('https://www.drupal.org/u/' . $this->extractNickname($nickname));
   }
 
 }
