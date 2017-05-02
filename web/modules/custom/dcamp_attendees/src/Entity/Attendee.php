@@ -3,6 +3,7 @@
 namespace Drupal\dcamp_attendees\Entity;
 
 use Drupal\dcamp\NicknameParserTrait;
+use Drupal\dcamp_sessions\Entity\Session;
 use JsonSerializable;
 
 class Attendee implements JsonSerializable {
@@ -58,6 +59,13 @@ class Attendee implements JsonSerializable {
    * @var string
    */
   protected $ticketClassName;
+
+  /**
+   * Whether this attendee is speaking or not.
+   *
+   * @var boolean
+   */
+  protected $isSpeaker = FALSE;
 
   /**
    * Attendee constructor.
@@ -264,7 +272,42 @@ class Attendee implements JsonSerializable {
       'twitter_url' => $this->getTwitter() ? $this->getTwitterUrl($this->getTwitter()) : '',
       'drupal_url' => $this->getDrupal() ? $this->getDrupalUrl($this->getDrupal()) : '',
       'individual_sponsor' => $this->isIndividualSponsor(),
+      'is_speaker' => $this->getIsSpeaker(),
     ];
+  }
+
+  /**
+   * @return bool
+   */
+  public function getIsSpeaker() {
+    return $this->isSpeaker;
+  }
+
+  /**
+   * @param bool $isSpeaker
+   */
+  public function setIsSpeaker($isSpeaker) {
+    $this->isSpeaker = $isSpeaker;
+  }
+
+  /**
+   * Checks whether this attendee speaks at a given session.
+   *
+   * @param Session $session
+   *   A Session object.
+   * @return bool
+   *   TRUE if this speaker speaks at the given session.
+   */
+  public function speaksAt(Session $session) {
+    if (!empty($this->getDrupal()) &&
+      ($this->getDrupalUrl($this->getDrupal()) == $session->getDrupalUrl($session->getDrupal()))) {
+      return TRUE;
+    }
+    elseif (!empty($this->getTwitter()) &&
+      ($this->getTwitterUrl($this->getTwitter()) == $session->getTwitterUrl($session->getTwitter()))) {
+      return TRUE;
+    }
+    return FALSE;
   }
 
 }
