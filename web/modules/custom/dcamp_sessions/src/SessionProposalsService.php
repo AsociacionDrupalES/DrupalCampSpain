@@ -36,8 +36,8 @@ class SessionProposalsService {
       self::AUDITORIO,
     ],
     '/sessions/todo-lo-que-hay-que-saber-para-enfrentarte-al-marketing-automation-cocinaitaliana' => [
-      self::FRIDAY,
-      '10:00',
+      self::SATURDAY,
+      '09:00',
       self::CINE,
     ],
     '/sessions/headless-drupal-gizra-way-davidbaltha' => [
@@ -116,8 +116,8 @@ class SessionProposalsService {
       self::POLIVALENTE,
     ],
     '/sessions/buenas-practicas-front-end-maquetacion-por-componentes' => [
-      self::SATURDAY,
-      '09:00',
+      self::FRIDAY,
+      '10:00',
       self::CINE,
     ],
     '/sessions/creacion-de-extensiones-de-twig-para-personalizar-la-presentacion-de-campos-vlledo' => [
@@ -233,6 +233,11 @@ class SessionProposalsService {
     '/sessions/empresas-comunidades-opensource-el-cliente-siempre-gana' => [
       self::SATURDAY,
       '17:30',
+      self::POLIVALENTE,
+    ],
+    '/sessions/taller-agile-jugando-con-pos-it-y-gomets-martinrayo' => [
+      self::SATURDAY,
+      '15:30',
       self::POLIVALENTE,
     ],
   ];
