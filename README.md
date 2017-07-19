@@ -19,7 +19,10 @@ drush cim sync -y
 drush cr
 drush en stage_file_proxy -y
 ```
-7. Open the homepage as administrator with `drush uli`.
+7. Create a virtual host like `dc2017.local` and point it to the web
+   directory of this project. If you choose a different hostname, then
+   adjust `settings.php` accordingly.
+8. Open the homepage as administrator with `drush uli`.
 
 ### Installing without the production database
 If you can't access to a production database dump, then use the following
