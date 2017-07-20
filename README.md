@@ -49,7 +49,7 @@ Run `git checkout master && git pull`. Then repeat steps 5th onwards from the ab
 
 
 ### Docker Environment
-We based our local environment in the[https://github.com/keopx/docker-lamp](keopx's Docker-lamp).
+We based our local environment in the [keopx's Docker-lamp](https://github.com/keopx/docker-lamp).
 
 #### Prerequisites
 You need to have installer docker and docker-compose. 
