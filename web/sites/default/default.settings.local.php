@@ -7,7 +7,7 @@
  */
 
 $databases['default']['default'] = array(
-  'database' => 'dc2017',
+  'database' => 'dc2018',
   'username' => 'root',
   'password' => '',
   'prefix' => '',

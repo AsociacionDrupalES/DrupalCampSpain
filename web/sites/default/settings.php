@@ -705,7 +705,7 @@ $settings['container_yamls'][] = __DIR__ . '/services.yml';
  */
 $settings['trusted_host_patterns'] = [
   'drupalcamp\.es$',
-  '^dc2017\.local$',
+  '^dc2018\.local$',
 ];
 
 /**
@@ -746,4 +746,4 @@ $config['stage_file_proxy.settings']['origin'] = 'https://2017.drupalcamp.es';
 if (file_exists(__DIR__ . '/settings.local.php')) {
   include __DIR__ . '/settings.local.php';
 }
-$settings['install_profile'] = 'minimal';
+$settings['install_profile'] = 'config_installer';
