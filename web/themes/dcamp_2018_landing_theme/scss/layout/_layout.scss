@@ -1,0 +1,362 @@
+
+#fullpage {
+  #block-languageswitcher {
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 3;
+  }
+  .messages {
+    position: absolute;
+    top: 0;
+    padding: 10px 25px;
+    width: calc(100% - 102px);
+    background: $secondary-color;
+    z-index: 99;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  h1 {
+    font-size: 0;
+  }
+  img.logo {
+    margin: 0;
+    left: -2px;
+    position: absolute;
+    top: 20%;
+    display: block;
+    width: 60%;
+    height: auto;
+    @include breakpoint(mobile) {
+      width: 80%;
+    }
+  }
+
+.arrow{
+  @include bounce-arrow;
+}
+
+  .section {
+    //  position: relative;
+    overflow: hidden;
+    .content {
+      margin: 0 100px;
+      @include breakpoint(mobile) {
+        margin: 20px;
+      }
+      @include breakpoint(tablet) {
+        margin: 40px;
+      }
+      .description {
+        max-width: 534px;
+      }
+    }
+
+    &#intro {
+      background: #fff url('../images/pattern.jpg') repeat top left;
+      z-index: 1;
+      .letter {
+        z-index: -1;
+        position:absolute;
+        &.d {
+          left: 0;
+          top: 50px;
+        }
+        &.r {
+          left: 37%;
+          top: 0;
+        }
+        &.u {
+          right: 14px;
+          top: 0;
+        }
+        &.p {
+          bottom: -20%;
+          left: 15%;
+        }
+        &.al {
+          bottom: -40%;
+          right: 10%;
+        }
+
+      }
+    }
+    &#slogan {
+      color: #fff;
+      background: #4b26e6;
+      z-index: 3;
+
+      .count {
+        display: inline-block;
+
+        div {
+          overflow: hidden;
+          text-align: left;
+          font-weight: 600;
+          text-transform: uppercase;
+          color: #fff;
+          margin-right: 20px;
+          span {
+            color: #9e87f9;
+            display: block;
+            font-size: 150%;
+            font-family: "futura-pt-condensed", sans-serif;
+          }
+        }
+
+      }
+      .ico {
+        position: absolute;
+
+        &.thunder {
+          right: 15%;
+          top: 5%;
+        }
+
+        &.saturn {
+          right: 45%;
+          top: 15%;
+        }
+
+        &.cloud {
+          right: 15%;
+          top: 35%;
+        }
+
+        &.drop {
+          right: 30%;
+          top: 45%;
+        }
+
+        &.computer {
+          right: 22%;
+          top: 65%;
+        }
+
+        &.mobile {
+          right: 50%;
+          top: 75%;
+        }
+
+      }
+    }
+
+    &#location {
+      background: white url('../images/location.jpg') no-repeat center center;
+      background-size: cover;
+      a {
+        color: $main-color;
+        text-decoration: none;
+        &:hover {
+          background-color: $main-color;
+          color: white;
+        }
+      }
+    }
+
+    &#sponsor {
+      color: $secondary-color;
+      background: white url(../images/circle.svg) no-repeat -30% -30%;
+      background-position: top -400px right -400px !important;
+      .circle {
+        position: absolute;
+        right: -25%;
+        top: -53%;
+        z-index: 0;
+      }
+      .content {
+        z-index: 1;
+        position: relative;
+      }
+      a {
+        @include button;
+        margin: 0;
+        &:before {
+          content: '\E810';
+          font-family: 'icons';
+          margin-right: 20px;
+
+          font-weight: normal;
+        }
+      }
+    }
+
+    /* community */
+    &#community {
+      background: white url('../images/community.jpg') no-repeat center center;
+      background-size: cover;
+      h2 {
+        color: $main-color;
+      }
+      .description p {
+        color: $secondary-color;
+      }
+      a.button {
+        @include button;
+        margin: 0;
+        &:before {
+          content: '\E805';
+          font-family: 'icons';
+          font-weight: normal;
+          margin-right: 20px;
+        }
+      }
+    }
+
+    /* newsletter */
+    &#newsletter {
+      color: white;
+      background-color: $main-color;
+      h2:after {
+        color: $secondary-color;
+      }
+
+      h3 {
+        font-size: 110%;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin-bottom: 15px;
+      }
+
+      form {
+        max-width: 530px;
+        width: 90%;
+        z-index: 99;
+        position: relative;
+        @include breakpoint(mobile) {
+          width: 100%;
+        }
+        .form-item {
+          margin: 0;
+        }
+        label {
+          display: none;
+        }
+      }
+      .ico {
+        position: absolute;
+
+        &.code {
+          right: 10%;
+          top: 20%;
+        }
+
+        &.diamond {
+          right: 35%;
+          top: 30%;
+        }
+
+        &.taxonomy {
+          right: 23%;
+          top: 45%;
+        }
+
+        &.newsletter {
+          right: 40%;
+          top: 66%;
+        }
+
+        &.mouse {
+          right: 15%;
+          top: 75%;
+        }
+      }
+
+      input[type="email"] {
+        border: medium none;
+        float: left;
+        font-size: 80%;
+        height: 50px;
+        line-height: 50px;
+        padding: 0 0 0 10px;
+        width: 75%;
+        color: $main-color;
+        border-radius: 0;
+      }
+      input[type="submit"] {
+        @include button;
+        margin: 0;
+        background: darken($main-color, 10) none repeat scroll 0 0;
+        border: medium none;
+        font-size: 110%;
+        height: 50px;
+        letter-spacing: 0;
+        line-height: 50px;
+        padding: 0;
+        width: 25%;
+        cursor: pointer;
+        &:hover {
+          background-color: $secondary-color;
+        }
+
+        @include breakpoint(mobile) {
+          padding: 0;
+        }
+      }
+
+      .note {
+        color: lighten($main-color, 20);
+        margin-top: 15px;
+        display: block;
+      }
+
+    }
+  }
+
+  #footer {
+    text-align: center;
+    background-color: #fff;
+    span {
+      color: #b3b3b3;
+      display: block;
+      text-transform: uppercase;
+      margin-bottom: 50px;
+    }
+    a.aed {
+      background: transparent url("../images/aed.svg") no-repeat scroll center center;
+      display: block;
+      height: 100px;
+      margin: 0 auto 100px;
+      text-indent: -9000px;
+      width: 218px;
+    }
+    .rrss a {
+      display: inline-block;
+      margin: 0 2%;
+      color: #b3b3b3;
+      text-transform: uppercase;
+      font-size: 120%;
+      text-decoration: none;
+      line-height: 38px;
+      height: 38px;
+      padding-left: 45px;
+      &:hover {
+        color: $main-color;
+      }
+      @include breakpoint(mobile) {
+        margin: 5px 0;
+        width: 100%;
+      }
+    }
+    a.contact {
+      background: transparent url("../images/contact.svg") no-repeat scroll left center;
+    }
+    a.facebook {
+      background: transparent url("../images/facebook.svg") no-repeat scroll left center;
+    }
+    a.twitter {
+      background: transparent url("../images/twitter.svg") no-repeat scroll left center;
+    }
+    .pattern {
+      background: url('../images/pattern.jpg') repeat bottom left;
+      bottom: 0;
+      height: 85px;
+      left: 0;
+      position: absolute;
+      right: 0;
+      width: 100%;
+    }
+  }
+
+}
