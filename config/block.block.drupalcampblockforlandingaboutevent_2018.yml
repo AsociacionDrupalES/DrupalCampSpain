@@ -1,0 +1,22 @@
+uuid: a14dbe51-01d3-4f36-a006-6f61695ab368
+langcode: en
+status: true
+dependencies:
+  module:
+    - dcamp
+  theme:
+    - dcamp_2018_landing_theme
+id: drupalcampblockforlandingaboutevent_2018
+theme: dcamp_2018_landing_theme
+region: region_1
+weight: 0
+provider: null
+plugin: dcamp_landing_about_event_block
+settings:
+  id: dcamp_landing_about_event_block
+  label: 'DrupalCamp block for landing about event'
+  provider: dcamp
+  label_display: '0'
+  title: '@todo'
+  body: "<p>Two days of sessions, workshops and networking on the Drupal CMS.</p>\r\n<p>The DrupalCamp's goal is to spread and share the use of Drupal within the web development industry, and to be a meeting point for the Spanish community.</p>"
+visibility: {  }

@@ -15,6 +15,4 @@ regions:
   region_6: 'Region 6'
 
 libraries:
- - dcamp_2017_landing_theme/global
- - dcamp_2017_landing_theme/plax
- - dcamp_2017_landing_theme/fullPage.js
+ - dcamp_2018_landing_theme/global

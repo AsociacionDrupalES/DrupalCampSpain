@@ -1,0 +1,22 @@
+uuid: c1f5659d-f5bd-4dc6-8d2f-cb02b51019bb
+langcode: en
+status: true
+dependencies:
+  module:
+    - dcamp
+  theme:
+    - dcamp_2018_landing_theme
+id: drupalcampblockforlandingaboutthelocation_2018
+theme: dcamp_2018_landing_theme
+region: region_2
+weight: 0
+provider: null
+plugin: dcamp_landing_about_location_block
+settings:
+  id: dcamp_landing_about_location_block
+  label: 'DrupalCamp block for landing about the location'
+  provider: dcamp
+  label_display: '0'
+  title: 'Alicante'
+  body: '@todo'
+visibility: {  }
