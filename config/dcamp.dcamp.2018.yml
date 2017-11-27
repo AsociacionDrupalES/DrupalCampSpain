@@ -4,5 +4,5 @@ status: true
 dependencies: {  }
 id: '2018'
 label: '2018'
-landing_theme: dcamp_2017_landing_theme
-starting_date: '1509836400'
+landing_theme: dcamp_2018_landing_theme
+starting_date: '1543964400'

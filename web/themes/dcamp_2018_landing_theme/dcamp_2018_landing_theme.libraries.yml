@@ -1,0 +1,6 @@
+#  Global library
+global:
+  version: 1.x
+  css:
+    theme:
+      styles/main.css: { weight: -2 }

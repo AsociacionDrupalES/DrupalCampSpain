@@ -1,0 +1,20 @@
+uuid: 3bcbe461-e693-4d20-af91-d64a68520f18
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - dcamp_2018_landing_theme
+id: mainpagecontent_landing_2018
+theme: dcamp_2018_landing_theme
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }

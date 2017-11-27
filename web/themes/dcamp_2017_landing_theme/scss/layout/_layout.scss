@@ -1,6 +1,6 @@
 
 #fullpage {
-  #block-languageswitcher {
+ .language-switcher-language-url {
     position: absolute;
     right: 0;
     top: 0;
@@ -51,6 +51,13 @@
       .description {
         max-width: 534px;
       }
+      h2{
+        font-size:4em;
+        margin-bottom:.5em;
+        @include breakpoint('mobile'){
+          font-size:2.5em;
+        }
+      }
     }
 
     &#intro {
@@ -86,6 +93,9 @@
       color: #fff;
       background: #4b26e6;
       z-index: 3;
+      h2{
+        color:white;
+      }
 
       .count {
         display: inline-block;
@@ -145,6 +155,9 @@
     &#location {
       background: white url('../images/location.jpg') no-repeat center center;
       background-size: cover;
+      h2{
+        color:white;
+      }
       a {
         color: $main-color;
         text-decoration: none;
@@ -159,6 +172,7 @@
       color: $secondary-color;
       background: white url(../images/circle.svg) no-repeat -30% -30%;
       background-position: top -400px right -400px !important;
+
       .circle {
         position: absolute;
         right: -25%;
@@ -206,12 +220,16 @@
 
     /* newsletter */
     &#newsletter {
+
       color: white;
       background-color: $main-color;
       h2:after {
         color: $secondary-color;
       }
 
+      h2{
+        color:white;
+      }
       h3 {
         font-size: 110%;
         font-weight: bold;

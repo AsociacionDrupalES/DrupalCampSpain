@@ -71,6 +71,7 @@ theme:
   dcamp_base_theme: 0
   dcamp_2017_theme: 0
   dcamp_2017_landing_theme: 0
+  dcamp_2018_landing_theme: 0
 _core:
   default_config_hash: m2GVq11UAOVuNgj8x0t5fMOPujpvQQ_zxLoaly1BMEU
 profile: minimal

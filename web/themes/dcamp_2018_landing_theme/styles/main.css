@@ -1,0 +1,5 @@
+#fullpage .section#location {
+  background: white url("../images/location.jpg") no-repeat center center;
+  background-size: cover; }
+
+/*# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImxheW91dC9fbGF5b3V0LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQ0E7RUFLTSx3RUFBdUU7RUFDdkUsdUJBQXNCLEVBQ3ZCIiwiZmlsZSI6Im1haW4uY3NzIiwic291cmNlc0NvbnRlbnQiOlsiXG4jZnVsbHBhZ2Uge1xuXG4gIC5zZWN0aW9uIHtcblxuICAgICYjbG9jYXRpb24ge1xuICAgICAgYmFja2dyb3VuZDogd2hpdGUgdXJsKCcuLi9pbWFnZXMvbG9jYXRpb24uanBnJykgbm8tcmVwZWF0IGNlbnRlciBjZW50ZXI7XG4gICAgICBiYWNrZ3JvdW5kLXNpemU6Y292ZXI7XG4gICAgfVxuICB9XG59Il19 */

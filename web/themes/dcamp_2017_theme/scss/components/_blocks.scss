@@ -19,8 +19,8 @@
   }
 }
 
-#block-languageswitcher-dcamp-2017,
-#block-languageswitcher {
+.block-language-blocklanguage-url,
+.block-language-blocklanguage-interface {
   .language-switcher-wrapper {
     background: $main-color;
     text-transform: uppercase;
@@ -66,12 +66,6 @@
     }
   }
 }
-
-#block-languageswitcher-dcamp-2017 {
-  .language-switcher-wrapper {
-  }
-}
-
 #block-userlogin {
   .user-login-trigger {
     @include header-menu-link;
