@@ -4,6 +4,7 @@ status: true
 dependencies:
   module:
     - dcamp
+    - language
   theme:
     - dcamp_2018_landing_theme
 id: drupalcampblockforlandingaboutthelocation_2018
@@ -17,6 +18,13 @@ settings:
   label: 'DrupalCamp block for landing about the location'
   provider: dcamp
   label_display: '0'
-  title: 'Alicante'
-  body: '@todo'
-visibility: {  }
+  title: Venue
+  body: "<p><a href=\r\n\"http://www.alicante.es/es/equipamientos/centro-cultural-cigarreras\" target=\"_blank\">Las Cigarreras</a> was Alicante's tobaco factory back in the 19th century. It was re-purposed five years ago as a cultural and innovation center.</p>\r\n<p>The venue has everything that a DrupalCamp needs: an auditory, conference rooms, meeting areas for BoFs, a dinning area, plus a great location just a few minutes away from the city center. </p>"
+visibility:
+  language:
+    id: language
+    langcodes:
+      en: en
+    negate: false
+    context_mapping:
+      language: '@language.current_language_context:language_interface'

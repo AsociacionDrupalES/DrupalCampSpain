@@ -17,6 +17,6 @@ settings:
   label: 'DrupalCamp block for landing about event'
   provider: dcamp
   label_display: '0'
-  title: '@todo'
+  title: 'Do it with Drupal'
   body: "<p>Two days of sessions, workshops and networking on the Drupal CMS.</p>\r\n<p>The DrupalCamp's goal is to spread and share the use of Drupal within the web development industry, and to be a meeting point for the Spanish community.</p>"
 visibility: {  }
