@@ -19,7 +19,7 @@ settings:
   provider: dcamp
   label_display: '0'
   title: 'Promote your brand'
-  body: "Get in touch with us at asociacion at drupal dot es if you are interested in promoting your presence at the event. We will publish sponsor packages here soon.\r\n\r\nAlternatively, sign up for the newsletter at the bottom of this page."
+  body: "<p>Get in touch with us at asociacion at drupal dot es if you are interested in promoting your presence at the event. We will publish sponsor packages here soon.</p>\r\n\r\n<p>Alternatively, sign up for the newsletter at the bottom of this page.</p>"
   download_text: ''
   download_url: ''
 visibility:
@@ -27,6 +27,7 @@ visibility:
     id: language
     langcodes:
       en: en
+      es: es
     negate: false
     context_mapping:
       language: '@language.current_language_context:language_interface'
