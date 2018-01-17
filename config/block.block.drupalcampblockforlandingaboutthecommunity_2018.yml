@@ -4,6 +4,7 @@ status: true
 dependencies:
   module:
     - dcamp
+    - language
   theme:
     - dcamp_2018_landing_theme
 id: drupalcampblockforlandingaboutthecommunity_2018
@@ -20,5 +21,13 @@ settings:
   title: 'Join the community'
   body: '<p>The Spanish Drupal community grows every year. Companies, freelancers, and students are part of one of the most influential families in the web industry.</p>'
   link_text: 'Join the Spanish Drupal Association'
-  link_url: 'http://asociaciondrupal.es/'
-visibility: {  }
+  link_url: 'http://asociaciondrupal.es'
+visibility:
+  language:
+    id: language
+    langcodes:
+      en: en
+      es: es
+    negate: false
+    context_mapping:
+      language: '@language.current_language_context:language_interface'

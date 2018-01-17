@@ -4,6 +4,7 @@ status: true
 dependencies:
   module:
     - dcamp
+    - language
   theme:
     - dcamp_2018_landing_theme
 id: drupalcampblockforlandingaboutevent_2018
@@ -18,5 +19,13 @@ settings:
   provider: dcamp
   label_display: '0'
   title: 'Do it with Drupal'
-  body: "<p>Two days of sessions, workshops and networking on the Drupal CMS.</p>\r\n<p>The DrupalCamp's goal is to spread and share the use of Drupal within the web development industry, and to be a meeting point for the Spanish community.</p>"
-visibility: {  }
+  body: "<p>Two days of sessions, workshops and networking on the Drupal CMS.</p>\r\n\r\n<p>The DrupalCamp's goal is to spread and share the use of Drupal within the web development industry, and to be a meeting point for the Spanish community.</p>\r\n\r\n"
+visibility:
+  language:
+    id: language
+    langcodes:
+      en: en
+      es: es
+    negate: false
+    context_mapping:
+      language: '@language.current_language_context:language_interface'
