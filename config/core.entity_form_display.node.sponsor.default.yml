@@ -48,8 +48,7 @@ content:
   langcode:
     type: language_select
     weight: 2
-    settings:
-      include_locked: true
+    settings: {  }
     third_party_settings: {  }
     region: content
   path:
@@ -63,13 +62,6 @@ content:
     settings:
       display_label: true
     weight: 15
-    third_party_settings: {  }
-    region: content
-  status:
-    type: boolean_checkbox
-    settings:
-      display_label: true
-    weight: 121
     third_party_settings: {  }
     region: content
   sticky:
@@ -95,8 +87,5 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    region: content
-  url_redirects:
-    weight: 50
     region: content
 hidden: {  }

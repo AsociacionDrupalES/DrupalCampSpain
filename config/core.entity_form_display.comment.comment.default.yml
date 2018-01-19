@@ -28,8 +28,7 @@ content:
   langcode:
     type: language_select
     weight: 2
-    settings:
-      include_locked: true
+    settings: {  }
     third_party_settings: {  }
     region: content
   subject:
