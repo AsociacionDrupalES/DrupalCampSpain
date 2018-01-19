@@ -165,11 +165,11 @@ display:
         - 'config:core.entity_view_display.node.article.teaser'
         - 'config:core.entity_view_display.node.page.default'
         - 'config:core.entity_view_display.node.page.teaser'
+        - 'config:core.entity_view_display.node.speaker.default'
         - 'config:core.entity_view_display.node.speaker.full'
+        - 'config:core.entity_view_display.node.speaker.teaser'
         - 'config:core.entity_view_display.node.sponsor.default'
         - 'config:core.entity_view_display.node.sponsor.teaser'
-        - 'config:core.entity_view_display.node.speaker.default'
-        - 'config:core.entity_view_display.node.speaker.teaser'
   block:
     display_plugin: block
     id: block
