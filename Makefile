@@ -9,7 +9,7 @@ tugboat-init:
 	cd web && \
 		wget -O - -o /dev/null ${DATABASE_URL} | ../vendor/bin/drush sql-cli && \
 		../vendor/bin/drush updatedb -y -v && \
-		../vendor/bin/drush config-import -y -v \
+		../vendor/bin/drush config-import -y -v && \
 		../vendor/bin/drush cr
 
 # Update an existing preview
