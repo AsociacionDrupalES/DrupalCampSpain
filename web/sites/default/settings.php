@@ -706,6 +706,7 @@ $settings['container_yamls'][] = __DIR__ . '/services.yml';
 $settings['trusted_host_patterns'] = [
   'drupalcamp\.es$',
   '^dc2018\.local$',
+  'tugboat\.qa$',
 ];
 
 /**
