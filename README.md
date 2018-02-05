@@ -1,6 +1,5 @@
 # DrupalCamp Spain 2018
 
-
 ## Installation
 
 1. Clone this repository.
