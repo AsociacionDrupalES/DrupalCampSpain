@@ -15,12 +15,14 @@
           responsiveHeight: 700,
           scrollBar: true,
           afterRender: function () {
-            $('img.d').plaxify({"xRange": 40, "yRange": 40});
-            $('img.r').plaxify({"xRange": 20, "yRange": 20});
-            $('img.u').plaxify({"xRange": 10, "yRange": 10, "invert": true});
-            $('img.p').plaxify({"xRange": 40, "yRange": 40, "invert": true});
-            $('img.al').plaxify({"xRange": 30, "yRange": 30});
-            $.plax.enable();
+            if ($('img.d').length > 0) {
+              $('img.d').plaxify({"xRange": 40, "yRange": 40});
+              $('img.r').plaxify({"xRange": 20, "yRange": 20});
+              $('img.u').plaxify({"xRange": 10, "yRange": 10, "invert": true});
+              $('img.p').plaxify({"xRange": 40, "yRange": 40, "invert": true});
+              $('img.al').plaxify({"xRange": 30, "yRange": 30});
+              $.plax.enable();
+            }
           }
         }
       );
