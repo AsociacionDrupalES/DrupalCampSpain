@@ -7,6 +7,8 @@ core: 8.x
 libraries:
   - dcamp_base_theme/global
   - dcamp_base_theme/typekit # @todo revise dependency of specific WWW typekit account.
+  - dcamp_base_theme/fullPage.js
+  - dcamp_base_theme/plax
 library_dependencies:
   - fastclick
 
