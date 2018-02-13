@@ -33,6 +33,8 @@
  * @ingroup themeable
  */
 #}
+
+<div class="footer-secondary-menu-wrapper">
 {% set heading_id = attributes.id ~ '-menu'|clean_id %}
 <nav role="navigation" aria-labelledby="{{ heading_id }}"{{ attributes|without('role', 'aria-labelledby') }}>
   {# Label. If not displayed, we still provide it for screen readers. #}
@@ -51,4 +53,4 @@
     © {{ "now"|date("Y") }} <a href="https://asociaciondrupal.es/">Asociación Española de Drupal</a>
   </div>
 </nav>
-
+</div>

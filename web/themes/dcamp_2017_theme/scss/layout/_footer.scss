@@ -1,4 +1,5 @@
-#block-newsletterblock {
+footer{
+.block-dcamp-newsletter-block {
   text-align: center;
   padding: 4em 1em;
   @include linear-gradient();
@@ -73,8 +74,8 @@
   }
 }
 
-#block-dcamp-2017-theme-footer,
-#block-mainnavigation {
+.footer-main-menu-wrapper,
+.footer-secondary-menu-wrapper {
   background: $secondary-color;
   text-align: center;
   padding: 2em 1em;
@@ -104,18 +105,18 @@
   }
 }
 
-#block-dcamp-2017-theme-footer {
+.footer-secondary-menu-wrapper {
   background: darken($secondary-color, 15);
-  .copyright{
-color:white;
- font-weight:bold;
+  .copyright {
+    color: white;
+    font-weight: bold;
     text-transform: uppercase;
-    margin-top:30px;
-    a{
-    text-decoration: none;
-      color:$main-color;
-      &:hover{
-        color:white;
+    margin-top: 30px;
+    a {
+      text-decoration: none;
+      color: $main-color;
+      &:hover {
+        color: white;
       }
     }
   }
@@ -161,4 +162,5 @@ footer {
       }
     }
   }
+}
 }
