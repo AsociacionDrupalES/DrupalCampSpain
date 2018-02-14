@@ -4,6 +4,7 @@
 
 .main-menu {
   &__trigger {
+    float:right;
     position: relative;
     z-index: 1000;
     height: $header-height;
@@ -254,7 +255,7 @@
 }
 
 footer{
-  #block-mainnavigation{
+  .main-menu-inner{
     .event-info{
       display:none;
     }

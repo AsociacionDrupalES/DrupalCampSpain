@@ -1,0 +1,24 @@
+uuid: 0ea7ccc9-d93c-4a92-a17e-95c01307b4c4
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - dcamp_2018_theme
+id: mainnavigation_3
+theme: dcamp_2018_theme
+region: footer
+weight: -2
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Main navigation'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 0
+visibility: {  }
