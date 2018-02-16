@@ -11,6 +11,9 @@ tugboat-init:
 		../vendor/bin/drush updatedb -y -v && \
 		../vendor/bin/drush config-import -y -v && \
 		../vendor/bin/drush cr
+	composer require drupal/stage_file_proxy
+	cd web && \
+		../vendor/bin/drush en -y stage_file_proxy
 
 # Update an existing preview
 tugboat-update:
