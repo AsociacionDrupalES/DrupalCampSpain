@@ -4,7 +4,6 @@
       <div class="content">
         <div class="top-area">
           <div class="inner">
-            <h1 class="page-title">{% trans %}Thank you!{% endtrans %}</h1>
 
             <a class="scroll-down" href="#"><img class="arrow" src="{{ base_path ~ directory }}/images/arrow.svg"
                                                  alt="Arrow down"/></a>
@@ -18,62 +17,27 @@
   </section>
   <div id="scroll-to-anchor"></div>
 
-  <section id="tickets" class="section">
+  <section id="speakers" class="section">
     <div class="sub">
       <div class="content">
-        <div class="buy-tickets">
-          <a class="button" href="https://www.flickr.com/groups/3613314@N25/pool" target="_blank">{% trans %}View photos{% endtrans %}</a>
-          <a class="button" href="https://vimeo.com/drupales" target="_blank">{% trans %}View videos{% endtrans %}</a>
+        <h2>{% trans %}Confirmed speakers{% endtrans %}</h2>
+          {{ speakers }}
+        <div class="send-proposals">
+
+          <a class="button" href="https://docs.google.com/forms/d/11AsO7SkeRNopvIFBATMbF9ya5z2T5ByMMGERSUhnEzo" target="_blank">Submit your proposal</a>
           <div class="content">
-            <h3>{% trans %}Keep enjoying DrupalCamp Spain{% endtrans %}</h3>
-            <div class="deadline">{% trans %}Check out the photos and videos of the event{% endtrans %}</div>
+            <h3>{% trans %}Propose your session{% endtrans %}</h3>
+            <div class="deadline">{% trans %}Call4Papers ends on April the 10th{% endtrans %}</div>
           </div>
         </div>
       </div>
     </div>
   </section>
-
-  <section id="speakers" class="section">
-    <div class="sub">
-      <div class="content">
-        <h2>{% trans %}Featured speakers{% endtrans %}</h2>
-        {{ speakers }}
-      </div>
-    </div>
-  </section>
-  <div class="maps">
-
-    <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3038.1250180372567!2d-3.7021128843044817!3d40.40608116421036!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd42262c501652cd%3A0x610543bed2cd3041!2sLa+Casa+Encendida!5e0!3m2!1sen!2ses!4v1487744705148"
-        width="100%" frameborder="0" style="border:0" allowfullscreen></iframe>
-
-  </div>
-  <section id="location" class="section">
-    <div class="sub">
-      <img class="venue-image" src="{{ base_path ~ directory }}/images/photos/casa_encendida.jpg"/>
-      <div class="content">
-        <h2>{% trans %}La Casa Encendida, Madrid {% endtrans %}</h2>
-        {{ venue }}
-      </div>
-    </div>
-  </section>
-
   <section id="become-a-sponsor" class="section">
     <div class="sub">
       <div class="content">
         <h2>{% trans %}Become a sponsor{% endtrans %}</h2>
         {{ become_a_sponsor }}
-      </div>
-    </div>
-  </section>
-
-  <section id="business-day" class="section">
-    <div class="sub">
-
-      <img class="business-day-image" src="{{ base_path ~ directory }}/images/photos/business_day.jpg"/>
-      <div class="content">
-        <h2>{% trans %}Business day{% endtrans %}</h2>
-        {{ business_day }}
       </div>
     </div>
   </section>
@@ -87,26 +51,5 @@
     </div>
   </section>
 
-  <section id="sponsors" class="section">
-    <div class="sub">
-      <div class="content">
-        {{ sponsors }}
-        <div id="individual_sponsors" class="individual-sponsors">
-          <h3>Individual sponsors</h3>
-          <ul class="individual-sponsors__list">
-              {% for individual_sponsor in individual_sponsors %}
-                <li class="individual-sponsors__item">
-                  <a class="individual-sponsors__link" href="{{ individual_sponsor.getProfileUrl() }}" target="_blank">
-                    <img src="{{ individual_sponsor.getHeadshot() ?: default_headshot  }}" class="individual-sponsors__img"/>
-                    <div class="individual-sponsors__name">{{ individual_sponsor.getName() }}</div>
-                    <div class="individual-sponsors__nick">({{ individual_sponsor.getNickname() }})</div>
-                  </a>
-                </li>
-              {% endfor %}
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
 
 </div>
