@@ -33,6 +33,29 @@
       </div>
     </div>
   </section>
+
+  <section id="sponsors" class="section">
+    <div class="sub">
+      <div class="content">
+          {{ sponsors }}
+        <div id="individual_sponsors" class="individual-sponsors">
+          <h3>Individual sponsors</h3>
+          <ul class="individual-sponsors__list">
+              {% for individual_sponsor in individual_sponsors %}
+                <li class="individual-sponsors__item">
+                  <a class="individual-sponsors__link" href="{{ individual_sponsor.getProfileUrl() }}" target="_blank">
+                    <img src="{{ individual_sponsor.getHeadshot() ?: default_headshot  }}" class="individual-sponsors__img"/>
+                    <div class="individual-sponsors__name">{{ individual_sponsor.getName() }}</div>
+                    <div class="individual-sponsors__nick">({{ individual_sponsor.getNickname() }})</div>
+                  </a>
+                </li>
+              {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="become-a-sponsor" class="section">
     <div class="sub">
       <div class="content">
