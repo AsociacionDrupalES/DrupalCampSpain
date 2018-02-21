@@ -24,4 +24,4 @@ $config['mailchimp_signup.mailchimp_signup.dcamp_mailchimp']['mc_lists'] = [
 ];
 
 // Point Stage File Proxy to production.
-$config['stage_file_proxy_origin'] = "https://2018.drupalcamp.es";
+$config['stage_file_proxy.settings']['origin'] = 'https://2018.drupalcamp.es';
