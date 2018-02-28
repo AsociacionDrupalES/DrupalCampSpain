@@ -427,3 +427,32 @@ function dcamp_update_8116() {
 function dcamp_update_8117() {
   \Drupal::service('module_installer')->install(['dcamp_schedule']);
 }
+
+/**
+ * Update main menu links for dcamp_2018_theme.
+ */
+function dcamp_update_8118() {
+  /** @var \Drupal\Core\Entity\EntityStorageInterface $menu_link_content_storage */
+  $menu_link_content_storage = \Drupal::entityTypeManager()->getStorage('menu_link_content');
+
+  // Adust and enable Tickets link.
+  /** @var \Drupal\menu_link_content\Entity\MenuLinkContent $tickets_link */
+  $tickets_link = $menu_link_content_storage->load(6);
+  $tickets_value = $tickets_link->link->getValue();
+  $tickets_value[0]['uri'] = 'https://www.eventbrite.es/e/entradas-drupalcamp-spain-2018-43648758612';
+  $tickets_link->link->setValue($tickets_value);
+  $tickets_link->enabled->setValue(1);
+  $tickets_link->save();
+
+  // Enable Attendees link.
+  /** @var \Drupal\menu_link_content\Entity\MenuLinkContent $attendees_link */
+  $attendees_link = $menu_link_content_storage->load(7);
+  $attendees_link->enabled->setValue(1);
+  $attendees_link->save();
+
+  // Enable Business Day link.
+  /** @var \Drupal\menu_link_content\Entity\MenuLinkContent $businessday_link */
+  $businessday_link = $menu_link_content_storage->load(12);
+  $businessday_link->enabled->setValue(1);
+  $businessday_link->save();
+}
