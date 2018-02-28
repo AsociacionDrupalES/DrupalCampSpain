@@ -1,4 +1,5 @@
 <div class="frontpage-wrapper">
+
     <section id="intro" class="section">
         <div class="sub">
             <div class="content">
@@ -15,6 +16,21 @@
             </div>
         </div>
     </section>
+
+    <section id="tickets" class="section">
+        <div class="sub">
+            <div class="content">
+                <div class="buy-tickets">
+                    <a class="button" href="https://www.eventbrite.es/e/entradas-drupalcamp-spain-2018-43648758612" target="_blank">{% trans %}Buy ticket{% endtrans %}</a>
+                    <div class="content">
+                        <h3>{% trans %}Come to Drupalcamp{% endtrans %}</h3>
+                        <div class="deadline">{% trans %}Get your ticket for DrupalCamp and Business Day{% endtrans %}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <div id="scroll-to-anchor"></div>
     <section id="speakers" class="section">
         <div class="sub">
@@ -31,6 +47,7 @@
             </div>
         </div>
     </section>
+
     <section id="location" class="cd-section section fp-section fp-table active fp-completely"
              style="height: 549px; background-position: 50% 64.0073%;">
         <div class="fp-tableCell" style="height: 549px;">
@@ -57,27 +74,30 @@
             </div>
         </div>
     </section>
+
     <section id="sponsors" class="section">
         <div class="sub">
             <div class="content">
                 {{ sponsors }}
-                <div id="individual_sponsors" class="individual-sponsors">
-                    <h3>Individual sponsors</h3>
-                    <ul class="individual-sponsors__list">
-                        {% for individual_sponsor in individual_sponsors %}
-                            <li class="individual-sponsors__item">
-                                <a class="individual-sponsors__link" href="{{ individual_sponsor.getProfileUrl() }}"
-                                   target="_blank">
-                                    <img src="{{ individual_sponsor.getHeadshot() ?: default_headshot }}"
-                                         class="individual-sponsors__img"/>
-                                    <div class="individual-sponsors__name">{{ individual_sponsor.getName() }}</div>
-                                    <div class="individual-sponsors__nick">({{ individual_sponsor.getNickname() }})
-                                    </div>
-                                </a>
-                            </li>
-                        {% endfor %}
-                    </ul>
-                </div>
+                {% if individual_sponsors %}
+                    <div id="individual_sponsors" class="individual-sponsors">
+                        <h3>Individual sponsors</h3>
+                        <ul class="individual-sponsors__list">
+                            {% for individual_sponsor in individual_sponsors %}
+                                <li class="individual-sponsors__item">
+                                    <a class="individual-sponsors__link" href="{{ individual_sponsor.getProfileUrl() }}"
+                                       target="_blank">
+                                        <img src="{{ individual_sponsor.getHeadshot() ?: default_headshot }}"
+                                             class="individual-sponsors__img"/>
+                                        <div class="individual-sponsors__name">{{ individual_sponsor.getName() }}</div>
+                                        <div class="individual-sponsors__nick">({{ individual_sponsor.getNickname() }})
+                                        </div>
+                                    </a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                {% endif %}
             </div>
         </div>
     </section>
@@ -117,4 +137,5 @@
             </div>
         </div>
     </section>
+
 </div>
