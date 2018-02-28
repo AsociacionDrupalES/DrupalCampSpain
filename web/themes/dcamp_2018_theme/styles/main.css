@@ -2807,7 +2807,8 @@ footer footer .social a:hover {
 
 @media (max-width: 720px) {
   .layout-container>header a.logo {
-    height: 30px;
+    height: auto;
+      width:100%;
   }
 }
 
@@ -2826,7 +2827,7 @@ footer footer .social a:hover {
 
 @media (max-width: 720px) {
   .layout-container>header .language-switcher-language-url .language-switcher-wrapper {
-    height: 30px;
+    height: 60px;
   }
 }
 
@@ -2931,7 +2932,7 @@ h4 {
 
 .frontpage-wrapper .top-area {
   background: url(../images/photos/alicante.jpg) 50% 50%;
-  background-sizing: cover;
+  background-size: cover;
 }
 
 .frontpage-wrapper #intro .top-area .inner h1 {
@@ -3069,4 +3070,26 @@ div.speaker-photo div.speaker__field-photo {
     width: 90%;
     margin: 40px 5% 0 5%;
   }
+
+  .layout-container>header a.logo {
+    height: auto;
+      width:100%;
+  }
+  .layout-container>header .language-switcher-language-url .language-switcher-wrapper {
+    height: 50px;
+  }
+.block-language-blocklanguage-url .language-switcher-wrapper .current-language,
+  .block-language-blocklanguage-interface .language-switcher-wrapper .current-language {
+    padding: 16px 10px 7px;
+    height: 50px;
+  }
 }
+  .main-menu__trigger {
+    height: 50px;
+    width: 60px;
+  }
+  .main-menu__icon-wrap {
+    left: 5px;
+    height: 50px;
+    width: 50px;
+  }

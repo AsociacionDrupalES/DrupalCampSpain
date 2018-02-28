@@ -2,9 +2,12 @@
 
   Drupal.behaviors.dcamp2017ThemeFrontpageBehaviors = {
     attach: function (context, settings) {
-      $(window).load(function(){
+      /*$(window).load(function(){
         setHeightIntro();
-      });
+      });*/
+      window.onload = function () {
+        setHeightIntro();
+      };
       $(window).resize(function(){
         setHeightIntro();
       });
