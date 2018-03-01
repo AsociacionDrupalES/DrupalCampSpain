@@ -14,7 +14,7 @@
       setHeightIntro();
 
       function setHeightIntro(){
-        var adminMenuHeight = $('#toolbar-bar').outerHeight();
+        var adminMenuHeight = $('#toolbar-bar').outerHeight() || 0;
         var bottomAreaHeight = $('#intro .bottom-area').outerHeight();
         var headerHeight = $('header').height();
         var screenHeight = $(window).height();
