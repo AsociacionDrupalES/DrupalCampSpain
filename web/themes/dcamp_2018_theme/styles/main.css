@@ -3059,12 +3059,12 @@ div.speaker-photo div.speaker__field-photo {
   div.speaker-photo {
     float: none;
     width: 50%;
-    margin:0 auto;
+    margin: 0 auto;
     text-align: center;
   }
   div.speaker-photo div.speaker__field-photo {
-  float: none;
-}
+    float: none;
+  }
   .speaker--full .node__content-wrapper {
     float: none;
     width: 90%;
@@ -3073,17 +3073,17 @@ div.speaker-photo div.speaker__field-photo {
 
   .layout-container>header a.logo {
     height: auto;
-      width:100%;
+    width: 100%;
   }
   .layout-container>header .language-switcher-language-url .language-switcher-wrapper {
     height: 50px;
   }
-.block-language-blocklanguage-url .language-switcher-wrapper .current-language,
+  .block-language-blocklanguage-url .language-switcher-wrapper .current-language,
   .block-language-blocklanguage-interface .language-switcher-wrapper .current-language {
     padding: 16px 10px 7px;
     height: 50px;
   }
-}
+
   .main-menu__trigger {
     height: 50px;
     width: 60px;
@@ -3093,3 +3093,4 @@ div.speaker-photo div.speaker__field-photo {
     height: 50px;
     width: 50px;
   }
+}
