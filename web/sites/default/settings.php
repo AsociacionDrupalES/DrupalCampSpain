@@ -732,7 +732,7 @@ $config['dcamp_attendees.settings'] = [
  * after downloading the production database from Jenkins
  * to see images stored in Production's files directory.
  */
-$config['stage_file_proxy.settings']['origin'] = 'https://2017.drupalcamp.es';
+$config['stage_file_proxy.settings']['origin'] = 'https://2018.drupalcamp.es';
 
 /**
  * Load local development override configuration, if available.

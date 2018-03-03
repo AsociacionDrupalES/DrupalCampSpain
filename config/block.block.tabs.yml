@@ -7,7 +7,7 @@ dependencies:
 id: tabs
 theme: dcamp_2018_theme
 region: content
-weight: -1
+weight: -2
 provider: null
 plugin: local_tasks_block
 settings:

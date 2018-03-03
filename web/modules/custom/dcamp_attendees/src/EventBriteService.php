@@ -3,6 +3,7 @@
 namespace Drupal\dcamp_attendees;
 
 use Drupal\dcamp_attendees\Entity\Attendee;
+use GuzzleHttp\Exception\ClientException;
 
 class EventBriteService {
 
@@ -73,34 +74,43 @@ class EventBriteService {
     $config = \Drupal::config('dcamp_attendees.settings');
     $attendees_list = [];
 
-    // Check if we are in developer mode.
-    if ($config->get('debugging')) {
-      $path = \Drupal::service('module_handler')->getModule('dcamp_attendees')->getPath();
-      $fixture_data = json_decode(file_get_contents($path . '/fixtures/attendees.json'));
-      $attendees_list = $fixture_data->attendees;
-    }
-    else {
-      // Check if there is a cached value and it has not expire.
-      $data = NULL;
-      if ($cache = \Drupal::cache()->get($this->attendees_cid)) {
-        $attendees_list = $cache->data->attendees;
+    try {
+      // Check if we are in developer mode.
+      if ($config->get('debugging')) {
+        $path = \Drupal::service('module_handler')
+          ->getModule('dcamp_attendees')
+          ->getPath();
+        $fixture_data = json_decode(file_get_contents($path . '/fixtures/attendees.json'));
+        $attendees_list = $fixture_data->attendees;
       }
-      if (($cache == FALSE) || ($cache->expire < time())) {
-        // Eventbrite returns paged responses. Go through every page and load
-        // attendee_data into a single array.
-        $eventbrite_data = $this->loadAllAttendees();
-        $attendees_list = $eventbrite_data->attendees;
+      else {
+        // Check if there is a cached value and it has not expire.
+        $data = NULL;
+        if ($cache = \Drupal::cache()->get($this->attendees_cid)) {
+          $attendees_list = $cache->data->attendees;
+        }
+        if (($cache == FALSE) || ($cache->expire < time())) {
+          // Eventbrite returns paged responses. Go through every page and load
+          // attendee_data into a single array.
+          $eventbrite_data = $this->loadAllAttendees();
+          $attendees_list = $eventbrite_data->attendees;
 
-        // Store this data in cache.
-        \Drupal::cache()->set($this->attendees_cid, $eventbrite_data, strtotime($this->attendees_lifetime));
+          // Store this data in cache.
+          \Drupal::cache()
+            ->set($this->attendees_cid, $eventbrite_data,
+              strtotime($this->attendees_lifetime));
+        }
       }
+
+      // Filter out attendees who cancelled his ticket.
+      $attendees_list = array_filter($attendees_list,
+        function ($attendee_data) {
+          return $attendee_data->cancelled == FALSE;
+        });
     }
-
-    // Filter out attendees who cancelled his ticket.
-    $attendees_list = array_filter($attendees_list, function($attendee_data) {
-      return $attendee_data->cancelled == FALSE;
-    });
-
+    catch (ClientException $e) {
+      // The event is not ready yet and threw a 403. Continue silently.
+    }
     return $attendees_list;
   }
 
@@ -115,6 +125,9 @@ class EventBriteService {
    *   An stdClass object containing the whole list of attendees at the
    *   attendees property, plus pagination data from the last page at
    *   the pagination property.
+   *
+   * @throws \GuzzleHttp\Exception\ClientException
+   *   When the event is not published.
    */
   protected function loadAllAttendees($eventbrite_data = NULL) {
     $config = \Drupal::config('dcamp_attendees.settings');

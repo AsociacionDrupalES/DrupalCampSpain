@@ -56,6 +56,7 @@ class DcampLandingAboutEventBlock extends DcampBlockBase implements ContainerFac
    */
   public function build() {
     $build = parent::build();
+
     /** @var Dcamp $dcamp */
     $dcamp = $this->currentRouteMatch->getParameter('dcamp');
     /**

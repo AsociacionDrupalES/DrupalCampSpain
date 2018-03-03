@@ -2,16 +2,19 @@
 
   Drupal.behaviors.dcamp2017ThemeFrontpageBehaviors = {
     attach: function (context, settings) {
-      $(window).load(function(){
+      /*$(window).load(function(){
         setHeightIntro();
-      });
+      });*/
+      window.onload = function () {
+        setHeightIntro();
+      };
       $(window).resize(function(){
         setHeightIntro();
       });
       setHeightIntro();
 
       function setHeightIntro(){
-        var adminMenuHeight = $('#toolbar-bar').outerHeight();
+        var adminMenuHeight = $('#toolbar-bar').outerHeight() || 0;
         var bottomAreaHeight = $('#intro .bottom-area').outerHeight();
         var headerHeight = $('header').height();
         var screenHeight = $(window).height();
