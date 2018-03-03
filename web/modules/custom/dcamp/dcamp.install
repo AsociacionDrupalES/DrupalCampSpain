@@ -444,12 +444,6 @@ function dcamp_update_8118() {
   $tickets_link->enabled->setValue(1);
   $tickets_link->save();
 
-  // Enable Attendees link.
-  /** @var \Drupal\menu_link_content\Entity\MenuLinkContent $attendees_link */
-  $attendees_link = $menu_link_content_storage->load(7);
-  $attendees_link->enabled->setValue(1);
-  $attendees_link->save();
-
   // Enable Business Day link.
   /** @var \Drupal\menu_link_content\Entity\MenuLinkContent $businessday_link */
   $businessday_link = $menu_link_content_storage->load(12);
