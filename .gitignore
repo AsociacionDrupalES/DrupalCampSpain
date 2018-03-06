@@ -15,4 +15,5 @@ web/sites/*/files
 # Ignore local settings
 web/sites/default/settings.local.php
 
-web/sites/
+
+web/sites/development\.settings\.php
