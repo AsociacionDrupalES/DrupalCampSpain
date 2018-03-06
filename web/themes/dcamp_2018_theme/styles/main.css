@@ -3056,6 +3056,11 @@ div.speaker-photo div.speaker__field-photo {
 }
 
 @media (max-width: 720px) {
+  
+    div#block-mainpagecontent-2 {
+    padding-top: 146px !important;
+  }
+
   div.speaker-photo {
     float: none;
     width: 50%;

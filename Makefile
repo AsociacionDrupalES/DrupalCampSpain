@@ -6,8 +6,10 @@ tugboat-init:
 	composer install
 	mysql -h mysql -u tugboat -ptugboat -e "create database demo;"
 	cp /var/www/html/sites/default/tugboat.settings.php /var/www/html/sites/default/settings.local.php
+	curl -u ${AUTH_USER}:${AUTH_PASSWORD} https://dev.drupalcamp.es/backup/dcamp2018.sql.gz?$(date +%s) -o dcamp2018.sql.gz
+	gunzip dcamp2018.sql.gz
 	cd web && \
-		wget -O - -o /dev/null ${DATABASE_URL} | ../vendor/bin/drush sql-cli && \
+		../vendor/bin/drush sql-cli < ../dcamp2018.sql && \
 		../vendor/bin/drush updatedb -y -v && \
 		../vendor/bin/drush config-import -y -v && \
 		../vendor/bin/drush cr
