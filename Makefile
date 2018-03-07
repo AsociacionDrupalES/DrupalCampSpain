@@ -1,4 +1,6 @@
 # Build a Tugboat preview from scratch
+TIMESTAMP := $(shell date +%s)
+
 tugboat-init:
 	apt-get update
 	apt-get install -y mysql-client wget
@@ -6,7 +8,7 @@ tugboat-init:
 	composer install
 	mysql -h mysql -u tugboat -ptugboat -e "create database demo;"
 	cp /var/www/html/sites/default/tugboat.settings.php /var/www/html/sites/default/settings.local.php
-	curl -u ${AUTH_USER}:'$(value AUTH_PASSWORD)' https://dev.drupalcamp.es/backup/dcamp2018.sql.gz -o dcamp2018.sql.gz
+	curl -u ${AUTH_USER}:'$(value AUTH_PASSWORD)' https://dev.drupalcamp.es/backup/dcamp2018.sql.gz?${TIMESTAMP} -o dcamp2018.sql.gz
 	gunzip dcamp2018.sql.gz
 	cd web && \
 		../vendor/bin/drush sql-cli < ../dcamp2018.sql && \
@@ -15,13 +17,3 @@ tugboat-init:
 		../vendor/bin/drush cr
 	cd web && \
 		../vendor/bin/drush en -y stage_file_proxy
-
-# Update an existing preview
-tugboat-update:
-    # pull in fresh data, if applicable
-    # call tugboat-build
-
-# Start from a base preview
-tugboat-build:
-    # run application-specific script(s)
-    # compile, uglify, etc.
