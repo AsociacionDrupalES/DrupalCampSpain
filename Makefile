@@ -6,7 +6,7 @@ tugboat-init:
 	composer install
 	mysql -h mysql -u tugboat -ptugboat -e "create database demo;"
 	cp /var/www/html/sites/default/tugboat.settings.php /var/www/html/sites/default/settings.local.php
-	curl -u ${AUTH_USER}:${AUTH_PASSWORD} https://dev.drupalcamp.es/backup/dcamp2018.sql.gz?$(date +%s) -o dcamp2018.sql.gz
+	curl -u ${AUTH_USER}:'$(value AUTH_PASSWORD)' https://dev.drupalcamp.es/backup/dcamp2018.sql.gz -o dcamp2018.sql.gz
 	gunzip dcamp2018.sql.gz
 	cd web && \
 		../vendor/bin/drush sql-cli < ../dcamp2018.sql && \
