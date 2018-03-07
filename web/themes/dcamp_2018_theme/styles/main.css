@@ -2976,6 +2976,16 @@ footer .block-dcamp-newsletter-block h2 {
   font-weight: bold !important;
 }
 
+#block-mainpagecontent-2 .frontpage-wrapper #community h2:before {
+  content: "" !important;
+  display: block;
+  width: 200px;
+  margin-left: 35%;
+  height: 100px;
+  background: url(../images/aed.svg) no-repeat center top;
+  background-size: 100% auto;
+}
+
 #community .description p {
   background-color: rgba(0, 0, 0, 0.5);
   padding: 20px;
