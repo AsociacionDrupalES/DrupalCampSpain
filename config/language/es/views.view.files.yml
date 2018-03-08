@@ -32,6 +32,9 @@ display:
           label: Tamaño
         status:
           label: Estado
+          settings:
+            format_custom_false: Temporal
+            format_custom_true: Permanente
         created:
           label: 'Fecha de subida'
         changed:

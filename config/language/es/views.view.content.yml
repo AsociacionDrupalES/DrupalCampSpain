@@ -1,8 +1,27 @@
-label: Content
-description: 'Find and manage content.'
 display:
   default:
     display_options:
+      filters:
+        status:
+          group_info:
+            group_items:
+              1:
+                value: '1'
+                title: Publicado
+              2:
+                title: 'No publicado'
+            label: 'Estado de publicación'
+          expose:
+            label: Estado
+        title:
+          expose:
+            label: Título
+        type:
+          expose:
+            label: 'Tipo de contenido'
+        langcode:
+          expose:
+            label: Language
       exposed_form:
         options:
           submit_button: Filter
@@ -27,31 +46,13 @@ display:
           label: Autor
         status:
           label: Estado
+          settings:
+            format_custom_true: Publicado
+            format_custom_false: 'No publicado'
         changed:
           label: Actualizado
         operations:
           label: Operaciones
-      filters:
-        status:
-          expose:
-            label: Estado
-          group_info:
-            label: 'Estado de publicación'
-            group_items:
-              1:
-                title: Publicado
-                value: '1'
-              2:
-                title: 'No publicado'
-        type:
-          expose:
-            label: 'Tipo de contenido'
-        title:
-          expose:
-            label: Título
-        langcode:
-          expose:
-            label: Language
       title: Content
       empty:
         area_text_custom:
@@ -65,3 +66,5 @@ display:
         title: Content
         description: 'Encontrar y administrar contenido'
     display_title: Página
+label: Content
+description: 'Find and manage content.'
