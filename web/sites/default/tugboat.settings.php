@@ -30,6 +30,6 @@ $config['stage_file_proxy.settings']['origin'] = 'https://2018.drupalcamp.es';
 $config['dcamp_sessions.settings'] = [
   'debugging' => FALSE,
   'service_account_file' => '/var/lib/tugboat/service-file.json',
-  'spreadsheet_id' => $_ENV["SESSIONS_SPREADSHEET_ID"],
-  'spreadsheet_range' => "Form Responses 1",
+  'spreadsheet_id' => getenv('SESSIONS_SPREADSHEET_ID'),
+  'spreadsheet_range' => 'Form Responses 1',
 ];
