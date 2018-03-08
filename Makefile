@@ -10,6 +10,7 @@ tugboat-init:
 	cp /var/www/html/sites/default/tugboat.settings.php /var/www/html/sites/default/settings.local.php
 	curl -u ${AUTH_USER}:'$(value AUTH_PASSWORD)' https://dev.drupalcamp.es/backup/dcamp2018.sql.gz?${TIMESTAMP} -o dcamp2018.sql.gz
 	gunzip dcamp2018.sql.gz
+	echo ${SERVICE_FILE} > service-file.json
 	cd web && \
 		../vendor/bin/drush sql-cli < ../dcamp2018.sql && \
 		../vendor/bin/drush updatedb -y -v && \
