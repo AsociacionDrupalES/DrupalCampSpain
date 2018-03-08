@@ -441,3 +441,19 @@ function dcamp_update_8118() {
   $businessday_link->enabled->setValue(1);
   $businessday_link->save();
 }
+
+/**
+ * Clean up old session aliases.
+ */
+function dcamp_update_8119() {
+  /** @var \Drupal\pathauto\AliasStorageHelperInterface $alias_storage_helper */
+  $alias_storage_helper = \Drupal::service('pathauto.alias_storage_helper');
+  $alias_storage_helper->deleteBySourcePrefix('/sessions/');
+}
+
+/**
+ * Install dcamp_sessions.
+ */
+function dcamp_update_8120() {
+  \Drupal::service('module_installer')->install(['dcamp_sessions']);
+}

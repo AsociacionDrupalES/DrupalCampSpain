@@ -106,7 +106,7 @@ class DcampSessionsController extends ControllerBase {
     $submission_id = (int) $submission_id;
     $sessions = \Drupal::service('dcamp_sessions.proposals')->getProposals();
     if (empty($sessions[$submission_id])) {
-      throw new BadRequestHttpException(t('Invalid submission id. https://media4.giphy.com/media/uOAXDA7ZeJJzW/giphy.gif'));
+      throw new BadRequestHttpException(t('https://i.makeagif.com/media/6-02-2015/UdiNwN.gif'));
     }
 
     // Extract session details.

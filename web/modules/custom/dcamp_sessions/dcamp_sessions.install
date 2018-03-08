@@ -15,7 +15,14 @@ use Symfony\Component\HttpFoundation\Response;
 function dcamp_sessions_install() {
   $menu_link = MenuLinkContent::create([
     'title' => 'Proposed sessions',
-    'link' => ['uri' => 'internal:/sessions/proposed'],
+    'link' => [
+      'uri' => 'internal:/sessions/proposed',
+      'options' => [
+        'attributes' => [
+          'class' => 'speakers',
+        ],
+      ],
+    ],
     'menu_name' => 'main',
     'expanded' => TRUE,
   ]);
