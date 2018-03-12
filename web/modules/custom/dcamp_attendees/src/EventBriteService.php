@@ -8,6 +8,22 @@ use GuzzleHttp\Exception\ClientException;
 class EventBriteService {
 
   /**
+   * Ticket types.
+   */
+  const TICKET_TYPE_GENERAL = 82145716;
+  const TICKET_TYPE_INDIVIDUAL_SPONSOR = 82145717;
+  const TICKET_TYPE_INDIVIDUAL_SPONSOR_NO_ACCESS = 82145718;
+  const TICKET_TYPE_STUDENT = 82145719;
+  const TICKET_TYPE_BEGINNER_TRACK = 82889072;
+
+  /**
+   * Question types.
+   */
+  const QUESTION_HEADSHOT = 18264712;
+  const QUESTION_TWITTER = 18264696;
+  const QUESTION_DRUPAL = 18264699;
+
+  /**
    * The cache id to store the list of attendees.
    *
    * @var string
@@ -36,7 +52,7 @@ class EventBriteService {
     // Extract individual sponsors from the list of attendees.
     $individual_sponsors = [];
     foreach ($attendees_raw as $attendee) {
-      if (in_array($attendee->ticket_class_name, ['Patrocinador individual', 'Patrocinador individual SIN entrada'])) {
+      if (in_array($attendee->ticket_class_id, [static::TICKET_TYPE_INDIVIDUAL_SPONSOR, static::TICKET_TYPE_INDIVIDUAL_SPONSOR_NO_ACCESS])) {
         $individual_sponsors[] = new Attendee($attendee);
       }
     }
@@ -53,10 +69,10 @@ class EventBriteService {
   public function getAttendees() {
     $attendees_raw = $this->doGetAttendees();
 
-    // Remove individual sponsors who did not get a ticket from the list.
+    // Filter out individual sponsors without ticket and beginner track.
     $attendees = [];
     foreach ($attendees_raw as $attendee) {
-      if ($attendee->ticket_class_name != 'Patrocinador individual SIN entrada') {
+      if (!in_array($attendee->ticket_class_id, [static::TICKET_TYPE_INDIVIDUAL_SPONSOR_NO_ACCESS, static::TICKET_TYPE_BEGINNER_TRACK])) {
         $attendees[] = new Attendee($attendee);
       }
     }

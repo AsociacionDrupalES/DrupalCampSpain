@@ -25,3 +25,23 @@ function dcamp_attendees_update_8101(&$sandbox) {
   ]);
   $menu_link->save();
 }
+
+/**
+ * Adds a link to the list of attendees.
+ */
+function dcamp_attendees_update_8102(&$sandbox) {
+  $menu_link = MenuLinkContent::create([
+    'title' => 'Attendees',
+    'link' => [
+      'uri' => 'internal:/attendees/list',
+      'options' => [
+        'attributes' => [
+          'class' => 'attendees',
+        ],
+      ],
+    ],
+    'menu_name' => 'main',
+    'expanded' => TRUE,
+  ]);
+  $menu_link->save();
+}
