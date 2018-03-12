@@ -97,7 +97,7 @@ class EventBriteService {
           ->getModule('dcamp_attendees')
           ->getPath();
         $fixture_data = json_decode(file_get_contents($path . '/fixtures/attendees.json'));
-        $attendees_list = $fixture_data->attendees;
+        $attendees_list = $fixture_data;
       }
       else {
         // Check if there is a cached value and it has not expire.
