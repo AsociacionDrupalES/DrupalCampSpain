@@ -3065,6 +3065,12 @@ div.speaker-photo div.speaker__field-photo {
   margin: 40px 0;
 }
 
+.teaser-list li.teaser-list__item a {
+  color: #2D4084;
+    font-size: .9em;
+    font-weight: 400;
+}
+
 @media (max-width: 720px) {
   
     div#block-mainpagecontent-2 {
