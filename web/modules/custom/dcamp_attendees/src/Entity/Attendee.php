@@ -3,6 +3,7 @@
 namespace Drupal\dcamp_attendees\Entity;
 
 use Drupal\dcamp\NicknameParserTrait;
+use Drupal\dcamp_attendees\EventBriteService;
 use Drupal\dcamp_sessions\Entity\Session;
 use JsonSerializable;
 
@@ -52,13 +53,11 @@ class Attendee implements JsonSerializable {
   protected $company;
 
   /**
-   * The ticket class name.
-   *
-   * Used to identify whether this is an individual sponsor or not.
+   * The identifier of the ticket type.
    *
    * @var string
    */
-  protected $ticketClassName;
+  protected $ticketClassId;
 
   /**
    * Whether this attendee is speaking or not.
@@ -77,16 +76,16 @@ class Attendee implements JsonSerializable {
     $this->id = $attendee->id;
     $this->name = $attendee->profile->name;
     $this->company = !empty($attendee->profile->company) ? $attendee->profile->company : '';
-    $this->ticketClassName = $attendee->ticket_class_name;
+    $this->ticketClassId = $attendee->ticket_class_id;
     foreach ($attendee->answers as $answer) {
       if (!empty($answer->answer)) {
-        if ($answer->question_id == '15019980') {
+        if ($answer->question_id == EventBriteService::QUESTION_HEADSHOT) {
           $this->headshot = $answer->answer;
         }
-        elseif ($answer->question_id == '15019982') {
+        elseif ($answer->question_id == EventBriteService::QUESTION_TWITTER) {
           $this->twitter = $answer->answer;
         }
-        elseif ($answer->question_id == '15019986') {
+        elseif ($answer->question_id == EventBriteService::QUESTION_DRUPAL) {
           $this->drupal = $answer->answer;
         }
       }
@@ -200,15 +199,15 @@ class Attendee implements JsonSerializable {
   /**
    * @return string
    */
-  public function getTicketClassName() {
-    return $this->ticketClassName;
+  public function getTicketClassId() {
+    return $this->ticketClassId;
   }
 
   /**
-   * @param string $ticketClassName
+   * @param string $ticketClassId
    */
-  public function setTicketClassName($ticket_class_name) {
-    $this->ticketClassName = $ticket_class_name;
+  public function setTicketClassId($ticket_class_id) {
+    $this->ticketClassId = $ticket_class_id;
   }
 
   /**
@@ -218,7 +217,7 @@ class Attendee implements JsonSerializable {
    *   TRUE if this attendee is an individual sponsor.
    */
   public function isIndividualSponsor() {
-    return $this->ticketClassName == 'Patrocinador individual';
+    return $this->ticketClassId == EventBriteService::TICKET_TYPE_INDIVIDUAL_SPONSOR;
   }
 
   /**

@@ -999,6 +999,10 @@ form input[type="submit"]:hover {
   content: '\E802';
 }
 
+.region-header .main-menu-wrapper .main-menu-inner ul li a.buy:before {
+  content: '\E80B';
+}
+
 footer .main-menu-inner .event-info {
   display: none;
 }
