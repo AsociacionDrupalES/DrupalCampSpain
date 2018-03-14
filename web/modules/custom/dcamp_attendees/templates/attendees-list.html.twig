@@ -11,33 +11,52 @@
 
 <section class="teaser-list__page">
 
-  <h1 class="teaser-list__page-title">{{ 'Attendees'|trans }}</h1>
+    <h1 class="teaser-list__page-title">{{ 'Attendees'|trans }}</h1>
 
-  {%- if attendees -%}
-    <ul class="teaser-list--small">
-      {%- for attendee in attendees -%}
-        <li class="teaser-list__item--small">
-          <div class="attendee__headshot">
-            <div class="attendee__image" style="background-image:url({{ attendee.getHeadshot() ?: default_headshot  }})">
+    <section id="tickets" class="section">
+        <div class="sub">
+            <div class="content">
+                <div class="buy-tickets">
+                    <a class="button" href="https://www.eventbrite.es/e/entradas-drupalcamp-spain-2018-43648758612"
+                       target="_blank">{% trans %}Buy ticket{% endtrans %}</a>
+                    <div class="content">
+                        <h3>{% trans %}Come to Drupalcamp{% endtrans %}</h3>
+                        <div class="deadline">{% trans %}Get your ticket for DrupalCamp and Business Day{% endtrans %}</div>
+                    </div>
+                </div>
             </div>
-            {%- if attendee.isIndividualSponsor -%}
-              <div class="attendee__sponsor">Sponsor</div>
-            {%- endif -%}
-          </div>
-          <h2 class="attendee__title">{{ attendee.getName }}</h2>
-          <h3 class="attendee__company">{{ attendee.getCompany }}</h3>
-          <div class="attendee__social">
-            {% if attendee.getTwitter %}
-             <a class="social-media__link social-media__link--twitter" href="{{ attendee.getTwitterUrl(attendee.getTwitter) }}" target="_blank"></a>
-            {% endif %}
-            {% if attendee.getDrupal %}
-              <a class="social-media__link social-media__link--drupal" href="{{ attendee.getDrupalUrl(attendee.getDrupal) }}" target="_blank"></a>
-            {% endif %}
-          </div>
-        </li>
-      {%- endfor -%}
-    </ul>
-  {%- else -%}
-    {{- empty -}}
-  {%- endif -%}
+        </div>
+    </section>
+
+
+    {%- if attendees -%}
+        <ul class="teaser-list--small">
+            {%- for attendee in attendees -%}
+                <li class="teaser-list__item--small">
+                    <div class="attendee__headshot">
+                        <div class="attendee__image"
+                             style="background-image:url({{ attendee.getHeadshot() ?: default_headshot }})">
+                        </div>
+                        {%- if attendee.isIndividualSponsor -%}
+                            <div class="attendee__sponsor">Sponsor</div>
+                        {%- endif -%}
+                    </div>
+                    <h2 class="attendee__title">{{ attendee.getName }}</h2>
+                    <h3 class="attendee__company">{{ attendee.getCompany }}</h3>
+                    <div class="attendee__social">
+                        {% if attendee.getTwitter %}
+                            <a class="social-media__link social-media__link--twitter"
+                               href="{{ attendee.getTwitterUrl(attendee.getTwitter) }}" target="_blank"></a>
+                        {% endif %}
+                        {% if attendee.getDrupal %}
+                            <a class="social-media__link social-media__link--drupal"
+                               href="{{ attendee.getDrupalUrl(attendee.getDrupal) }}" target="_blank"></a>
+                        {% endif %}
+                    </div>
+                </li>
+            {%- endfor -%}
+        </ul>
+    {%- else -%}
+        {{- empty -}}
+    {%- endif -%}
 </section>
