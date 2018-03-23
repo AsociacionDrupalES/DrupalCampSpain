@@ -47,15 +47,13 @@ class EventBriteService {
    *   Array of Attendee objects
    */
   public function getIndividualSponsors() {
-    $attendees_raw = $this->doGetAttendees();
+    /** @var Attendee[] $attendees */
+    $attendees = $this->doGetAttendees();
 
     // Extract individual sponsors from the list of attendees.
-    $individual_sponsors = [];
-    foreach ($attendees_raw as $attendee) {
-      if (in_array($attendee->ticket_class_id, [static::TICKET_TYPE_INDIVIDUAL_SPONSOR, static::TICKET_TYPE_INDIVIDUAL_SPONSOR_NO_ACCESS])) {
-        $individual_sponsors[] = new Attendee($attendee);
-      }
-    }
+    $individual_sponsors = array_filter($attendees, function ($attendee) {
+      return in_array($attendee->getTicketClassId(), [static::TICKET_TYPE_INDIVIDUAL_SPONSOR, static::TICKET_TYPE_INDIVIDUAL_SPONSOR_NO_ACCESS]);
+    });
 
     return $individual_sponsors;
   }
@@ -67,15 +65,22 @@ class EventBriteService {
    *   Array of Attendee objects
    */
   public function getAttendees() {
-    $attendees_raw = $this->doGetAttendees();
+    $attendees = $this->doGetAttendees();
 
-    // Filter out individual sponsors without ticket and beginner track.
-    $attendees = [];
-    foreach ($attendees_raw as $attendee) {
-      if (!in_array($attendee->ticket_class_id, [static::TICKET_TYPE_INDIVIDUAL_SPONSOR_NO_ACCESS, static::TICKET_TYPE_BEGINNER_TRACK])) {
-        $attendees[] = new Attendee($attendee);
+    // Filter out individual sponsors without ticket and beginner track tickets.
+    $attendees = array_filter($attendees, function ($attendee) {
+      return !in_array($attendee->getTicketClassId(), [static::TICKET_TYPE_INDIVIDUAL_SPONSOR_NO_ACCESS, static::TICKET_TYPE_BEGINNER_TRACK]);
+    });
+
+    // If someone bought many tickets in one go, keep just one ticket.
+    $attendees = array_filter($attendees, function ($attendee) {
+      static $order_ids = [];
+      if (in_array($attendee->getOrderId(), $order_ids)) {
+        return FALSE;
       }
-    }
+      $order_ids[] = $attendee->getOrderId();
+      return TRUE;
+    });
 
     return $attendees;
   }
@@ -83,12 +88,12 @@ class EventBriteService {
   /**
    * Request the list of attendees to Eventbrite.
    *
-   * @return array
-   *   The raw array of attendees from Eventbrite.
+   * @return \Drupal\dcamp_attendees\Entity\Attendee[]
+   *   Array of Attendee objects
    */
   protected function doGetAttendees() {
     $config = \Drupal::config('dcamp_attendees.settings');
-    $attendees_list = [];
+    $attendees = [];
 
     try {
       // Check if we are in developer mode.
@@ -123,11 +128,17 @@ class EventBriteService {
         function ($attendee_data) {
           return $attendee_data->cancelled == FALSE;
         });
+
+      // Build an array of Attendee objects.
+      $attendees = [];
+      foreach ($attendees_list as $attendee) {
+        $attendees[] = new Attendee($attendee);
+      }
     }
     catch (ClientException $e) {
-      // The event is not ready yet and threw a 403. Continue silently.
+      watchdog_exception('dcamp_attendees', $e, 'Could not fetch attendees from EventBrite.');
     }
-    return $attendees_list;
+    return $attendees;
   }
 
   /**
@@ -182,4 +193,5 @@ class EventBriteService {
 
     return $eventbrite_data;
   }
+
 }
