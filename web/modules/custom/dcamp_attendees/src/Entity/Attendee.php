@@ -67,6 +67,13 @@ class Attendee implements JsonSerializable {
   protected $isSpeaker = FALSE;
 
   /**
+   * The order id.
+   *
+   * @var string
+   */
+  protected $orderId;
+
+  /**
    * Attendee constructor.
    *
    * @param stdClass $attendee
@@ -77,6 +84,7 @@ class Attendee implements JsonSerializable {
     $this->name = $attendee->profile->name;
     $this->company = !empty($attendee->profile->company) ? $attendee->profile->company : '';
     $this->ticketClassId = $attendee->ticket_class_id;
+    $this->orderId = $attendee->order_id;
     foreach ($attendee->answers as $answer) {
       if (!empty($answer->answer)) {
         if ($answer->question_id == EventBriteService::QUESTION_HEADSHOT) {
@@ -208,6 +216,20 @@ class Attendee implements JsonSerializable {
    */
   public function setTicketClassId($ticket_class_id) {
     $this->ticketClassId = $ticket_class_id;
+  }
+
+  /**
+   * @return string
+   */
+  public function getOrderId() {
+    return $this->orderId;
+  }
+
+  /**
+   * @param string $orderId
+   */
+  public function setOrderId($orderId) {
+    $this->orderId = $orderId;
   }
 
   /**
