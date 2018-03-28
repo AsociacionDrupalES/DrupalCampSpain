@@ -3075,10 +3075,41 @@ div.speaker-photo div.speaker__field-photo {
     font-weight: 400;
 }
 
+
+h2.attendee__title {
+  width:100%;
+  position: relative;
+}
+
+h2.attendee__title span {
+  display: inline-block;
+  position: absolute;
+  top: -50px;
+  right: 00px;
+  background:#FFF;
+  z-index: 4;
+  padding:10px 20px 0 10px;
+  border-radius: 50px 0 0 0;
+}
+
+h2.attendee__title span::after {
+  font-family: 'icons';
+  content: '\E814';
+  font-size: .7em;
+  font-weight: normal;
+  position: absolute;
+  right: 0;
+  top: 11px;
+}
+
 @media (max-width: 720px) {
   
     div#block-mainpagecontent-2 {
     padding-top: 146px !important;
+  }
+
+  .path-frontpage div#block-mainpagecontent-2 {
+    padding-top: 92px !important;
   }
 
   div.speaker-photo {
@@ -3117,5 +3148,9 @@ div.speaker-photo div.speaker__field-photo {
     left: 5px;
     height: 50px;
     width: 50px;
+  }
+
+  h2.attendee__title span {
+    top: -35px;
   }
 }

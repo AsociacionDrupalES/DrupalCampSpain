@@ -41,7 +41,11 @@
                             <div class="attendee__sponsor">Sponsor</div>
                         {%- endif -%}
                     </div>
-                    <h2 class="attendee__title">{{ attendee.getName }}</h2>
+                    <h2 class="attendee__title">{{ attendee.getName }} 
+                        {%- if attendee.hasExtraTickets -%}
+                          <span>{{ attendee.getExtraTickets }}</span>
+                        {%- endif -%}
+                    </h2>
                     <h3 class="attendee__company">{{ attendee.getCompany }}</h3>
                     <div class="attendee__social">
                         {% if attendee.getTwitter %}
@@ -54,9 +58,7 @@
                         {% endif %}
                     </div>
                     <div>
-                        {%- if attendee.hasExtraTickets -%}
-                          {{ attendee.getExtraTickets }}
-                        {%- endif -%}
+                        
                     </div>
                 </li>
             {%- endfor -%}
