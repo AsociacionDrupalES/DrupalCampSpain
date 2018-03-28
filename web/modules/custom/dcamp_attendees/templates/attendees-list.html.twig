@@ -53,6 +53,11 @@
                                href="{{ attendee.getDrupalUrl(attendee.getDrupal) }}" target="_blank"></a>
                         {% endif %}
                     </div>
+                    <div>
+                        {%- if attendee.hasExtraTickets -%}
+                          {{ attendee.getExtraTickets }}
+                        {%- endif -%}
+                    </div>
                 </li>
             {%- endfor -%}
         </ul>

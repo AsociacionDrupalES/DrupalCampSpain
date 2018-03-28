@@ -75,11 +75,22 @@ class EventBriteService {
     // If someone bought many tickets in one go, keep just one ticket.
     $attendees = array_filter($attendees, function ($attendee) {
       static $order_ids = [];
-      if (in_array($attendee->getOrderId(), $order_ids)) {
+      if (in_array($attendee->getOrderId(), array_keys($order_ids))) {
+        $order_ids[$attendee->getOrderId()]->addExtraTicket();
         return FALSE;
       }
-      $order_ids[] = $attendee->getOrderId();
+      $order_ids[$attendee->getOrderId()] = $attendee;
       return TRUE;
+    });
+
+    // Sort attendees by purchase date.
+    usort($attendees, function ($attendee_a, $attendee_b) {
+      $time_a = strtotime($attendee_a->getRegistered());
+      $time_b = strtotime($attendee_b->getRegistered());
+      if ($time_a == $time_b) {
+        return 0;
+      }
+      return ($time_a < $time_b) ? -1 : 1;
     });
 
     return $attendees;

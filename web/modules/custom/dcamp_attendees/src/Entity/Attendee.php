@@ -74,6 +74,20 @@ class Attendee implements JsonSerializable {
   protected $orderId;
 
   /**
+   * The amount of extra tickets that this attendee bought.
+   *
+   * @var int
+   */
+  protected $extraTickets = 0;
+
+  /**
+   * The date when the attendee registered.
+   *
+   * @var string
+   */
+  protected $registered;
+
+  /**
    * Attendee constructor.
    *
    * @param stdClass $attendee
@@ -85,6 +99,7 @@ class Attendee implements JsonSerializable {
     $this->company = !empty($attendee->profile->company) ? $attendee->profile->company : '';
     $this->ticketClassId = $attendee->ticket_class_id;
     $this->orderId = $attendee->order_id;
+    $this->registered = $attendee->created;
     foreach ($attendee->answers as $answer) {
       if (!empty($answer->answer)) {
         if ($answer->question_id == EventBriteService::QUESTION_HEADSHOT) {
@@ -230,6 +245,51 @@ class Attendee implements JsonSerializable {
    */
   public function setOrderId($orderId) {
     $this->orderId = $orderId;
+  }
+
+  /**
+   * @return int
+   */
+  public function getExtraTickets() {
+    return $this->extraTickets;
+  }
+
+  /**
+   * @param int $extra_tickets
+   */
+  public function setExtraTickets($extra_tickets) {
+    $this->extraTickets = $extra_tickets;
+  }
+
+  /**
+   * @return int
+   */
+  public function getRegistered() {
+    return $this->registered;
+  }
+
+  /**
+   * @param int $registered
+   */
+  public function setRegistered($registered) {
+    $this->registered = $registered;
+  }
+
+  /**
+   * Adds an extra ticket.
+   */
+  public function addExtraTicket() {
+    $this->extraTickets++;
+  }
+
+  /**
+   * Checks if this attendee bought extra tickets.
+   *
+   * @return bool
+   *   TRUE if the attendee bought extra tickets.
+   */
+  public function hasExtraTickets() {
+    return $this->extraTickets > 0;
   }
 
   /**
