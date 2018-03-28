@@ -33,3 +33,10 @@ $config['dcamp_sessions.settings'] = [
   'spreadsheet_id' => getenv('SESSIONS_SPREADSHEET_ID'),
   'spreadsheet_range' => 'Form Responses 1',
 ];
+
+// Attendees settings.
+$config['dcamp_attendees.settings'] = [
+  'debugging' => FALSE,
+  'event_id' => getenv('ATTENDEES_EVENT_ID'),
+  'oauth_token' => getenv('ATTENDEES_OAUTH_TOKEN'),
+];
