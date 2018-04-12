@@ -20,12 +20,41 @@ class SessionProposalsService {
    * @var array
    */
   protected $selectedSessions = [
-//  Once sessions have been selected, edit this array and the above constants accordingly.
-//    '/sessions/contribuir-drupal-por-donde-comenzar-de-0-100-regiguren' => [
-//      self::SATURDAY,
-//      '16:30',
-//      self::POLIVALENTE,
-//    ],
+    // Once sessions have been selected, edit this array and the above constants accordingly.
+    // Once the schedule has completed, complete the information about sessions.
+    // Template:
+    //    '/sessions/contribuir-drupal-por-donde-comenzar-de-0-100-regiguren' => [
+    //      self::SATURDAY,
+    //      '16:30',
+    //      self::POLIVALENTE,
+    //    ],
+
+    '/sessions/integrando-componentes-en-la-edicion-de-contenidos-chumillas' => [],
+    '/sessions/symfony-framework-style-api-building-drupal' => [],
+    '/sessions/headless-drupal-rteijeiro' => [],
+    '/sessions/construyendo-un-motor-de-recomendaciones-con-d8-y-solr-estoyausente' => [],
+    '/sessions/masticando-requisitos-como-hacer-mas-facil-la-vida-al-desarrollador-y-al-cliente-rvilar' => [],
+    '/sessions/programacion-reactiva-lidiando-con-la-asincronia-sanzante' => [],
+    '/sessions/docker-subete-al-barco-de-las-herramientas-de-desarrollo-estandar-marinero' => [],
+    '/sessions/csi-autopsia-de-vulnerabilidades-rabbitlair' => [],
+    '/sessions/elasticsearch-101-isholgueras' => [],
+    '/sessions/e2e-testing-con-nightwatchjs-salvabg' => [],
+    '/sessions/seo-page-orientado-drupal-buenas-practicas-para-ponerselo-facil-google-asierlc' => [],
+    '/sessions/casos-de-exito-de-drupal-en-espana-davidgilbiko2' => [],
+    '/sessions/consejos-y-trucos-para-cualificar-una-oportunidad-drupal-es-ese-proyecto-para-nosotros-o-mejor-que' => [],
+    '/sessions/designer-vs-front-end-do-you-know-way-nesta' => [],
+    '/sessions/utilizando-drupal-como-lms-xapi-learning-record-store-martinrayo' => [],
+    '/sessions/contribuir-drupal-por-donde-comenzar-de-0-100-regiguren' => [],
+    '/sessions/el-trabajo-en-remoto-desde-diferentes-puntos-de-vista' => [],
+    '/sessions/ojo-al-dato-como-evitar-microinfartos-la-gente-de-marketing-beagonpoz' => [],
+    '/sessions/how-we-work-gizra-davidbaltha' => [],
+    // Short sessions.
+    '/sessions/envio-de-correos-transaccionales-sin-caer-spam-en-el-intento-isholgueras' => [],
+    '/sessions/integracion-continua-con-circleci-para-drupal-8-regiguren' => [],
+    '/sessions/checking-your-sites-health-monitoring-plopesc' => [],
+    '/sessions/muerte-al-javascript-larga-vida-al-javascript-sanzante' => [],
+    '/sessions/caso-de-uso-configsplit-como-alternativa-multisites-jjcarrion' => [],
+    '/sessions/drush-9-creemos-un-comando-en-10-minutos-capynet' => [],
   ];
 
   /**
