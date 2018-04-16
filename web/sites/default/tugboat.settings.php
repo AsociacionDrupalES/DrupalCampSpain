@@ -17,10 +17,10 @@ $databases = array (
 
 $config_directories['sync'] = '../config';
 
-// If you need to test the newsletter widget, set your Mailchimp API key and List ID below.
-$config['mailchimp.settings']['api_key'] = 'foo';
+// Mailchimp settings.
+$config['mailchimp.settings']['api_key'] = getenv('MAILCHIMP_KEY');
 $config['mailchimp_signup.mailchimp_signup.dcamp_mailchimp']['mc_lists'] = [
-  'bar' => 'bar',
+  getenv('MAILCHIMP_LIST') => getenv('MAILCHIMP_LIST'),
 ];
 
 // Point Stage File Proxy to production.

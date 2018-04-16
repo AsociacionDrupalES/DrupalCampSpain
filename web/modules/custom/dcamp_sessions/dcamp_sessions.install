@@ -70,3 +70,34 @@ function dcamp_sessions_update_8102() {
   $alias_storage->delete(['alias' => '/sessions/casos-de-exito-de-drupal-en-espana']);
   $alias_storage->save('/sessions/84', '/sessions/casos-de-exito-de-drupal-en-espana');
 }
+
+/**
+ * Clean up session links.
+ */
+function dcamp_sessions_update_8104() {
+  /** @var \Drupal\Core\Entity\EntityStorageInterface $menu_link_content_storage */
+  $menu_link_content_storage = \Drupal::entityTypeManager()->getStorage('menu_link_content');
+
+  // Delete old session links.
+  $menu_link_content_storage->load(4)->delete();
+  $menu_link_content_storage->load(10)->delete();
+  $menu_link_content_storage->load(16)->delete();
+
+  // Create selected sessions link.
+  $selected_sessions_link = MenuLinkContent::create([
+    'title' => 'Selected sessions',
+    'link' => [
+      'uri' => 'internal:/sessions/selected',
+      'options' => [
+        'attributes' => [
+          'class' => 'news',
+        ],
+      ],
+    ],
+    'menu_name' => 'main',
+    'expanded' => TRUE,
+  ]);
+  $selected_sessions_link->save();
+
+  $selected_sessions_link->addTranslation('es', ['title' => 'Charlas seleccionadas'])->save();
+}
