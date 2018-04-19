@@ -24,14 +24,14 @@
       <thead>
       <tr>
         <th scope="row">&nbsp;</th>
-        <th scope="col">Auditorio (170)</th>
-        <th scope="col">Cine (75)</th>
-        <th scope="col">Polivalente (45)</th>
+        <th scope="col">Caja de la música (240)</th>
+        <th scope="col">Caja negra (200)</th>
+        <th scope="col">Sala CAMON (60)</th>
       </tr>
       </thead>
       <tbody>
       <tr>
-        <th scope="row">08:30</th>
+        <th scope="row">09:00</th>
         <td colspan="3">{% trans %}Registration - Badge Pick-Up{% endtrans %}</td>
       </tr>
       <tr>
@@ -42,10 +42,10 @@
       </tr>
       <tr>
         <th scope="row">10:00</th>
-        <td class="english featured basic">
-          <a href="/sessions/putting-yourself-out-there-and-avoiding-what-ifs-mikeherchel"
-             target="_blank">Putting Yourself Out There and Avoiding the “What Ifs” <span
-                class="author"> {{ 'by'|t }} Mike Herchel</span></a>
+        <td class="featured basic">
+          <a href="#"
+             target="_blank">PRESTON <span
+                    class="author"> {{ 'by'|t }} Preston</span></a>
           <span class="english"></span>
           <span class="featured"></span>
           <span class="basic"></span>
@@ -55,9 +55,16 @@
                     class="author"> {{ 'by'|t }} Cristian Aliaga</span></a>
           <span class="intermediate"></span>
         </td>
-        <td rowspan="3">
-          <a href="{{ path('entity.node.canonical', {'node': 35}) }}" target="_blank">Business Day</a>
+        <td class="basic">
+          <a href="/sessions/commerce-en-drupal-8-facine" target="_blank">Commerce en Drupal 8 <span
+                    class="author"> {{ 'by'|t }} Manuel Egío</span>
+          </a>
+          <span class="basic"></span>
         </td>
+      </tr>
+      <tr>
+        <th scope="row">10:45</th>
+        <td  colspan="3">Descanso / Break</td>
       </tr>
       <tr>
         <th scope="row">11:00</th>
@@ -75,9 +82,19 @@
           </a>
           <span class="basic"></span>
         </td>
+        <td class="basic">
+          <a href="/sessions/commerce-en-drupal-8-facine" target="_blank">Commerce en Drupal 8 <span
+                    class="author"> {{ 'by'|t }} Manuel Egío</span>
+          </a>
+          <span class="basic"></span>
+        </td>
       </tr>
       <tr>
-        <th scope="row">12:00</th>
+        <th scope="row">11:45</th>
+        <td>Café / Coffee</td>
+      </tr>
+      <tr>
+        <th scope="row">12:30</th>
         <td class="intermediate">
           <a href="/sessions/migrando-datos-drupal-8-jonhattan" target="_blank">Migrando datos a
             Drupal 8 <span class="author"> {{ 'by'|t }} Jonathan Araña Cruz</span>
@@ -92,19 +109,50 @@
           <span class="english"></span>
           <span class="intermediate"></span>
         </td>
-      </tr>
-      <tr class="break">
-        <th scope="row">13:00</th>
-        <td colspan="3">{% trans %}Group photo{% endtrans %}</td>
-      </tr>
-      <tr class="break">
-        <th scope="row">&nbsp;</th>
-        <td colspan="3"><a href="{{ path('entity.node.canonical', {'node': 46}) }}">{% trans %}Lunchtime
-            break{% endtrans %}</a>
+        <td class="basic">
+          <a href="/sessions/commerce-en-drupal-8-facine" target="_blank">Commerce en Drupal 8 <span
+                    class="author"> {{ 'by'|t }} Manuel Egío</span>
+          </a>
+          <span class="basic"></span>
         </td>
       </tr>
       <tr>
-        <th rowspan="3" scope="row">15:00</th>
+        <th scope="row">13:15</th>
+        <td colspan="3">Descanso / Break</td>
+      </tr>
+      <tr>
+        <th scope="row">13:30</th>
+        <td class="intermediate">
+          <a href="/sessions/migrando-datos-drupal-8-jonhattan" target="_blank">Migrando datos a
+            Drupal 8 <span class="author"> {{ 'by'|t }} Jonathan Araña Cruz</span>
+          </a>
+          <span class="intermediate"></span>
+        </td>
+        <td class="intermediate">
+          <a href="/sessions/migrando-datos-drupal-8-jonhattan" target="_blank">Migrando datos a
+            Drupal 8 <span class="author"> {{ 'by'|t }} Jonathan Araña Cruz</span>
+          </a>
+          <span class="intermediate"></span>
+        </td>
+        <td class="english intermediate">
+          <a href="/sessions/exploring-composer-drupal-8-drupal-project-salvabg"
+             target="_blank">Exploring Composer in Drupal 8 with composer-project <span
+                    class="author"> {{ 'by'|t }} Salvador Molina Moreno</span>
+          </a>
+          <span class="english"></span>
+          <span class="intermediate"></span>
+        </td>
+      </tr>
+      <tr class="break">
+        <th scope="row">14:15</th>
+        <td colspan="3">{% trans %}Group photo{% endtrans %}</td>
+      </tr>
+      <tr class="break">
+        <th scope="row">14:30</th>
+        <td colspan="3">{% trans %}Lunch time{% endtrans %}</td>
+      </tr>
+      <tr>
+        <th rowspan="3" scope="row">15:30</th>
         <td class="lightning english advanced"><a href="/sessions/caching-post-data-varnish-rodricels" target="_blank">Caching
             POST
             data with Varnish <span class="author"> {{ 'by'|t }} Rodrigo Alfaro</span></a>
@@ -126,6 +174,10 @@
           <span class="lightning"></span>
           <span class="intermediate"></span>
         </td>
+      </tr>
+      <tr>
+        <th scope="row">16:15</th>
+        <td colspan="3">Descanso / Break</td>
       </tr>
       <tr>
         <td class="lightning english intermediate"><a
@@ -255,7 +307,6 @@
             instantáneo con Service Workers <span class="author"> {{ 'by'|t }} Alberto Silva</span></a>
 
           <span class="intermediate"></span>
-
         </td>
       </tr>
       <tr>
@@ -278,7 +329,7 @@
           <span class="na"></span>
         </td>
       </tr>
-      <tr>
+      <tr class="break">
         <th scope="row">11:00</th>
         <td colspan="3">{% trans %}Coffee break{% endtrans %}</td>
       </tr>
