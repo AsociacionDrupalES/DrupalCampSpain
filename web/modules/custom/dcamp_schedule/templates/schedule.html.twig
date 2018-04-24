@@ -6,7 +6,7 @@
   </div>
 
   <div class="inner">
-    <h2>{% trans %}Friday{% endtrans %}</h2>
+    <h2>{% trans %}Saturday{% endtrans %}</h2>
 
     <div class="legend">
       <div class="basic">{% trans %}Basic{% endtrans %}</div>
@@ -24,14 +24,14 @@
       <thead>
       <tr>
         <th scope="row">&nbsp;</th>
-        <th scope="col">Auditorio (170)</th>
-        <th scope="col">Cine (75)</th>
-        <th scope="col">Polivalente (45)</th>
+        <th scope="col">Caja de la música (240)</th>
+        <th scope="col">Caja negra (200)</th>
+        <th scope="col">Sala CAMON (60)</th>
       </tr>
       </thead>
       <tbody>
       <tr>
-        <th scope="row">08:30</th>
+        <th scope="row">09:00</th>
         <td colspan="3">{% trans %}Registration - Badge Pick-Up{% endtrans %}</td>
       </tr>
       <tr>
@@ -42,171 +42,189 @@
       </tr>
       <tr>
         <th scope="row">10:00</th>
-        <td class="english featured basic">
-          <a href="/sessions/putting-yourself-out-there-and-avoiding-what-ifs-mikeherchel"
-             target="_blank">Putting Yourself Out There and Avoiding the “What Ifs” <span
-                class="author"> {{ 'by'|t }} Mike Herchel</span></a>
-          <span class="english"></span>
+        <td class="featured basic">
+          <a href="#"
+             target="_blank">{{ 'Session'|t }} <span
+                    class="author"> {{ 'by'|t }} Preston So</span></a>
           <span class="featured"></span>
-          <span class="basic"></span>
         </td>
-        <td class="intermediate"><a href="/sessions/buenas-practicas-front-end-maquetacion-por-componentes"
-                                    target="_blank">Buenas prácticas front-end: Maquetación por componentes <span
-                    class="author"> {{ 'by'|t }} Cristian Aliaga</span></a>
+        <td class="intermediate"><a href="https://2018.drupalcamp.es/sessions/elasticsearch-101-isholgueras"
+                                    target="_blank">Elasticsearch 101 <span
+                    class="author"> {{ 'by'|t }} Ignacio Sánchez</span></a>
           <span class="intermediate"></span>
         </td>
-        <td rowspan="3">
-          <a href="{{ path('entity.node.canonical', {'node': 35}) }}" target="_blank">Business Day</a>
+        <td class="basic">
+          <a href="#" target="_blank">Disponible <span
+                    class="author"> {{ 'by'|t }} Anónimo</span>
+          </a>
+          <span class="basic"></span>
         </td>
+      </tr>
+      <tr>
+        <th scope="row">10:45</th>
+        <td  colspan="3">Descanso / Break</td>
       </tr>
       <tr>
         <th scope="row">11:00</th>
-        <td class="english basic">
-          <a href="/sessions/drupal-8s-multilingual-apis-building-entire-world-penyaskito"
-             target="_blank">Drupal 8's Multilingual APIs: Building for the Entire World <span
-                class="author"> {{ 'by'|t }} Christian López Espínola</span>
+        <td>
+          <a href="/sessions/headless-drupal-rteijeiro"
+             target="_blank">Headless Drupal <span
+                class="author"> {{ 'by'|t }} Ruben <Teijeiro></Teijeiro></span>
           </a>
-          <span class="english"></span>
+          <span class="intermediate"></span>
+        </td>
+        <td>
+          <a href="/sessions/programacion-reactiva-lidiando-con-la-asincronia-sanzante" target="_blank">Programación reactiva: lidiando con la asincronía <span
+                class="author"> {{ 'by'|t }} Ricardo Sanz Ante</span>
+          </a>
+          <span class="intermediate"></span>
+        </td>
+        <td>
+          <a href="/sessions/utilizando-drupal-como-lms-xapi-learning-record-store-martinrayo" target="_blank">Utilizando Drupal como LMS + API + Learning record store <span
+                    class="author"> {{ 'by'|t }} Raúl Bordallo</span>
+          </a>
           <span class="basic"></span>
         </td>
+      </tr>
+      <tr class="break">
+        <th scope="row">11:45</th>
+        <td colspan="3">Cafe'/ Coffee</td>
+      </tr>
+      <tr>
+        <th scope="row">12:30</th>
+        <td>
+          <a href="#" target="_blank">{{ 'Session'|t }} <span class="author"> {{ 'by'|t }} Laura Bonmatí</span>
+          </a>
+          <span class="featured"></span>
+        </td>
+        <td>
+          <a href="/sessions/construyendo-un-motor-de-recomendaciones-con-d8-y-solr-estoyausente"
+             target="_blank">Construyendo un motor de recomendaciones con D8 y Solr <span
+                class="author"> {{ 'by'|t }} Samuel Solís</span>
+          </a>
+          <span class="intermediate"></span>
+        </td>
         <td class="basic">
-          <a href="/sessions/commerce-en-drupal-8-facine" target="_blank">Commerce en Drupal 8 <span
-                class="author"> {{ 'by'|t }} Manuel Egío</span>
+          <a href="/sessions/el-trabajo-en-remoto-desde-diferentes-puntos-de-vista" target="_blank">El trabajo en remoto desde diferentes puntos de vista <span
+                    class="author"> {{ 'by'|t }} Álvaro Hurtado, Ela Meier {{ 'and'|t }} Rubén Egiguren</span>
           </a>
           <span class="basic"></span>
         </td>
       </tr>
       <tr>
-        <th scope="row">12:00</th>
-        <td class="intermediate">
-          <a href="/sessions/migrando-datos-drupal-8-jonhattan" target="_blank">Migrando datos a
-            Drupal 8 <span class="author"> {{ 'by'|t }} Jonathan Araña Cruz</span>
+        <th scope="row">13:15</th>
+        <td colspan="3">Descanso / Break</td>
+      </tr>
+      <tr>
+        <th scope="row">13:30</th>
+        <td>
+          <a href="/sessions/csi-autopsia-de-vulnerabilidades-rabbitlair" target="_blank">CSI: Autopsia de vulnerabilidades
+            <span class="author"> {{ 'by'|t }} Zequi Vázquez</span>
           </a>
           <span class="intermediate"></span>
         </td>
-        <td class="english intermediate">
-          <a href="/sessions/exploring-composer-drupal-8-drupal-project-salvabg"
-             target="_blank">Exploring Composer in Drupal 8 with composer-project <span
-                class="author"> {{ 'by'|t }} Salvador Molina Moreno</span>
+        <td class="intermediate">
+          <a href="/sessions/masticando-requisitos-como-hacer-mas-facil-la-vida-al-desarrollador-y-al-cliente-rvilar" target="_blank">Masticando requisitos: cómo hacer más fácil la vida al desarrollador y al cliente
+            <span class="author"> {{ 'by'|t }} Ramón Vilar</span>
           </a>
-          <span class="english"></span>
-          <span class="intermediate"></span>
+          <span class="na"></span>
+        </td>
+        <td>
+          <a href="/sessions/docker-subete-al-barco-de-las-herramientas-de-desarrollo-estandar-marinero"
+             target="_blank">Docker: súbete al barco de las herramientas de desarrollo estándar. <span
+                    class="author"> {{ 'by'|t }} Rodrigo Aguilera {{ 'and'|t }} Diego Marrufos</span>
+          </a>
+          <span class="basic"></span>
         </td>
       </tr>
       <tr class="break">
-        <th scope="row">13:00</th>
+        <th scope="row">14:15</th>
         <td colspan="3">{% trans %}Group photo{% endtrans %}</td>
       </tr>
       <tr class="break">
-        <th scope="row">&nbsp;</th>
-        <td colspan="3"><a href="{{ path('entity.node.canonical', {'node': 46}) }}">{% trans %}Lunchtime
-            break{% endtrans %}</a>
-        </td>
+        <th scope="row">14:30</th>
+        <td colspan="3">{% trans %}Lunch time{% endtrans %}</td>
       </tr>
       <tr>
-        <th rowspan="3" scope="row">15:00</th>
-        <td class="lightning english advanced"><a href="/sessions/caching-post-data-varnish-rodricels" target="_blank">Caching
-            POST
-            data with Varnish <span class="author"> {{ 'by'|t }} Rodrigo Alfaro</span></a>
-          <span class="english"></span>
-          <span class="lightning"></span>
-          <span class="advanced"></span>
-        </td>
-        <td class="lightning basic"><a
-              href="/sessions/creacion-de-extensiones-de-twig-para-personalizar-la-presentacion-de-campos-vlledo"
-              target="_blank">Creación de extensiones de Twig para personalizar la presentación de campos <span
-                class="author"> {{ 'by'|t }} Víctor Rodríguez Lledó</span></a>
-          <span class="lightning"></span>
-          <span class="basic"></span>
-        </td>
-        <td class="lightning intermediate"><a href="/sessions/abstraer-requisitos-de-cliente-en-modulos-para-contribuir"
-                                              target="_blank">Abstraer requisitos de cliente en módulos para contribuir
-            by
-            <span>Cristian Aliaga</span></a>
+        <th rowspan="3" scope="row">15:30</th>
+        <td><a href="/sessions/envio-de-correos-transaccionales-sin-caer-spam-en-el-intento-isholgueras" target="_blank">Envío de correos transaccionales sin caer (a spam) en el intento
+            <span class="author"> {{ 'by'|t }} Ignacio Sánchez Holgueras</span></a>
           <span class="lightning"></span>
           <span class="intermediate"></span>
         </td>
-      </tr>
-      <tr>
-        <td class="lightning english intermediate"><a
-              href="/sessions/using-traefikio-your-local-docker-environments-jsbalsera">Using
-            Traefik.io with your local Docker environments <span class="author"> {{ 'by'|t }}
-              Jesús Sánchez Balsera</span></a>
-          <span class="lightning"></span>
-          <span class="intermediate"></span>
-          <span class="english"></span>
-        </td>
-        <td class="lightning basic">
-          <a href="/sessions/css-grid-layout-aless86" target="_blank">CSS Grid Layout <span
-                class="author"> {{ 'by'|t }} Alejandro Soto</span></a>
-          <span class="lightning"></span>
-          <span class="basic"></span>
-        </td>
-        <td class="lightning intermediate"><a href="/sessions/google-amp-y-drupal-8-antoniogarrod" target="_blank">Google
-            AMP
-            y Drupal 8 <span class="author"> {{ 'by'|t }} Antonio García Rodríguez</span></a>
+        <td><a
+              href="/sessions/caso-de-uso-configsplit-como-alternativa-multisites-jjcarrion"
+              target="_blank">Caso de uso: Config_split como alternativa a multisites. <span
+                class="author"> {{ 'by'|t }} José Jiménez Carrión</span></a>
           <span class="lightning"></span>
           <span class="intermediate"></span>
         </td>
-      </tr>
-      <tr>
-        <td class="lightning english intermediate"><a href="/sessions/synchronize-your-drupal-data-carto-plopesc"
-                                                      target="_blank">Synchronize
-            your Drupal data with Carto <span class="author"> {{ 'by'|t }} Pablo López Escobés</span></a>
-          <span class="lightning"></span>
-          <span class="intermediate"></span>
-          <span class="english"></span>
-        </td>
-        <td class="lightning intermediate"><a
-              href="/sessions/lets-encrypt-o-como-tener-tu-pagina-https-tras-5-instrucciones-en-la-linea-de-comandos"
-              target="_blank">Let’s Encrypt o como tener tu página HTTPS tras 5 instrucciones en la línea de comandos by
-            <span>Luis Ortiz Ramos</span></a></td>
-        <td class="lightning basic"><a href="/sessions/why-drupal-davidbaltha" target="_blank">Why Drupal <span
-                class="author"> {{ 'by'|t }} David Hernández Ruiz</span></a>
-          <span class="lightning"></span>
+        <td rowspan="3" scope="row">
+          <a href="/sessions/tu-drupal-esta-listo-lo-sabe-google-beagonpoz"
+             target="_blank">¡Ojo al dato!: Cómo evitar microinfartos a la gente de marketing
+            <span class="author"> {{ 'by'|t }} Beatriz González</span></a>
           <span class="basic"></span>
         </td>
       </tr>
       <tr>
-        <th scope="row">16:00</th>
-        <td class="featured intermediate"><a
-              href="/sessions/seleccionando-un-cms-para-la-transformacion-por-que-drupal-javierespadas" target="_blank">Seleccionando
-            un CMS para la transformación: ¿Por qué Drupal? <span class="author"> {{ 'by'|t }}
-              Javier Espadas Bardón</span></a>
+        <td><a
+              href="/sessions/checking-your-sites-health-monitoring-plopesc">
+            Checking your site's health with Monitoring
+            <span class="author"> {{ 'by'|t }} Pablo López</span></a>
+          <span class="lightning"></span>
+          <span class="intermediate"></span>
+        </td>
+        <td>
+          <a href="/sessions/muerte-al-javascript-larga-vida-al-javascript-sanzante"
+             target="_blank">¡Muerte al JavaScript, larga vida al JavaScript! <span
+                class="author"> {{ 'by'|t }} Ricardo Sanz Ante</span></a>
+          <span class="lightning"></span>
+          <span class="intermediate"></span>
+        </td>
+      </tr>
+      <tr>
+        <td><a href="/sessions/integracion-continua-con-circleci-para-drupal-8-regiguren"
+                                                      target="_blank">Integración continua con CircleCI para Drupal 8
+            <span class="author"> {{ 'by'|t }} Rubén Egiguren</span></a>
+          <span class="lightning"></span>
+          <span class="basic"></span>
+        </td>
+        <td><a
+              href="/sessions/drush-9-creemos-un-comando-en-10-minutos-capynet"
+              target="_blank">Drush 9 creemos un comando en 10 minutos
+            <span>Marcelo Tosco</span></a>
+          <span class="lightning"></span>
+          <span class="intermediate"></span>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">16:15</th>
+        <td  colspan="3">Descanso / Break</td>
+      </tr>
+      <tr>
+        <th scope="row">16:30</th>
+        <td><a
+              href="/sessions/seleccionando-un-cms-para-la-transformacion-por-que-drupal-javierespadas"
+              target="_blank">{{ 'Session'|t }} <span class="author"> {{ 'by'|t }}
+              Pedro González</span></a>
           <span class="featured"></span>
-          <span class="intermediate"></span>
-        </td>
-        <td class="english intermediate"><a href="/sessions/test-driven-development-drupal-8-nuezweb" target="_blank">Test
-            Driven Development in Drupal 8 <span class="author"> {{ 'by'|t }} Teun Van Veggel</span></a>
-          <span class="english"></span>
-          <span class="intermediate"></span>
-        </td>
-        <td class="basic"><a href="/sessions/tu-drupal-esta-listo-lo-sabe-google-beagonpoz" target="_blank">Tu Drupal
-            está
-            listo… ¿Lo sabe Google? <span class="author"> {{ 'by'|t }} Beatriz González Pozo</span></a>
-          <span class="basic"></span>
-        </td>
-      </tr>
-      <tr>
-        <th scope="row">17:00</th>
-        <td class="english intermediate"><a href="/sessions/drupal-8-cache-developers-jjcarrion" target="_blank">Drupal
-            8
-            cache for developers <span class="author"> {{ 'by'|t }} Jose Jiménez Carrión</span></a>
-          <span class="english"></span>
-          <span class="intermediate"></span>
-        </td>
-        <td class="na"><a href="/sessions/casos-de-exito-de-drupal-en-espana" target="_blank">Casos de éxito de Drupal
-            en
-            España <span class="author"> {{ 'by'|t }} David Gil, Isaura Galafate y Beatriz González, Ramon Vilar Gavaldà, y Siddharta Navarro</span></a>
           <span class="na"></span>
         </td>
-        <td class="intermediate"><a href="/sessions/entidades-en-drupal-8-luisortizramos" target="_blank">Entidades en
-            Drupal 8 <span class="author"> {{ 'by'|t }} Luis Ortiz Ramos</span></a>
-          <span class="intermediate"></span>
+        <td class="basic"><a href="/sessions/symfony-framework-style-api-building-drupal"
+                             target="_blank">Symfony Framework Style API Building in Drupal
+            <span class="author"> {{ 'by'|t }} Robert Slootjes</span></a>
+          <span class="advanced"></span>
+          <span class="english"></span>
+        </td>
+        <td>
+          <a href="/sessions/contribuir-drupal-por-donde-comenzar-de-0-100-regiguren"
+             target="_blank">Contribuir a Drupal, por donde comenzar de 0 a 100
+            <span class="author"> {{ 'by'|t }} Rubén Egiguren</span></a>
+          <span class="basic"></span>
         </td>
       </tr>
       <tr>
-        <th scope="row">18:00</th>
+        <th scope="row">17:15</th>
         <td colspan="3"><a href="{{ path('entity.node.canonical', {'node': 50}) }}" target="_blank">{% trans %}Spanish
             Drupal Association assembly{% endtrans %}</a>
         </td>
@@ -214,8 +232,8 @@
       </tbody>
     </table>
 
-    <!-- Saturday Schedule -->
-    <h2>{% trans %}Saturday{% endtrans %}</h2>
+    <!-- Sunday Schedule -->
+    <h2>{% trans %}Sunday{% endtrans %}</h2>
     <div class="legend">
       <div class="basic">{% trans %}Basic{% endtrans %}</div>
       <div class="intermediate">{% trans %}Intermediate{% endtrans %}</div>
@@ -225,191 +243,94 @@
       <div class="lightning">{% trans %}Lightning{% endtrans %}</div>
       <div class="english">{% trans %}English{% endtrans %}</div>
     </div>
-    <table align="center" summary="Saturday">
+    <table align="center" summary="Sunday">
 
       <thead>
       <tr>
         <th scope="row">&nbsp;</th>
-        <th scope="col">Auditorio (170)</th>
-        <th scope="col">Cine (75)</th>
-        <th scope="col">Polivalente (45)</th>
+        <th scope="col">Caja de la música (240)</th>
+        <th scope="col">Caja negra (200)</th>
+        <th scope="col">Sala CAMON (60)</th>
       </tr>
       </thead>
       <tbody>
       <tr>
-        <th scope="row">09:00</th>
-        <td class="english basic"><a href="/sessions/bdd-behavior-driven-development-jltutor" target="_blank">BDD:
-            Desarrollo guiado por comportamiento <span class="author"> {{ 'by'|t }} Jorge Tutor</span></a>
-          <span class="english"></span>
-          <span class="basic"></span>
-        </td>
-        <td class="intermediate">
-          <a
-                  href="/sessions/todo-lo-que-hay-que-saber-para-enfrentarte-al-marketing-automation-cocinaitaliana"
-                  target="_blank">Todo lo que hay que saber para enfrentarte al Marketing Automation <span
-                    class="author"> {{ 'by'|t }} Claudia Giommarini</span>
-          </a>
-          <span class="intermediate"></span>
-        </td>
-        <td class="intermediate"><a href="/sessions/drupal-instantaneo-con-service-workers-asilgag" target="_blank">Drupal
-            instantáneo con Service Workers <span class="author"> {{ 'by'|t }} Alberto Silva</span></a>
-
-          <span class="intermediate"></span>
-
-        </td>
-      </tr>
-      <tr>
         <th scope="row">10:00</th>
-        <td class="english featured intermediate"><a href="/sessions/adventures-apis-justafish" target="_blank">Adventures
-            in
-            APIs <span class="author"> {{ 'by'|t }} Sally Young</span></a>
-          <span class="english"></span>
-          <span class="featured"></span>
-          <span class="intermediate"></span>
-        </td>
-        <td class="basic"><a href="/sessions/extreme-page-composition-paragraphs-sidddi" target="_blank">Extreme page
-            composition with paragraphs <span class="author"> {{ 'by'|t }} Siddharta Navarro Castellar</span></a>
-          <span class="basic"></span>
-        </td>
-        <td class="na"><a
-              href="/sessions/grandes-proyectos-desde-la-perspectiva-de-una-pequena-empresa-ii-como-retenerlos-rvilar"
-              target="_blank">Grandes proyectos desde la perspectiva de una pequeña empresa II: cómo retenerlos <span
-                class="author"> {{ 'by'|t }} Ramon Vilar Gavaldà</span></a>
+        <td>
+          <a href="/sessions/casos-de-exito-de-drupal-en-espana-davidgilbiko2"
+             target="_blank">Casos de éxito de Drupal en España <span class="author"> {{ 'by'|t }} David Gil</span></a>
           <span class="na"></span>
         </td>
+        <td>
+          <a href="#"
+                  target="_blank">Reservado
+            <!-- <span class="author"> {{ 'by'|t }} Claudia Giommarini</span> -->
+          </a>
+        </td>
+        <td>
+          <a href="/sessions/seo-page-orientado-drupal-buenas-practicas-para-ponerselo-facil-google-asierlc" target="_blank">SEO On-Page orientado a Drupal: buenas prácticas para ponérselo fácil a Google
+            <span class="author"> {{ 'by'|t }} Asier López Cabañas</span></a>
+          <span class="basic"></span>
+        </td>
       </tr>
-      <tr>
-        <th scope="row">11:00</th>
+      <tr class="break">
+        <th scope="row">10:45</th>
         <td colspan="3">{% trans %}Coffee break{% endtrans %}</td>
       </tr>
       <tr>
         <th scope="row">11:30</th>
-        <td class="english featured basic"><a href="/sessions/responsive-images-under-control-chumillas"
-                                              target="_blank">Responsive
-            Images under control <span class="author"> {{ 'by'|t }} Cristina Chumillas</span></a>
-          <span class="english"></span>
-          <span class="featured"></span>
+        <td>
+          <a href="/sessions/integrando-componentes-en-la-edicion-de-contenidos-ch"
+             target="_blank">Integrando componentes en la edición de contenidos
+            <span class="author"> {{ 'by'|t }} Carles Tarrés {{ 'and'|t }} Cristina Chumillas</span></a>
           <span class="basic"></span>
         </td>
-        <td class="intermediate"><a
-              href="/sessions/search-api-solr-en-drupal-8-bases-practicas-para-encontrar-lo-buscado-tuwebo"
-              target="_blank">Search Api Solr en Drupal 8, bases prácticas para encontrar lo buscado <span
-                class="author"> {{ 'by'|t }} Agustín Gómez Iglesias</span></a>
+        <td>
+          <a href="E2E Testing con Nightwatch.js"
+             target="_blank">E2E Testing con Nightwatch.js<span class="author"> {{ 'by'|t }} Salvador Molina</span></a>
           <span class="intermediate"></span>
         </td>
-        <td class="basic"><a href="/sessions/el-poder-de-webform-antes-yamform-regiguren" target="_blank">El poder de
-            Webform (antes YamForm) <span class="author"> {{ 'by'|t }} Ruben Egiguren y/o David Gil</span></a>
-          <span class="basic"></span>
+        <td><a
+              href="/sessions/consejos-y-trucos-para-cualificar-una-oportunidad-drupal-es-ese-proyecto-para-nosotros-o-mejor-que"
+              target="_blank">Consejos y trucos para cualificar una oportunidad Drupal ¿Es ese proyecto para nosotros o mejor que no? <span
+                class="author"> {{ 'by'|t }} David Munárriz</span></a>
+          <span class="na"></span>
         </td>
+      </tr>
+      <tr>
+        <th scope="row">12:15</th>
+        <td  colspan="3">Descanso / Break</td>
       </tr>
       <tr>
         <th scope="row">12:30</th>
-        <td class="english intermediate"><a href="/sessions/headless-drupal-gizra-way-davidbaltha" target="_blank">Headless
-            Drupal: The Gizra Way <span class="author"> {{ 'by'|t }} David Hernández Ruiz</span></a>
+        <td><a href="#"
+               target="_blank">{{ 'Session'|t }} <span class="author"> {{ 'by'|t }} Sebastian Bergman</span></a>
           <span class="english"></span>
+          <span class="featured"></span>
           <span class="intermediate"></span>
-        </td>
-        <td class="basic"><a
-              href="/sessions/patrones-de-diseno-inclusivos-como-abordar-la-accesibilidad-en-el-desarrollo-de-temas-personalizados">Patrones
-            de diseño inclusivos: como abordar la accesibilidad en el desarrollo de temas personalizados en Drupal 8 by
-            <span>Víctor Rodríguez Lledó</span></a>
-          <span class="basic"></span>
-        </td>
-        <td class="intermediate"><a href="/sessions/iniciacion-al-profiling-con-webprofiler-kikoalonsob"
-                                    target="_blank">Iniciación
-            al profiling con Webprofiler <span class="author"> {{ 'by'|t }} Francisco Alonso</span></a>
-          <span class="intermediate"></span>
-        </td>
-      </tr>
-      <tr class="break">
-        <th scope="row">13:30</th>
-        <td colspan="3"><a href="{{ path('entity.node.canonical', {'node': 46}) }}">{% trans %}Lunchtime
-            break{% endtrans %}</a></td>
-      </tr>
-      <tr>
-        <th rowspan="3" scope="row">15:30</th>
-        <td rowspan="3" class="na"><a href="/sessions/pretendiendo-ser-rockstar-developers-juanolalla">Pretendiendo ser
-            rockstar developers <span class="author"> {{ 'by'|t }} Juan Olalla</span></a>
-          <span class="na"></span>
-        </td>
-        <td class="lightning basic"><a
-              href="/sessions/el-grupo-de-trabajo-de-documentacion-en-espanol-te-necesita-skuark"
-              target="_blank">El grupo de trabajo de documentación en Español te necesita <span
-                class="author"> {{ 'by'|t }} Jesús Manuel García Muñoz</span></a>
-          <span class="lightning"></span>
-          <span class="basic"></span>
-        </td>
-        <td rowspan="3"><a href="/sessions/taller-agile-jugando-con-pos-it-y-gomets-martinrayo"
-                                    target="_blank">Taller Agile: Jugando con Pos-it y Gomets.<span
-                    class="author"> {{ 'by'|t }} Raúl Bordallo</span></a>
-          <span class="sponsored"></span>
-        </td>
-      </tr>
-      <tr>
-        <td class="lightning intermediate"><a href="/sessions/pierdele-el-miedo-drupal-console-kikoalonsob"
-                                              target="_blank">Piérdele
-            el miedo a Drupal Console <span class="author"> {{ 'by'|t }} Francisco Alonso</span></a>
-          <span class="lightning"></span>
-          <span class="intermediate"></span>
-        </td>
-      </tr>
-      <tr>
-        <td class="lightning intermediate"><a href="/sessions/pruebas-de-carga-web-con-gatling-jonhattan"
-                                              target="_blank">Pruebas
-            de carga web con Gatling <span class="author"> {{ 'by'|t }} Jonathan Araña Cruz</span></a>
-          <span class="lightning"></span>
-          <span class="intermediate"></span>
-        </td>
-      </tr>
-      <tr>
-        <th scope="row">16:30</th>
-        <td class="intermediate english"><a
-              href="/sessions/scrum-master-story-hackathons-scrum-agile-and-chicken-nancyvb"
-              target="_blank">A Scrum Master story; Hackathons, Scrum, Agile and chicken by
-            <span>Nancy Beers</span></a>
-          <span class="intermediate"></span>
-          <span class="english"></span>
         </td>
         <td class="intermediate"><a
-              href="/sessions/introduccion-al-modulo-ui-patterns-usando-atomic-ui-components-en-drupal8-nicolasbottini"
-              target="_blank">Introducción al módulo UI Patterns: Usando atomic UI Components en Drupal8 <span
-                class="author"> {{ 'by'|t }} Nicolás Bottini Turín</span></a>
+              href="/sessions/designer-vs-front-end-do-you-know-way-nesta"
+              target="_blank">Designer VS Front-end (Do You Know the Way) <span
+                class="author"> {{ 'by'|t }} Nesta Guerrero {{ 'and'|t }} Lara Garrido</span></a>
           <span class="intermediate"></span>
         </td>
-        <td class="basic">
-          <a href="/sessions/contribuir-drupal-por-donde-comenzar-de-0-100-regiguren" target="_blank">Contribuir
-            a Drupal, por donde comenzar de 0 a 100 <span class="author"> {{ 'by'|t }} Ruben Egiguren</span></a>
+        <td>
+          <a href="/sessions/how-we-work-gizra-davidbaltha"
+                             target="_blank">How we work in Gizra
+            <span class="author"> {{ 'by'|t }} David Hernández</span></a>
           <span class="basic"></span>
         </td>
       </tr>
       <tr>
-        <th scope="row">17:30</th>
-        <td class="english intermediate"><a
-              href="/sessions/debugging-profiling-rocking-out-browser-based-developer-tools-mikeherchel"
-              target="_blank">Debugging,
-            Profiling, &amp; Rocking Out with Browser-Based Developer Tools! <span class="author"> {{ 'by'|t }} Mike Herchel</span></a>
-          <span class="intermediate"></span>
-          <span class="english"></span>
-        </td>
-        <td class="basic"><a href="/sessions/improve-your-testing-experience-migrate-default-content-module-marinero"
-                             target="_blank">Improve your testing experience with the Migrate Default Content module by
-            <span>Rodrigo Aguilera</span></a>
-          <span class="basic"></span>
-        </td>
-        <td class="na"><a href="/sessions/empresas-comunidades-opensource-el-cliente-siempre-gana" target="_blank">Empresas
-            + Comunidades OpenSource: El cliente siempre gana <span class="author"> {{ 'by'|t }}
-              Jose Ramón Padrón</span></a>
-          <span class="na"></span>
-        </td>
+        <th scope="row">13:15</th>
+        <td  colspan="3">Descanso / Break</td>
       </tr>
       <tr>
-        <th scope="row">18:30</th>
-        <td colspan="3">{% trans %}Closing session{% endtrans %}</td>
-      </tr>
-      <tr>
-        <th scope="row">21:00</th>
-        <td colspan="3"><a href="{{ path('entity.node.canonical', {'node': 47}) }}">{% trans %}Party{% endtrans %}</a>
-        </td>
+        <th scope="row">13:30</th>
+        <td>{% trans %}Closing session{% endtrans %}</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
       </tr>
       </tbody>
     </table>

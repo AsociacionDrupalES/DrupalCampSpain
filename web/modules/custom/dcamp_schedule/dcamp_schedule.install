@@ -10,30 +10,14 @@ use Drupal\menu_link_content\Entity\MenuLinkContent;
  * Implements hook_install().
  */
 function dcamp_schedule_install() {
-  // Fix alias for case studies session.
-  /** @var \Drupal\Core\Path\AliasStorage $aliasStorage */
-  $aliasStorage = \Drupal::service('path.alias_storage');
-  $aliasStorage->delete(['alias' => '/sessions/casos-de-exito-de-drupal-en-espana']);
-  $aliasStorage->save('/sessions/83', '/sessions/casos-de-exito-de-drupal-en-espana');
 
   // Disable the Proposed Sessions link.
-  $proposed_sessions_menu_link = MenuLinkContent::load(10);
+  $proposed_sessions_menu_link = MenuLinkContent::load(18);
   $proposed_sessions_menu_link->set('enabled', FALSE);
   $proposed_sessions_menu_link->save();
 
-  // Create a menu link for the Schedule.
-  $schedule_menu_link = MenuLinkContent::create([
-    'title' => 'Schedule',
-    'link' => [
-      'uri' => 'internal:/schedule',
-      'options' => [
-        'attributes' => [
-          'class' => 'agenda',
-        ],
-      ],
-    ],
-    'menu_name' => 'main',
-    'expanded' => TRUE,
-  ]);
+  // Enable the Schedule Sessions link.
+  $schedule_menu_link = MenuLinkContent::load(15);
+  $schedule_menu_link->set('enabled', TRUE);
   $schedule_menu_link->save();
 }
