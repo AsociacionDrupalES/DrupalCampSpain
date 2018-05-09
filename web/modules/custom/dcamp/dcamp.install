@@ -6,6 +6,7 @@
  */
 
 use Drupal\block_content\Entity\BlockContent;
+use Drupal\menu_link_content\Entity\MenuLinkContent;
 use Drupal\node\Entity\Node;
 use Psr\Log\LogLevel;
 
@@ -456,4 +457,27 @@ function dcamp_update_8119() {
  */
 function dcamp_update_8120() {
   \Drupal::service('module_installer')->install(['dcamp_sessions']);
+}
+
+/**
+ * Create the Training link.
+ */
+function dcamp_update_8121() {
+  // Create selected sessions link.
+  $selected_sessions_link = MenuLinkContent::create([
+    'title' => 'Training',
+    'link' => [
+      'uri' => 'internal:/node/70',
+      'options' => [
+        'attributes' => [
+          'class' => 'training',
+        ],
+      ],
+    ],
+    'menu_name' => 'main',
+    'expanded' => TRUE,
+  ]);
+  $selected_sessions_link->save();
+
+  $selected_sessions_link->addTranslation('es', ['title' => 'Formación'])->save();
 }
