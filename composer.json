@@ -1,88 +1,97 @@
 {
-  "name": "drupal-composer/drupal-project",
-  "description": "Project template for Drupal 8 projects with composer",
-  "type": "project",
-  "license": "GPL-2.0+",
-  "authors": [
-    {
-      "name": "",
-      "role": ""
-    }
-  ],
-  "repositories": [
-    {
-      "type": "composer",
-      "url": "https://packages.drupal.org/8"
-    }
-  ],
-  "require": {
-    "composer/installers": "^1.0.20",
-    "drupal-composer/drupal-scaffold": "^2.0.1",
-    "cweagans/composer-patches": "~1.0",
-    "drupal/core": "~8.4.6",
-    "drush/drush": "^8.1",
-    "drupal/mailchimp": "1.2.0",
-    "drupal/features": "3.*",
-    "drupal/google_analytics": "2.*",
-    "drupal/menu_link_attributes": "1.*",
-    "drupal/views_list_sort": "1.*",
-    "drupal/pathauto": "1.x-dev",
-    "drupal/redirect": "1.x-dev",
-    "google/apiclient": "^2.0",
-    "drupal/jsonapi": "1.x-dev",
-    "drupal/stage_file_proxy": "^1.0@alpha"
-  },
-  "require-dev": {
-    "behat/mink": "~1.7",
-    "behat/mink-goutte-driver": "~1.2",
-    "jcalderonzumba/gastonjs": "~1.0.2",
-    "jcalderonzumba/mink-phantomjs-driver": "~0.3.1",
-    "mikey179/vfsStream": "~1.2",
-    "phpunit/phpunit": "~4.8",
-    "symfony/css-selector": "~2.8"
-  },
-  "conflict": {
-    "drupal/drupal": "*"
-  },
-  "minimum-stability": "dev",
-  "prefer-stable": true,
-  "autoload": {
-    "classmap": [
-      "scripts/composer/ScriptHandler.php"
-    ]
-  },
-  "scripts": {
-    "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
-    "post-install-cmd": [
-      "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
+    "name": "drupal-composer/drupal-project",
+    "description": "Project template for Drupal 8 projects with composer",
+    "type": "project",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "",
+            "role": ""
+        }
     ],
-    "post-update-cmd": [
-      "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
-    ]
-  },
-  "extra": {
-    "installer-paths": {
-      "web/core": [
-        "type:drupal-core"
-      ],
-      "web/modules/contrib/{$name}": [
-        "type:drupal-module"
-      ],
-      "web/profiles/contrib/{$name}": [
-        "type:drupal-profile"
-      ],
-      "web/themes/contrib/{$name}": [
-        "type:drupal-theme"
-      ],
-      "drush/contrib/{$name}": [
-        "type:drupal-drush"
-      ]
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://packages.drupal.org/8"
+        }
+    ],
+    "require": {
+        "composer/installers": "^1.2",
+        "cweagans/composer-patches": "^1.6",
+        "drupal-composer/drupal-scaffold": "^2.2",
+        "drupal/console": "^1.0.2",
+        "drupal/core": "~8.5.3",
+        "drupal/google_analytics": "2.*",
+        "drupal/jsonapi": "1.x-dev",
+        "drupal/mailchimp": "1.2.0",
+        "drupal/menu_link_attributes": "1.*",
+        "drupal/pathauto": "^1.2",
+        "drupal/redirect": "^1.2",
+        "drupal/stage_file_proxy": "^1.0@alpha",
+        "drush/drush": "^9.2",
+        "google/apiclient": "^2.0",
+        "vlucas/phpdotenv": "^2.4",
+        "webflo/drupal-finder": "^1.0.0",
+        "webmozart/path-util": "^2.3"
     },
-    "patches": {
-      "drupal/mailchimp": {
-        "Allow translating signup forms": "https://www.drupal.org/files/issues/translation_for_email-2821153-3.patch",
-        "Don't show a signup form if there aren't lists": "https://www.drupal.org/files/issues/don_t_render_a_signup-2822659-2.patch"
-      }
+    "require-dev": {
+        "webflo/drupal-core-require-dev": "~8.5.3"
+    },
+    "conflict": {
+        "drupal/drupal": "*"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+        "sort-packages": true
+    },
+    "autoload": {
+        "classmap": [
+            "scripts/composer/ScriptHandler.php"
+        ],
+        "files": ["load.environment.php"]
+    },
+    "scripts": {
+        "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
+        "pre-install-cmd": [
+            "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
+        ],
+        "pre-update-cmd": [
+            "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
+        ],
+        "post-install-cmd": [
+            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
+        ],
+        "post-update-cmd": [
+            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
+        ]
+    },
+    "extra": {
+        "installer-paths": {
+            "web/core": [
+                "type:drupal-core"
+            ],
+            "web/libraries/{$name}": [
+                "type:drupal-library"
+            ],
+            "web/modules/contrib/{$name}": [
+                "type:drupal-module"
+            ],
+            "web/profiles/contrib/{$name}": [
+                "type:drupal-profile"
+            ],
+            "web/themes/contrib/{$name}": [
+                "type:drupal-theme"
+            ],
+            "drush/contrib/{$name}": [
+                "type:drupal-drush"
+            ]
+        },
+        "patches": {
+            "drupal/mailchimp": {
+                "Allow translating signup forms": "https://www.drupal.org/files/issues/translation_for_email-2821153-3.patch",
+                "Don't show a signup form if there aren't lists": "https://www.drupal.org/files/issues/don_t_render_a_signup-2822659-2.patch"
+            }
+        }
     }
-  }
 }
