@@ -1003,6 +1003,10 @@ form input[type="submit"]:hover {
   content: '\E80B';
 }
 
+.region-header .main-menu-wrapper .main-menu-inner ul li a.formacion:before {
+  content: '\E80B';
+}
+
 footer .main-menu-inner .event-info {
   display: none;
 }
@@ -3077,6 +3081,10 @@ div.speaker-photo div.speaker__field-photo {
 
 @media (max-width: 720px) {
   
+
+  .frontpage-wrapper {
+    margin-top: -50px;
+  }
     div#block-mainpagecontent-2 {
     padding-top: 146px !important;
   }
