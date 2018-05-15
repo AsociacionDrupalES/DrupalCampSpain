@@ -432,6 +432,16 @@ html body h4 {
   font-size: 4em;
 }
 
+#training .buy-tickets .content:before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  content: '\E80E';
+  font-family: icons;
+  color: white;
+  font-size: 4em;
+}
+
 .buy-tickets .content h3 {
   line-height: 1;
   font-size: 2.2em;
@@ -2517,13 +2527,22 @@ footer footer .social a:hover {
   background-image: url(../images/photos/location.jpg);
   margin-bottom: 3em;
 }
+#block-mainpagecontent-2 .frontpage-wrapper #party {
+  z-index: 2;
+  position: relative;
+  padding-top: 0;
+  background-image: url(https://2018.drupalcamp.es/sites/default/files/2018-05/castillo.png);
+  margin-bottom: 3em;
+}
 
-.frontpage-wrapper #location h2 {
+.frontpage-wrapper #location h2,
+.frontpage-wrapper #party h2 {
   margin-top: 1em;
   margin-bottom: 1em;
 }
 
-.frontpage-wrapper #location .venue-image {
+.frontpage-wrapper #location .venue-image,
+.frontpage-wrapper #party .venue-image {
   float: right;
   width: 50%;
   margin-left: 1em;
@@ -2962,6 +2981,7 @@ footer .block-dcamp-newsletter-block h2 {
 #location h2,
 #sponsor h2,
 #community h2,
+#party h2,
 #fullpage section#newsletter .content h2 {
   display: inline-block;
   padding: 20px 40px;
@@ -3003,7 +3023,8 @@ footer .block-dcamp-newsletter-block h2 {
   font-size: 1.2em;
 }
 
-#location .description p {
+#location .description p,
+#party .description p {
   background-color: rgba(0, 0, 0, 0.5);
   padding: 20px;
   color: #FFF;
@@ -3011,7 +3032,8 @@ footer .block-dcamp-newsletter-block h2 {
   font-size: 1.2em;
 }
 
-#location #block-drupalcampblockforlandingaboutthelocation-2018 .description a {
+#location #block-drupalcampblockforlandingaboutthelocation-2018 .description a,
+#party #block-drupalcampblockforlandingaboutthelocation-2018 .description a {
   background-color: #87C0A8;
   color: #2D4084;
   padding: 10px 20px;
@@ -3021,12 +3043,14 @@ footer .block-dcamp-newsletter-block h2 {
   font-size: 1.8em;
 }
 
-#location #block-drupalcampblockforlandingaboutthelocation-2018 .description a:hover {
+#location #block-drupalcampblockforlandingaboutthelocation-2018 .description a:hover,
+#party #block-drupalcampblockforlandingaboutthelocation-2018 .description a:hover {
   background-color: #2D4084;
   color: #FFF;
 }
 
-#location #block-drupalcampblockforlandingaboutthelocation-2018 .description p a {
+#location #block-drupalcampblockforlandingaboutthelocation-2018 .description p a,
+#party #block-drupalcampblockforlandingaboutthelocation-2018 .description p a {
   background-color: transparent;
   padding: 0;
   margin: 0;
@@ -3036,7 +3060,8 @@ footer .block-dcamp-newsletter-block h2 {
 }
 
 
-.frontpage-wrapper .section#location a:hover {
+.frontpage-wrapper .section#location a:hover,
+.frontpage-wrapper .section#party a:hover {
   background: #87C0A8;
 }
 
@@ -3083,7 +3108,11 @@ div.speaker-photo div.speaker__field-photo {
   
 
   .frontpage-wrapper {
-    margin-top: -50px;
+    margin-top: -58px;
+  }
+
+  div.page__image {
+    margin-top: -58px;
   }
     div#block-mainpagecontent-2 {
     padding-top: 146px !important;
