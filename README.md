@@ -24,7 +24,7 @@ drush en stage_file_proxy -y
 8. Open the homepage as administrator with `drush uli`.
 
 ## Updating your local environment
-Run `git checkout master && git pull`. Then repeat steps 5th onwards from the above section.
+Run `git checkout master && git pull`. Then repeat steps 5 onwards from the above section.
 
 ## Development
 

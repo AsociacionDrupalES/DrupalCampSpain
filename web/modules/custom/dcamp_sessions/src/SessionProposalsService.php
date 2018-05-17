@@ -48,6 +48,9 @@ class SessionProposalsService {
     '/sessions/el-trabajo-en-remoto-desde-diferentes-puntos-de-vista' => [],
     '/sessions/ojo-al-dato-como-evitar-microinfartos-la-gente-de-marketing-beagonpoz' => [],
     '/sessions/how-we-work-gizra-davidbaltha' => [],
+    '/sessions/que-debo-mejorar-de-mi-web-laurabonmati' => [],
+    '/sessions/socorrista-en-el-mar-muerto-niteman' => [],
+    '/sessions/getting-started-phpunit-sbergmann' => [],
     // Short sessions.
     '/sessions/envio-de-correos-transaccionales-sin-caer-spam-en-el-intento-isholgueras' => [],
     '/sessions/integracion-continua-con-circleci-para-drupal-8-regiguren' => [],
