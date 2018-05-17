@@ -5,9 +5,10 @@
             <div class="content">
                 <div class="top-area">
                     <div class="inner">
-                        <a class="scroll-down" href="#"><img class="arrow"
-                                                             src="{{ base_path ~ directory }}/images/arrow.svg"
-                                                             alt="Arrow down"/></a>
+                        <a class="scroll-down" href="#">
+                            <img class="arrow"
+                                 src="{{ base_path ~ directory }}/images/arrow.svg"
+                                 alt="Arrow down"/></a>
                     </div>
                 </div>
                 <div class="bottom-area">
@@ -42,6 +43,7 @@
         </div>
     </section>
 
+
     <section id="location" class="cd-section section fp-section fp-table active fp-completely"
              style="height: 549px; background-position: 50% 64.0073%;">
         <div class="fp-tableCell" style="height: 549px;">
@@ -61,6 +63,44 @@
                                     meeting areas for BoFs, a dinning area, plus a great location just a few minutes
                                     away from the city center. </p>{% endtrans %}
                                 <a href="{{ path('entity.node.canonical', {'node': 1}) }}">{% trans %}Survival guide{% endtrans %}</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="training" class="section">
+        <div class="sub">
+            <div class="content">
+                <div class="buy-tickets">
+                    <a class="button"
+                       href="{{ path('entity.node.canonical', {'node': 70}) }}">{% trans %}Sign up{% endtrans %}</a>
+                    <div class="content">
+                        <h3>{% trans %}Free Drupal 8 workshops{% endtrans %}</h3>
+                        <div class="deadline">{% trans %}Site building & backend development{% endtrans %}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="party" class="cd-section section fp-section fp-table active fp-completely"
+             style="height: 549px; background-position: 50% 64.0073%;">
+        <div class="fp-tableCell" style="height: 549px;">
+            <div class="sub">
+                <div class="content">
+                    <div class="region region-region-2">
+                        <div id="block-drupalcampblockforlandingaboutthelocation-2018"
+                             class="contextual-region block block-dcamp block-dcamp-landing-about-location-block">
+                            <h2>{% trans %}Saturday night party{% endtrans %}</h2>
+                            <div class="description">
+                                <p>{% trans %}In this edition we have the privilege to
+                                    celebrate our famous Saturday Night Party at the Castle of Santa
+                                    Bárbara.{% endtrans %}</p>
+                                <a href="{{ path('entity.node.canonical', {'node': 71}) }}">{% trans %}More info{% endtrans %}</a>
                             </div>
                         </div>
                     </div>
