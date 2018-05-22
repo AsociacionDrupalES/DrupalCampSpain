@@ -68,21 +68,27 @@ class EventBriteService {
     $attendees = $this->doGetAttendees();
 
     // Filter out individual sponsors without ticket and beginner track tickets.
-    $attendees = array_filter($attendees, function ($attendee) {
+    $filtered_attendees = array_filter($attendees, function ($attendee) {
       return !in_array($attendee->getTicketClassId(), [static::TICKET_TYPE_INDIVIDUAL_SPONSOR_NO_ACCESS, static::TICKET_TYPE_BEGINNER_TRACK]);
     });
 
-    // If someone bought many tickets in one go, keep just one ticket.
-    $attendees = array_filter($attendees, function ($attendee) {
-      static $order_ids = [];
-      if (in_array($attendee->getOrderId(), $order_ids)) {
-        return FALSE;
+    // Extract names of individual sponsors without ticket.
+    $is_without_ticket_names = [];
+    foreach ($attendees as $attendee) {
+      if ($attendee->getTicketClassId() == static::TICKET_TYPE_INDIVIDUAL_SPONSOR_NO_ACCESS) {
+        $is_without_ticket_names[] = $attendee->getName();
       }
-      $order_ids[] = $attendee->getOrderId();
-      return TRUE;
-    });
+    }
 
-    return $attendees;
+    // If someone has a normal ticket and a sponsor without access ticket,
+    // merge the two together so we can highlight the sponsorship.
+    foreach ($filtered_attendees as $attendee) {
+      if (in_array($attendee->getName(), $is_without_ticket_names)) {
+        $attendee->setTicketClassId(static::TICKET_TYPE_INDIVIDUAL_SPONSOR);
+      }
+    }
+
+    return $filtered_attendees;
   }
 
   /**
