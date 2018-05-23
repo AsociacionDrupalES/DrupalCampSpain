@@ -2654,6 +2654,20 @@ footer footer .social a:hover {
   content: '\E800';
 }
 
+#block-mainpagecontent-2 div.attendee__speaker {
+  position: absolute;
+  top: 0;
+  left:-5px;
+  padding: 0.2rem 1rem 0.1rem;
+  height: 24px;
+  color: white;
+  background: #2D4084;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-transform: uppercase; 
+transform: rotate(-20deg);
+}
+
 .frontpage-wrapper #sponsors h3 {
   clear: both;
   text-align: left;

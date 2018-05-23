@@ -40,6 +40,9 @@
                         {%- if attendee.isIndividualSponsor -%}
                             <div class="attendee__sponsor">Sponsor</div>
                         {%- endif -%}
+                        {%- if attendee.isSpeaker -%}
+                            <div class="attendee__sponsor">Sponsor</div>
+                        {%- endif -%}
                     </div>
                     <h2 class="attendee__title">{{ attendee.getName }}</h2>
                     <h3 class="attendee__company">{{ attendee.getCompany }}</h3>

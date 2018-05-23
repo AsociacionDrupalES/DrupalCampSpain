@@ -39,19 +39,19 @@ class DcampAttendeesController extends ControllerBase {
   public function listAttendees() {
     $attendees = \Drupal::service('dcamp_attendees.eventbrite')->getAttendees();
 
-    // Check if this is an API request.
-    if (\Drupal::request()->query->get('_format') == 'json') {
-      // Set the is_speaker flag.
-      $sessions = \Drupal::service('dcamp_sessions.proposals')->getSelected();
-      foreach ($attendees as $attendee) {
-        foreach ($sessions as $session) {
-          if ($attendee->speaksAt($session)) {
-            $attendee->setIsSpeaker(TRUE);
-            break;
-          }
+    // Set the is_speaker flag.
+    $sessions = \Drupal::service('dcamp_sessions.proposals')->getSelected();
+    foreach ($attendees as $attendee) {
+      foreach ($sessions as $session) {
+        if ($attendee->speaksAt($session)) {
+          $attendee->setIsSpeaker(TRUE);
+          break;
         }
       }
+    }
 
+    // Check if this is an API request.
+    if (\Drupal::request()->query->get('_format') == 'json') {
       // Prepare and send response.
       $headers = [
         'max-age' => $this->maxAge,
