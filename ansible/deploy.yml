@@ -22,5 +22,5 @@
     local_action: composer command=install no-dev=yes optimize-autoloader=yes working_dir="{{ ansistrano_deploy_from }}"
 
   roles:
-    - role: carlosbuenosvinos.ansistrano-deploy
+    - role: ansistrano.deploy
 
