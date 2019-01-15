@@ -1,0 +1,17 @@
+<?php
+
+use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+
+/**
+ * Implements theme_preprocess().
+ *
+ * Add current theme path to variables.
+ *
+ * This is necessary until it's possible accessing stream wrappers in twig.
+ *
+ * @see https://www.drupal.org/node/2611246
+ */
+function dcamp_2019_theme_preprocess(&$variables, $hook) {
+  $variables['path_to_dcamp_2019_theme'] = base_path() . drupal_get_path('theme', 'dcamp_2019_theme');
+}
