@@ -1,0 +1,14 @@
+name: DCamp 2019 Theme
+type: theme
+description: 'AED Drupal Camp 2019 Theme'
+base theme: dcamp_2017_theme
+version: 0.1-dev
+core: 8.x
+
+regions:
+  header: Header
+  content: Content
+  footer: Footer
+
+libraries:
+ - dcamp_2019_theme/global

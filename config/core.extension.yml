@@ -45,6 +45,7 @@ module:
   search: 0
   serialization: 0
   shortcut: 0
+  stage_file_proxy: 0
   system: 0
   taxonomy: 0
   text: 0
@@ -70,6 +71,7 @@ theme:
   dcamp_2017_landing_theme: 0
   dcamp_2018_landing_theme: 0
   dcamp_2018_theme: 0
+  dcamp_2019_theme: 0
 _core:
   default_config_hash: m2GVq11UAOVuNgj8x0t5fMOPujpvQQ_zxLoaly1BMEU
 profile: minimal
