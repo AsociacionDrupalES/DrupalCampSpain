@@ -306,6 +306,10 @@ footer .footer-secondary-menu-wrapper {
   }
 }
 
+.layout-container > header a.logo img.logo {
+  background-color: white;
+}
+
 // Mobile styles.
 
 @media only screen and (max-width: 720px) {
