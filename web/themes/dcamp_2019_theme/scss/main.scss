@@ -268,7 +268,9 @@ footer .footer-secondary-menu-wrapper {
   background-image: url(../images/photos/fondo-1.jpg);
 }
 
-#location {
+#location,
+#venues,
+#party {
   background: url(../images/photos/fondo-2.jpg) 50% 50%;
   background-size: cover;
   padding-top: 3em !important;
@@ -341,4 +343,10 @@ footer .footer-secondary-menu-wrapper {
   .layout-container > header.nav-up {
     top: -180px !important;
   }
+}
+
+.frontpage-wrapper #block-drupalcampblockforlandingaboutthelocation-2018 ul {
+  padding-left: 20px;
+  color: white;
+  line-height: 25px;
 }

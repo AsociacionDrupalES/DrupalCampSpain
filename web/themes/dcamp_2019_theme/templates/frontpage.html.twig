@@ -12,7 +12,7 @@
                     </div>
                 </div>
                 <div class="bottom-area">
-                    {% trans %} Two days of Drupal presentations, workshops and networking {% endtrans %}
+                    {% trans %}One week of Drupal presentations, trainings and networking{% endtrans %}
                 </div>
             </div>
         </div>
@@ -38,28 +38,39 @@
     <section id="speakers" class="section">
         <div class="sub">
             <div class="content">
-                <h2>{% trans %}Confirmed speakers{% endtrans %}</h2> {{ speakers }}
+                <h2>{% trans %}Featured speakers{% endtrans %}</h2>{{ speakers }}
             </div>
         </div>
     </section>
 
-    <section id="location" class="cd-section section fp-section fp-table active fp-completely">
+    <section id="become-a-sponsor" class="section">
+        <div class="sub">
+            <div class="content">
+                <h2>{% trans %}Become a sponsor{% endtrans %}</h2> {{ become_a_sponsor }}
+            </div>
+        </div>
+    </section>
+
+    <section id="venues" class="cd-section section fp-section fp-table active fp-completely">
         <div class="fp-tableCell">
             <div class="sub">
                 <div class="content">
                     <div class="region region-region-2">
                         <div id="block-drupalcampblockforlandingaboutthelocation-2018"
                              class="contextual-region block block-dcamp block-dcamp-landing-about-location-block">
-                            <h2>{% trans %}Venue{% endtrans %}</h2>
+                            <h2>{% trans %}Venues{% endtrans %}</h2>
                             <div class="description">
-                                <p>{% trans %}<a href="http://www.alicante.es/es/equipamientos/centro-cultural-cigarreras"
-                                  target="_blank">Las Cigarreras</a> was Alicante's tobaco factory back in the
-                                  19th century. It was re-purposed five years ago as a cultural and innovation center.{% endtrans %}
+                                <p>{% trans %}<a href="https://www.conildelafrontera.es"
+                                  target="_blank">The Town Hall of Conil de la Frontera</a> has provided different locations in town, walking distance to each other so you can enjoy the beautiful streets of the village. The venues are structured in the following:{% endtrans %}
                                 </p>
-                                <p>{% trans %}The venue has everything that a DrupalCamp needs: an auditory, conference rooms,
-                                    meeting areas for BoFs, a dinning area, plus a great location just a few minutes
-                                    away from the city center.{% endtrans %}</p>
-                                <a class = "button" href="{{ path('entity.node.canonical', {'node': 1}) }}">{% trans %}Survival guide{% endtrans %}</a>
+				<p>
+				<ul class=>
+                                  <li>{% trans %}Culture House (200 people){% endtrans %}</li>
+                                  <li>{% trans %}Santa Catalina Church (100 people){% endtrans %}</li>
+                                  <li>{% trans %}La Chanca (80 people){% endtrans %}</li>
+				</ul>
+				</p>
+                                <a class = "button" href="{{ path('entity.node.canonical', {'node': 1}) }}">{% trans %}Venues guide{% endtrans %}</a>
                             </div>
                         </div>
                     </div>
@@ -75,14 +86,51 @@
                     <a class="button"
                        href="{{ path('entity.node.canonical', {'node': 70}) }}">{% trans %}Sign up{% endtrans %}</a>
                     <div class="content">
-                        <h3>{% trans %}Free Drupal 8 workshops{% endtrans %}</h3>
-                        <div class="deadline">{% trans %}Site building & backend development{% endtrans %}</div>
+                        <h3>{% trans %}Free Drupal 8 Trainings{% endtrans %}</h3>
+                        <div class="deadline">{% trans %}Site building, frontend and backend development{% endtrans %}</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <section id="location" class="cd-section section fp-section fp-table active fp-completely">
+        <div class="fp-tableCell">
+            <div class="sub">
+                <div class="content">
+                    <div class="region region-region-2">
+                        <div id="block-drupalcampblockforlandingaboutthelocation-2018"
+                             class="contextual-region block block-dcamp block-dcamp-landing-about-location-block">
+                            <h2>{% trans %}Social Activities{% endtrans %}</h2>
+                            <div class="description">
+                                <p>{% trans %}<a href="https://www.conildelafrontera.es"
+                                  target="_blank">The Town Hall of Conil de la Frontera</a> has provided different locations in town, walking distance to each other so you can enjoy the beautiful streets of the village. The venues are structured in the following:{% endtrans %}
+                                </p>
+				<p>
+				<ul class=>
+                                  <li>{% trans %}Culture House (200 people){% endtrans %}</li>
+                                  <li>{% trans %}Santa Catalina Church (100 people){% endtrans %}</li>
+                                  <li>{% trans %}La Chanca (80 people){% endtrans %}</li>
+				</ul>
+				</p>
+                                <a class = "button" href="{{ path('entity.node.canonical', {'node': 1}) }}">{% trans %}Venues guide{% endtrans %}</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="business-day" class="section">
+        <div class="sub">
+            <img class="business-day-image" src="{{ base_path ~ directory }}/images/photos/business_day.jpg"/>
+            <div class="content">
+                <h2>{% trans %}Business day{% endtrans %}</h2>
+                {{ business_day }}
+            </div>
+        </div>
+    </section>
 
     <section id="party" class="cd-section section fp-section fp-table active fp-completely">
         <div class="fp-tableCell">
@@ -91,7 +139,38 @@
                     <div class="region region-region-2">
                         <div id="block-drupalcampblockforlandingaboutthelocation-2018"
                              class="contextual-region block block-dcamp block-dcamp-landing-about-location-block">
-                            <h2>{% trans %}Saturday night party{% endtrans %}</h2>
+                            <h2>{% trans %}Networking{% endtrans %}</h2>
+                            <div class="description">
+                                <p>{% trans %}In this edition we have the privilege to
+                                    celebrate our famous Saturday Night Party at the Castle of Santa
+                                    Bárbara.{% endtrans %}</p>
+                                <a href="{{ path('entity.node.canonical', {'node': 71}) }}">{% trans %}More info{% endtrans %}</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="business-day" class="section">
+        <div class="sub">
+            <img class="business-day-image" src="{{ base_path ~ directory }}/images/photos/business_day.jpg"/>
+            <div class="content">
+                <h2>{% trans %}Splash Awards{% endtrans %}</h2>
+                {{ business_day }}
+            </div>
+        </div>
+    </section>
+
+    <section id="party" class="cd-section section fp-section fp-table active fp-completely">
+        <div class="fp-tableCell">
+            <div class="sub">
+                <div class="content">
+                    <div class="region region-region-2">
+                        <div id="block-drupalcampblockforlandingaboutthelocation-2018"
+                             class="contextual-region block block-dcamp block-dcamp-landing-about-location-block">
+                            <h2>{% trans %}Networking{% endtrans %}</h2>
                             <div class="description">
                                 <p>{% trans %}In this edition we have the privilege to
                                     celebrate our famous Saturday Night Party at the Castle of Santa
@@ -128,24 +207,6 @@
                         </ul>
                     </div>
                 {% endif %}
-            </div>
-        </div>
-    </section>
-
-    <section id="become-a-sponsor" class="section">
-        <div class="sub">
-            <div class="content">
-                <h2>{% trans %}Become a sponsor{% endtrans %}</h2> {{ become_a_sponsor }}
-            </div>
-        </div>
-    </section>
-
-    <section id="business-day" class="section">
-        <div class="sub">
-            <img class="business-day-image" src="{{ base_path ~ directory }}/images/photos/business_day.jpg"/>
-            <div class="content">
-                <h2>{% trans %}Business day{% endtrans %}</h2>
-                {{ business_day }}
             </div>
         </div>
     </section>
