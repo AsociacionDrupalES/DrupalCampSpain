@@ -14,3 +14,5 @@ web/sites/*/files
 
 # Ignore local settings
 web/sites/default/settings.local.php
+
+.docker.override.env

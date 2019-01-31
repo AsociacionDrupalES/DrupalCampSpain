@@ -19,9 +19,9 @@
     "composer/installers": "^1.0.20",
     "drupal-composer/drupal-scaffold": "^2.0.1",
     "cweagans/composer-patches": "~1.0",
-    "drupal/core": "~8.4.6",
+    "drupal/core": "~8.6.7",
     "drush/drush": "^8.1",
-    "drupal/mailchimp": "1.2.0",
+    "drupal/mailchimp": "*",
     "drupal/features": "3.*",
     "drupal/google_analytics": "2.*",
     "drupal/menu_link_attributes": "1.*",
@@ -80,8 +80,7 @@
     },
     "patches": {
       "drupal/mailchimp": {
-        "Allow translating signup forms": "https://www.drupal.org/files/issues/translation_for_email-2821153-3.patch",
-        "Don't show a signup form if there aren't lists": "https://www.drupal.org/files/issues/don_t_render_a_signup-2822659-2.patch"
+        "Allow translating signup forms": "https://www.drupal.org/files/issues/translation-for-email-address-label-unavailable-2821153-5.patch"
       }
     }
   }
