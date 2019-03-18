@@ -357,3 +357,21 @@ footer .footer-secondary-menu-wrapper {
   margin-bottom: 1em;
 }
 
+.path-sessions {
+  .teaser-list__item {
+    .session__title--list {
+      text-transform: none;
+      line-height: 2.1rem;
+      padding-bottom: 0.5em;
+      a {
+        color: #435772;
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+    .session__author {
+      text-transform: none;
+    }
+  }
+}
