@@ -11,7 +11,7 @@ dependencies:
 id: dcamp_2019_theme_footer
 theme: dcamp_2019_theme
 region: footer
-weight: 0
+weight: -2
 provider: null
 plugin: 'system_menu_block:footer'
 settings:
