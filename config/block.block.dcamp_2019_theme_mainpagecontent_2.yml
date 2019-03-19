@@ -9,7 +9,7 @@ dependencies:
 id: dcamp_2019_theme_mainpagecontent_2
 theme: dcamp_2019_theme
 region: content
-weight: -1
+weight: 0
 provider: null
 plugin: system_main_block
 settings:

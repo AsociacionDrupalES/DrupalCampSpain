@@ -11,7 +11,7 @@ dependencies:
 id: dcamp_2019_theme_mainnavigation_3
 theme: dcamp_2019_theme
 region: footer
-weight: -2
+weight: -3
 provider: null
 plugin: 'system_menu_block:main'
 settings:
