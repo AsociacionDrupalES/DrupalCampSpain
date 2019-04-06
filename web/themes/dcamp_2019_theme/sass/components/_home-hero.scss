@@ -6,11 +6,15 @@
           background: rgba(38, 61, 69, 0.7);
           padding: 20px;
           display: inline-block;
-          margin-top: -110px;
           color: white;
           text-align: left;
           float: left;
-          margin-left: 70px;
+          margin: 10px;
+
+          @media (min-width: 720px) {
+            margin: 50px 0 50px 70px;
+          }
+
 
           h2 {
             color: #fff;
@@ -32,7 +36,7 @@
             margin: 5px 0;
           }
 
-          strong{
+          strong {
             font-weight: bold !important;
           }
         }

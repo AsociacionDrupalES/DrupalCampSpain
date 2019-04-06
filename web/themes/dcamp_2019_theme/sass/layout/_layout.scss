@@ -1,0 +1,11 @@
+@media (max-width: 720px) {
+
+  .layout-container > header {
+    position: static !important;
+  }
+
+  main {
+    margin-top: 0 !important;
+  }
+}
+

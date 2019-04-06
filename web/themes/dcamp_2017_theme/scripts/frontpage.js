@@ -18,7 +18,7 @@
         var bottomAreaHeight = $('#intro .bottom-area').outerHeight();
         var headerHeight = $('header').height();
         var screenHeight = $(window).height();
-        $('#intro .top-area').css('height', screenHeight-headerHeight -bottomAreaHeight - adminMenuHeight + 'px');
+        // $('#intro .top-area').css('height', screenHeight-headerHeight -bottomAreaHeight - adminMenuHeight + 'px');
       }
 
       if($('img.d').length > 0){
