@@ -47,15 +47,29 @@
   }
 }
 
+@media (max-width: 720px) {
+  .layout-container > header {
+    position: static !important;
+  }
+  main {
+    margin-top: 0 !important;
+  }
+}
+
 .frontpage-wrapper #intro .top-area .inner .quick-info {
   background: rgba(38, 61, 69, 0.7);
   padding: 20px;
   display: inline-block;
-  margin-top: -110px;
   color: white;
   text-align: left;
   float: left;
-  margin-left: 70px;
+  margin: 10px;
+}
+
+@media (min-width: 720px) {
+  .frontpage-wrapper #intro .top-area .inner .quick-info {
+    margin: 50px 0 50px 70px;
+  }
 }
 
 .frontpage-wrapper #intro .top-area .inner .quick-info h2 {
