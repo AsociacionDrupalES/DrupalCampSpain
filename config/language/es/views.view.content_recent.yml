@@ -6,9 +6,9 @@ display:
     display_options:
       exposed_form:
         options:
-          submit_button: Apply
+          submit_button: Aplicar
           reset_button_label: Reiniciar
-          exposed_sorts_label: 'Sort by'
+          exposed_sorts_label: 'Ordenar por'
           sort_asc_label: Asc
           sort_desc_label: Desc
       fields:
@@ -17,7 +17,7 @@ display:
       title: 'Recent content'
       empty:
         area_text_custom:
-          content: 'No content available.'
+          content: 'No hay contenido disponible.'
       use_more_text: Más
   block_1:
     display_title: Bloque

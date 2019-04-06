@@ -1,2 +1,2 @@
-label: 'Default short date'
-pattern: 'm/d/Y - H:i'
+label: 'Fecha corta por defecto'
+pattern: 'd/m/Y - H:i'

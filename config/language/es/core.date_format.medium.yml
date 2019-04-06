@@ -1,2 +1,2 @@
-label: 'Default medium date'
-pattern: 'D, m/d/Y - H:i'
+label: 'Fecha mediana por defecto'
+pattern: 'D, d/m/Y - H:i'

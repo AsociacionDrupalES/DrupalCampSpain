@@ -5,9 +5,9 @@ display:
     display_options:
       exposed_form:
         options:
-          submit_button: Apply
+          submit_button: Filter
           reset_button_label: Reiniciar
-          exposed_sorts_label: 'Sort by'
+          exposed_sorts_label: 'Ordenar por'
           sort_asc_label: Asc
           sort_desc_label: Desc
       pager:

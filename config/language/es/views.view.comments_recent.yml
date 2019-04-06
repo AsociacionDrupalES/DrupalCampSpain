@@ -7,9 +7,9 @@ display:
       title: 'Recent comments'
       empty:
         area_text_custom:
-          content: 'No comments available.'
+          content: 'No hay comentarios disponibles.'
   block_1:
     display_title: Bloque
     display_options:
       block_description: 'Recent comments'
-      block_category: 'Lists (Views)'
+      block_category: 'Listas (Views)'

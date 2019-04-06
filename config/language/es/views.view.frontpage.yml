@@ -1,18 +1,16 @@
-label: Frontpage
+label: 'Página principal'
 description: 'All content promoted to the front page.'
 display:
   default:
     display_options:
       empty:
-        area_text_custom:
-          content: 'No front page content has been created yet.'
         title:
-          title: 'Welcome to [site:name]'
+          title: 'Bienvenido a [site:name]'
       exposed_form:
         options:
-          submit_button: Apply
+          submit_button: Aplicar
           reset_button_label: Reiniciar
-          exposed_sorts_label: 'Sort by'
+          exposed_sorts_label: 'Ordenar por'
           sort_asc_label: Asc
           sort_desc_label: Desc
       pager:
@@ -23,11 +21,11 @@ display:
             offset_label: Desplazamiento
           tags:
             previous: '‹ Anterior'
-            next: 'Siguiente ›'
+            next: 'Siguiente >'
             first: '« Primera'
             last: 'Última »'
     display_title: Máster
   feed_1:
-    display_title: 'Canal de noticias'
+    display_title: Agregador
   page_1:
     display_title: Página

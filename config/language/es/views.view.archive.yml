@@ -7,9 +7,9 @@ display:
       title: 'Monthly archive'
       exposed_form:
         options:
-          submit_button: Apply
+          submit_button: Aplicar
           reset_button_label: Reiniciar
-          exposed_sorts_label: 'Sort by'
+          exposed_sorts_label: 'Ordenar por'
           sort_asc_label: Asc
           sort_desc_label: Desc
       pager:

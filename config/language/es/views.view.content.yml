@@ -9,7 +9,7 @@ display:
                 value: '1'
                 title: Publicado
               2:
-                title: 'No publicado'
+                title: 'Sin publicar'
             label: 'Estado de publicación'
           expose:
             label: Estado
@@ -26,14 +26,14 @@ display:
         options:
           submit_button: Filter
           reset_button_label: Reiniciar
-          exposed_sorts_label: 'Sort by'
+          exposed_sorts_label: 'Ordenar por'
           sort_asc_label: Asc
           sort_desc_label: Desc
       pager:
         options:
           tags:
             previous: '‹ Anterior'
-            next: 'Siguiente ›'
+            next: 'Siguiente >'
             first: '« Primera'
             last: 'Última »'
       fields:
@@ -48,7 +48,7 @@ display:
           label: Estado
           settings:
             format_custom_true: Publicado
-            format_custom_false: 'No publicado'
+            format_custom_false: 'Sin publicar'
         changed:
           label: Actualizado
         operations:
@@ -56,7 +56,7 @@ display:
       title: Content
       empty:
         area_text_custom:
-          content: 'No content available.'
+          content: 'No hay contenido disponible.'
     display_title: Máster
   page_1:
     display_options:

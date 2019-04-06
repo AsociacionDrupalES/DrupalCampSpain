@@ -1,32 +1,32 @@
-label: 'View edit page'
+label: 'Ver página de edición'
 tips:
   views-main:
-    label: 'Manage view settings'
-    body: 'View or edit the configuration.'
+    label: 'Administrar las configuraciones de la vista'
+    body: 'Ver o editar la configuración.'
   views-ui-displays:
-    label: 'Displays in this view'
-    body: 'A display is a way of outputting the results, e.g., as a page or a block. A view can contain multiple displays, which are listed here. The active display is highlighted.'
+    label: 'Mostrar en esta vista'
+    body: 'Una visualización es una manera de mostrar los resultados, por ejemplo, como una página o un bloque. Una vista puede contener múltiples visualizaciones, las cuales figuran en esta lista. La visualización activa está resaltada.'
   views-ui-view-admin:
-    label: 'View administration'
-    body: 'Perform administrative tasks, including adding a description and creating a clone. Click the drop-down button to view the available options.'
+    label: 'Administración de Vista'
+    body: 'Realizar tareas administrativas, como agregar una descripción y la creación de un clon. Haga clic en el botón desplegable para ver las opciones disponibles.'
   views-ui-format:
-    label: 'Output format'
-    body: 'Choose how to output results. E.g., choose <em>Content</em> to output each item completely, using your configured display settings. Or choose <em>Fields</em>, which allows you to output only specific fields for each result. Additional formats can be added by installing modules to <em>extend</em> Drupal''s base functionality.'
+    label: 'Formato de salida'
+    body: 'Elija la forma de mostrar los resultados. Por ejemplo, elija <em>Contenido</em> para mostrar cada elemento completamente, utilizando sus opciones de visualización configuradas. O seleccione <em>Campos</em>, que le permite mostrar sólo campos específicos para cada resultado. Formatos adicionales se pueden agregar mediante la instalación de módulos para <em>extender</em> la funcionalidad básica de Drupal.'
   views-ui-fields:
     label: Fields
-    body: 'If this view uses fields, they are listed here. You can click on a field to configure it.'
+    body: 'Si esta vista utiliza campos, ellos están listados aquí. Usted puede hacer click en un campo para configurarlo.'
   views-ui-filter:
-    label: 'Filter your view'
-    body: 'Add filters to limit the results in the output. E.g., to only show content that is <em>published</em>, you would add a filter for <em>Published</em> and select <em>Yes</em>.'
+    label: 'Filtrar su vista'
+    body: 'Adicionar filtros para limitar los resultados en la salida. E.g., para mostrar sólo contenido que está publicado, Usted debería adicionar un filtro para <em>Publicado</em> y seleccionar <em>Sí</em>.'
   views-ui-filter-operations:
-    label: 'Filter actions'
-    body: 'Add, rearrange or remove filters.'
+    label: 'Acciones de filtrado'
+    body: 'Añadir, reordenar o eliminar filtros.'
   views-ui-sorts:
     label: 'Sort Criteria'
-    body: 'Control the order in which the results are output. Click on an active sort rule to configure it.'
+    body: 'Controla el orden en que los resultados son mostrados. Haga clic en una regla de clasificación activa para configurarla.'
   views-ui-sorts-operations:
-    label: 'Sort actions'
-    body: 'Add, rearrange or remove sorting rules.'
+    label: 'Actiones de ordenamiento'
+    body: 'Añadir, reordenar o eliminar reglas de ordenación.'
   views-ui-preview:
     label: 'Vista previa'
-    body: 'Show a preview of the view output.'
+    body: 'Mostrar una vista previa de la salida de la vista.'

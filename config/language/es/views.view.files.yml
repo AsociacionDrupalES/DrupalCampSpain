@@ -8,14 +8,14 @@ display:
         options:
           submit_button: Filter
           reset_button_label: Reiniciar
-          exposed_sorts_label: 'Sort by'
+          exposed_sorts_label: 'Ordenar por'
           sort_asc_label: Asc
           sort_desc_label: Desc
       pager:
         options:
           tags:
             previous: '‹ Anterior'
-            next: 'Siguiente ›'
+            next: 'Siguiente >'
           expose:
             items_per_page_label: 'elementos por página'
             items_per_page_options_all_label: '— Todo(s) —'
@@ -27,7 +27,7 @@ display:
           label: Nombre
           separator: ', '
         filemime:
-          label: 'MIME type'
+          label: 'Tipo MIME'
         filesize:
           label: Tamaño
         status:
@@ -38,37 +38,37 @@ display:
         created:
           label: 'Fecha de subida'
         changed:
-          label: 'Fecha del último cambio'
+          label: 'Fecha de modificación'
         count:
           label: 'Usado en'
           format_plural_string: !!binary MSBsdWdhcgNAY291bnQgbHVnYXJlcw==
       filters:
         filename:
           expose:
-            label: Filename
+            label: 'Nombre de archivo'
         filemime:
           expose:
-            label: 'MIME type'
+            label: 'Tipo MIME'
         status:
           expose:
             label: Estado
       title: Files
       empty:
         area_text_custom:
-          content: 'No files available.'
+          content: 'No hay archivos disponibles.'
   page_1:
-    display_title: 'Files overview'
+    display_title: 'Vista general de archivos'
     display_options:
       menu:
         title: Files
   page_2:
-    display_title: 'File usage'
+    display_title: 'Usos del archivo'
     display_options:
       pager:
         options:
           tags:
             previous: '‹ Anterior'
-            next: 'Siguiente ›'
+            next: 'Siguiente >'
           expose:
             items_per_page_label: 'elementos por página'
             items_per_page_options_all_label: '— Todo(s) —'
@@ -79,13 +79,13 @@ display:
         type:
           label: 'Tipo de entidad'
         module:
-          label: 'Registering module'
+          label: 'Registrando módulo'
         count:
-          label: 'Use count'
+          label: 'Conteo de usos'
           format_plural_string: !!binary MQNAY291bnQ=
-      title: 'File usage'
+      title: 'Usos del archivo'
       arguments:
         fid:
           exception:
-            title: Todo
-          title: 'File usage information for {{ arguments.fid }}'
+            title: Todo(s)
+          title: 'Información de uso del fichero para {{ arguments.fid }}'

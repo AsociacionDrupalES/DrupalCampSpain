@@ -8,19 +8,19 @@ tips:
     body: 'Choose the language you want to translate.'
   locale-search:
     label: Search
-    body: 'Enter the specific word or sentence you want to translate, you can also write just a part of a word.'
+    body: 'Intruduzca la palabra u oración específica que usted desea traducir, también puede escribir solamente una parte de la palabra.'
   locale-filter:
-    label: 'Filter the search'
-    body: 'You can search for untranslated strings if you want to translate something that isn''t translated yet. If you want to modify an existing translation, you might want to search only for translated strings.'
+    label: 'Filtrar la búsqueda'
+    body: 'Puede buscar cadenas no traducidas si quiere traducir algo que todavía no está traducido. Si quiere modificar una traducción exitente, podría querer buscar solo cadenas traducidas.'
   locale-submit:
-    label: 'Apply your search criteria'
-    body: 'To apply your search criteria, click on the <em>Filter</em> button.'
+    label: 'Aplicar sus criterios de búsqueda'
+    body: 'Para aplicar su criterio de búsqueda, haga click en el botón <em>Filtrar</em>.'
   locale-translate:
     label: Translate
-    body: 'You can write your own translation in the text fields of the right column. Try to figure out in which context the text will be used in order to translate it in the appropriate way.'
+    body: 'Puede escribir su propia traducción en los campos de texto en la columna de la derecha. Intente fijarse en cual contexto el texto será usado para traducirlo de la manera apropiada.'
   locale-validate:
-    label: 'Validate the translation'
-    body: 'When you have finished your translations, click on the <em>Save translations</em> button. You must save your translations, each time before changing the page or making a new search.'
+    label: 'Validar la traducción'
+    body: 'Cuando haya terminado sus traducciones, haga clic en el botón <em>Guardar traducciones</em>. Usted debe guardar sus traducciones, cada vez antes de cambiar de página o hacer una nueva búsqueda.'
   locale-continue:
-    label: 'Continuing on'
+    label: Continuando
     body: 'The translations you have made here will be used on your site''s user interface. If you want to use them on another site or modify them on an external translation editor, you can <a href="[site:url]/admin/config/regional/translate/export">export them</a> to a .po file and <a href="[site:url]/admin/config/regional/translate/import">import them</a> later.'

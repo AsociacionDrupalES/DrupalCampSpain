@@ -9,29 +9,29 @@ display:
                 value: '1'
                 title: Activo
               2:
-                title: Blocked
+                title: Bloqueado
             label: Estado
         combine:
           expose:
-            label: 'Name or email contains'
+            label: 'El nombre o correo electrónico contiene'
         roles_target_id:
           expose:
             label: Rol
         permission:
           expose:
-            label: Permission
+            label: Permiso
       exposed_form:
         options:
           submit_button: Filter
           reset_button_label: Reiniciar
-          exposed_sorts_label: 'Sort by'
+          exposed_sorts_label: 'Ordenar por'
           sort_asc_label: Asc
           sort_desc_label: Desc
       pager:
         options:
           tags:
             previous: '‹ Anterior'
-            next: 'Siguiente ›'
+            next: 'Siguiente >'
             first: '« Primera'
             last: 'Última »'
           expose:
@@ -40,18 +40,18 @@ display:
             offset_label: Desplazamiento
       fields:
         user_bulk_form:
-          label: 'Actualización en masa'
+          label: 'Actualización masiva'
         name:
           label: 'Nombre de usuario'
         status:
           label: Estado
           settings:
             format_custom_true: Activo
-            format_custom_false: Blocked
+            format_custom_false: Bloqueado
         roles_target_id:
           label: Roles
         created:
-          label: 'Member for'
+          label: 'Miembro desde hace'
         access:
           label: 'Último acceso'
         operations:
@@ -72,6 +72,6 @@ display:
         description: 'Find and manage people interacting with your site.'
       tab_options:
         title: People
-        description: 'Manage user accounts, roles, and permissions.'
+        description: 'Gestionar cuentas, roles y permisos de usuarios.'
 label: People
 description: 'Find and manage people interacting with your site.'

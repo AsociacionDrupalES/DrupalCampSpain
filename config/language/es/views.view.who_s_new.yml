@@ -6,15 +6,15 @@ display:
     display_options:
       exposed_form:
         options:
-          submit_button: Apply
+          submit_button: Aplicar
           reset_button_label: Reiniciar
-          exposed_sorts_label: 'Sort by'
+          exposed_sorts_label: 'Ordenar por'
           sort_asc_label: Asc
           sort_desc_label: Desc
       title: 'Who''s new'
   block_1:
     display_title: 'Who''s new'
     display_options:
-      display_description: 'A list of new users'
+      display_description: 'Una lista de los usuarios nuevos'
       block_description: 'Who''s new'
       block_category: Usuario
