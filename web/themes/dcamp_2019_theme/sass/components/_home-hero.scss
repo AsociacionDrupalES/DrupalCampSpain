@@ -1,0 +1,43 @@
+.frontpage-wrapper {
+  #intro {
+    .top-area {
+      .inner {
+        .quick-info {
+          background: rgba(38, 61, 69, 0.7);
+          padding: 20px;
+          display: inline-block;
+          margin-top: -110px;
+          color: white;
+          text-align: left;
+          float: left;
+          margin-left: 70px;
+
+          h2 {
+            color: #fff;
+          }
+
+          h3 {
+            color: #fff;
+            font-weight: bold !important;
+            margin-top: 20px;
+            text-decoration: underline;
+          }
+
+          a {
+            color: #fff;
+            font-weight: bold;
+          }
+
+          p {
+            margin: 5px 0;
+          }
+
+          strong{
+            font-weight: bold !important;
+          }
+        }
+      }
+    }
+  }
+
+}

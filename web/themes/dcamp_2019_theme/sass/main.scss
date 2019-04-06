@@ -1,4 +1,5 @@
 @import "../../dcamp_2017_theme/scss/utils/**/*";
+@import "components/**/*";
 
 @mixin button-gradient($background-color: $secondary-color, $background-hover-color: $main-color, $text-color: white, $padding: 30px 50px 30px 40px) {
   background:$main-color !important;

@@ -5,6 +5,33 @@
             <div class="content">
                 <div class="top-area">
                     <div class="inner">
+
+                        <div class="quick-info">
+                            <h2>Actividades de la semana:</h2>
+
+                            <h3>Lunes:</h3>
+                            <p><strong>Cursos de surf</strong> a las 16hs en la playa los carmenes <a href="#">+info</a></p>
+                            <p><strong>Clases de yoga</strong> las 19hs en el centro de fitnes mr gym <a href="#">+info</a></p>
+
+                            <h3>Martes:</h3>
+                            <p><strong>Curso de desarrollo web (Site-building)</strong> a las 14hs en el palacio de las ciencias <a href="#">+info</a></p>
+
+                            <h3>Miercoles:</h3>
+                            <p><strong>Curso de desarrollo web (Back-end)</strong> a las 14hs en el palacio de las ciencias <a href="#">+info</a></p>
+
+                            <h3>Jueves:</h3>
+                            <p><strong>Curso de desarrollo web (Front-end)</strong> a las 14hs en el palacio de las ciencias <a href="#">+info</a></p>
+
+                            <h3>Viernes y Sábado:</h3>
+                            <p><strong>Business day</strong> a las 12hs en el palacio de las ciencias <a href="#">+info</a></p>
+                            <p><strong>DrupalCampSpain</strong> (Charlas y ponencias) desde las 9am <a href="#">+info</a></p>
+                            <p><strong>Fiesta drupalera</strong> en la taberna del loco a partir de las 22hs <a href="#">+info</a></p>
+
+                            <h3>Domingo:</h3>
+                            <p><strong>Visita cultural a la villa de Conil</strong> <a href="#">+info</a></p>
+
+                        </div>
+
                         <a class="scroll-down" href="#">
                             <img class="arrow"
                                  src="{{ base_path ~ directory }}/images/arrow.svg"
@@ -61,7 +88,7 @@
                             <h2>{% trans %}Submit your Session{% endtrans %}</h2>
                             <div class="description">
                                 <p>{% trans %}Call for papers is open. Submit your session as soon as possible so we can select the most optimal for this edition. Sessions can be of any leven and in Spanish or English. Feel free to contact us if you need any help submitting or preparing your session, we will be glad to support you.{% endtrans %}</p>
-                                <a class = "button" href="https://docs.google.com/forms/d/e/1FAIpQLScxHHPbOIin_6N0Oeft9aqVQN8iUo9JZREk_VqPwGbHvVuaLg/viewform">{% trans %}Session Submission Form{% endtrans %}</a>
+                                <a class="button" href="https://docs.google.com/forms/d/e/1FAIpQLScxHHPbOIin_6N0Oeft9aqVQN8iUo9JZREk_VqPwGbHvVuaLg/viewform">{% trans %}Session Submission Form{% endtrans %}</a>
                             </div>
                         </div>
                     </div>
@@ -96,14 +123,14 @@
                             <div class="description">
                                 <p>{% trans %}There will be different options of entertainment for both you and your family during the conference. Apart of the great weather expected, you will find the following activities available:{% endtrans %}
                                 </p>
-				<p>
-				<ul class=>
-                                  <li>{% trans %}Wild Red Tuna Tapas Route{% endtrans %}</li>
-                                  <li>{% trans %}<a href="https://drupal.surf" target="_blank">Drupal.Surf</a>{% endtrans %}</li>
-                                  <li>{% trans %}<a href="https://splashawards.es/">1st Splash Awards Spain</a>{% endtrans %}</li>
-				</ul>
-				</p>
-                                <a class = "button" href="{{ path('entity.node.canonical', {'node': 1}) }}">{% trans %}Social guide{% endtrans %}</a>
+                                <p>
+                                <ul class=>
+                                    <li>{% trans %}Wild Red Tuna Tapas Route{% endtrans %}</li>
+                                    <li>{% trans %}<a href="https://drupal.surf" target="_blank">Drupal.Surf</a>{% endtrans %}</li>
+                                    <li>{% trans %}<a href="https://splashawards.es/">1st Splash Awards Spain</a>{% endtrans %}</li>
+                                </ul>
+                                </p>
+                                <a class="button" href="{{ path('entity.node.canonical', {'node': 1}) }}">{% trans %}Social guide{% endtrans %}</a>
                             </div>
                         </div>
                     </div>
@@ -132,7 +159,7 @@
                             <h2>{% trans %}Family in Drupal{% endtrans %}</h2>
                             <div class="description">
                                 <p>{% trans %}In this edition we are organising a side-event for the people accompanying the attendees. Bring your family to DrupalCamp Spain and let them meet new people while your are attending the conference, learning, networking or closing a business deal. We will take good care of them and we will be sure this experience will be unique. Fill the following form so we know what kind of people are attending and the activities they are interested in.{% endtrans %}</p>
-                                <a class = "button" href="https://docs.google.com/forms/d/e/1FAIpQLSe0bkmyfIav_GUJnyFjsWEZ-gKUWH9_qMHMZ69yMaE9u1FwwA/viewform">{% trans %}Fill the Form{% endtrans %}</a>
+                                <a class="button" href="https://docs.google.com/forms/d/e/1FAIpQLSe0bkmyfIav_GUJnyFjsWEZ-gKUWH9_qMHMZ69yMaE9u1FwwA/viewform">{% trans %}Fill the Form{% endtrans %}</a>
                             </div>
                         </div>
                     </div>
@@ -161,7 +188,7 @@
                             <h2>{% trans %}Networking{% endtrans %}</h2>
                             <div class="description">
                                 <p>{% trans %}We will celebrate a Welcome party on Friday night and a Closing party on Saturday night. There will be susprises so you shouldn't miss them!{% endtrans %}</p>
-                                <a class = "button" href="{{ path('entity.node.canonical', {'node': 71}) }}">{% trans %}Party guide{% endtrans %}</a>
+                                <a class="button" href="{{ path('entity.node.canonical', {'node': 71}) }}">{% trans %}Party guide{% endtrans %}</a>
                             </div>
                         </div>
                     </div>
