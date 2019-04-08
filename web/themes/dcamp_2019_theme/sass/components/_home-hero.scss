@@ -3,13 +3,14 @@
     .top-area {
       .inner {
         .quick-info {
-          background: rgba(38, 61, 69, 0.7);
+          background: rgba(38, 61, 69, 0.9);
           padding: 20px;
-          display: inline-block;
           color: white;
           text-align: left;
-          float: left;
           margin: 10px;
+          max-width: 40%;
+          display: inline-block;
+          float: left;
 
           @media (min-width: 720px) {
             margin: 50px 0 50px 70px;

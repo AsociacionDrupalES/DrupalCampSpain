@@ -6,31 +6,73 @@
                 <div class="top-area">
                     <div class="inner">
 
-                        <div class="quick-info">
-                            <h2>Actividades de la semana:</h2>
+                        {% if language == 'en' %}
 
-                            <h3>Lunes:</h3>
-                            <p><strong>Cursos de surf</strong> a las 16hs en la playa los carmenes <a href="#">+info</a></p>
-                            <p><strong>Clases de yoga</strong> las 19hs en el centro de fitnes mr gym <a href="#">+info</a></p>
+                            <div class="quick-info">
+                                <h2>Activities of the week:</h2>
 
-                            <h3>Martes:</h3>
-                            <p><strong>Curso de desarrollo web (Site-building)</strong> a las 14hs en el palacio de las ciencias <a href="#">+info</a></p>
+                                <h3>Monday:</h3>
+                                <p><strong>Surf + yoga courses</strong> from 6 to 9 May <a href="https://freeyourmindexperience.com/camp/drupal-surf-camp/" target="_blank">+info</a></p>
 
-                            <h3>Miercoles:</h3>
-                            <p><strong>Curso de desarrollo web (Back-end)</strong> a las 14hs en el palacio de las ciencias <a href="#">+info</a></p>
+                                <h3>Tuesday:</h3>
+                                <p><strong>Web development course (Site-building)</strong> from 8:00 to 14:00H at RECINTO LA CHANCA <a href="{{ path('entity.node.canonical', {'node': 70}) }}">+info</a></p>
 
-                            <h3>Jueves:</h3>
-                            <p><strong>Curso de desarrollo web (Front-end)</strong> a las 14hs en el palacio de las ciencias <a href="#">+info</a></p>
+                                <h3>Wednesday:</h3>
+                                <p><strong>Web development course (Back-end)</strong> from 8:00 to 14:00H at RECINTO LA CHANCA <a href="{{ path('entity.node.canonical', {'node': 70}) }}">+info</a></p>
 
-                            <h3>Viernes y Sábado:</h3>
-                            <p><strong>Business day</strong> a las 12hs en el palacio de las ciencias <a href="#">+info</a></p>
-                            <p><strong>DrupalCampSpain</strong> (Charlas y ponencias) desde las 9am <a href="#">+info</a></p>
-                            <p><strong>Fiesta drupalera</strong> en la taberna del loco a partir de las 22hs <a href="#">+info</a></p>
+                                <h3>Thursday:</h3>
+                                <p><strong>Web development course (Front-end)</strong> from 8:00 to 14:00H at RECINTO LA CHANCA <a href="{{ path('entity.node.canonical', {'node': 70}) }}">+info</a></p>
 
-                            <h3>Domingo:</h3>
-                            <p><strong>Visita cultural a la villa de Conil</strong> <a href="#">+info</a></p>
+                                <h3>Friday</h3>
+                                <p><strong>Business day</strong> from 10hs at Iglesia de Santa Catalina <a href="{{ path('entity.node.canonical', {'node': 35}) }}">+info</a></p>
+                                <p><strong>DrupalCampSpain</strong> from 10hs to 18hs (Schedule available from 17th may)
+                                <p><strong>Drupal party 1º 🥳</strong> en <a href="https://www.facebook.com/ChsssConil/" target="_blank">Chsss Conil</a> from 23hs <a href="https://goo.gl/maps/u3qMVpSgZ2U2">Location</a></p>
 
-                        </div>
+                                <h3>Saturday:</h3>
+                                <p><strong>DrupalCampSpain</strong> from 10hs to 18hs (Schedule available from 17th may)
+                                <p><strong>Drupal party 2º 🥳</strong> en <a href="https://www.facebook.com/ChsssConil/" target="_blank">Chsss Conil</a> from 23hs <a href="https://goo.gl/maps/u3qMVpSgZ2U2">Location</a></p>
+
+
+                                <h3>Sunday:</h3>
+                                <p><strong>Cultural visit to the village of Conil</strong> Will be organized at the <br>DrupalCamp's telegram group on the same day <a href="https://t.me/joinchat/AGU1QUKeqKocZJ0_6D9WAA">Access to the group</a>.
+
+                            </div>
+
+                        {% else %}
+
+                            <div class="quick-info">
+                                <h2>Actividades de la semana:</h2>
+
+                                <h3>Lunes:</h3>
+                                <p><strong>Cursos de surf + yoga</strong> del 6 al 9 de mayo <a href="https://freeyourmindexperience.com/camp/drupal-surf-camp/" target="_blank">+info</a></p>
+
+                                <h3>Martes:</h3>
+                                <p><strong>Curso de desarrollo web (Site-building)</strong> de 8:00 A 14:00H <br>en el recinto RECINTO LA CHANCA <a href="{{ path('entity.node.canonical', {'node': 70}) }}">+info</a></p>
+
+                                <h3>Miercoles:</h3>
+                                <p><strong>Curso de desarrollo web (Back-end)</strong> de 8:00 A 14:00H <br>en el recinto RECINTO LA CHANCA <a href="{{ path('entity.node.canonical', {'node': 70}) }}">+info</a></p>
+
+                                <h3>Jueves:</h3>
+                                <p><strong>Curso de desarrollo web (Front-end)</strong> de 8:00 A 14:00H <br>en el recinto RECINTO LA CHANCA <a href="{{ path('entity.node.canonical', {'node': 70}) }}">+info</a></p>
+
+                                <h3>Viernes</h3>
+                                <p><strong>Business day</strong> desde las 10hs en la Iglesia de Santa Catalina <a href="{{ path('entity.node.canonical', {'node': 35}) }}">+info</a></p>
+                                <p><strong>DrupalCampSpain</strong> desde las 10hs a 18hs <br> (Calendario de ponencias disponibles desde el día 17)
+                                <p><strong>Fiesta drupalera 1º parte 🥳</strong> en <a href="https://www.facebook.com/ChsssConil/" target="_blank">Chsss Conil</a> a partir de las 23hs <a href="https://goo.gl/maps/u3qMVpSgZ2U2">Ubicación</a></p>
+
+                                <h3>Sábado:</h3>
+                                <p><strong>DrupalCampSpain</strong> 10hs a las 18hs <br> (Calendario de ponencias disponibles desde el día 17)
+                                <p><strong>Fiesta drupalera 2º parte 🥳</strong> en <a href="https://www.facebook.com/ChsssConil/" target="_blank">Chsss Conil</a> a partir de las 23hs <a href="https://goo.gl/maps/u3qMVpSgZ2U2">Ubicación</a></p>
+
+
+                                <h3>Domingo:</h3>
+                                <p><strong>Visita cultural a la villa de Conil</strong> Se organizará por el grupo de telegram <br>en el mismo día <a href="https://t.me/joinchat/AGU1QUKeqKocZJ0_6D9WAA">Acceder al grupo</a>.
+
+                            </div>
+
+                        {% endif %}
+
+
 
                         <a class="scroll-down" href="#">
                             <img class="arrow"

@@ -14,4 +14,7 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
  */
 function dcamp_2019_theme_preprocess(&$variables, $hook) {
   $variables['path_to_dcamp_2019_theme'] = base_path() . drupal_get_path('theme', 'dcamp_2019_theme');
+
+  $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
+  $variables['language'] = $language;
 }
