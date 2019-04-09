@@ -62,12 +62,11 @@
   color: white;
   text-align: left;
   margin: 10px;
-  max-width: 40%;
   display: inline-block;
   float: left;
 }
 
-@media (min-width: 720px) {
+@media (min-width: 980px) {
   .frontpage-wrapper #intro .top-area .inner .quick-info {
     margin: 50px 0 50px 70px;
   }
