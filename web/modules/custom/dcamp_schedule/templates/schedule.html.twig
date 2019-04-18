@@ -1,147 +1,134 @@
 <div class="schedule-wrapper">
 
 
-    <div class="node__header">
-        <h1>{{ title }}</h1>
+  <div class="node__header">
+    <h1>{{ title }}</h1>
+  </div>
+
+  <div class="inner">
+    <h2>{% trans %}Saturday{% endtrans %}</h2>
+
+    <div class="legend">
+      <div class="basic">{% trans %}Basic{% endtrans %}</div>
+      <div class="intermediate">{% trans %}Intermediate{% endtrans %}</div>
+      <div class="advanced">{% trans %}Advanced{% endtrans %}</div>
+      <div class="featured">{% trans %}Featured{% endtrans %}</div>
+      <div class="sponsored">{% trans %}Sponsored{% endtrans %}</div>
+      <div class="english">{% trans %}English{% endtrans %}</div>
     </div>
 
-    <div class="inner">
-        <h2>{% trans %}Saturday{% endtrans %}</h2>
+    <!-- Friday Schedule -->
+    <table>
 
-        <div class="legend">
-            <div class="basic">{% trans %}Basic{% endtrans %}</div>
-            <div class="intermediate">{% trans %}Intermediate{% endtrans %}</div>
-            <div class="advanced">{% trans %}Advanced{% endtrans %}</div>
-            <div class="featured">{% trans %}Featured{% endtrans %}</div>
-            <div class="sponsored">{% trans %}Sponsored{% endtrans %}</div>
-            <div class="english">{% trans %}English{% endtrans %}</div>
-        </div>
+      <thead>
+      <tr>
+        <th scope="row">&nbsp;</th>
+        <th scope="col">Sala Aquia (240)</th>
+        <th scope="col">Sala Siteground (160)</th>
+        <th scope="col">Sala AED (60)</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <th scope="row">09:00</th>
+        <td colspan="3">{% trans %}Registration - Badge Pick-Up{% endtrans %}</td>
+      </tr>
+      <tr>
+        <th scope="row">09:30</th>
+        <td>{% trans %}Opening session{% endtrans %}</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
 
-        <!-- Friday Schedule -->
-        <table>
+      <tr>
+        <th scope="row">10:00</th>
 
-            <thead>
-            <tr>
-                <th scope="row">&nbsp;</th>
-                <th scope="col">Sala foo</th>
-                <th scope="col">Sala bar</th>
-            </tr>
-            </thead>
+        <td class="intermediate">
+          <a href="/sessions/drupal-admin-modernization-design-processes-integration-open-source-community-chumillas" target="_blank">
+            Drupal Admin Modernization: design processes integration in an Open Source community
+            <span class="author"> {{ 'by'|t }} Cristina Chumillas</span>
+          </a>
+          <span class="english"></span>
+        </td>
 
-            <tbody>
+        <td class="intermediate">
+          <a href="/sessions/las-tripas-de-un-sistema-solr-estoyausente" target="_blank">
+            Las tripas de un sistema Solr
+            <span class="author"> {{ 'by'|t }} Samuel Solís</span>
+          </a>
+          <span class="intermediate"></span>
+        </td>
 
-            <tr>
-                <th scope="row">09:00</th>
-                <td colspan="2">{% trans %}Registration - Badge Pick-Up{% endtrans %}</td>
-            </tr>
+        <td class="intermediate">
+          <a href="/sessions/qa-en-seo-amigos-con-derecho-roce-beagonpoz" target="_blank">
+            QA en SEO: amigos con derecho a roce
+            <span class="author"> {{ 'by'|t }} Beatriz González Pozo</span>
+          </a>
+          <span class="basic"></span>
+        </td>
 
-            <tr>
-                <th scope="row">09:30</th>
-                <td colspan="2">{% trans %}Opening session{% endtrans %}</td>
-            </tr>
+      </tr>
 
-            <tr>
-                <th scope="row">10:00</th>
-
-                <td class="featured basic">
-                    <a href="#" target="_blank">{{ 'Featured session'|t }} <span class="author"> {{ 'by'|t }} Preston So</span></a>
-                    <span class="featured"></span>
-                </td>
-
-                <td class="intermediate">
-                    <a href="/sessions/foo" target="_blank">Elasticsearch 101 <span class="author"> {{ 'by'|t }} Ignacio Sánchez</span></a>
-                    <span class="intermediate"></span>
-                </td>
-
-            </tr>
-
-            <tr>
-                <th scope="row">10:45</th>
-                <td colspan="2">{{ 'Break'|t }}</td>
-            </tr>
-
-            <tr>
-                <th scope="row">10:00</th>
-
-                <td class="featured basic">
-                    <a href="#" target="_blank">{{ 'Featured session'|t }} <span class="author"> {{ 'by'|t }} Preston So</span></a>
-                    <span class="featured"></span>
-                </td>
-
-                <td class="intermediate">
-                    <a href="/sessions/foo" target="_blank">Elasticsearch 101 <span class="author"> {{ 'by'|t }} Ignacio Sánchez</span></a>
-                    <span class="intermediate"></span>
-                </td>
-
-            </tr>
-
-            <tr class="break">
-                <th scope="row">11:45</th>
-                <td colspan="2">{{ 'Coffee'|t }}</td>
-            </tr>
-
-            <tr>
-                <th scope="row">10:00</th>
-
-                <td class="featured basic">
-                    <a href="#" target="_blank">{{ 'Featured session'|t }} <span class="author"> {{ 'by'|t }} Preston So</span></a>
-                    <span class="featured"></span>
-                </td>
-
-                <td class="intermediate">
-                    <a href="/sessions/foo" target="_blank">Elasticsearch 101 <span class="author"> {{ 'by'|t }} Ignacio Sánchez</span></a>
-                    <span class="intermediate"></span>
-                </td>
-
-            </tr>
-
-            <tr>
-                <th scope="row">10:45</th>
-                <td colspan="2">{{ 'Break'|t }}</td>
-            </tr>
-
-            <tr>
-                <th scope="row">10:00</th>
-
-                <td class="featured basic">
-                    <a href="#" target="_blank">{{ 'Featured session'|t }} <span class="author"> {{ 'by'|t }} Preston So</span></a>
-                    <span class="featured"></span>
-                </td>
-
-                <td class="intermediate">
-                    <a href="/sessions/foo" target="_blank">Elasticsearch 101 <span class="author"> {{ 'by'|t }} Ignacio Sánchez</span></a>
-                    <span class="intermediate"></span>
-                </td>
-
-            </tr>
-
-            <tr class="break">
-                <th scope="row">11:45</th>
-                <td colspan="2">{{ 'Coffee'|t }}</td>
-            </tr>
+      <tr>
+        <th scope="row">10:45</th>
+        <td colspan="3">{{ 'Break'|t }}</td>
+      </tr>
 
 
-            <tr class="break">
-                <th scope="row">14:15</th>
-                <td colspan="2">{% trans %}Group photo{% endtrans %}</td>
-            </tr>
-
-            <tr class="break">
-                <th scope="row">14:30</th>
-                <td colspan="2">{% trans %}Lunch time{% endtrans %}</td>
-            </tr>
+      <tr class="break">
+        <th scope="row">11:45</th>
+        <td colspan="3">{{ 'Coffee'|t }}</td>
+      </tr>
 
 
-            <tr class="break">
-                <th scope="row">21:00</th>
-                <td colspan="2"><a href="{{ path('entity.node.canonical', {'node': 71}) }}" target="_blank">{% trans %}Saturday Night Party{% endtrans %}</a>
-                </td>
-            </tr>
-            </tbody>
-        </table>
+      <tr>
+        <th scope="row">13:15</th>
+        <td colspan="3">{{ 'Break'|t }}</td>
+      </tr>
 
-        <!-- Sunday Schedule -->
+      <tr class="break">
+        <th scope="row">14:15</th>
+        <td colspan="3">{% trans %}Group photo{% endtrans %}</td>
+      </tr>
 
-        Completar la tabla del domingo
+      <tr class="break">
+        <th scope="row">14:30</th>
+        <td colspan="3">{% trans %}Lunch time{% endtrans %}</td>
+      </tr>
+
+
+      <tr>
+        <th scope="row">16:15</th>
+        <td colspan="3">{{ 'Break'|t }}</td>
+      </tr>
+
+
+      <tr>
+        <th scope="row">17:15</th>
+        <td colspan="3"><a href="{{ path('entity.node.canonical', {'node': 50}) }}" target="_blank">{% trans %}Spanish
+              Drupal Association assembly{% endtrans %}</a>
+        </td>
+      </tr>
+
+      <tr class="break">
+        <th scope="row">21:00</th>
+        <td colspan="3"><a href="{{ path('entity.node.canonical', {'node': 71}) }}" target="_blank">{% trans %}Saturday Night Party{% endtrans %}</a>
+        </td>
+      </tr>
+
+      </tbody>
+    </table>
+
+    <!-- Sunday Schedule -->
+    <h2>{% trans %}Sunday{% endtrans %}</h2>
+    <div class="legend">
+      <div class="basic">{% trans %}Basic{% endtrans %}</div>
+      <div class="intermediate">{% trans %}Intermediate{% endtrans %}</div>
+      <div class="advanced">{% trans %}Advanced{% endtrans %}</div>
+      <div class="featured">{% trans %}Featured{% endtrans %}</div>
+      <div class="sponsored">{% trans %}Basic{% endtrans %}</div>
+      <div class="english">{% trans %}English{% endtrans %}</div>
     </div>
+    Copiar tabla del sabado aqui y adaptarla.
+  </div>
 </div>
