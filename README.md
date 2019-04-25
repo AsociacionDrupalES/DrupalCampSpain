@@ -35,3 +35,35 @@ Run `git checkout master && git pull`. Then repeat steps 5 onwards from the abov
 1. Run 'gulp' in the terminal
 1. Activate LiveReload in chrome
 1. Happy styling!
+
+### Configure Eventbrite
+Edit web/modules/custom/dcamp_attendees/src/EventBriteService.php and update this variables:
+```
+  /**
+   * Ticket types.
+   */
+  const TICKET_TYPE_GENERAL = 107881623;
+  const TICKET_TYPE_INDIVIDUAL_SPONSOR = 104863188;
+  const TICKET_TYPE_INDIVIDUAL_SPONSOR_NO_ACCESS = 82145718;
+  const TICKET_TYPE_STUDENT = 82145719;
+  const TICKET_TYPE_BEGINNER_TRACK = 82889072;
+
+  /**
+   * Question types.
+   */
+  const QUESTION_HEADSHOT = 21920431; // Is the user image field
+  const QUESTION_TWITTER = 21920429;
+  const QUESTION_DRUPAL = 21920430;
+```
+
+
+And add these lines to settings.local.php
+```
+// Attendees settings.
+$config['dcamp_attendees.settings'] = [
+  'debugging' => FALSE,
+  'event_id' => '55000000416',
+  'oauth_token' => '3h4g5j3h4gf534hjg56',
+];
+``` 
+(You need to create a new "app" at https://www.eventbrite.es/account-settings/apps to get the oauth token).
