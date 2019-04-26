@@ -10,8 +10,8 @@ class EventBriteService {
   /**
    * Ticket types.
    */
-  const TICKET_TYPE_GENERAL = 82145716;
-  const TICKET_TYPE_INDIVIDUAL_SPONSOR = 82145717;
+  const TICKET_TYPE_GENERAL = 107881623;
+  const TICKET_TYPE_INDIVIDUAL_SPONSOR = 104863188;
   const TICKET_TYPE_INDIVIDUAL_SPONSOR_NO_ACCESS = 82145718;
   const TICKET_TYPE_STUDENT = 82145719;
   const TICKET_TYPE_BEGINNER_TRACK = 82889072;
@@ -19,9 +19,9 @@ class EventBriteService {
   /**
    * Question types.
    */
-  const QUESTION_HEADSHOT = 18264712;
-  const QUESTION_TWITTER = 18264696;
-  const QUESTION_DRUPAL = 18264699;
+  const QUESTION_HEADSHOT = 21920431;
+  const QUESTION_TWITTER = 21920429;
+  const QUESTION_DRUPAL = 21920430;
 
   /**
    * The cache id to store the list of attendees.
