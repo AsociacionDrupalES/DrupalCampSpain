@@ -96,6 +96,29 @@
   font-weight: bold !important;
 }
 
+/**
+ * Specific speaker styles.
+ */
+.speaker--full .speaker__field-linkedin, .speaker--full .speaker__field-twitter, .speaker--full .speaker__field-drupal-org, .speaker--full .speaker__field-facebook, .speaker--full .speaker__field-bitbucket, .speaker--full .speaker__field-github {
+  display: inline-block;
+  margin-right: 0.75rem;
+}
+
+.speaker--full .speaker__field-linkedin a, .speaker--full .speaker__field-twitter a, .speaker--full .speaker__field-drupal-org a, .speaker--full .speaker__field-facebook a, .speaker--full .speaker__field-bitbucket a, .speaker--full .speaker__field-github a {
+  display: inline-block;
+  overflow: hidden;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  text-indent: -1000px;
+  transition: all .2s ease-in-out;
+}
+
+.speaker--full .speaker__field-linkedin a:hover, .speaker--full .speaker__field-twitter a:hover, .speaker--full .speaker__field-drupal-org a:hover, .speaker--full .speaker__field-facebook a:hover, .speaker--full .speaker__field-bitbucket a:hover, .speaker--full .speaker__field-github a:hover {
+  transition: all .2s ease-in-out;
+  transform: scale(1.1);
+}
+
 a.button {
   background: #eabc51 !important;
   color: white !important;
