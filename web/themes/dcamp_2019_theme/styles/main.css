@@ -56,6 +56,17 @@
   }
 }
 
+.block-dcamp-landing-about-community-block > h2:before {
+  content: '' !important;
+  background: url(../images/logo-aed-white.png) !important;
+  width: 320px;
+  height: 90px;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  margin: 0 auto !important;
+  margin-bottom: 40px !important;
+}
+
 .frontpage-wrapper #intro .top-area .inner .quick-info {
   background: rgba(38, 61, 69, 0.9);
   padding: 20px;
