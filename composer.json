@@ -81,6 +81,9 @@
     "patches": {
       "drupal/mailchimp": {
         "Allow translating signup forms": "https://www.drupal.org/files/issues/translation-for-email-address-label-unavailable-2821153-5.patch"
+      },
+      "drupal/core": {
+        "Updating Drupal 8.6.x to twig 1.40.0 causes twig exceptions": "https://www.drupal.org/files/issues/2019-04-29/3051269-45.patch"
       }
     }
   }
