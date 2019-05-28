@@ -1,29 +1,35 @@
 ---
+
 - name: 'drush updb'
-  shell: 'drush updb -y {{ drush_args }}'
+  drush:
   args:
-    chdir: "{{ ansistrano_release_path.stdout }}{{ drupal_rel_path }}"
-  register: updb
+    command: 'updb'
+    chdir: "{{ deploy_to }}/{{ docroot }}"
+    log:
+      enabled: false
 
-- name: 'debug: drush updb'
-  debug: var=updb
-
-- name: 'drush cim sync'
-  shell: 'drush cim -y {{ drush_args }}'
+- name: 'drush cim'
+  drush:
   args:
-    chdir: "{{ ansistrano_release_path.stdout }}{{ drupal_rel_path }}"
-  register: cim_sync
-
-- name: 'debug: drush cim sync'
-  debug: var=cim_sync
+    command: 'cim'
+    chdir: "{{ deploy_to }}/{{ docroot }}"
+    log:
+      enabled: false
 
 - name: 'drush cr'
-  shell: 'drush cr {{ drush_args }}'
+  drush:
   args:
-    chdir: "{{ ansistrano_release_path.stdout }}{{ drupal_rel_path }}"
+    command: 'cr'
+    chdir: "{{ deploy_to }}/{{ docroot }}"
+    log:
+      enabled: false
 
 - name: 'varnish clean domain all'
-  shell: 'curl -X BAN "http://{{ item }}/.*" -H "Host: {{ varnish_domain }}" --fail -s  -o /dev/null'
+  sbhell:
+  args:
+    command: 'curl -X BAN "http://{{ item }}/.*" -H "Host: {{ domain_env }}" --fail -s -o /dev/null'
+    log:
+      enabled: false
   with_items: "{{ varnish_servers }}"
+  when: appenv == 'pro'
   run_once: true
-
