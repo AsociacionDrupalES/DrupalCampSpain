@@ -1,4 +1,4 @@
-uuid: fa654e9d-acf0-4402-a189-cf19ab16fd01
+uuid: 60d763d0-3fca-460c-83fd-74eea8bda8b9
 langcode: en
 status: true
 dependencies:
@@ -7,18 +7,16 @@ dependencies:
   module:
     - system
   theme:
-    - bartik
-_core:
-  default_config_hash: kkISXE1LT2FJEoYnqCrCpeFB-2pmGmMxMklVk7rQcfg
-id: bartik_footer
-theme: bartik
-region: footer_fifth
-weight: 0
+    - dcamp_2020_theme
+id: dcamp_2020_theme_footer
+theme: dcamp_2020_theme
+region: footer
+weight: -2
 provider: null
 plugin: 'system_menu_block:footer'
 settings:
   id: 'system_menu_block:footer'
-  label: 'Footer menu'
+  label: Footer
   provider: system
   label_display: '0'
   level: 1

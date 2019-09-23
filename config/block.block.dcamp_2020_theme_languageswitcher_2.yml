@@ -1,13 +1,13 @@
-uuid: a7adb79d-81b2-4b4a-93bf-c39063f5c504
+uuid: 09657577-528a-40a2-bee3-66d068c160ec
 langcode: en
 status: true
 dependencies:
   module:
     - language
   theme:
-    - dcamp_2019_theme
-id: dcamp_2019_theme_languageswitcher_2
-theme: dcamp_2019_theme
+    - dcamp_2020_theme
+id: dcamp_2020_theme_languageswitcher_2
+theme: dcamp_2020_theme
 region: header
 weight: -2
 provider: null

@@ -1,15 +1,13 @@
-uuid: 3845d77e-e525-4267-823a-864a08b48630
+uuid: c1e9d19f-09cd-4137-b4cf-be0a14311ec7
 langcode: en
 status: true
 dependencies:
   theme:
-    - bartik
-_core:
-  default_config_hash: 13GQpeITIJsp1kyPniXtWZfyFH87vb1xxJCHifL4UeE
-id: bartik_local_actions
-theme: bartik
+    - dcamp_2020_theme
+id: dcamp_2020_theme_primaryadminactions
+theme: dcamp_2020_theme
 region: content
-weight: -20
+weight: -3
 provider: null
 plugin: local_actions_block
 settings:

@@ -1,4 +1,4 @@
-uuid: 29cb7c41-cfc2-43eb-9646-c0e1d7cdccca
+uuid: 82fdb238-3ec2-484d-af66-cf0b476e3de5
 langcode: en
 status: true
 dependencies:
@@ -7,9 +7,9 @@ dependencies:
   module:
     - system
   theme:
-    - dcamp_2019_theme
-id: dcamp_2019_theme_mainnavigation_3
-theme: dcamp_2019_theme
+    - dcamp_2020_theme
+id: dcamp_2020_theme_mainnavigation_3
+theme: dcamp_2020_theme
 region: footer
 weight: -3
 provider: null

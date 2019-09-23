@@ -64,14 +64,13 @@ module:
 theme:
   stable: 0
   classy: 0
-  bartik: 0
   seven: 0
   dcamp_base_theme: 0
   dcamp_2017_theme: 0
   dcamp_2017_landing_theme: 0
   dcamp_2018_landing_theme: 0
   dcamp_2018_theme: 0
-  dcamp_2019_theme: 0
+  dcamp_2020_theme: 0
 _core:
   default_config_hash: m2GVq11UAOVuNgj8x0t5fMOPujpvQQ_zxLoaly1BMEU
 profile: minimal
