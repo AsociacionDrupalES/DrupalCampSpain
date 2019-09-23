@@ -703,11 +703,11 @@ $settings['container_yamls'][] = __DIR__ . '/services.yml';
  * will allow the site to run off of all variants of example.com and
  * example.org, with all subdomains included.
  */
-$settings['trusted_host_patterns'] = [
-  'drupalcamp\.es$',
-  '^dc2018\.local$',
-  'tugboat\.qa$',
-];
+//$settings['trusted_host_patterns'] = [
+//  'drupalcamp\.es$',
+//  '^dc2018\.local$',
+//  'tugboat\.qa$',
+//];
 
 /**
  * Use sample data for listing sessions.
@@ -732,7 +732,8 @@ $config['dcamp_attendees.settings'] = [
  * after downloading the production database from Jenkins
  * to see images stored in Production's files directory.
  */
-$config['stage_file_proxy.settings']['origin'] = 'https://2018.drupalcamp.es';
+
+$settings['install_profile'] = 'config_installer';
 
 /**
  * Load local development override configuration, if available.
@@ -747,4 +748,4 @@ $config['stage_file_proxy.settings']['origin'] = 'https://2018.drupalcamp.es';
 if (file_exists(__DIR__ . '/settings.local.php')) {
   include __DIR__ . '/settings.local.php';
 }
-$settings['install_profile'] = 'config_installer';
+
