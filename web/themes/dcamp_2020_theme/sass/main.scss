@@ -1,0 +1,379 @@
+@import "../../dcamp_2017_theme/scss/utils/**/*";
+@import "layout/**/*";
+@import "components/**/*";
+
+@mixin button-gradient($background-color: $secondary-color, $background-hover-color: $main-color, $text-color: white, $padding: 30px 50px 30px 40px) {
+  background:$main-color !important;
+  color:white !important;
+  border-radius: 2px;
+  &:hover {
+    background:$tertiary-color !important;
+  }
+}
+
+@mixin linear-gradient($direction: 40deg, $color1: lighten($main-color,10), $color2: lighten($main-color,20)) {
+  background: $color1; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient($direction, $color1, $color2); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient($direction, $color1, $color2); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient($direction, $color1, $color2); /* For Firefox 3.6 to 15 */
+  background: linear-gradient($direction, $color1, $color2); /* Standard syntax */
+}
+
+@mixin linear-gradient-text($direction, $color1: lighten($main-color,10), $color2: lighten($main-color,20)) {
+  background-image: -webkit-linear-gradient(left, $color1, lighten($color2,10)); /* For Chrome and Safari */
+  background-image: -moz-linear-gradient(left, $color1, $color2); /* For old Fx (3.6 to 15) */
+  background-image: -ms-linear-gradient(left, $color1, $color2); /* For pre-releases of IE 10*/
+  background-image: -o-linear-gradient(left, $color1, $color2); /* For old Opera (11.1 to 12.0) */
+  background-image: linear-gradient(to right, $color1, $color2); /* Standard syntax; must be last */
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+$main-color: #eabc51;
+$secondary-color: #435772;
+$tertiary-color: #435772;
+
+
+$header-height:80px;
+$header-height-mobile:30px;
+
+
+@import url('https://fonts.googleapis.com/css?family=Ubuntu:400,500,700');
+
+$body-font:"Ubuntu", helvetica, sans-serif;
+$header-font: $body-font;
+
+
+@import "../../dcamp_2017_theme/scss/base/**/*";
+@import "../../dcamp_2017_theme/scss/components/**/*";
+@import "../../dcamp_2017_theme/scss/layout/**/*";
+
+
+body{
+div{
+  font-weight:300 !important;
+
+}
+}
+.region-header .main-menu-wrapper .main-menu-inner .event-info,
+.region-header .main-menu-wrapper .main-menu-inner ul li a,
+h1,h2,h3,h4{
+  font-weight:300 !important;
+}
+
+
+.main-menu__trigger{
+border-left: 1px solid lighten($secondary-color, 10);
+}
+
+.block-language-blocklanguage-url .language-switcher-wrapper .current-language, .block-language-blocklanguage-interface .language-switcher-wrapper .current-language {
+  padding: 32px 25px;
+}
+
+.region-header .main-menu-wrapper{
+  background: $main-color;
+  .main-menu-inner .event-info {
+color:white;
+    margin-bottom:10px;
+  }
+}
+
+.frontpage-wrapper {
+  #intro .top-area .inner .arrow {
+    width: 100px;
+  }
+  .top-area{
+    background:url(../images/photos/alicante.jpg) 50% 50%;
+    background-sizing: cover;
+  }
+}
+
+.frontpage-wrapper #intro .top-area .inner h1 {
+  background-image:none;
+  color:white;
+  font-weight:900 !important;
+}
+
+footer .block-dcamp-newsletter-block h2{
+  color:white;
+}
+
+// Drupal Camp 2019.
+
+.layout-container > header {
+  background: $main-color;
+}
+
+.block-language-blocklanguage-url .language-switcher-wrapper .current-language, .block-language-blocklanguage-interface .language-switcher-wrapper .current-language {
+  background: $main-color;
+  color: $secondary-color;
+  &:hover {
+    background: $main-color;
+    color: $secondary-color;
+  }
+}
+
+.main-menu__trigger {
+  border-left-color: $secondary-color;
+}
+
+.main-menu-enabled .main-menu__trigger {
+  background-color: $main-color;
+  border-left-color: $main-color;
+}
+
+.frontpage-wrapper #intro .bottom-area {
+  background: $main-color;
+}
+
+.main-menu__icon {
+  background-color: $secondary-color;
+  &:after, &:before {
+    background-color: $secondary-color;
+  }
+}
+
+.region-header .main-menu-wrapper .main-menu-header {
+  background: none;
+}
+
+.buy-tickets {
+  background: $main-color;
+  border-radius: 0;
+  .content {
+    h3, .deadline {
+      color: $secondary-color;
+      text-transform: none;
+    }
+    h3 {
+      font-weight: 700 !important;
+    }
+  }
+}
+
+a.button {
+  background: $secondary-color !important;
+  color: white !important;
+  border-radius: 0;
+  font-family: $body-font;
+  transition: all 128ms;
+  &:hover {
+    background: white !important;
+    color: $secondary-color !important;
+  }
+}
+
+.frontpage-wrapper .section h2 {
+  font-weight: 700 !important;
+  &:after {
+    background-color: $main-color;
+    width: 38px;
+  }
+}
+
+.frontpage-wrapper #speakers .sub > .content .view {
+  text-align: center;
+}
+
+.speaker.teaser {
+  a h3 {
+    color: $main-color;
+    text-transform: none;
+  }
+  .field--name-field-company a {
+    color: $secondary-color;
+    text-transform: none;
+  }
+  .field--name-field-twitter a {
+    font-weight: normal;
+    font-style: italic;
+    text-transform: none;
+  }
+}
+
+.frontpage-wrapper .top-area {
+  background: url(../images/photos/beach.jpg) 50% 50%;
+  background-size: cover;
+}
+
+.frontpage-wrapper #become-a-sponsor {
+  background: $main-color;
+}
+
+.frontpage-wrapper .section .sub .field--name-body a.button {
+  background: $secondary-color !important;
+  color: white !important;
+  border-radius: 0;
+  font-family: $body-font;
+  transition: all 128ms;
+  &:hover {
+    background: white !important;
+    color: $secondary-color !important;
+  }
+}
+
+.frontpage-wrapper #become-a-sponsor {
+  h2 {
+    color: $secondary-color;
+  }
+  .field--name-body {
+    color: $secondary-color;
+  }
+}
+
+.frontpage-wrapper .block-dcamp-landing-about-community-block a.button {
+  margin-top: 2em;
+  background: $main-color !important;
+  color: white !important;
+  border-radius: 0;
+  font-family: $body-font;
+  transition: all 128ms;
+  &:hover {
+    background: white !important;
+    color: $secondary-color !important;
+  }
+}
+
+footer .block-dcamp-newsletter-block {
+  padding: 2em;
+  margin: 4em 18%;
+  background: $main-color;
+  h2, .description {
+    color: $secondary-color;
+  }
+  h2 {
+    font-weight: 700 !important;
+  }
+  @media only screen and (max-width: 1280px) {
+    margin: 4em 4em;
+  }
+  @media only screen and (max-width: 768px) {
+    margin: 2em;
+  }
+}
+
+footer .footer-secondary-menu-wrapper {
+  background-color: $secondary-color;
+  border-top: 1px solid $main-color;
+}
+
+.layout-container > header.nav-up {
+  top: -80px !important;
+}
+
+.frontpage-wrapper #intro {
+  background: none;
+}
+
+.frontpage-wrapper #community {
+  background-image: url(../images/photos/fondo-1.jpg);
+}
+
+#location,
+#venues,
+#party {
+  background: url(../images/photos/fondo-2.jpg) 50% 50%;
+  background-size: cover;
+  padding-top: 3em !important;
+  padding-bottom: 7em !important;
+  a.button {
+    background: $main-color !important;
+    color: white !important;
+    border-radius: 0;
+    font-family: $body-font;
+    transition: all 128ms;
+    position: absolute;
+    margin-top: -0.5em;
+    &:hover {
+      background: white !important;
+      color: $secondary-color !important;
+    }
+  }
+  h2 {
+    color: white;
+  }
+  p {
+    color: white;
+    display: inline-block;
+    margin-right: 2em;
+    width: 60%;
+    line-height: 1.5em;
+    @media only screen and (max-width: 720px) {
+      width: 100%;
+      margin-bottom: 1.5em;
+      margin-right: 0;
+    }
+  }
+  a {
+    color: white;
+  }
+}
+
+.layout-container > header a.logo img.logo {
+  background-color: white;
+}
+
+// Mobile styles.
+
+@media only screen and (max-width: 720px) {
+  .layout-container > header {
+    a.logo {
+      height: auto;
+      width: 100%;
+      img.logo {
+        height: 100%;
+        width: auto;
+      }
+    }
+  }
+
+  .main-menu__trigger {
+    height: 48px;
+    width: 50px;
+    margin-top: -3px;
+  }
+  .main-menu__icon-wrap {
+    left: 10px;
+    top: 10px;
+  }
+  .block-language-blocklanguage-interface .language-switcher-wrapper .current-language {
+    padding: 17px 16px 31px;
+    margin-top: -3px;
+  }
+
+  .layout-container > header.nav-up {
+    top: -180px !important;
+  }
+}
+
+.frontpage-wrapper #block-drupalcampblockforlandingaboutthelocation-2018 ul {
+  padding-left: 20px;
+  color: white;
+  line-height: 25px;
+}
+
+.frontpage-wrapper #business-day .splashawards-image {
+  float: right;
+  margin-left: 1em;
+  margin-bottom: 1em;
+}
+
+.path-sessions {
+  .teaser-list__item {
+    .session__title--list {
+      text-transform: none;
+      line-height: 2.1rem;
+      padding-bottom: 0.5em;
+      a {
+        color: #435772;
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+    .session__author {
+      text-transform: none;
+    }
+  }
+}

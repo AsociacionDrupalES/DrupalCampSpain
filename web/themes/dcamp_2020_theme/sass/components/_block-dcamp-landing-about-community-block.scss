@@ -1,0 +1,14 @@
+.block-dcamp-landing-about-community-block {
+  > h2 {
+    &:before {
+      content: '' !important;
+      background: url(../images/logo-aed-white.png) !important;
+      width: 320px;
+      height: 90px;
+      background-size: contain !important;
+      background-repeat: no-repeat !important;
+      margin: 0 auto !important;
+      margin-bottom: 40px !important;
+    }
+  }
+}
