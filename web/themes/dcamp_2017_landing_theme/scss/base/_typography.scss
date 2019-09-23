@@ -1,0 +1,46 @@
+
+html {
+  body {
+    color: #ffffff;
+
+    .title {
+      text-align: center;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+    }
+
+    h2 {
+      font-family: $header-font;
+      font-weight: 800;
+      text-transform: uppercase;
+      font-size: 500%;
+      padding-bottom: .8em;
+      text-align: left;
+      position: relative;
+      &:after {
+        font-family: 'icons';
+        content: '\e811';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        font-size: .4em;
+        color: $main-color;
+      }
+    }
+    .description {
+      display: block;
+      margin-bottom: 78px;
+      font-size: 150%;
+      letter-spacing: 2px;
+      @include breakpoint(tablet) {
+        margin-bottom: 40px;
+      }
+      @include breakpoint(mobile) {
+        margin-bottom: 30px;
+      }
+    }
+  }
+}

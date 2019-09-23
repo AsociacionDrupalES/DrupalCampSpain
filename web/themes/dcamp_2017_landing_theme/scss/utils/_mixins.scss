@@ -1,0 +1,104 @@
+// Mixins
+
+// Breakpoints
+
+@mixin breakpoint($class) {
+  @if $class == mobile {
+    @media (max-width: $tablet) {
+      @content;
+    }
+  }
+  @if $class == tablet {
+    @media (min-width: $tablet) and (max-width: $desktop) {
+      @content;
+    }
+  }
+  @else if $class == desktop {
+    @media (min-width: 1200px) {
+      @content;
+    }
+  }
+}
+
+// Clearfix
+
+@mixin clearfix {
+  &:before,
+  &:after {
+    content: "";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+// Mixin that will include the fall back px declaration as well as the calculated rem value.
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: calculateRem($size);
+}
+
+@mixin vertical-align {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  transform-style: preserve-3d;
+}
+
+@mixin button {
+  font-family: $header-font;
+  display: inline-block;
+  padding: 30px 40px 30px 40px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 120%;
+  background:  $secondary-color none no-repeat left 30px center;
+  max-width: 90%;
+  &:hover{
+    background:$main-color;
+  }
+  @include breakpoint(mobile){
+    padding: 20px 15px 20px 15px;
+    font-size:90%;
+  }
+}
+
+@-webkit-keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {-webkit-transform: translateY(0);}
+  40% {-webkit-transform: translateY(-30px);}
+  60% {-webkit-transform: translateY(-15px);}
+}
+
+@-moz-keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {-moz-transform: translateY(0);}
+  40% {-moz-transform: translateY(-30px);}
+  60% {-moz-transform: translateY(-15px);}
+}
+
+@-o-keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {-o-transform: translateY(0);}
+  40% {-o-transform: translateY(-30px);}
+  60% {-o-transform: translateY(-15px);}
+}
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+  40% {transform: translateY(-30px);}
+  60% {transform: translateY(-15px);}
+}
+
+@mixin bounce-arrow {
+  bottom: 10%;
+  left: 0;
+  margin: 0 auto;
+  position: absolute;
+  right: 0;
+  animation: bounce 2s infinite;
+  -webkit-animation: bounce 2s infinite;
+  -moz-animation: bounce 2s infinite;
+  -o-animation: bounce 2s infinite;
+
+}
