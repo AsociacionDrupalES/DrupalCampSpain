@@ -1,90 +1,82 @@
 {
-  "name": "drupal-composer/drupal-project",
-  "description": "Project template for Drupal 8 projects with composer",
-  "type": "project",
-  "license": "GPL-2.0+",
-  "authors": [
-    {
-      "name": "",
-      "role": ""
-    }
-  ],
-  "repositories": [
-    {
-      "type": "composer",
-      "url": "https://packages.drupal.org/8"
-    }
-  ],
-  "require": {
-    "composer/installers": "^1.0.20",
-    "drupal-composer/drupal-scaffold": "^2.0.1",
-    "cweagans/composer-patches": "~1.0",
-    "drupal/core": "~8.6.7",
-    "drush/drush": "^9",
-    "drupal/mailchimp": "*",
-    "drupal/features": "3.*",
-    "drupal/google_analytics": "2.*",
-    "drupal/menu_link_attributes": "1.*",
-    "drupal/views_list_sort": "1.*",
-    "drupal/pathauto": "1.x-dev",
-    "drupal/redirect": "1.x-dev",
-    "google/apiclient": "^2.0",
-    "drupal/jsonapi": "1.x-dev",
-    "drupal/stage_file_proxy": "^1.0@alpha"
-  },
-  "require-dev": {
-    "behat/mink": "~1.7",
-    "behat/mink-goutte-driver": "~1.2",
-    "jcalderonzumba/gastonjs": "~1.0.2",
-    "jcalderonzumba/mink-phantomjs-driver": "~0.3.1",
-    "mikey179/vfsStream": "~1.2",
-    "phpunit/phpunit": "~4.8",
-    "symfony/css-selector": "~2.8"
-  },
-  "conflict": {
-    "drupal/drupal": "*"
-  },
-  "minimum-stability": "dev",
-  "prefer-stable": true,
-  "autoload": {
-    "classmap": [
-      "scripts/composer/ScriptHandler.php"
-    ]
-  },
-  "scripts": {
-    "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
-    "post-install-cmd": [
-      "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
+    "name": "drupal-composer/drupal-project",
+    "description": "Project template for Drupal 8 projects with composer",
+    "type": "project",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "",
+            "role": ""
+        }
     ],
-    "post-update-cmd": [
-      "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
-    ]
-  },
-  "extra": {
-    "installer-paths": {
-      "web/core": [
-        "type:drupal-core"
-      ],
-      "web/modules/contrib/{$name}": [
-        "type:drupal-module"
-      ],
-      "web/profiles/contrib/{$name}": [
-        "type:drupal-profile"
-      ],
-      "web/themes/contrib/{$name}": [
-        "type:drupal-theme"
-      ],
-      "drush/contrib/{$name}": [
-        "type:drupal-drush"
-      ]
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://packages.drupal.org/8"
+        }
+    ],
+    "require": {
+        "php": ">=7.0.8",
+        "composer/installers": "^1.2",
+        "cweagans/composer-patches": "^1.6.5",
+        "drupal-composer/drupal-scaffold": "^2.5",
+        "drupal/console": "^1.0.2",
+        "drupal/core": "^8.7.0",
+        "drush/drush": "^9.0.0",
+        "vlucas/phpdotenv": "^2.4",
+        "webflo/drupal-finder": "^1.0.0",
+        "webmozart/path-util": "^2.3",
+        "zaporylie/composer-drupal-optimizations": "^1.0"
     },
-    "patches": {
-      "drupal/mailchimp": {
-        "Allow translating signup forms": "https://www.drupal.org/files/issues/translation-for-email-address-label-unavailable-2821153-5.patch"
-      },
-      "drupal/core": {
-        "Updating Drupal 8.6.x to twig 1.40.0 causes twig exceptions": "https://www.drupal.org/files/issues/2019-04-29/3051269-45.patch"
-      }
+    "require-dev": {
+        "webflo/drupal-core-require-dev": "^8.7.0"
+    },
+    "conflict": {
+        "drupal/drupal": "*"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+        "sort-packages": true
+    },
+    "autoload": {
+        "classmap": [
+            "scripts/composer/ScriptHandler.php"
+        ],
+        "files": ["load.environment.php"]
+    },
+    "scripts": {
+        "pre-install-cmd": [
+            "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
+        ],
+        "pre-update-cmd": [
+            "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
+        ],
+        "post-install-cmd": [
+            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
+        ],
+        "post-update-cmd": [
+            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
+        ]
+    },
+    "extra": {
+        "composer-exit-on-patch-failure": true,
+        "patchLevel": {
+            "drupal/core": "-p2"
+        },
+        "installer-paths": {
+            "web/core": ["type:drupal-core"],
+            "web/libraries/{$name}": ["type:drupal-library"],
+            "web/modules/contrib/{$name}": ["type:drupal-module"],
+            "web/profiles/contrib/{$name}": ["type:drupal-profile"],
+            "web/themes/contrib/{$name}": ["type:drupal-theme"],
+            "drush/Commands/contrib/{$name}": ["type:drupal-drush"]
+        },
+        "drupal-scaffold": {
+            "initial": {
+                ".editorconfig": "../.editorconfig",
+                ".gitattributes": "../.gitattributes"
+            }
+        }
     }
-  }
 }

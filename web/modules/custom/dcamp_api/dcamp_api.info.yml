@@ -1,7 +1,0 @@
-name: DrupalCamp API
-description: Exposes data via a JSON API
-package: dcamp
-type: module
-core: 8.x
-dependencies:
-  - jsonapi

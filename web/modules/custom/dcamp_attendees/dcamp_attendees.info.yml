@@ -1,5 +1,0 @@
-name: DrupalCamp Attendees
-description: Fetches attendees from EventBrite
-package: dcamp
-type: module
-core: 8.x
