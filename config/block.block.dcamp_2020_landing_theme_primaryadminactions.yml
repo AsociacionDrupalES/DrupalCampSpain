@@ -1,0 +1,18 @@
+uuid: 800e7748-dac7-46c9-a2f8-f829bc0de3b8
+langcode: en
+status: true
+dependencies:
+  theme:
+    - dcamp_2020_landing_theme
+id: dcamp_2020_landing_theme_primaryadminactions
+theme: dcamp_2020_landing_theme
+region: content
+weight: -3
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }

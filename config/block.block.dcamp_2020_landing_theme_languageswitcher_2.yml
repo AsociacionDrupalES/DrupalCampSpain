@@ -1,0 +1,20 @@
+uuid: 59f11273-4ad4-478f-9cec-3f69b72dd370
+langcode: en
+status: true
+dependencies:
+  module:
+    - language
+  theme:
+    - dcamp_2020_landing_theme
+id: dcamp_2020_landing_theme_languageswitcher_2
+theme: dcamp_2020_landing_theme
+region: content
+weight: -2
+provider: null
+plugin: 'language_block:language_interface'
+settings:
+  id: 'language_block:language_interface'
+  label: 'Language switcher'
+  provider: language
+  label_display: '0'
+visibility: {  }

@@ -1,0 +1,8 @@
+uuid: 6d16c3c4-57cf-43b4-8ca5-13c8148a7c6a
+langcode: en
+status: true
+dependencies: {  }
+id: '2020'
+label: '2020'
+landing_theme: dcamp_2020_landing_theme
+starting_date: '1588316400'
