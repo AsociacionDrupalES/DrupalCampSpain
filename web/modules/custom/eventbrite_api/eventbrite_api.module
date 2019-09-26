@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains eventbrite_api.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function eventbrite_api_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the eventbrite_api module.
+    case 'help.page.eventbrite_api':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Eventbrite&#039;&#039;s api') . '</p>';
+      return $output;
+
+    default:
+  }
+}
