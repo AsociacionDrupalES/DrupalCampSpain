@@ -62,4 +62,4 @@ $config['dcamp_attendees.settings'] = [
   'debugging' => TRUE,
 ];
 
-$config['stage_file_proxy.settings']['origin'] = 'https://2018.drupalcamp.es';
+$config['stage_file_proxy.settings']['origin'] = 'https://2019.drupalcamp.es';

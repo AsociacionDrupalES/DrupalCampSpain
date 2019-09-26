@@ -14,7 +14,7 @@ function dcamp_attendees_theme($existing, $type, $theme, $path) {
     'attendees_list' => array(
       'variables' => array(
         'attendees' => [],
-        'default_headshot' => base_path() . drupal_get_path('theme', 'dcamp_2019_theme') . '/images/drupal.png',
+        'default_headshot' => base_path() . drupal_get_path('theme', 'dcamp_2020_theme') . '/images/drupal.png',
       ),
     ),
   );

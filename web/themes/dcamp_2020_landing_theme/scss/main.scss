@@ -1,0 +1,150 @@
+
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,400,700');
+
+html body {
+  font-family: "Raleway", helvetica, sans-serif;
+  font-weight: 300;
+}
+html body #fullpage h1, html body #fullpage h2, html body #fullpage h3, html body #fullpage {
+  font-family: "Raleway", helvetica, sans-serif;
+}
+
+div.language-switcher-language-url .language-switcher-wrapper .current-language {
+  background:  #2D4084;
+  border:0;
+  position: relative;
+}
+
+div.language-switcher-language-url .language-switcher-wrapper:hover .current-language {
+  background:  #2D4084;
+}
+
+div.language-switcher-language-url .language-switcher-wrapper  ul {
+  position: absolute;
+  left: 0;
+  bottom: -120px;
+  padding: 0;
+}
+
+div.language-switcher-language-url .language-switcher-wrapper  ul li a {
+  background:  #87C0A8;
+}
+
+div.language-switcher-language-url .language-switcher-wrapper  ul li a:hover {
+  background:  #2D4084;
+}
+
+#fullpage .section#location {
+  background: white url("../images/location.jpg") no-repeat center center;
+  background-size: cover; }
+
+#fullpage .section#intro {
+  background: white url("../images/alicante.jpg") no-repeat center center;
+  background-size: cover; }
+#fullpage .section#community {
+  background: white url("../images/community.jpg") no-repeat center center;
+  background-size: cover;
+}
+#fullpage .section#slogan {
+  background: #2D4084; }
+
+#fullpage .section#sponsor {
+  color: #2D4084;
+  background: white url(../images/circle.svg) no-repeat -30% -30%;
+  background-position: top -400px right -400px !important; }
+
+#fullpage .section#newsletter {
+  background: #87C0A8;
+}
+
+#fullpage img.logo {
+  top: 3%;
+  left: 2%;
+  border-radius: 3px;
+}
+
+.scroll-down .arrow {
+  max-width: 80px;
+}
+
+#fullpage section#slogan .content h2 {
+  display: inline-block;
+  padding: 20px 40px;
+  background-color: #FFF;
+  color: #2D4084;
+  border-radius: 3px;
+  font-weight: 300;
+
+
+}
+
+#location h2, #sponsor h2, #fullpage section#community .content h2, #fullpage section#newsletter .content h2{
+  display: inline-block;
+  padding: 20px 40px;
+  background-color: #2D4084;
+  border-radius: 3px;
+  color: #FFF;
+  font-weight: 300;
+}
+
+#location h2 {
+  background-color: #87C0A8;
+}
+#fullpage .section#community div.description p,
+#location .description p {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  color: #FFF;
+}
+
+#fullpage .section#location a {
+  color: #87C0A8;
+}
+
+#fullpage .section#location a:hover {
+  background: #87C0A8;
+}
+
+.content h2::after {
+  display: none;
+}
+
+#fullpage  section#newsletter div.content h3,
+#fullpage .section#newsletter .note {
+  color: #2D4084;
+}
+
+#fullpage  section#community div.content a.button {
+  background: #87C0A8;
+}
+
+#fullpage  section#community div.content a.button:hover {
+  background: #2D4084;
+}
+
+#slogan #block-drupalcampblockforlandingaboutevent-2020 #countdown span {
+  color: #87C0A8;
+  font-family: "Raleway", helvetica, sans-serif;
+  font-size: 3em;
+  font-weight: 300;
+}
+
+html body div#fp-nav.right {
+  background-color: #FFF;
+  right: 0;
+  padding: 20px 5px 20px 10px;
+  border-radius: 5px 0 0 5px;
+
+}
+
+html body div#fp-nav.right li a span{
+  background-color: #2D4084 !important;
+}
+
+#fullpage #footer div.rrss a:hover {
+  color: #87C0A8;
+}
+
+#fullpage #footer .pattern {
+  background: #87C0A8;
+}

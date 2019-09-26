@@ -129,7 +129,7 @@ function _dcamp_add_dummy_sponsors_and_default_logo() {
     Node::create([
       'type' => 'sponsor',
       'title' => $sponsor['title'],
-      'field_url' => 'http://2017.drupalcamp.es',
+      'field_url' => 'http://2020.drupalcamp.es',
       'field_sponsor_type' => $sponsor['sponsor_type'],
     ])->save();
   }
@@ -202,7 +202,7 @@ EOD
   ];
 
   foreach ($content_blocks as $uuid => $body) {
-    $block = $entity_repository->loadEntityByUuid('block_content', 'dcamp_2017_' . $uuid);
+    $block = $entity_repository->loadEntityByUuid('block_content', 'dcamp_2020_' . $uuid);
     $block->set('body', [
       'value' => t($body),
       'format' => 'basic_html',
@@ -351,7 +351,7 @@ function dcamp_update_8111() {
     ],
     'openexpo' => [
       'name' => 'OpenExpo',
-      'logo' => 'https://trello-attachments.s3.amazonaws.com/5745764996fb85475c78a609/58b03811787b5fc88a61a8fa/8e0acaf4b77bd0f60e10f0aa057d57b5/OpenExpo_2017_-_banner_vert.png',
+      'logo' => 'https://trello-attachments.s3.amazonaws.com/5745764996fb85475c78a609/58b03811787b5fc88a61a8fa/8e0acaf4b77bd0f60e10f0aa057d57b5/OpenExpo_2020_-_banner_vert.png',
       'type' => 'collaborators',
       'website' => 'http://www.openexpo.es',
     ],
@@ -430,7 +430,7 @@ function dcamp_update_8117() {
 }
 
 /**
- * Update main menu links for dcamp_2018_theme.
+ * Update main menu links for dcamp_2020_theme.
  */
 function dcamp_update_8118() {
   /** @var \Drupal\Core\Entity\EntityStorageInterface $menu_link_content_storage */

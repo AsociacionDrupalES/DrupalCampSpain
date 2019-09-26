@@ -61,15 +61,15 @@ function dcamp_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_sta
  */
 function _dcamp_add_content_blocks_for_frontpage(){
   $contentBlocks = [
-    'business_day' => t('Dcamp 2017 Business day'),
-    'venue' => t('Dcamp 2017 Venue'),
-    'become_a_sponsor' => t('Dcamp 2017 Become a sponsor'),
-    'community' => t('Dcamp 2017 Community'),
+    'business_day' => t('Dcamp 2020 Business day'),
+    'venue' => t('Dcamp 2020 Venue'),
+    'become_a_sponsor' => t('Dcamp 2020 Become a sponsor'),
+    'community' => t('Dcamp 2020 Community'),
   ];
   foreach ($contentBlocks as $blockUuid => $label) {
     BlockContent::create([
       'type' => 'basic',
-      'uuid' => 'dcamp_2017_' . $blockUuid,
+      'uuid' => 'dcamp_2020_' . $blockUuid,
       'info' => $label,
       'body' => [
         'value' => '<p>Nulla porttitor accumsan tincidunt. Vivamus suscipit tortor

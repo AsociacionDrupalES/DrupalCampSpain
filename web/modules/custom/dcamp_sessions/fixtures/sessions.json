@@ -1,6 +1,6 @@
 [
   [
-    "3\/17\/2017 17:12:22",
+    "3\/17\/2020 17:12:22",
     "foo@bar",
     "Ruben Egiguren (keopx)",
     "keopx",
@@ -15,7 +15,7 @@
     "Este track seria al menos de 2 horas."
   ],
   [
-    "3\/17\/2017 17:21:02",
+    "3\/17\/2020 17:21:02",
     "foo@bar",
     "Ruben Egiguren (keopx)",
     "keopx",
@@ -30,7 +30,7 @@
     "Es posible hacerla en 45 min o en dos tracks. Aqu\u00ed al gusto de la organizaci\u00f3n."
   ],
   [
-    "3\/17\/2017 17:26:31",
+    "3\/17\/2020 17:26:31",
     "foo@bar",
     "Ruben Egiguren (keopx)",
     "keopx",
@@ -45,7 +45,7 @@
     "Esta charla la he puesto como breve de 10 min, pero puede ser un track normal si se considera adecuado e interesante."
   ],
   [
-    "3\/17\/2017 17:33:22",
+    "3\/17\/2020 17:33:22",
     "foo@bar",
     "Ruben Egiguren (keopx)",
     "keopx",
@@ -60,7 +60,7 @@
     "En caso necesario puede ser adaptada a un track de 10 min, pero seria interesante que fuese de 45 min. En 10 min solo hablar\u00eda de muy muy basico."
   ],
   [
-    "3\/18\/2017 16:48:44",
+    "3\/18\/2020 16:48:44",
     "foo@bar",
     "Cristina Chumillas",
     "ckrina",
@@ -74,7 +74,7 @@
     "Optimizing images can drastically decrease the page load time because, on average, 60% of a website\u2019s page weight is made up of them. Responsive Web Design has changed how the web is built and that includes images too, because the aim is to deliver the highest quality image supported and nothing more. So today we have new standard elements and attributes to work with images widely supported by browsers (and polyfills for the rest) and Drupal has incorporated them.\n\nIn Drupal 8 the Responsive Image module is in core and is prepared to solve a wide range of needs. And, as usually happens in Drupal, there are several contributed modules that help us to improve the basic needs or to solve the special ones, like Art Direction.\n\nI\u2019ll start this session with a quick introduction about the different existing solutions for responsive images to be sure we are all at the same page. I\u2019ll explain the difference between viewport sizing and Art Direction and how we are supposed to work with Drupal for each one, including demos. I\u2019ll share tips and contrib modules that can make the developer and the final user live easier. I\u2019ll also explain how lazy loading works and what solutions do we have in Drupal.\n\nWhen you leave this session you\u2019ll have an idea about the options offered for Drupal and enough knowledge to choose the correct one for your project."
   ],
   [
-    "3\/22\/2017 9:54:34",
+    "3\/22\/2020 9:54:34",
     "foo@bar",
     "Miguel Angel Caro Garc\u00eda",
     "miguel.caro",
@@ -89,7 +89,7 @@
     "La charla es con Juan Jos\u00e9 Gal\u00e1n L\u00f3pez. Nombre de usuario drupal: galan. Descripci\u00f3n: Desarrollador Web en ASPgems. Le encanta la lectura y salir a correr, especialmente escuchando m\u00fasica de los 80's y 90s. Disfruta trabajando como desarrollador web y la programaci\u00f3n en general. A medio camino entre backend y el frontend le gusta experimentar con las nuevas tecnolog\u00edas. Twitter: @Jgalanlo ."
   ],
   [
-    "3\/23\/2017 11:30:21",
+    "3\/23\/2020 11:30:21",
     "foo@bar",
     "Ignacio S\u00e1nchez Holgueras",
     "isholgueras",
@@ -103,7 +103,7 @@
     "A finales del a\u00f1o pasado cre\u00e9 un club de lectura, llamado OPHPEN_READS, enfocado a PHP. Las reuniones las hacemos cada 2 o 3 domingos y todo lo hacemos por Hangout Live.\n\nMe gustar\u00eda publicar y dar a conocer aun m\u00e1s que existe este club de lectura, c\u00f3mo funciona, qu\u00e9 libros son los que vamos o hemos le\u00eddo y por qu\u00e9 deber\u00edas participar, aunque sea s\u00f3lo viendo las sesiones :)"
   ],
   [
-    "3\/23\/2017 23:09:27",
+    "3\/23\/2020 23:09:27",
     "foo@bar",
     "Claudia Giommarini",
     "",
@@ -117,7 +117,7 @@
     "En esta sesi\u00f3n quiero dar unas pautas para que cuando una organizaci\u00f3n tome la decisi\u00f3n de empezar un proyecto de Marketing Automation se organice de manera tal que el proyecto no se haga eterno generando el descontento de todos, tanto por de los departamentos de marketing y negocio tanto de los departamentos de tecnologia y producto."
   ],
   [
-    "3\/25\/2017 15:56:18",
+    "3\/25\/2020 15:56:18",
     "foo@bar",
     "David Hern\u00e1ndez Ruiz",
     "David Hern\u00e1ndez",
@@ -131,7 +131,7 @@
     "Gizra has been doing Headless Drupal for a long time and the technology stack has evolved a lot since the very beginning. In this session, we will have a look at our current tools, how do we use them and their benefits: reliability, development speed, maintainability...\n\nDuring the session we will see the process of building a chatroom: we will start with the backend, where we still use Drupal 7, with the Restful module and the ecosystem around it. We will move into the frontend, where we currently use Elm. Real time applications are super cool, so we will see our current tool for them: Pusher and how we integrate it with Drupal and Elm.\n\nAnd we will finish having a look at the bright future of Drupal 8: Rest, GraphQL, JSON API."
   ],
   [
-    "3\/28\/2017 10:12:01",
+    "3\/28\/2020 10:12:01",
     "foo@bar",
     "Teun van Veggel",
     "nuez",
@@ -145,7 +145,7 @@
     "How to develop an app in Drupal 8 by writing the tests first.\n\nIn this talk I will explore the Drupal 8 Testing API, using an example application. I will try to explain how you can use tests not only to validate your code, but also to help you write it."
   ],
   [
-    "3\/29\/2017 8:36:12",
+    "3\/29\/2020 8:36:12",
     "foo@bar",
     "Oscar Calvo Vidal",
     "oskarcalvo",
@@ -159,7 +159,7 @@
     "Una charla en la que se explica que es Deployer, como se configura, y como se puede usar para desplegar proyectos de Drupal."
   ],
   [
-    "3\/29\/2017 8:38:37",
+    "3\/29\/2020 8:38:37",
     "calvo.oskar@gmail.com",
     "Oscar Calvo",
     "oskarcalvo",
@@ -173,7 +173,7 @@
     "Charla en la que explico dos opciones para acelerar la carga de las p\u00e1ginas webs de Drupal que utilizan boost como cache."
   ],
   [
-    "3\/29\/2017 20:43:00",
+    "3\/29\/2020 20:43:00",
     "foo@bar",
     "Ra\u00fal Bordallo Mart\u00edn-Rayo",
     "rbordallo",
@@ -188,7 +188,7 @@
     "Como organizador\/facilitador del BusinessDay me gustar\u00eda que si la charla es aceptada no coincida con el BusinessDay. Gracias."
   ],
   [
-    "3\/30\/2017 9:32:20",
+    "3\/30\/2020 9:32:20",
     "foo@bar",
     "Oskar Calvo",
     "oskarcalvo",
@@ -202,7 +202,7 @@
     "Qu\u00e9 ocurre cuando en tu organizaci\u00f3n ten\u00e9is \"n\" modules privados y no se quieren hacer p\u00fablicos, como conseguir que Composer pueda gestionar estos repositorios."
   ],
   [
-    "3\/30\/2017 14:53:31",
+    "3\/30\/2020 14:53:31",
     "foo@bar",
     "Monta\u00f1a Franco ",
     "mon_franco",

@@ -1,0 +1,18 @@
+name: DrupalCampSpain 2020 Landing Theme
+type: theme
+description: 'AED DrupalCamp 2020 Landing Theme'
+base theme: dcamp_2017_landing_theme
+version: 0.1-dev
+core: 8.x
+
+regions:
+  content: 'Content'
+  region_1: 'Region 1'
+  region_2: 'Region 2'
+  region_3: 'Region 3'
+  region_4: 'Region 4'
+  region_5: 'Region 5'
+  region_6: 'Region 6'
+
+libraries:
+ - dcamp_2020_landing_theme/global

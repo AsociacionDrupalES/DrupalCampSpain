@@ -47,16 +47,16 @@ class DcampController extends ControllerBase {
 
     return [
       '#theme' => 'frontpage',
-      '#business_day' => $blockManager->createInstance('block_content:dcamp_2017_business_day')->build(),
-      '#venue' => $blockManager->createInstance('block_content:dcamp_2017_venue')->build(),
+      '#business_day' => $blockManager->createInstance('block_content:dcamp_2020_business_day')->build(),
+      '#venue' => $blockManager->createInstance('block_content:dcamp_2020_venue')->build(),
       '#sponsors' => views_embed_view('sponsors', 'all_sponsors'),
-      '#become_a_sponsor' => $blockManager->createInstance('block_content:dcamp_2017_become_a_sponsor')->build(),
+      '#become_a_sponsor' => $blockManager->createInstance('block_content:dcamp_2020_become_a_sponsor')->build(),
       '#speakers' => views_embed_view('featured_speakers', 'block'),
-      '#community' => $blockManager->createInstance('block_content:dcamp_2017_community')->build(),
+      '#community' => $blockManager->createInstance('block_content:dcamp_2020_community')->build(),
       '#attached' => [
         'library' => [
-          'dcamp_2017_theme/frontpage',
-          'dcamp_2017_landing_theme/plax'
+          'dcamp_2020_theme/frontpage',
+          'dcamp_2020_landing_theme/plax'
         ]
       ]
     ];
@@ -66,7 +66,7 @@ class DcampController extends ControllerBase {
    * Title callback for frontpage.
    */
   public function getFrontpageTitle(){
-    return $this->t('Two days of Drupal presentations, workshops and networking | Alicante, May the 26th and 27th 2018');
+    return $this->t('Two days of Drupal presentations, workshops and networking | Alicante, May the 26th and 27th 2020');
   }
 
 }

@@ -35,8 +35,8 @@
     },
     "resource_uri": "https:\/\/www.eventbriteapi.com\/v3\/events\/43648758612\/attendees\/925469688\/",
     "id": "925469688",
-    "changed": "2018-03-12T09:31:06Z",
-    "created": "2018-03-12T09:31:05Z",
+    "changed": "2020-03-12T09:31:06Z",
+    "created": "2020-03-12T09:31:05Z",
     "quantity": 1,
     "profile": {
       "first_name": "tom",
@@ -56,8 +56,8 @@
         "status": "unused",
         "barcode": "742221389925469688001",
         "checkin_type": 0,
-        "created": "2018-03-12T09:31:06Z",
-        "changed": "2018-03-12T09:31:06Z"
+        "created": "2020-03-12T09:31:06Z",
+        "changed": "2020-03-12T09:31:06Z"
       }
     ],
     "answers": [
@@ -150,8 +150,8 @@
     },
     "resource_uri": "https:\/\/www.eventbriteapi.com\/v3\/events\/43648758612\/attendees\/925472435\/",
     "id": "925472435",
-    "changed": "2018-03-12T09:40:48Z",
-    "created": "2018-03-12T09:40:48Z",
+    "changed": "2020-03-12T09:40:48Z",
+    "created": "2020-03-12T09:40:48Z",
     "quantity": 1,
     "profile": {
       "first_name": "iggy",
@@ -171,8 +171,8 @@
         "status": "unused",
         "barcode": "742223821925472435001",
         "checkin_type": 0,
-        "created": "2018-03-12T09:40:48Z",
-        "changed": "2018-03-12T09:40:48Z"
+        "created": "2020-03-12T09:40:48Z",
+        "changed": "2020-03-12T09:40:48Z"
       }
     ],
     "answers": [
@@ -264,8 +264,8 @@
     },
     "resource_uri": "https:\/\/www.eventbriteapi.com\/v3\/events\/43648758612\/attendees\/925472435-1\/",
     "id": "925472435-1",
-    "changed": "2018-03-12T09:40:48Z",
-    "created": "2018-03-12T09:40:48Z",
+    "changed": "2020-03-12T09:40:48Z",
+    "created": "2020-03-12T09:40:48Z",
     "quantity": 1,
     "profile": {
       "first_name": "iggy",
@@ -285,8 +285,8 @@
         "status": "unused",
         "barcode": "742223821925472435002",
         "checkin_type": 0,
-        "created": "2018-03-12T09:40:48Z",
-        "changed": "2018-03-12T09:40:48Z"
+        "created": "2020-03-12T09:40:48Z",
+        "changed": "2020-03-12T09:40:48Z"
       }
     ],
     "answers": [
@@ -378,8 +378,8 @@
     },
     "resource_uri": "https:\/\/www.eventbriteapi.com\/v3\/events\/43648758612\/attendees\/925472652\/",
     "id": "925472652",
-    "changed": "2018-03-12T09:41:32Z",
-    "created": "2018-03-12T09:41:32Z",
+    "changed": "2020-03-12T09:41:32Z",
+    "created": "2020-03-12T09:41:32Z",
     "quantity": 1,
     "profile": {
       "first_name": "rita",
@@ -399,8 +399,8 @@
         "status": "unused",
         "barcode": "742224008925472652001",
         "checkin_type": 0,
-        "created": "2018-03-12T09:41:32Z",
-        "changed": "2018-03-12T09:41:32Z"
+        "created": "2020-03-12T09:41:32Z",
+        "changed": "2020-03-12T09:41:32Z"
       }
     ],
     "answers": [
@@ -492,8 +492,8 @@
     },
     "resource_uri": "https:\/\/www.eventbriteapi.com\/v3\/events\/43648758612\/attendees\/925472954\/",
     "id": "925472954",
-    "changed": "2018-03-12T09:42:36Z",
-    "created": "2018-03-12T09:42:35Z",
+    "changed": "2020-03-12T09:42:36Z",
+    "created": "2020-03-12T09:42:35Z",
     "quantity": 1,
     "profile": {
       "first_name": "carmelo",
@@ -512,8 +512,8 @@
         "status": "unused",
         "barcode": "742224280925472954001",
         "checkin_type": 0,
-        "created": "2018-03-12T09:42:36Z",
-        "changed": "2018-03-12T09:42:36Z"
+        "created": "2020-03-12T09:42:36Z",
+        "changed": "2020-03-12T09:42:36Z"
       }
     ],
     "answers": [
@@ -608,8 +608,8 @@
     },
     "resource_uri": "https:\/\/www.eventbriteapi.com\/v3\/events\/43648758612\/attendees\/925473191\/",
     "id": "925473191",
-    "changed": "2018-03-12T09:43:18Z",
-    "created": "2018-03-12T09:43:18Z",
+    "changed": "2020-03-12T09:43:18Z",
+    "created": "2020-03-12T09:43:18Z",
     "quantity": 1,
     "profile": {
       "first_name": "txema",
@@ -629,8 +629,8 @@
         "status": "unused",
         "barcode": "742224498925473191001",
         "checkin_type": 0,
-        "created": "2018-03-12T09:43:18Z",
-        "changed": "2018-03-12T09:43:18Z"
+        "created": "2020-03-12T09:43:18Z",
+        "changed": "2020-03-12T09:43:18Z"
       }
     ],
     "answers": [
