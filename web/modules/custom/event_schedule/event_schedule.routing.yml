@@ -1,0 +1,6 @@
+event_schedule.schedule:
+  path: '/schedule'
+  defaults:
+    _controller: '\Drupal\event_schedule\Controller\ScheduleController::renderSchedule'
+  requirements:
+    _permission: 'access content'
