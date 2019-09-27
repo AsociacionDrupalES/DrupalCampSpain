@@ -1,0 +1,22 @@
+uuid: 55961dba-de71-4e0b-aee2-3e15a15ec326
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.featured_speakers
+    - field.field.block_content.featured_speakers.field_featured_speakers
+id: block_content.featured_speakers.default
+targetEntityType: block_content
+bundle: featured_speakers
+mode: default
+content:
+  field_featured_speakers:
+    weight: 1
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+hidden:
+  langcode: true

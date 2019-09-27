@@ -1,0 +1,28 @@
+uuid: 40c499b6-70a6-4945-8989-b4c9bc78f5a8
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.featured_speakers
+    - field.storage.block_content.field_featured_speakers
+    - node.type.featured_speaker
+id: block_content.featured_speakers.field_featured_speakers
+field_name: field_featured_speakers
+entity_type: block_content
+bundle: featured_speakers
+label: 'Featured speakers'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      featured_speaker: featured_speaker
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

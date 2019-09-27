@@ -1,0 +1,8 @@
+uuid: a98ea4a8-7364-4041-98b8-e682fca53a67
+langcode: en
+status: true
+dependencies: {  }
+id: featured_speakers
+label: 'Featured speakers'
+revision: 0
+description: ''

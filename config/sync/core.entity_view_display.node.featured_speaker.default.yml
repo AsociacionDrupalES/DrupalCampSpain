@@ -1,0 +1,67 @@
+uuid: 27c7822c-d31f-4493-9d46-ea56d4bbbe67
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.featured_speaker.body
+    - field.field.node.featured_speaker.field_company
+    - field.field.node.featured_speaker.field_photo
+    - field.field.node.featured_speaker.field_social_networks
+    - node.type.featured_speaker
+  module:
+    - image
+    - link
+    - text
+    - user
+id: node.featured_speaker.default
+targetEntityType: node
+bundle: featured_speaker
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_company:
+    weight: 102
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_photo:
+    weight: 104
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_social_networks:
+    weight: 103
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  links:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  langcode: true

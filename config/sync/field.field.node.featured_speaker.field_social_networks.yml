@@ -1,0 +1,23 @@
+uuid: e7bc7014-a0d4-4fae-afc9-e8ccef96f441
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_social_networks
+    - node.type.featured_speaker
+  module:
+    - link
+id: node.featured_speaker.field_social_networks
+field_name: field_social_networks
+entity_type: node
+bundle: featured_speaker
+label: 'Social networks'
+description: 'Provide full URL''s'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 0
+field_type: link

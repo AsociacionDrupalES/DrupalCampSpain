@@ -1,0 +1,16 @@
+uuid: 2286363c-ed73-4f2f-9ca1-f2abe182d84c
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.featured_speakers
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: block_content.featured_speakers
+target_entity_type_id: block_content
+target_bundle: featured_speakers
+default_langcode: site_default
+language_alterable: false
