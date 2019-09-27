@@ -1,0 +1,7 @@
+eventbrite_api.webhooks:
+  path: '/eventbrite-webhooks'
+  methods: [POST]
+  defaults:
+    _controller: '\Drupal\eventbrite_api\Controller\EventbriteApiController::processPayload'
+  requirements:
+    _permission: 'access content'
