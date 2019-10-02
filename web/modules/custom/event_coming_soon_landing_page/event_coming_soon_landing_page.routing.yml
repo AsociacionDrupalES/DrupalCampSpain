@@ -1,0 +1,6 @@
+event_coming_soon_landing_page.render:
+  path: '/coming-soon'
+  defaults:
+    _controller: '\Drupal\event_coming_soon_landing_page\Controller\ComingSoonLandingPageController::render'
+  requirements:
+    _permission: 'access content'
