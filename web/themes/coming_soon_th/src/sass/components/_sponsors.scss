@@ -1,3 +1,21 @@
-.sponsors{
+.sponsors {
   background: $color-white-1;
+  padding: 70px 0;
+
+  h2 {
+    font-size: 36px;
+    color: $color-grey-1;
+    text-align: center;
+  }
+
+  .content {
+    @include flex-grid(7, 40px);
+
+    a {
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
 }

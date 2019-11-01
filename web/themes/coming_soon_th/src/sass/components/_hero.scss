@@ -1,7 +1,7 @@
 .hero {
   background: $color-blue-1;
   text-align: center;
-  padding: 300px 20px 150px;
+  padding: 300px 20px 30px;
   position: relative;
   margin-bottom: 40px;
 
@@ -24,12 +24,11 @@
 
   .overflow-footer {
     background: $color-yellow-1;
-    position: absolute;
-    width: 90%;
-    left: 5%;
-    bottom: -40px;
+    color: $color-brown-1;
+    position: relative;
+    bottom: -70px;
     padding: 30px 40px 40px;
     font-size: 24px;
-    color: $color-brown-1;
+    width: 100%;
   }
 }

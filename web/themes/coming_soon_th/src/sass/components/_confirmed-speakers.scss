@@ -1,3 +1,11 @@
-.confirmed-speakers{
+.confirmed-speakers {
+  > h2 {
+    font-size: 36px;
+    color: $color-grey-1;
+  }
 
+  > .list {
+    display: flex;
+    justify-content: space-between;
+  }
 }

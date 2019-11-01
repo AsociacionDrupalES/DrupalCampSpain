@@ -1,0 +1,46 @@
+.about-venue {
+  position: relative;
+  padding-bottom: 50px;
+
+  > .content {
+    position: absolute;
+    width: 50%;
+    bottom: 0;
+    padding: 40px 27% 40px 40px;
+
+    &:after {
+      content: '';
+      background: $color-white-1;
+      width: 100%;
+      height: 50%;
+      display: block;
+      position: absolute;
+      bottom: 0;
+      z-index: -1;
+      left: 0;
+    }
+
+    > h2 {
+      font-size: 36px;
+      color: $color-grey-1;
+
+    }
+
+    > p {
+      color: $color-grey-1;
+      font-size: 18px;
+    }
+
+    > a {
+      background: $color-grey-1;
+      display: inline-block;
+      color: white;
+      text-decoration: none;
+      padding: 10px 50px 10px 10px;
+    }
+  }
+
+  > img {
+    float: right;
+  }
+}

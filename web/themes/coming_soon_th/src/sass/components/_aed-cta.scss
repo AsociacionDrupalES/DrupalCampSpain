@@ -1,3 +1,31 @@
 .aed-cta {
   background: $color-grey-1;
+  text-align: center;
+  padding: 50px 0;
+
+  .content {
+    max-width: 500px;
+    margin: 0 auto;
+
+    h2 {
+      font-size: 36px;
+      color: #fff;
+    }
+
+    p {
+      font-size: 14px;
+      color: #fff;
+    }
+
+    a {
+      background: $color-blue-1;
+      font-size: 18px;
+      color: $color-grey-1;
+      text-decoration: none;
+      padding: 10px 20px;
+      display: inline-block;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+  }
 }
