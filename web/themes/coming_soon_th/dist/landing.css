@@ -1,4 +1,92 @@
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,900&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Playfair+Display&display=swap");
+* {
+  box-sizing: border-box;
+  font-family: "Source Sans Pro";
+}
+
+ul, li {
+  margin: 0;
+  padding: 0;
+}
+
+.hero {
+  margin-bottom: 100px !important;
+}
+
+.confirmed-speakers {
+  margin-bottom: 100px;
+}
+
+.about-venue {
+  margin-bottom: 100px;
+}
+
+.about-business-day {
+  margin-bottom: 100px;
+}
+
+.sponsors {
+  margin-bottom: 100px;
+}
+
+.aed-cta {
+  background: #323B3E;
+}
+
+.footer-first {
+  background: #222627;
+}
+
+.footer-second {
+  background: #1B1C1D;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.hero {
+  background: #A5E6EC;
+  text-align: center;
+  padding: 300px 20px 150px;
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.hero h1 {
+  font-family: "layfair Display";
+  font-size: 48px;
+  line-height: 64px;
+  text-decoration-line: underline;
+  font-weight: normal;
+  color: #323B3E;
+}
+
+.hero .overflow-footer {
+  background: #FAE673;
+  position: absolute;
+  width: 90%;
+  left: 5%;
+  bottom: -40px;
+  padding: 30px 40px 40px;
+  font-size: 24px;
+  color: #4B420C;
+}
+
+.navigation > ul {
+  display: none;
+}
+
+.post-footer {
+  background: #1B1C1D;
+}
+
+.sponsors {
+  background: #F3F3EE;
+}
 
 /*# sourceMappingURL=landing.css.map */
