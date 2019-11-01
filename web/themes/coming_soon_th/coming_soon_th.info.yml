@@ -1,0 +1,12 @@
+name: 'Event "coming soon" landing page'
+type: theme
+description: 'Event "coming soon" landing page'
+base theme: classy
+version: 1.0.0
+core_version_requirement: ^8
+
+libraries:
+  - coming_soon_th/landing-page
+
+regions:
+  content: 'Content'

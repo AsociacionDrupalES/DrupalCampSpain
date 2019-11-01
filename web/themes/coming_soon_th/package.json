@@ -11,9 +11,7 @@
     "gulp-sass": "^4.0.2",
     "gulp-sass-glob": "^1.0.9",
     "gulp-sourcemaps": "^2.6.5",
-    "gulp-uglify": "^3.0.2"
-  },
-  "dependencies": {
+    "gulp-uglify": "^3.0.2",
     "gulp-concat": "^2.6.1"
   }
 }

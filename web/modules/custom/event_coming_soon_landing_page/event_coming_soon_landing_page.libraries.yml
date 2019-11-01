@@ -1,6 +1,0 @@
-landing-page:
-  js:
-    theming/dist/landing-page.min.js: {}
-  css:
-    component:
-      theming/dist/landing-page.css: {}

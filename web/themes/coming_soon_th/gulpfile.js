@@ -1,16 +1,18 @@
+// jshint ignore: start
 'use strict';
 const gulp = require('gulp');
 const sass = require('gulp-sass');
 const sassGlob = require('gulp-sass-glob');
 const sourcemaps = require('gulp-sourcemaps');
 const rename = require('gulp-rename');
+const uglify = require('gulp-uglify');
 const concat = require('gulp-concat');
 
 const settings = {
   // Sources
   sassSrcFiles: ['src/sass/**/*.scss'],
-  jsSrcFiles: ['src/js/**/*.js'],
-  copySrcFiles: ['src/*img/**/*'],
+  jsSrcFiles: ['src/js/**/*.js', '!src/js/vendor/**'],
+  copySrcFiles: ['src/js/*vendor/**/*', 'src/*img/**/*'],
 
   // Destinations.
   destDir: 'dist',
@@ -21,7 +23,8 @@ const settings = {
  */
 const jsTask = () => {
   return gulp.src(settings.jsSrcFiles)
-    .pipe(concat('landing-page.js'))
+    .pipe(concat('landing.js'))
+    // .pipe(uglify())
     .pipe(rename({suffix: '.min'}))
     .pipe(gulp.dest(settings.destDir));
 };

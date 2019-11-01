@@ -1,0 +1,6 @@
+landing-page:
+  js:
+    dist/landing.min.js: {}
+  css:
+    component:
+      dist/landing.css: {}

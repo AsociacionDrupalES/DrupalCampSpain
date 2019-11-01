@@ -1,5 +1,5 @@
 (function ($, Drupal) {
-  Drupal.behaviors.comminSoonLandingPage = {
+  Drupal.behaviors.landingPage = {
 
     attach: function (context, settings) {
 
