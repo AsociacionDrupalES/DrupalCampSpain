@@ -1,0 +1,19 @@
+{
+  "name": "landing_page",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "gulp build",
+    "watch": "gulp watch"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.1",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sass-glob": "^1.0.9",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-uglify": "^3.0.2"
+  },
+  "dependencies": {
+    "gulp-concat": "^2.6.1"
+  }
+}

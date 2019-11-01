@@ -13,8 +13,10 @@ use Symfony\Component\HttpFoundation\Response;
 class ComingSoonLandingPageController extends ControllerBase {
 
   public function render() {
+    $variables['#attached']['library'][] = 'fluffiness/node-preview';
     $theme = [
       '#theme' => 'coming_soon_landing_page',
+      '#attached' => ['library' => ['event_coming_soon_landing_page/landing-page']]
     ];
 
     $res = \Drupal::service('renderer')->render($theme);
