@@ -9,8 +9,8 @@
   debug: var=updb
 
 - name: 'drush cim sync'
-  shell: 'drush cim sync -y {{ drush_args }}' 
-  args: 
+  shell: 'drush cim -y {{ drush_args }}'
+  args:
     chdir: "{{ ansistrano_release_path.stdout }}{{ drupal_rel_path }}"
   register: cim_sync
 
@@ -18,8 +18,8 @@
   debug: var=cim_sync
 
 - name: 'drush cr'
-  shell: 'drush cr {{ drush_args }}' 
-  args: 
+  shell: 'drush cr {{ drush_args }}'
+  args:
     chdir: "{{ ansistrano_release_path.stdout }}{{ drupal_rel_path }}"
 
 - name: 'varnish clean domain all'
