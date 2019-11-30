@@ -1,1 +1,15 @@
 <?php
+
+/**
+ * Implements theme_preprocess().
+ *
+ * Add current theme path to variables.
+ *
+ * This is necessary until it's possible accessing stream wrappers in twig.
+ *
+ * @see https://www.drupal.org/node/2611246
+ */
+function coming_soon_th_preprocess(&$variables, $hook) {
+  $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
+  $variables['language'] = $language;
+}
