@@ -4,3 +4,14 @@ landing-page:
   css:
     component:
       dist/landing.css: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings
+
+waypoints:
+  version: "4.0.1"
+  remote: "http://imakewebthings.com/waypoints/"
+  license: "MIT"
+  js:
+    dist/vendor/waypoints/noframework.waypoints.js: {}

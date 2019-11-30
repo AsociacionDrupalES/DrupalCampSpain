@@ -2,13 +2,23 @@
   Drupal.behaviors.landingPage = {
 
     attach: function (context, settings) {
+      const $header = $('.header');
 
-      // let $els = $(context).find();
-      //
-      // $els.once().each(function () {
-      //   let $this = $(this);
-      //
-      // });
+      new Waypoint({
+        element: $('body')[0],
+        handler: function (direction) {
+
+          if (direction === 'down') {
+            $header.addClass('header-offset');
+          }
+          else {
+            $header.removeClass('header-offset');
+          }
+        },
+        offset: -100
+      });
+
+
     }
   };
 
