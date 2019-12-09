@@ -1,0 +1,9 @@
+<?php
+
+/**
+ * Implements theme_preprocess().
+ */
+function dcamp_2020_th_preprocess(&$variables, $hook) {
+  $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
+  $variables['language'] = $language;
+}
