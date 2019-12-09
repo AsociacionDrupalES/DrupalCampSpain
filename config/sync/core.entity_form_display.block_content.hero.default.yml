@@ -22,6 +22,7 @@ content:
       rows: 9
       summary_rows: 3
       placeholder: ''
+      show_summary: false
     third_party_settings: {  }
     region: content
   field_background_image:
@@ -47,4 +48,9 @@ content:
     settings:
       include_locked: true
     third_party_settings: {  }
+  translation:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
 hidden: {  }

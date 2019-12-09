@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.landing.layout_builder__layout
     - node.type.landing
   module:
     - path
@@ -57,8 +58,10 @@ content:
       match_operator: CONTAINS
       size: 60
       placeholder: ''
+      match_limit: 10
     region: content
     third_party_settings: {  }
 hidden:
+  layout_builder__layout: true
   promote: true
   sticky: true
