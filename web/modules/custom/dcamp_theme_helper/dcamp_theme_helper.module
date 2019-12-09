@@ -1,0 +1,16 @@
+<?php
+
+/**
+ * @file
+ * Contains dcamp_theme_helper.module.
+ */
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter() for form templates.
+ */
+function dcamp_theme_helper_theme_suggestions_block_alter(array &$suggestions, array $variables) {
+  // Block suggestions for custom block bundles.
+  if (isset($variables['elements']['content']['#block_content'])) {
+    array_splice($suggestions, 1, 0, 'block__type__' . $variables['elements']['content']['#block_content']->bundle());
+  }
+}
