@@ -25,25 +25,24 @@
  * @see template_preprocess_block()
  */
 #}
-{%
-  set classes = [
+{% set classes = [
   'block',
   'block-' ~ configuration.provider|clean_class,
   'block-' ~ plugin_id|clean_class,
-]
-%}
+] %}
+
 <div{{ attributes.addClass(classes) }}>
   {{ title_prefix }}
   {% if label %}
     <h2{{ title_attributes }}>{{ label }}</h2>
   {% endif %}
   {{ title_suffix }}
+
   {% block content %}
+    {{ content.field_background_image }}
 
-    <div class="mirana">
-      {{ content.field_background_image }}
+    <div class="inner-content">
+      {{ content|without('field_background_image') }}
     </div>
-
-    {{ content.body }}
   {% endblock %}
 </div>
