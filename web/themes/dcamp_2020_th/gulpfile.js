@@ -11,8 +11,15 @@ const concat = require('gulp-concat');
 const settings = {
   // Sources
   sassSrcFiles: ['src/sass/**/*.scss'],
-  jsSrcFiles: ['src/js/**/*.js', '!src/js/vendor/**'],
-  copySrcFiles: ['src/js/*vendor/**/*', 'src/*img/**/*'],
+  jsSrcFiles: [
+    'src/js/**/*.js',
+    '!src/js/blocks/**',
+    '!src/js/regions/**'],
+  copySrcFiles: [
+    'src/js/*blocks/**/*',
+    'src/js/*regions/**/*',
+    'src/*img/**/*'
+  ],
 
   // Destinations.
   destDir: 'dist',

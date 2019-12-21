@@ -1,8 +1,8 @@
 (function ($, Drupal) {
-  Drupal.behaviors.dcamp2020Th = {
+  Drupal.behaviors.dcamp2020ThBlockTypeHero = {
 
     attach: function (context, settings) {
-      // Code goes here.
+      console.log('Block type "hero"');
     }
   };
 

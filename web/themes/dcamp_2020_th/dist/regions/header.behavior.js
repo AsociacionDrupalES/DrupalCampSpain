@@ -1,8 +1,8 @@
 (function ($, Drupal) {
-  Drupal.behaviors.landingPage = {
+  Drupal.behaviors.dcamp2020ThRegionHeader = {
 
     attach: function (context, settings) {
-      const $header = $('.header');
+      const $header = $('header');
 
       new Waypoint({
         element: $('body')[0],
@@ -17,7 +17,6 @@
         },
         offset: -100
       });
-
 
     }
   };

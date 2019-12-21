@@ -9,9 +9,19 @@ dcamp_2020_th_core_library:
     - core/drupal
     - core/drupalSettings
 
-waypoints:
-  version: "4.0.1"
-  remote: "http://imakewebthings.com/waypoints/"
-  license: "MIT"
+region-header:
   js:
-    dist/vendor/waypoints/noframework.waypoints.js: {}
+    dist/regions/header.behavior.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings
+    - dcamp_theme_helper/waypoints
+
+block-type-hero:
+  js:
+    dist/blocks/block-types/hero.behavior.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings
