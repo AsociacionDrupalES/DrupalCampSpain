@@ -1,0 +1,12 @@
+
+# Library for [COMPONENT_NAME] component.
+block-type-[COMPONENT_NAME]:
+  css:
+    component:
+      dist/blocks/block-types/[COMPONENT_NAME].css: {}
+  js:
+    dist/blocks/block-types/[COMPONENT_NAME].behavior.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings

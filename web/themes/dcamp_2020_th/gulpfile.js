@@ -7,6 +7,10 @@ const sourcemaps = require('gulp-sourcemaps');
 const rename = require('gulp-rename');
 const uglify = require('gulp-uglify');
 const concat = require('gulp-concat');
+const debug = require('gulp-debug');
+const through = require('through2');
+const fs = require('fs');
+const replace = require('replace-in-file');
 
 const settings = {
   // Sources
@@ -55,6 +59,86 @@ const copyTask = () => {
     .pipe(gulp.dest(settings.destDir));
 };
 
+const pipeGenComponentFiles = () => {
+  return through.obj((file, enc, cb) => {
+    const jsDestPath = "./src/js/blocks/block-types/";
+    const scssDestPath = "./src/sass/blocks/block-types/";
+    const templatesDir = "./src/file-templates/block-types/";
+
+    const baseName = file.basename.split('.')[0];
+    const componentName = baseName.split('--').pop();
+    const capitalizedComponentName = componentName.charAt(0).toUpperCase() + componentName.slice(1);
+    const jsName = componentName + '.behavior.js';
+    const scssName = componentName + '.scss';
+    const jsFullPathFile = jsDestPath + jsName;
+    const scssFullPathFile = scssDestPath + scssName;
+
+    // Check if component files already exists.
+    let jsCompFileAlreadyExist = fs.existsSync(jsFullPathFile);
+    let scssCompFileAlreadyExist = fs.existsSync(scssFullPathFile);
+
+    console.log('');
+    console.group('Generated files for "' + componentName + '" component:');
+
+    if (jsCompFileAlreadyExist && scssCompFileAlreadyExist) {
+      console.log('All needed files for this component already exist.');
+    }
+    else {
+
+      if (!jsCompFileAlreadyExist) {
+        const templateFullPath = templatesDir + 'template.behavior.js';
+
+        fs.copyFileSync(templateFullPath, jsFullPathFile);
+
+        replace.sync({
+          files: jsFullPathFile,
+          from: /\[COMPONENT_NAME\]/g,
+          to: capitalizedComponentName,
+        });
+
+        console.log(jsName);
+      }
+
+      if (!scssCompFileAlreadyExist) {
+        const templateFullPath = templatesDir + 'template.scss';
+
+        fs.copyFileSync(templateFullPath, scssFullPathFile);
+
+        replace.sync({
+          files: scssFullPathFile,
+          from: /\[COMPONENT_NAME\]/g,
+          to: componentName,
+        });
+
+        console.log(scssName);
+      }
+
+      let libraryNewContent = fs.readFileSync(templatesDir + 'template.library.yml', 'utf8');
+      libraryNewContent = libraryNewContent.replace(/\[COMPONENT_NAME\]/g, componentName);
+      fs.appendFileSync('dcamp_2020_th.libraries.yml', libraryNewContent);
+
+    }
+
+    console.log('');
+    console.groupEnd();
+
+    return cb(null, file);
+  });
+};
+
+/**
+ * Generates corresponding SCSS and js behavior file for each component
+ * template located at "templates/block-types/"
+ */
+const genComponentsAssetsTask = () => {
+  const templatesList = "templates/block-types/block--type--*.html.twig";
+
+  return gulp
+    .src(templatesList)
+    .pipe(pipeGenComponentFiles());
+  // .pipe(debug());
+};
+
 /**
  * Build task.
  */
@@ -76,3 +160,4 @@ function watcherTask() {
 
 exports.build = buildTask;
 exports.watch = watcherTask;
+exports.genComponentsAssetsTask = genComponentsAssetsTask;
