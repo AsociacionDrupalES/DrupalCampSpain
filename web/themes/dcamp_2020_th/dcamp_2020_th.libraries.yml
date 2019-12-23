@@ -19,6 +19,9 @@ region-header:
     - dcamp_theme_helper/waypoints
 
 block-type-hero:
+  css:
+    component:
+      dist/blocks/block-types/hero.css: {}
   js:
     dist/blocks/block-types/hero.behavior.js: {}
   dependencies:

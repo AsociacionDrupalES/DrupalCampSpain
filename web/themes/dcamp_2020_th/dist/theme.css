@@ -10,16 +10,4 @@ ul, li {
   padding: 0;
 }
 
-.block-type--hero {
-  position: relative;
-}
-
-.block-type--hero > .inner-content {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
 /*# sourceMappingURL=theme.css.map */
