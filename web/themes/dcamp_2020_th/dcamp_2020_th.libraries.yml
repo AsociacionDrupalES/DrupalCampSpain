@@ -28,3 +28,15 @@ block-type-hero:
     - core/jquery
     - core/drupal
     - core/drupalSettings
+
+# Library for featured-speakers component.
+block-type-featured-speakers:
+  css:
+    component:
+      dist/blocks/block-types/featured-speakers.css: {}
+  js:
+    dist/blocks/block-types/featured-speakers.behavior.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings
