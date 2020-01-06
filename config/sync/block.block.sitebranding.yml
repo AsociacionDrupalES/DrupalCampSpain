@@ -1,0 +1,23 @@
+uuid: 61572720-8ccf-4528-b2f1-c3be0f53a2e6
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - dcamp_2020_th
+id: sitebranding
+theme: dcamp_2020_th
+region: header
+weight: -1
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  provider: system
+  label_display: '0'
+  use_site_logo: true
+  use_site_name: false
+  use_site_slogan: false
+visibility: {  }

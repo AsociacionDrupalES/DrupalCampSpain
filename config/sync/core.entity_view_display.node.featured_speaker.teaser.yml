@@ -5,27 +5,30 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.featured_speaker.body
+    - field.field.node.featured_speaker.field_company
+    - field.field.node.featured_speaker.field_photo
+    - field.field.node.featured_speaker.field_social_networks
     - node.type.featured_speaker
   module:
-    - text
+    - image
     - user
 id: node.featured_speaker.teaser
 targetEntityType: node
 bundle: featured_speaker
 mode: teaser
 content:
-  body:
+  field_photo:
+    type: image
+    weight: 0
+    region: content
     label: hidden
-    type: text_summary_or_trimmed
-    weight: 101
     settings:
-      trim_length: 600
+      image_style: ''
+      image_link: content
     third_party_settings: {  }
-    region: content
-  links:
-    weight: 100
-    settings: {  }
-    third_party_settings: {  }
-    region: content
 hidden:
+  body: true
+  field_company: true
+  field_social_networks: true
   langcode: true
+  links: true
