@@ -1,0 +1,8 @@
+uuid: c12a01dd-b63d-4182-8bf0-bf4e85620f33
+langcode: en
+status: true
+dependencies: {  }
+id: call_to_action_style_1
+label: 'Call to action style 1'
+revision: 0
+description: 'Background image, title and white text on left and a call to action link to the right.'

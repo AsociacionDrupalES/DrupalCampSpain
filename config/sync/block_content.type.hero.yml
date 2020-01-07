@@ -5,4 +5,4 @@ dependencies: {  }
 id: hero
 label: Hero
 revision: 0
-description: ''
+description: 'Background image with important message content.'

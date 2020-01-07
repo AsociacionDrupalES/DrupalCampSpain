@@ -40,3 +40,15 @@ block-type-featured-speakers:
     - core/jquery
     - core/drupal
     - core/drupalSettings
+
+# Library for call-to-action-style-1 component.
+block-type-call-to-action-style-1:
+  css:
+    component:
+      dist/blocks/block-types/call-to-action-style-1.css: {}
+  js:
+    dist/blocks/block-types/call-to-action-style-1.behavior.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings
