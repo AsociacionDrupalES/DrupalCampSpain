@@ -289,6 +289,7 @@ display:
     display_options:
       display_extenders: {  }
       display_description: ''
+      block_description: 'Sponsor bronze'
     cache_metadata:
       max-age: -1
       contexts:
@@ -381,6 +382,7 @@ display:
         operator: AND
         groups:
           1: AND
+      block_description: 'Sponsor gold'
     cache_metadata:
       max-age: -1
       contexts:
@@ -473,6 +475,7 @@ display:
         operator: AND
         groups:
           1: AND
+      block_description: 'Sponsor platinum'
     cache_metadata:
       max-age: -1
       contexts:
@@ -565,6 +568,7 @@ display:
         operator: AND
         groups:
           1: AND
+      block_description: 'Sponsor silver'
     cache_metadata:
       max-age: -1
       contexts:
