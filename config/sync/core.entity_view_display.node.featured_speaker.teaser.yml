@@ -11,12 +11,25 @@ dependencies:
     - node.type.featured_speaker
   module:
     - image
+    - link
     - user
 id: node.featured_speaker.teaser
 targetEntityType: node
 bundle: featured_speaker
 mode: teaser
 content:
+  field_company:
+    type: link
+    weight: 1
+    region: content
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
   field_photo:
     type: image
     weight: 0
@@ -26,9 +39,19 @@ content:
       image_style: ''
       image_link: content
     third_party_settings: {  }
+  field_social_networks:
+    type: link
+    weight: 2
+    region: content
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
 hidden:
   body: true
-  field_company: true
-  field_social_networks: true
   langcode: true
   links: true
