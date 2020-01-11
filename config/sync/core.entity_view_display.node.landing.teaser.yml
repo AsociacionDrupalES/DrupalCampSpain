@@ -1,9 +1,10 @@
 uuid: ebd63df4-9c85-40ce-aa17-1cdd669853c7
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.landing.layout_builder__layout
     - node.type.landing
   module:
     - user
@@ -19,3 +20,4 @@ content:
     region: content
 hidden:
   langcode: true
+  layout_builder__layout: true
