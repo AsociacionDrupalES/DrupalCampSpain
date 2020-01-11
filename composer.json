@@ -24,6 +24,7 @@
         "drupal/color_field": "^2.0",
         "drupal/console": "^1.0.2",
         "drupal/core": "^8.7.0",
+        "drupal/layout_builder_modal": "^1.0@alpha",
         "drupal/layout_builder_restrictions": "^2.4",
         "drupal/pathauto": "^1.6",
         "drush/drush": "^9.0.0",
