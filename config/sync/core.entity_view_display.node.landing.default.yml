@@ -3,9 +3,11 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.landing.layout_builder__layout
     - node.type.landing
   module:
     - layout_builder
+    - layout_builder_restrictions
     - layout_discovery
     - user
 third_party_settings:
@@ -15,7 +17,8 @@ third_party_settings:
     sections:
       -
         layout_id: layout_onecol
-        layout_settings: {  }
+        layout_settings:
+          label: ''
         components:
           2d4362cf-c992-4a92-8d29-7ba488656e80:
             uuid: 2d4362cf-c992-4a92-8d29-7ba488656e80
@@ -28,6 +31,23 @@ third_party_settings:
             additional: {  }
             weight: 0
         third_party_settings: {  }
+  layout_builder_restrictions:
+    entity_view_mode_restriction:
+      allowed_blocks:
+        'Chaos Tools': {  }
+        'Content fields': {  }
+        Help: {  }
+        'Lists (Views)':
+          - 'views_block:sponsors-block_sponsors_bronze'
+          - 'views_block:sponsors-block_sponsors_gold'
+          - 'views_block:sponsors-block_sponsors_platinum'
+          - 'views_block:sponsors-block_sponsors_silver'
+        Menus: {  }
+        System: {  }
+        User: {  }
+        'User fields': {  }
+        core: {  }
+      allowed_layouts: {  }
 id: node.landing.default
 targetEntityType: node
 bundle: landing
@@ -40,3 +60,4 @@ content:
     region: content
 hidden:
   langcode: true
+  layout_builder__layout: true
