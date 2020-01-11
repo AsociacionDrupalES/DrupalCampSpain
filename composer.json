@@ -21,6 +21,7 @@
         "cweagans/composer-patches": "^1.6.5",
         "drupal-composer/drupal-scaffold": "^2.5",
         "drupal/admin_toolbar": "^2.0",
+        "drupal/color_field": "^2.0",
         "drupal/console": "^1.0.2",
         "drupal/core": "^8.7.0",
         "drupal/pathauto": "^1.6",
