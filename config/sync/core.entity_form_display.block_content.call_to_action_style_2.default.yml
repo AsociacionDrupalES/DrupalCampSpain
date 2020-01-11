@@ -1,0 +1,60 @@
+uuid: 08b006c5-e57d-408f-8019-06c924d9f295
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.call_to_action_style_2
+    - field.field.block_content.call_to_action_style_2.body
+    - field.field.block_content.call_to_action_style_2.field_background_color
+    - field.field.block_content.call_to_action_style_2.field_image
+    - image.style.thumbnail
+  module:
+    - color_field
+    - image
+    - text
+id: block_content.call_to_action_style_2.default
+targetEntityType: block_content
+bundle: call_to_action_style_2
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 26
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+    region: content
+  field_background_color:
+    weight: 28
+    settings:
+      default_colors: "\n#AC725E,#D06B64,#F83A22,#FA573C,#FF7537,#FFAD46\n#42D692,#16A765,#7BD148,#B3DC6C,#FBE983\n#92E1C0,#9FE1E7,#9FC6E7,#4986E7,#9A9CFF\n#B99AFF,#C2C2C2,#CABDBF,#CCA6AC,#F691B2\n#CD74E6,#A47AE2"
+    third_party_settings: {  }
+    type: color_field_widget_box
+    region: content
+  field_image:
+    weight: 27
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  info:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+hidden: {  }
