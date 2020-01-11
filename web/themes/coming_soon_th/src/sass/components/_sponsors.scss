@@ -9,7 +9,14 @@
   }
 
   .content {
-    @include flex-grid(7, 40px);
+
+    @media (min-width: 0) and (max-width: $desk) {
+      @include flex-grid(2, 40px);
+    }
+
+    @media (min-width: $desk) {
+      @include flex-grid(7, 40px);
+    }
 
     a {
       img {

@@ -51,7 +51,6 @@ NOTES:
 
 
 ## Activate "Coming soon" landing page
-- Go to `admin/config/system/site-information` and set `/coming-soon` as "Default front page".
-when you are ready to release the real page go to `admin/config/system/site-information` and set `/node/1` as "Default front page".
+Just set `Event "coming soon" landing page 1.0.0` at `/admin/appearance` as default theme.
 
 NOTE: If you want to modify the landing page go to `themes/coming_soon_th/templates/layout`. There you will find all HTML and used assets for the landing page.

@@ -1,9 +1,17 @@
 .about-business-day {
-  display: flex;
+  display: block;
+
+  @media (min-width: $desk) {
+    display: flex;
+  }
 
   .content {
     background: $color-yellow-1;
-    padding: 50px;
+    padding: 20px;
+
+    @media (min-width: $desk) {
+      padding: 50px;
+    }
 
     > h2 {
       font-size: 36px;

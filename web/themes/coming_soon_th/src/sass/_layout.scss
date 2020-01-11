@@ -4,18 +4,35 @@
 }
 
 .hero {
-  margin-bottom: 100px !important;
+  margin-bottom: 20px !important;
+
+  @media (min-width: $desk) {
+    margin-bottom: 100px !important;
+  }
+
 }
 
 .confirmed-speakers {
-  margin-bottom: 100px;
+  margin-bottom: 20px;
+
+  @media (min-width: $desk) {
+    margin-bottom: 100px;
+  }
 }
 
 .about-venue {
-  margin-bottom: 100px;
+  margin-bottom: 20px;
+
+  @media (min-width: $desk) {
+    margin-bottom: 100px;
+  }
 }
 
 .about-business-day {
-  margin-bottom: 100px;
+  margin-bottom: 20px;
+
+  @media (min-width: $desk) {
+    margin-bottom: 100px;
+  }
 }
 

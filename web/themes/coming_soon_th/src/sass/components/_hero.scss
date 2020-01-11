@@ -1,9 +1,13 @@
 .hero {
   background: $color-blue-1;
   text-align: center;
-  padding: 300px 20px 30px;
+  padding: 110px 20px 30px;
   position: relative;
   margin-bottom: 40px;
+
+  @media (min-width: $desk) {
+    padding: 300px 20px 30px;
+  }
 
   h1 {
     font-family: $font-secondary;

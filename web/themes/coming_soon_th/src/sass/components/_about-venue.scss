@@ -1,23 +1,52 @@
 .about-venue {
   position: relative;
-  padding-bottom: 50px;
+
+  @media (min-width: $desk) {
+    padding-bottom: 50px;
+  }
+
+  &.image-left {
+    > .content {
+      right: 0;
+
+      @media (min-width: $desk) {
+        padding: 40px 40px 40px 27%;
+      }
+
+    }
+
+    > img {
+      float: left;
+    }
+  }
 
   > .content {
-    position: absolute;
-    width: 50%;
+    position: static;
+    width: 100%;
+    padding: 20px;
     bottom: 0;
-    padding: 40px 27% 40px 40px;
+
+    @media (min-width: $desk) {
+      position: absolute;
+      width: 50%;
+      padding: 40px 27% 40px 40px;
+    }
 
     &:after {
       content: '';
       background: $color-white-1;
       width: 100%;
-      height: 50%;
+      height: 100%;
       display: block;
       position: absolute;
       bottom: 0;
       z-index: -1;
       left: 0;
+
+      @media (min-width: $desk) {
+        height: 50%;
+      }
+
     }
 
     > h2 {

@@ -1,7 +1,8 @@
-// Fonts.-
+// Fonts.
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,900&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Playfair+Display&display=swap');
 
+// Colors
 $color-blue-1: #A5E6EC;
 
 $color-grey-1: #323B3E;
@@ -16,3 +17,6 @@ $color-white-1: #F3F3EE;
 
 $font-primary: 'Source Sans Pro';
 $font-secondary: 'layfair Display';
+
+// Media query
+$desk: 968px;
