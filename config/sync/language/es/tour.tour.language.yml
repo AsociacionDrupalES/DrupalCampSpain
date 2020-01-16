@@ -1,0 +1,20 @@
+label: Idioma
+tips:
+  language-overview:
+    label: Idiomas
+    body: '<p>La página "Idiomas" le permite añadir, editar, borrar y reordenar los idiomas para el sitio.</p>'
+  language-add:
+    label: 'Añadiendo idiomas'
+    body: '<p>Para añadir más idiomas a su sitio, haga clic en el botón "Añadir idioma".</p><p>Los idiomas añadidos se mostrarán en la lista de idiomas y pueden entonces ser editados o borrados.</p>'
+  language-reorder:
+    label: 'Reordenando idiomas'
+    body: '<p>Para cambiar el orden de los idiomas en su sitio, utilice los iconos de selección junto a cada idioma.</p><p>El orden que se muestra aquí es el orden de presentación de las listas de idiomas en el sitio como en los bloques selectores de idiomas proporcionados por los módulos Interface Translation  y Content Translation.</p><p>Cuando haya terminado con la reordenación de los idiomas, haga clic en el botón "Guardar configuración" para que los cambios surtan efecto.</p>'
+  language-default:
+    label: 'Establecer un idioma por defecto'
+    body: '<p>Se puede cambiar el idioma predeterminado del sitio por uno de los idiomas configurados por defecto. El sitio utilizará el idioma predeterminado cuando se necesite tener seleccionado un idioma pero no se haya elegido ninguno. Como por ejemplo el idioma de la interfaz mostrada.</p>'
+  language-operations:
+    label: 'Modificando idiomas'
+    body: '<p>Las operaciones son proporcionadas para editar y eliminar sus idiomas.</p><p>Puede editar el nombre y la dirección de un idioma.</p><p>Los idiomas eliminados pueden ser nuevamente añadidos en otro momento. Eliminar un idioma removerá todas las traducciones de la interfaz asociadas con él, y el contenido en este idioma será establecido como idioma neutral. Tenga en cuenta que no puede eliminar el idioma predeterminado para su sitio.</p>'
+  language-continue:
+    label: Continuando
+    body: '<p>Ahora que usted tiene una visión general de la página "Idiomas", puede continuar:<ul><li><a href="[site:url]admin/config/regional/language/add">Añadiendo un idioma</a></li><li>Reordenando los idiomas</li><li>Editando un idioma</li><li>Eliminando un idioma</li></ul></p>'

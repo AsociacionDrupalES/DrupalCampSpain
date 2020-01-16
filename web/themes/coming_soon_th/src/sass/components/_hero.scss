@@ -1,0 +1,38 @@
+.hero {
+  background: $color-blue-1;
+  text-align: center;
+  padding: 110px 20px 30px;
+  position: relative;
+  margin-bottom: 40px;
+
+  @media (min-width: $desk) {
+    padding: 300px 20px 30px;
+  }
+
+  h1 {
+    font-family: $font-secondary;
+    font-size: 48px;
+    line-height: 64px;
+    text-decoration-line: underline;
+    font-weight: normal;
+    color: $color-grey-1;
+  }
+
+  h2 {
+
+  }
+
+  h3 {
+
+  }
+
+  .overflow-footer {
+    background: $color-yellow-1;
+    color: $color-brown-1;
+    position: relative;
+    bottom: -70px;
+    padding: 30px 40px 40px;
+    font-size: 24px;
+    width: 100%;
+  }
+}

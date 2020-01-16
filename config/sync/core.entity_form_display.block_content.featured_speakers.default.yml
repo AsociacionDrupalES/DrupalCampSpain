@@ -1,0 +1,43 @@
+uuid: 48dca576-9d0c-482b-bcce-1e73248f85e5
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.featured_speakers
+    - field.field.block_content.featured_speakers.field_featured_speakers
+id: block_content.featured_speakers.default
+targetEntityType: block_content
+bundle: featured_speakers
+mode: default
+content:
+  field_featured_speakers:
+    weight: 27
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+      match_limit: 10
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  info:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  translation:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

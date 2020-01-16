@@ -1,0 +1,20 @@
+uuid: 295ec3e9-fca1-486d-a646-6a1a685d6f67
+langcode: en
+status: true
+dependencies:
+  theme:
+    - dcamp_2020_th
+id: tabs
+theme: dcamp_2020_th
+region: content
+weight: -2
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }

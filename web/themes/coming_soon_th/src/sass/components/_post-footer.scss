@@ -1,0 +1,17 @@
+.post-footer {
+  background: $color-grey-3;
+  padding-bottom: 50px;
+
+  p {
+    margin: 0;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+
+    a {
+      color: $color-yellow-1;
+      text-decoration: none;
+    }
+  }
+}

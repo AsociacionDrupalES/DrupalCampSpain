@@ -1,0 +1,27 @@
+.about-business-day {
+  display: block;
+
+  @media (min-width: $desk) {
+    display: flex;
+  }
+
+  .content {
+    background: $color-yellow-1;
+    padding: 20px;
+
+    @media (min-width: $desk) {
+      padding: 50px;
+    }
+
+    > h2 {
+      font-size: 36px;
+      color: $color-grey-1;
+    }
+
+    > p {
+      font-size: 18px;
+      color: $color-grey-1;
+    }
+  }
+
+}

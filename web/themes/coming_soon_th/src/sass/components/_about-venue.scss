@@ -1,0 +1,75 @@
+.about-venue {
+  position: relative;
+
+  @media (min-width: $desk) {
+    padding-bottom: 50px;
+  }
+
+  &.image-left {
+    > .content {
+      right: 0;
+
+      @media (min-width: $desk) {
+        padding: 40px 40px 40px 27%;
+      }
+
+    }
+
+    > img {
+      float: left;
+    }
+  }
+
+  > .content {
+    position: static;
+    width: 100%;
+    padding: 20px;
+    bottom: 0;
+
+    @media (min-width: $desk) {
+      position: absolute;
+      width: 50%;
+      padding: 40px 27% 40px 40px;
+    }
+
+    &:after {
+      content: '';
+      background: $color-white-1;
+      width: 100%;
+      height: 100%;
+      display: block;
+      position: absolute;
+      bottom: 0;
+      z-index: -1;
+      left: 0;
+
+      @media (min-width: $desk) {
+        height: 50%;
+      }
+
+    }
+
+    > h2 {
+      font-size: 36px;
+      color: $color-grey-1;
+
+    }
+
+    > p {
+      color: $color-grey-1;
+      font-size: 18px;
+    }
+
+    > a {
+      background: $color-grey-1;
+      display: inline-block;
+      color: white;
+      text-decoration: none;
+      padding: 10px 50px 10px 10px;
+    }
+  }
+
+  > img {
+    float: right;
+  }
+}

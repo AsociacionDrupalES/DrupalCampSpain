@@ -1,0 +1,47 @@
+uuid: 53156bf5-beb1-4ce1-ac38-1b4d000e1f55
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.call_to_action_style_2
+    - field.field.block_content.call_to_action_style_2.body
+    - field.field.block_content.call_to_action_style_2.field_background_color
+    - field.field.block_content.call_to_action_style_2.field_image
+  module:
+    - color_field
+    - image
+    - text
+id: block_content.call_to_action_style_2.default
+targetEntityType: block_content
+bundle: call_to_action_style_2
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_background_color:
+    weight: 2
+    label: hidden
+    settings:
+      selector: body
+      property: background-color
+      important: '1'
+      opacity: '1'
+    third_party_settings: {  }
+    type: color_field_formatter_css
+    region: content
+  field_image:
+    weight: 1
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+hidden:
+  langcode: true

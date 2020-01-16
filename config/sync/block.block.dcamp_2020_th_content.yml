@@ -1,0 +1,22 @@
+uuid: 47408783-227d-42ee-9f39-af8c93012382
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - dcamp_2020_th
+_core:
+  default_config_hash: 9EoWV2Lot6FVSr50t4hoKgiz1LIXYWNG-IIPYsWxBqo
+id: dcamp_2020_th_content
+theme: dcamp_2020_th
+region: content
+weight: -1
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }

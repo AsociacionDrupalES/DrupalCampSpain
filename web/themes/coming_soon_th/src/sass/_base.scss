@@ -1,0 +1,19 @@
+* {
+  box-sizing: border-box;
+  font-family: $font-primary;
+}
+
+ul, li {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: top;
+  height: auto;
+}
+
+a{
+  color: black;
+}

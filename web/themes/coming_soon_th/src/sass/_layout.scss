@@ -1,0 +1,38 @@
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.hero {
+  margin-bottom: 20px !important;
+
+  @media (min-width: $desk) {
+    margin-bottom: 100px !important;
+  }
+
+}
+
+.confirmed-speakers {
+  margin-bottom: 20px;
+
+  @media (min-width: $desk) {
+    margin-bottom: 100px;
+  }
+}
+
+.about-venue {
+  margin-bottom: 20px;
+
+  @media (min-width: $desk) {
+    margin-bottom: 100px;
+  }
+}
+
+.about-business-day {
+  margin-bottom: 20px;
+
+  @media (min-width: $desk) {
+    margin-bottom: 100px;
+  }
+}
+

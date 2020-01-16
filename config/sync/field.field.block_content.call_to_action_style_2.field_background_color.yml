@@ -1,0 +1,22 @@
+uuid: 2e52e1ad-44e8-4c1a-8812-eff317232574
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.call_to_action_style_2
+    - field.storage.block_content.field_background_color
+  module:
+    - color_field
+id: block_content.call_to_action_style_2.field_background_color
+field_name: field_background_color
+entity_type: block_content
+bundle: call_to_action_style_2
+label: 'Background color'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  opacity: 0
+field_type: color_field_type

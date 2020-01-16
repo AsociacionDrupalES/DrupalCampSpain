@@ -1,0 +1,2 @@
+mobile
+el header como la web de prod y poner color al empezar el scroll.

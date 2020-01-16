@@ -1,0 +1,13 @@
+{
+    "name": "eventbrite_api",
+    "type": "drupal-module",
+    "description": "Eventbrite's api",
+    "keywords": [
+    ],
+    "homepage": "https://www.drupal.org/project/eventbrite_api",
+    "minimum-stability": "dev",
+    "support": {
+        "issues": "https://www.drupal.org/project/issues/eventbrite_api",
+        "source": "http://cgit.drupalcode.org/eventbrite_api"
+    }
+}

@@ -1,0 +1,5 @@
+name: 'Event schedule'
+type: module
+description: 'Event schedule (editable via twig template)'
+core: 8.x
+package: 'Event'

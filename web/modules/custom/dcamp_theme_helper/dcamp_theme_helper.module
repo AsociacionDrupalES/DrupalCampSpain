@@ -1,0 +1,50 @@
+<?php
+
+/**
+ * @file
+ * Contains dcamp_theme_helper.module.
+ */
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter() for form templates.
+ */
+function dcamp_theme_helper_theme_suggestions_block_alter(array &$suggestions, array $vars) {
+  $block_type = _dcamp_theme_helper_get_block_type($vars);
+
+  if ($block_type) {
+    $theme_suggestion_name = 'block__type__' . $block_type;
+    array_splice($suggestions, 1, 0, $theme_suggestion_name);
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function dcamp_theme_helper_preprocess_block(&$vars) {
+  $block_type = _dcamp_theme_helper_get_block_type($vars);
+
+  if ($block_type) {
+
+    $classes = &$vars['attributes']['class'];
+    // If there is not an existing class array, create an empty array.
+    if (!isset($classes)) {
+      $classes = [];
+    }
+
+    $classes = array_merge($classes, ['block-type--' . $block_type]);
+  }
+}
+
+
+/**
+ * Gets bundle type of a block type.
+ * @param $vars
+ * @return bool|string
+ */
+function _dcamp_theme_helper_get_block_type($vars) {
+  if (isset($vars['elements']['content']['#block_content'])) {
+    return $vars['elements']['content']['#block_content']->bundle();
+  }
+
+  return FALSE;
+}

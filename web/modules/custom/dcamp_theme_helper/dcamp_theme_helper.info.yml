@@ -1,0 +1,5 @@
+name: 'Dcamp theme helper'
+type: module
+description: 'Adds some extras for all enabled themes.'
+core: 8.x
+package: 'Dcamp'

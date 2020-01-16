@@ -1,0 +1,54 @@
+dcamp_2020_th_core_library:
+  js:
+    dist/theme.min.js: {}
+  css:
+    component:
+      dist/theme.css: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings
+
+region-header:
+  js:
+    dist/regions/header.behavior.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings
+    - dcamp_theme_helper/waypoints
+
+block-type-hero:
+  css:
+    component:
+      dist/blocks/block-types/hero.css: {}
+  js:
+    dist/blocks/block-types/hero.behavior.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings
+
+# Library for featured-speakers component.
+block-type-featured-speakers:
+  css:
+    component:
+      dist/blocks/block-types/featured-speakers.css: {}
+  js:
+    dist/blocks/block-types/featured-speakers.behavior.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings
+
+# Library for call-to-action-style-1 component.
+block-type-call-to-action-style-1:
+  css:
+    component:
+      dist/blocks/block-types/call-to-action-style-1.css: {}
+  js:
+    dist/blocks/block-types/call-to-action-style-1.behavior.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings

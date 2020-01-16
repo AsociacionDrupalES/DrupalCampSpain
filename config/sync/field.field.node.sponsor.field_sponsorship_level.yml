@@ -1,0 +1,21 @@
+uuid: 90992caa-4c67-4330-bfd8-0c1b17b2534f
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_sponsorship_level
+    - node.type.sponsor
+  module:
+    - options
+id: node.sponsor.field_sponsorship_level
+field_name: field_sponsorship_level
+entity_type: node
+bundle: sponsor
+label: 'Sponsorship level'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

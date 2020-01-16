@@ -1,5 +1,0 @@
-name: DrupalCamp Sessions
-description: Manages session data
-package: dcamp
-type: module
-core: 8.x

@@ -1,0 +1,18 @@
+.block-type--call_to_action_style_1 {
+  position: relative;
+}
+
+.block-type--call_to_action_style_1 .field--name-field-background-image img {
+  vertical-align: top;
+}
+
+.block-type--call_to_action_style_1 > .inner-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+}
+
+/*# sourceMappingURL=call-to-action-style-1.css.map */

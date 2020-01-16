@@ -1,8 +1,0 @@
-uuid: c71aba94-a8dc-4c4b-9e44-46c3d51946a7
-langcode: en
-status: true
-dependencies: {  }
-id: '2018'
-label: '2018'
-landing_theme: dcamp_2018_landing_theme
-starting_date: '1527285600'

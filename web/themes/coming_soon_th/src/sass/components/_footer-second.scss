@@ -1,0 +1,22 @@
+.footer-second {
+  background: $color-grey-3;
+  padding: 50px 0;
+
+  ul {
+    list-style: none;
+    text-align: center;
+
+    li {
+      display: inline-block;
+      margin: 0 20px;
+
+      a {
+        text-transform: uppercase;
+        color: #fff;
+        font-weight: bold;
+        font-size: 14px;
+        text-decoration: none;
+      }
+    }
+  }
+}

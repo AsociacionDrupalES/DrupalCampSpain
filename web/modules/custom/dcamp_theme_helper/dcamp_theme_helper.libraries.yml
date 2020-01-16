@@ -1,0 +1,6 @@
+waypoints:
+  version: "4.0.1"
+  remote: "http://imakewebthings.com/waypoints/"
+  license: "MIT"
+  js:
+    /libraries/waypoints/noframework.waypoints.js: {}

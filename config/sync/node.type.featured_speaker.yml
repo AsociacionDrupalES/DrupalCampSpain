@@ -1,0 +1,17 @@
+uuid: f01f4717-4fd9-4a32-ae0d-272c972a749a
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Featured speaker'
+type: featured_speaker
+description: ''
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: false

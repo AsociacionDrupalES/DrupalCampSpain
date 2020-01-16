@@ -1,3 +1,0 @@
-services:
-  dcamp_sessions.proposals:
-    class: Drupal\dcamp_sessions\SessionProposalsService

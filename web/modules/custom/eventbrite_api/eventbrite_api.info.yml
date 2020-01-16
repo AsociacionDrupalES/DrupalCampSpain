@@ -1,0 +1,5 @@
+name: 'Eventbrite api'
+type: module
+description: 'Eventbrite''s api'
+core: 8.x
+package: 'Event'
