@@ -1,11 +1,11 @@
 uuid: fd304135-f6c6-4b6a-8495-16c8b63845ca
-name: 'DrupalCamp Spain'
+name: 'DrupalCamp Spain 2020'
 mail: drupalcamp@drupal.es
 slogan: ''
 page:
   403: ''
   404: ''
-  front: /node/6
+  front: /node/1
 admin_compact_mode: false
 weight_select_max: 100
 langcode: en
