@@ -328,6 +328,58 @@ a {
   text-decoration: none;
 }
 
+.tickets {
+  position: relative;
+}
+
+@media (min-width: 968px) {
+  .tickets {
+    padding-bottom: 50px;
+  }
+}
+
+.tickets .buy-tickets {
+  padding: 2em 2em;
+  border: 0;
+  margin: 0;
+  vertical-align: baseline;
+  border-radius: 10px;
+  background: #FAE673;
+}
+
+.tickets .buy-tickets .button {
+  float: right;
+  position: relative;
+  margin-left: 0;
+  margin-right: 0;
+  z-index: 2;
+  background: #435772 !important;
+  color: white !important;
+  border-radius: 0;
+  transition: all 128ms;
+  display: inline-block;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: .8em 1.7em;
+  font-size: 1.2em;
+  text-decoration: none;
+}
+
+.tickets .buy-tickets .content h3 {
+  font-weight: 700 !important;
+  text-transform: none;
+  line-height: 1;
+  font-size: 2.2em;
+  margin: 0;
+}
+
+.tickets .buy-tickets .content .deadline {
+  text-transform: none;
+  font-family: "Ubuntu",helvetica,sans-serif;
+  font-size: 1.2em;
+}
+
+/*.buy-tickets .content:before{position:absolute;left:0;top:0;content:'\E818';font-family:icons;color:white;font-size:4em;}.buy-tickets .content h3{line-height:1;font-size:2.2em;color:white;}.buy-tickets .content .deadline{color:#EAD872;font-family:"Ubuntu",helvetica,sans-serif;text-transform:uppercase;font-weight:bold;font-size:1.2em;}@media (max-width:720px){.buy-tickets{padding:1em;}.buy-tickets .button{float:none;display:block;margin-bottom:20px;}.buy-tickets .content{padding-left:30px;}.buy-tickets .content:before{font-size:20px;}.buy-tickets .content h3{font-size:20px;}.buy-tickets .content .deadline{font-size:16px;}}*/
 .header {
   position: fixed;
   top: 0;
