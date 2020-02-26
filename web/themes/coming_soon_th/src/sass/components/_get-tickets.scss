@@ -1,8 +1,10 @@
 .tickets {
   position: relative;
+  padding: 50px 20px 30px;
+  margin-bottom: 2em;
 
   @media (min-width: $desk) {
-    padding-bottom: 50px;
+    padding: 20px 30px;
   }
 
   .buy-tickets{
@@ -14,14 +16,17 @@
     background: #FAE673;
 
     .button {
+      width: 100%;
       float:right;
       position:relative;
       margin-left: 0;
+      margin-bottom: 1em;
       margin-right: 0;
       z-index:2;
       background: #435772 !important;
       color: white !important;
       border-radius: 0;
+      text-align: center;
       transition: all 128ms;
       display: inline-block;
       text-transform: uppercase;
@@ -29,21 +34,31 @@
       padding: .8em 1.7em;
       font-size: 1.2em;
       text-decoration: none;
+
+      @media (min-width: $desk) {
+        width: auto;
+      }
     }
 
     .content {
       h3 {
+        clear: right;
         font-weight: 700 !important;
         text-transform: none;
         line-height: 1;
         font-size: 2.2em;
         margin: 0;
+
+        @media (min-width: $desk) {
+          clear: none;
+        }
       }
 
       .deadline {
         text-transform: none;
         font-family: "Ubuntu",helvetica,sans-serif;
         font-size: 1.2em;
+        margin-top: 1em;
       }
     }
   }
