@@ -7,5 +7,37 @@
   > .list {
     display: flex;
     justify-content: space-between;
+
+    .speaker {
+      margin: 0 20px;
+      width: calc(100% / 4 - 20px * 2);
+      float: left;
+      clear: left;
+      margin-bottom: 2em;
+
+      @media (min-width: $desk) {
+        clear: none;
+      }
+
+      .speaker--picture {
+        background: #DCDCDC;
+        text-align: center;
+        overflow: hidden;
+        margin-bottom: 10px;
+        display: inline-block;
+        vertical-align: bottom;
+        height: 180px;
+        width: auto;
+      }
+
+      .speaker--name {
+        color: #eabc51;
+        text-transform: none;
+      }
+
+      .speaker--session {
+        color: #435772;
+      }
+    }
   }
 }
