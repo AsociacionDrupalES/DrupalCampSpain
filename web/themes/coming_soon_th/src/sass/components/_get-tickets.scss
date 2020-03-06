@@ -1,5 +1,5 @@
-.tickets {
-  position: relative;
+.buy-tickets {
+  background: #FAE673;
   padding: 50px 20px 30px;
   margin-bottom: 2em;
 
@@ -7,61 +7,51 @@
     padding: 20px 30px;
   }
 
-  .buy-tickets{
-    padding:2em 2em;
-    border: 0;
-    margin:0;
-    vertical-align: baseline;
-    border-radius:10px;
-    background: #FAE673;
+  h3 {
+    font-size: 36px;
+    line-height: 40px;
+    color: $color-grey-1;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-align: center;
 
-    .button {
-      width: 100%;
-      float:right;
-      position:relative;
-      margin-left: 0;
-      margin-bottom: 1em;
-      margin-right: 0;
-      z-index:2;
-      background: #435772 !important;
-      color: white !important;
-      border-radius: 0;
-      text-align: center;
-      transition: all 128ms;
-      display: inline-block;
-      text-transform: uppercase;
-      font-weight: bold;
-      padding: .8em 1.7em;
-      font-size: 1.2em;
-      text-decoration: none;
+    @media (min-width: $desk) {
+      padding: 0 20%;
+    }
+  }
 
-      @media (min-width: $desk) {
-        width: auto;
-      }
+  p {
+    color: $color-grey-1;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 30px;
+    text-align: center;
+    letter-spacing: 0.1em;
+  }
+
+  .button {
+    width: 100%;
+    background: $color-grey-1;
+    color: white;
+    border-radius: 0;
+    text-align: center;
+    transition: all 128ms;
+    display: inline-block;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: .8em 1.7em;
+    font-size: 1.2em;
+    text-decoration: none;
+    margin: 0;
+
+    &:hover {
+      background-color: lighten($color: $color-grey-1, $amount: 10%);
     }
 
-    .content {
-      h3 {
-        clear: right;
-        font-weight: 700 !important;
-        text-transform: none;
-        line-height: 1;
-        font-size: 2.2em;
-        margin: 0;
-
-        @media (min-width: $desk) {
-          clear: none;
-        }
-      }
-
-      .deadline {
-        text-transform: none;
-        font-family: "Ubuntu",helvetica,sans-serif;
-        font-size: 1.2em;
-        margin-top: 1em;
-      }
+    @media (min-width: $desk) {
+      width: 400px;
+      margin: 40px auto;
+      display: block;
     }
   }
 }
-
-/*.buy-tickets .content:before{position:absolute;left:0;top:0;content:'\E818';font-family:icons;color:white;font-size:4em;}.buy-tickets .content h3{line-height:1;font-size:2.2em;color:white;}.buy-tickets .content .deadline{color:#EAD872;font-family:"Ubuntu",helvetica,sans-serif;text-transform:uppercase;font-weight:bold;font-size:1.2em;}@media (max-width:720px){.buy-tickets{padding:1em;}.buy-tickets .button{float:none;display:block;margin-bottom:20px;}.buy-tickets .content{padding-left:30px;}.buy-tickets .content:before{font-size:20px;}.buy-tickets .content h3{font-size:20px;}.buy-tickets .content .deadline{font-size:16px;}}*/

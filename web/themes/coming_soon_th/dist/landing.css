@@ -328,37 +328,46 @@ a {
   text-decoration: none;
 }
 
-.tickets {
-  position: relative;
+.buy-tickets {
+  background: #FAE673;
   padding: 50px 20px 30px;
   margin-bottom: 2em;
 }
 
 @media (min-width: 968px) {
-  .tickets {
+  .buy-tickets {
     padding: 20px 30px;
   }
 }
 
-.tickets .buy-tickets {
-  padding: 2em 2em;
-  border: 0;
-  margin: 0;
-  vertical-align: baseline;
-  border-radius: 10px;
-  background: #FAE673;
+.buy-tickets h3 {
+  font-size: 36px;
+  line-height: 40px;
+  color: #323B3E;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-align: center;
 }
 
-.tickets .buy-tickets .button {
+@media (min-width: 968px) {
+  .buy-tickets h3 {
+    padding: 0 20%;
+  }
+}
+
+.buy-tickets p {
+  color: #323B3E;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 30px;
+  text-align: center;
+  letter-spacing: 0.1em;
+}
+
+.buy-tickets .button {
   width: 100%;
-  float: right;
-  position: relative;
-  margin-left: 0;
-  margin-bottom: 1em;
-  margin-right: 0;
-  z-index: 2;
-  background: #435772 !important;
-  color: white !important;
+  background: #323B3E;
+  color: white;
   border-radius: 0;
   text-align: center;
   transition: all 128ms;
@@ -368,37 +377,21 @@ a {
   padding: .8em 1.7em;
   font-size: 1.2em;
   text-decoration: none;
-}
-
-@media (min-width: 968px) {
-  .tickets .buy-tickets .button {
-    width: auto;
-  }
-}
-
-.tickets .buy-tickets .content h3 {
-  clear: right;
-  font-weight: 700 !important;
-  text-transform: none;
-  line-height: 1;
-  font-size: 2.2em;
   margin: 0;
 }
 
+.buy-tickets .button:hover {
+  background-color: #49565a;
+}
+
 @media (min-width: 968px) {
-  .tickets .buy-tickets .content h3 {
-    clear: none;
+  .buy-tickets .button {
+    width: 400px;
+    margin: 40px auto;
+    display: block;
   }
 }
 
-.tickets .buy-tickets .content .deadline {
-  text-transform: none;
-  font-family: "Ubuntu",helvetica,sans-serif;
-  font-size: 1.2em;
-  margin-top: 1em;
-}
-
-/*.buy-tickets .content:before{position:absolute;left:0;top:0;content:'\E818';font-family:icons;color:white;font-size:4em;}.buy-tickets .content h3{line-height:1;font-size:2.2em;color:white;}.buy-tickets .content .deadline{color:#EAD872;font-family:"Ubuntu",helvetica,sans-serif;text-transform:uppercase;font-weight:bold;font-size:1.2em;}@media (max-width:720px){.buy-tickets{padding:1em;}.buy-tickets .button{float:none;display:block;margin-bottom:20px;}.buy-tickets .content{padding-left:30px;}.buy-tickets .content:before{font-size:20px;}.buy-tickets .content h3{font-size:20px;}.buy-tickets .content .deadline{font-size:16px;}}*/
 .header {
   position: fixed;
   top: 0;
