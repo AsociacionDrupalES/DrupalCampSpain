@@ -211,14 +211,75 @@ a {
   text-transform: uppercase;
 }
 
+.confirmed-speakers {
+  margin-top: 80px;
+}
+
 .confirmed-speakers > h2 {
   font-size: 36px;
   color: #323B3E;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-align: center;
 }
 
-.confirmed-speakers > .list {
-  display: flex;
-  justify-content: space-between;
+@media (min-width: 968px) {
+  .confirmed-speakers > h2 {
+    text-align: left;
+  }
+}
+
+@media (min-width: 968px) {
+  .confirmed-speakers > .list {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.confirmed-speakers > .list .speaker {
+  margin: 0 20px;
+  margin-bottom: 2em;
+  background-color: #F3F3EE;
+  text-align: center;
+}
+
+@media (min-width: 968px) {
+  .confirmed-speakers > .list .speaker {
+    width: 20%;
+    clear: none;
+  }
+}
+
+.confirmed-speakers > .list .speaker .speaker--picture {
+  background: #DCDCDC;
+  text-align: center;
+  overflow: hidden;
+  margin-bottom: 10px;
+  display: inline-block;
+  vertical-align: bottom;
+  width: 100%;
+  object-fit: cover;
+}
+
+@media (min-width: 968px) {
+  .confirmed-speakers > .list .speaker .speaker--picture {
+    height: 200px;
+  }
+}
+
+.confirmed-speakers > .list .speaker .speaker--name {
+  margin: 0 0 .5rem;
+  color: #435772;
+  text-transform: none;
+}
+
+.confirmed-speakers > .list .speaker .speaker--session {
+  color: #435772;
+  margin: 0 0 .5rem;
+}
+
+.confirmed-speakers > .list .speaker .speaker--content {
+  padding: .5rem;
 }
 
 .footer-first {
@@ -306,9 +367,16 @@ a {
 
 .header .container .logo a h2 {
   margin: 0;
-  font-size: 30px;
   color: #323B3E;
-  line-height: 26px;
+  font-size: 20px;
+  line-height: 20px;
+}
+
+@media (min-width: 968px) {
+  .header .container .logo a h2 {
+    font-size: 30px;
+    line-height: 26px;
+  }
 }
 
 .header .container .navigation .burger {
@@ -327,27 +395,52 @@ a {
 
 @media (min-width: 968px) {
   .hero {
-    padding: 300px 20px 30px;
+    padding: 30vh 20px 30px;
+    height: 100vh;
   }
 }
 
 .hero h1 {
-  font-family: "layfair Display";
-  font-size: 48px;
-  line-height: 64px;
+  font-family: "Playfair Display";
+  font-size: 36px;
+  line-height: 42px;
   text-decoration-line: underline;
   font-weight: normal;
+  color: #323B3E;
+  margin-bottom: 4rem;
+}
+
+@media (min-width: 968px) {
+  .hero h1 {
+    font-size: 48px;
+    line-height: 64px;
+  }
+}
+
+.hero h2 {
+  font-size: 24px;
+  line-height: 26px;
+  letter-spacing: 0.1em;
+  color: #323B3E;
+}
+
+.hero h3 {
+  font-size: 22px;
+  line-height: 26px;
+  letter-spacing: 0.5em;
   color: #323B3E;
 }
 
 .hero .overflow-footer {
   background: #FAE673;
-  color: #4B420C;
+  color: #323B3E;
   position: relative;
   bottom: -70px;
   padding: 30px 40px 40px;
-  font-size: 24px;
+  font-size: 20px;
+  font-weight: bold;
   width: 100%;
+  letter-spacing: 0.1em;
 }
 
 .navigation-lang ul {
