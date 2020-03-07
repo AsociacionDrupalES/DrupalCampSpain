@@ -6,33 +6,48 @@
   margin-bottom: 40px;
 
   @media (min-width: $desk) {
-    padding: 300px 20px 30px;
+    padding: 30vh 20px 30px;
+    height: 100vh;
   }
 
   h1 {
     font-family: $font-secondary;
-    font-size: 48px;
-    line-height: 64px;
+    font-size: 36px;
+    line-height: 42px;
     text-decoration-line: underline;
     font-weight: normal;
     color: $color-grey-1;
+    margin-bottom: 4rem;
+    
+    @media (min-width: $desk) {
+      font-size: 48px;
+      line-height: 64px;
+    }
   }
 
   h2 {
-
+    font-size: 24px;
+    line-height: 26px;
+    letter-spacing: 0.1em;
+    color: $color-grey-1;
   }
 
   h3 {
-
+    font-size: 22px;
+    line-height: 26px;
+    letter-spacing: 0.5em;
+    color: $color-grey-1;
   }
 
   .overflow-footer {
     background: $color-yellow-1;
-    color: $color-brown-1;
+    color: $color-grey-1;
     position: relative;
     bottom: -70px;
     padding: 30px 40px 40px;
-    font-size: 24px;
+    font-size: 20px;
+    font-weight: bold;
     width: 100%;
+    letter-spacing: 0.1em;
   }
 }
