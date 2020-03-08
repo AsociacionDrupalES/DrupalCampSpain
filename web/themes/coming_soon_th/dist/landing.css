@@ -328,6 +328,70 @@ a {
   text-decoration: none;
 }
 
+.buy-tickets {
+  background: #FAE673;
+  padding: 50px 20px 30px;
+  margin-bottom: 2em;
+}
+
+@media (min-width: 968px) {
+  .buy-tickets {
+    padding: 20px 30px;
+  }
+}
+
+.buy-tickets h3 {
+  font-size: 36px;
+  line-height: 40px;
+  color: #323B3E;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+@media (min-width: 968px) {
+  .buy-tickets h3 {
+    padding: 0 20%;
+  }
+}
+
+.buy-tickets p {
+  color: #323B3E;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 30px;
+  text-align: center;
+  letter-spacing: 0.1em;
+}
+
+.buy-tickets .button {
+  width: 100%;
+  background: #323B3E;
+  color: white;
+  border-radius: 0;
+  text-align: center;
+  transition: all 128ms;
+  display: inline-block;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: .8em 1.7em;
+  font-size: 1.2em;
+  text-decoration: none;
+  margin: 0;
+}
+
+.buy-tickets .button:hover {
+  background-color: #49565a;
+}
+
+@media (min-width: 968px) {
+  .buy-tickets .button {
+    width: 400px;
+    margin: 40px auto;
+    display: block;
+  }
+}
+
 .header {
   position: fixed;
   top: 0;
