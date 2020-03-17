@@ -1,0 +1,57 @@
+.buy-tickets {
+  background: #FAE673;
+  padding: 50px 20px 30px;
+  margin-bottom: 2em;
+
+  @media (min-width: $desk) {
+    padding: 20px 30px;
+  }
+
+  h3 {
+    font-size: 36px;
+    line-height: 40px;
+    color: $color-grey-1;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-align: center;
+
+    @media (min-width: $desk) {
+      padding: 0 20%;
+    }
+  }
+
+  p {
+    color: $color-grey-1;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 30px;
+    text-align: center;
+    letter-spacing: 0.1em;
+  }
+
+  .button {
+    width: 100%;
+    background: $color-grey-1;
+    color: white;
+    border-radius: 0;
+    text-align: center;
+    transition: all 128ms;
+    display: inline-block;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: .8em 1.7em;
+    font-size: 1.2em;
+    text-decoration: none;
+    margin: 0;
+
+    &:hover {
+      background-color: lighten($color: $color-grey-1, $amount: 10%);
+    }
+
+    @media (min-width: $desk) {
+      width: 400px;
+      margin: 40px auto;
+      display: block;
+    }
+  }
+}

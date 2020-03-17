@@ -33,9 +33,14 @@
 
         h2 {
           margin: 0;
-          font-size: 30px;
           color: $color-grey-1;
-          line-height: 26px;
+          font-size: 20px;
+          line-height: 20px;
+
+          @media (min-width: $desk) {
+            font-size: 30px;
+            line-height: 26px;
+          }
         }
       }
     }

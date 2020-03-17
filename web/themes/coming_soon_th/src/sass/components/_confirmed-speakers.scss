@@ -1,11 +1,65 @@
 .confirmed-speakers {
+  margin-top: 80px;
+
   > h2 {
     font-size: 36px;
     color: $color-grey-1;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-align: center;
+
+    @media (min-width: $desk) {
+      text-align: left;
+    }
   }
 
   > .list {
-    display: flex;
-    justify-content: space-between;
+
+    @media (min-width: $desk) {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .speaker {
+      margin: 0 20px;
+      margin-bottom: 2em;
+      background-color: #F3F3EE;
+      text-align: center;
+
+      @media (min-width: $desk) {
+        width: 20%;
+        clear: none;
+      }
+
+      .speaker--picture {
+        background: #DCDCDC;
+        text-align: center;
+        overflow: hidden;
+        margin-bottom: 10px;
+        display: inline-block;
+        vertical-align: bottom;
+        width: 100%;
+        object-fit: cover;
+
+        @media (min-width: $desk) {
+          height: 200px;
+        }
+      }
+
+      .speaker--name {
+        margin: 0 0 .5rem;
+        color: #435772;
+        text-transform: none;
+      }
+
+      .speaker--session {
+        color: #435772;
+        margin: 0 0 .5rem;
+      }
+
+      .speaker--content {
+        padding: .5rem;
+      }
+    }
   }
 }
