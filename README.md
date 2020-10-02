@@ -1,3 +1,5 @@
+#### Clone Repository
+  1 git clone https://github.com/AsociacionDrupalES/DrupalCampSpain.git
 ## Setup localhost
 After cloning the repo
 - Change to the "dev" branch.
